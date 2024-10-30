@@ -1,0 +1,352 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "CycloAI",
+      "description": "The comprehensive research project is aimed at leveraging self-supervised deep learning techniques to enhance cyclone intensity classification and improve disaster management in the fields of geological and climate sciences. The project will involve the development of advanced Scientific Machine Learning models, and collaboration with the Indian Space Research Organisation (ISRO) to analyze meteorological data. The ultimate goal is to provide accurate predictions, enable effective decision-making, and contribute to scientific advancements in cyclone analysis and disaster mitigation. The increasing frequency and intensity of cyclonic events demand more accurate and timely predictions to enhance disaster management efforts. This research project aims to utilize the power of ML techniques to improve cyclone intensity classification, cyclone genesis forecast and cyclone tracking, enabling effective mitigation strategies in geological and climate sciences. Collaboration with ISRO will provide access to rich meteorological data for analysis and validation.",
+      "researchers": [
+        "Akash Agrawal",
+        "Mayesh Mohapatra",
+        "Paritosh Tiwari",
+        "Vishwajeet Pattanaik",
+        "Aravinda Reddy"
+      ],
+      "tech": [
+        "Self-Supervised Learning",
+        "Time-series forecasting",
+        "Explainable AI"
+      ],
+      "data": ["Satellite Imagery", "INSAT 3D IR"],
+      "fundedBy": ["Indian Space Research Organisation (ISRO)"],
+      "url": "/P_portfolio/research/cyc"
+    },
+    {
+      "id": 2,
+      "name": "Indian ADAS",
+      "description": "The usefulness of ADAS or advanced driver warning systems under Heterogeneous Disordered Traffic (HDT) conditions is still not well understood in scientific literature. Too many ADAS warnings can have detrimental effects on drivers’ behaviour, particularly when driving larger vehicles (like buses) under densely packed HDT conditions, like on Indian roads. This work will allow us to optimize ADAS for Indian drivers and traffic conditions, reducing driver fatigue and making the drivers more aware of their surroundings, thus improving the overall road safety of bus drivers. For BMTC (Bangalore Metropolitan Transport Corporation), this will allow them to understand the best ADAS warnings and modalities for their bus drivers.",
+      "researchers": [
+        "Aditya Arvind",
+        "Rishab Sharma",
+        "Vishwajeet Pattanaik",
+        "Aravinda Reddy"
+      ],
+      "tech": [
+        "Computer Vision",
+        "Generative AI",
+        "Regression",
+        "Classification"
+      ],
+      "data": [
+        "Telematics",
+        "Images",
+        "Physiological Sensors",
+        "Eye Tracking Data"
+      ],
+      "fundedBy": ["Volvo Group India Private Ltd.", "CiSTUP, IISc"],
+      "url": "/P_portfolio/research/IADS"
+    },
+    {
+      "id": 3,
+      "name": "CityWatch",
+      "description": "The project aims to leverage the capabilities of Unmanned Aerial Vehicles (UAVs) to create an automated surveillance system. Drones, equipped with high-resolution cameras and AI software, will be used for accurate object detection and tracking, including vehicles and people, even under challenging conditions such as partial occlusion and varied viewpoints. The project specifically targets two critical objectives: (i) real-time tracking of vehicles and individuals on roads and (ii) precise estimation of vehicle queue lengths in dense traffic. Emphasis will be placed on developing efficient algorithms for embedded systems, ensuring optimal performance without overloading the UAV’s hardware. By addressing these challenges, the project seeks to contribute to the advancement of effective UAV-based surveillance systems for diverse applications, including traffic monitoring and security.",
+      "researchers": [
+        "Parikshit Singh Rathore",
+        "Romit Bhaumik",
+        "Vishwajeet Pattanaik",
+        "Aravinda Reddy"
+      ],
+      "tech": ["Computer Vision", "Edge-Computing", "Deep Learning"],
+      "data": ["Aerial View Videos"],
+      "fundedBy": ["Bharat Electronics Limited (BEL)"],
+      "url": "/P_portfolio/research/CW"
+    },
+    {
+      "id": 4,
+      "name": "TrafficBrain",
+      "description": "In the era of rapid urbanization driving globalization, the emphasis on smart cities has become central to this process. India, as a developing nation, is poised to construct a significant number of smart cities. However, the pressing challenge remains in designing and implementing an intelligent traffic management system, particularly in densely populated and chaotic traffic scenarios like those in India. The escalating traffic congestion, fuel consumption, and economic losses have underscored the urgent need for an efficient traffic control paradigm. Traditional traffic control methods with signal transitions have proven inadequate, necessitating a paradigm shift towards an automated traffic management system. Considering these aspects, this project aims to develop an innovative data-driven traffic control solution for a selected Indian city, targeting around 40 to 50 major traffic intersections, with the primary objective of ensuring a seamless and optimized traffic flow.",
+      "researchers": [
+        "Rankit Kachroo",
+        "Vishwajeet Pattanaik",
+        "Aravinda Reddy"
+      ],
+      "tech": [
+        "Reinforcement Learning",
+        "Computer Vision",
+        "Graph Neural Networks"
+      ],
+      "data": ["Traffic Density", "Traffic Cameras", "Phase Signal timings"],
+      "fundedBy": ["Bharat Electronics Limited (BEL)"],
+      "url": "/P_portfolio/research/TB"
+    },
+    {
+      "id": 5,
+      "name": "Deep-Clustering",
+      "description": "Clustering is an important unsupervised learning approach for (unlabelled) data mining that partitions the data into groups with similar objects to discover interesting patterns from the dataset. Deep learning-based clustering techniques have recently gained popularity due to their ability to handle complex high-dimensional data. However, these algorithms have limitations, such as the need to specify the number of clusters explicitly beforehand, the lack of information about the inherent cluster structure of data points, and difficulties in interpreting the neural network’s predictions. To overcome these limitations, researchers have used visual assessment of clustering tendency (VAT) methods to estimate the number of clusters present in data. However, these methods are not practical and are often inconclusive with high-dimensional datasets which is the case in most real-life data. Therefore, this project aims to develop an explainable, self-supervised learning-based visual-analytical framework for cluster structure assessment to discover the deep structures present in complex, high-dimensional data when no ground truths are available.",
+      "researchers": [
+        "Alokendu Mazumder",
+        "Paritosh Tiwari",
+        "Tirthajit Baruah",
+        "Siddhant Sharma",
+        "Sourav Ranjan Saraf",
+        "Nidhi Ahlawat"
+      ],
+      "tech": ["Contrastive Learning", "Self-Supervised Learning"],
+      "data": ["Images", "Time-series"],
+      "fundedBy": [
+        "Anusandhan National Research Foundation (ANRF, previously SERB)"
+      ],
+      "url": "/P_portfolio/research/DC"
+    },
+    {
+      "id": 6,
+      "name": "VehicleSec",
+      "description": "Modern automobile systems are integrated with advanced communication and computational capabilities, and as a result, they come with many advanced features. However, these advancements render the automobile systems more prone to cyber-attacks. This project focuses on developing unsupervised learning technique on edge device (ECU) to detect and prevent attacks by monitoring the CAN bus traffic data in a car.",
+      "researchers": ["Ashhar Zaman", "Pruthvish Rajput"],
+      "tech": [
+        "Unsupervised Learning",
+        "Clustering",
+        "Anomaly Detection",
+        "Markov Chain Models"
+      ],
+      "data": ["Telematics Data"],
+      "fundedBy": ["Tata Elxsi Ltd."],
+      "url": "/P_portfolio/research/VSec"
+    },
+    {
+      "id": 7,
+      "name": "UPGRID",
+      "description": "The project aims to develop an advanced Machine Learning (ML)-based Intrusion Detection System (IDS) to safeguard power grids in India against cyber-attacks. Given the increasing vulnerability of modern power grids due to the integration of Computing and Communication (CC) devices, the project will focus on devising unsupervised learning models capable of detecting anomalies across various communication protocols. By leveraging state-of-the-art techniques like isolation forest, One-Class Support Vector Machine (OCSVM), and auto-encoders, the project seeks to enhance the specificity and sensitivity of the detection system. The research involves extensive data analysis using open datasets and synthetic data generation from power grid simulators. The developed models will be evaluated using standard metrics and deployed over GPU-accelerated computing platforms for real-time monitoring. Ultimately, the project’s goal is to create a robust and adaptive solution that can effectively detect and prevent cyber threats in the Indian power grid, making it more resilient to dynamic and sophisticated attacks.",
+      "researchers": [
+        "Anushtha Tamrakar",
+        "Syed Lateef",
+        "Kunal Ajay Wasnik",
+        "Shailja Sharma",
+        "Vishwajeet Pattanaik"
+      ],
+      "tech": ["Unsupervised Learning", "Clustering", "Anomaly Detection"],
+      "data": [""],
+      "fundedBy": ["POWERGRID Centre of Excellence (PGCoE), IISc"],
+      "url": "/P_portfolio/research/upgrid"
+    },
+    {
+      "id": 8,
+      "name": "AML WatchDog",
+      "description": "The Indian Institute of Science (IISc) and the National Payments Corporation of India (NPCI) have initiated a groundbreaking joint research project to revolutionize the fight against financial crimes in India. This critical initiative leverages cutting-edge Graph and Graph Neural Network (GNN) analytics to detect and prevent money laundering and fraudulent transactions within NPCI's vast network of over 40 crore daily transactions. The collaboration brings together renowned researchers and industry professionals to develop innovative solutions that can identify anomalous sub-graphs and networks contributing to financial crimes with unprecedented speed and accuracy. By harnessing advanced graph algorithms and GNN techniques, this project aims to provide NPCI's Anti-Money Laundering team with cutting-edge tools for near real-time detection of suspicious patterns and relationships within the transaction graph. The outcomes of this research have far-reaching implications for the entire financial sector in India and beyond, setting new benchmarks in the fight against financial crimes. The project's success will strengthen public confidence in digital transactions, support the government's efforts to curb illicit activities, and contribute to the overall economic stability and growth of the nation.",
+      "researchers": ["Paritosh Tiwari", "Ram Samarth B B"],
+      "tech": [
+        "Graph Neural Networks",
+        "Anomaly Detection",
+        "Temporal Graph Mining",
+        "Dynamic Graphs"
+      ],
+      "data": ["Financial Transactions (UPI and IMPS Data)"],
+      "fundedBy": ["National Payments Corporation of India (NPCI)"],
+      "url": "#"
+    },
+    {
+      "id": 9,
+      "name": "RoadDNA",
+      "description": "This project explores prototyping and development of a sensing platform with multiple modalities. It also involves computer vision techniques which will be used for road surface monitoring applications under adverse weather conditions to enhance existing ADAS systems.",
+      "researchers": ["Shaurya Pratap Singh", "Prasant Misra"],
+      "tech": [
+        "Multimodal Machine Learning",
+        "Representation Learning",
+        "ML for Constrained Devices"
+      ],
+      "data": ["Heterogeneous Data"],
+      "fundedBy": ["IISc Bangalore"],
+      "url": "#"
+    },
+    {
+      "id": 11,
+      "name": "Wreck Analyzer",
+      "description": "The Ministry of Road Transport and Highways (MoRTH) has recently launched the Integrated Road Accident Database (iRAD) initiative, aimed at enhancing road safety across the country. The iRAD system will gather comprehensive accident data from every region, enabling data analytics to generate insights that improve road safety. This information will provide critical input to various stakeholders, including the Transport Department, Health Department, Highway Authorities, and others, to support decision-making and policy formulation. This project also involves advanced technologies such as multi-drone energy-aware scheduling, path planning, crash analysis algorithms, autonomous flying, and autonomous data collection. When the police receive an SOS about an accident within their jurisdiction, they quickly arrive at the scene and deploy a drone to assist with data collection, including capturing video footage of the site. The drone is designed to perform this task autonomously.",
+      "researchers": ["Rishabh Sabharwal", "Vijay G. Kovali"],
+      "tech": [
+        "Trajectory Planning",
+        "Objects Detection and Tracking",
+        "Edge AI"
+      ],
+      "data": ["Videos", "IMU"],
+      "fundedBy": ["ARTPARK", "CiSTUP, IISc"],
+      "url": "/P_portfolio/research/WAna"
+    },
+    {
+      "id": 12,
+      "name": "Driver-Vehicle Interaction",
+      "description": "Today, and probably for a long time to come, humans will remain an integral part of vehicles for driving tasks. Therefore, it is essential to understand how vehicles and drivers interact with each other and how drivers' behavior and physical and mental states affect vehicle performance and traffic safety. In this work, the relationship between driver and vehicle was explored in real-world driving conditions by analyzing large-scale naturalistic data collected from cars and drivers. We analyzed different types of driver-vehicle interactions during driving, investigated the effect of different driving conditions on drivers' stress, and explored the relationship between driver and vehicle in different driving conditions. The findings from this work could be used to help manage comfort-related in-vehicle intervention systems and could provide a continuous measure of how different external conditions (traffic, road, weather, etc.) affect drivers.",
+      "researchers": ["S. Milardo", "P. Rathore", "P. Santi", "C. Ratti"],
+      "tech": [
+        "Trajectory Planning",
+        "Objects Detection and Tracking",
+        "Edge AI"
+      ],
+      "data": ["Videos", "IMU"],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/dbshmi"
+    },
+    {
+      "id": 13,
+      "name": "DriverDNA",
+      "description": "Traditional driving behaviour recognition algorithms leverage hand-crafted features extracted from raw driving data and apply user-defined machine learning models to identify driving behaviours. However, these solutions are limited by the selected features and the chosen model, requiring extensive knowledge of the analyzed signals to perform well. In this work, two data-driven driving behaviour recognition frameworks are developed for professional drivers based on a simple yet efficient unsupervised aggregation-based approach, and an automatic feature extraction and selection algorithm with a deep neural network architecture obtained through AutoML.",
+      "researchers": [
+        "S. Milardo",
+        "P. Rathore",
+        "R. Buteau",
+        "P. Santi",
+        "C. Ratti"
+      ],
+      "tech": ["Unsupervised Learning", "AutoML", "Deep Neural Networks"],
+      "data": [],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/dba"
+    },
+    {
+      "id": 14,
+      "name": "Spam Detection",
+      "description": "Online product reviews play a crucial role in digital consumer markets, influencing purchasing decisions. However, spammers often write fake reviews to promote or demote products. While previous studies focused on detecting individual fake reviews, this work addresses the detection of fake reviewer groups who work collaboratively. A top-down framework using the DeepWalk approach on reviewers’ graph data and a modified semi-supervised clustering method is proposed to detect such groups. The approach can also be extended to detect opinion spammers on social media.",
+      "researchers": [
+        "P. Rathore",
+        "J. Soni",
+        "N. Prabakar",
+        "M. Palaniswami",
+        "P. Santi"
+      ],
+      "tech": [
+        "DeepWalk",
+        "Semi-supervised Clustering",
+        "Graph Data Analysis",
+        "Sentiment Analysis"
+      ],
+      "data": [],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/frcd"
+    },
+    {
+      "id": 15,
+      "name": "Big Data Cluster Analysis",
+      "description": "With the vast amount of data generated daily from sources like IoT networks and social media, analyzing and extracting actionable information from big data is critical for businesses and applications. Traditional supervised machine learning techniques are inadequate due to limited labeled training data. This project aims to develop scalable, unsupervised algorithms to handle and analyze high-dimensional, anomalous, and streaming big data for cluster assessment, clustering, and cluster validity.",
+      "researchers": [
+        "P. Rathore",
+        "Z. Ghafoori",
+        "J. C. Bezdek",
+        "M. Palaniswami",
+        "C. Leckie",
+        "D. Kumar",
+        "S. M. Erfani",
+        "S. Rajasegarar"
+      ],
+      "tech": [
+        "Unsupervised Learning",
+        "Cluster Analysis",
+        "High-Dimensional Data",
+        "Big Data Processing",
+        "Streaming Data"
+      ],
+      "data": [],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/bdca"
+    },
+    {
+      "id": 16,
+      "name": "Online Clustering",
+      "description": "The rise of IoT technologies, smartphones, and social media generates vast amounts of high-velocity data. Detecting interesting events, often in the form of clusters, requires real-time processing. Current techniques are insufficient for visual assessment of evolving cluster structures in such high-velocity data. This project introduces an incremental version of the scalable iVAT (siVAT) algorithm, which efficiently tracks changes and assesses structural evolution in high-velocity, high-dimensional data streams. It produces reordered dissimilarity images or cluster heat maps that are updated with each new batch of data.",
+      "researchers": [
+        "P. Rathore",
+        "D. Kumar",
+        "J. C. Bezdek",
+        "S. Rajasegarar",
+        "M. Palaniswami"
+      ],
+      "tech": [
+        "IoT Data Processing",
+        "Cluster Assessment",
+        "Streaming Data",
+        "Unsupervised Learning",
+        "Visual Structure Assessment"
+      ],
+      "data": [],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/sasd"
+    },
+    {
+      "id": 17,
+      "name": "Traj-Pred",
+      "description": "The widespread use of global positioning system (GPS) navigation systems and wireless communication technology-enabled vehicles have resulted in huge volumes of spatio-temporal data, especially in the form of trajectories. These data often contain a great deal of information, which give rise to many location-based services (LBSs) and applications such as vehicle navigation, traffic management, and location-based recommendations. One key operation in such applications is the route prediction of moving objects. Vehicle route prediction allows certain services to improve their quality, e.g., if the route of vehicles is known in advance, intelligent transportation systems (ITSs) can provide route-specific traffic information to drivers such as forecasting traffic conditions and routing the driver to avoid traffic jams.\n\nMost trajectory prediction approaches in the literature use only synthetic or small to medium size real trajectory datasets because they are not scalable. The aim is to develop a framework for large-scale trajectory prediction which can be used for road networks of major cities. A scalable framework was developed for short-term and long-term trajectory prediction, based on our novel big data clustering algorithm and Markov models, which can utilize a large number (in millions) of trajectories in a dense road network. The developed framework was tested on two real-life, large-scale, taxi trajectory datasets from the Beijing and Singapore road networks in our experiments.",
+      "researchers": [
+        "P. Rathore",
+        "D. Kumar",
+        "S. Rajasegarar",
+        "M. Palaniswami",
+        "J. C. Bezdek"
+      ],
+      "tech": [
+        "Trajectory Prediction",
+        "Big Data Clustering",
+        "Markov Models",
+        "Spatio-temporal Data Analysis"
+      ],
+      "data": ["Taxi Trajectory Datasets from Beijing and Singapore"],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/lstp"
+    },
+    {
+      "id": 18,
+      "name": "ST Estimation",
+      "description": "In modern IoT deployments for continuous monitoring applications, many inexpensive sensors along with a relatively few expensive high-precision sensors are used to reduce deployment costs. Generally, the low-cost, low-precision sensor nodes have limited memory and processing power. Most techniques for sensor drift detection are not suitable for modern IoT deployment as they do not consider measurement errors/uncertainties present in low-precision sensor measurements. We developed an automatic sensor drift detection and correction technique by leveraging a Bayesian maximum entropy-based estimation method that incorporates measurement errors/uncertainties of low-precision sensors to estimate drift, with Kalman filtering to track and correct the estimated drift from sensor measurements. We implemented the proposed technique in both centralized and distributed frameworks to facilitate in-network sensor drift detection/correction in real-time. We extended this work for both smooth and abrupt drift detection using Interacting Multiple Models. The method was demonstrated using data from the Dockland Deployment in a distributed manner.",
+      "researchers": [
+        "P. Rathore",
+        "D. Kumar",
+        "S. Rajasegarar",
+        "M. Palaniswami"
+      ],
+      "tech": [
+        "Bayesian Maximum Entropy",
+        "Kalman Filtering",
+        "Sensor Drift Detection",
+        "IoT",
+        "Interacting Multiple Models"
+      ],
+      "data": ["Dockland Deployment"],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/sme"
+    },
+    {
+      "id": 19,
+      "name": "Urban Sensing using IOT",
+      "description": "As part of the 'Internet of Things (IoT) for Creating Smart Cities' project, the University of Melbourne, ARUP, and the City of Melbourne council (CoM) conducted a pilot deployment of IoT networks in Melbourne city for monitoring environmental parameters. The research aimed to develop systems and algorithms to help city administrators remotely monitor, understand, and interpret real-time information on urban environments. Environmental sensors, measuring light levels, humidity, and temperature, were deployed at Fitzroy Gardens and Library at the Docklands. The data collected was analyzed to understand the impact of canopy cover on urban cooling.",
+      "researchers": [
+        "P. Rathore",
+        "A. S. Rao",
+        "S. Rajasegarar",
+        "E. Vanz",
+        "J. Gubbi",
+        "M. Palaniswami"
+      ],
+      "tech": [
+        "IoT",
+        "Environmental Sensors",
+        "Deep Neural Networks",
+        "Automated Machine Learning (AutoML)"
+      ],
+      "data": ["Fitzroy Gardens", "Library at the Docklands"],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/iot"
+    },
+    {
+      "id": 20,
+      "name": "Vehicle REID",
+      "description": "",
+      "researchers": [
+        "P. Rathore",
+        "Vishwajeet Pattanaik",
+        "Rishab Sharma",
+        "Aravinda Reddy"
+      ],
+      "tech": [],
+      "data": [],
+      "fundedBy": [],
+      "url": "/P_portfolio/research/reid"
+    }
+  ]
+}

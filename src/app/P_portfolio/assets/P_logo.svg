@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1278.92 1226.03">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-2 {
+        font-family: GTEestiProDisplay-UltraBold, 'GT Eesti Pro Display';
+        font-size: 119.98px;
+        font-weight: 700;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #231f20;
+      }
+
+      .cls-6 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        font-family: GTEestiProDisplay-Medium, 'GT Eesti Pro Display';
+        font-size: 372.22px;
+        font-weight: 500;
+      }
+
+      .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-5 {
+        font-family: GTEestiProDisplay-Light, 'GT Eesti Pro Display';
+        font-size: 301.21px;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(253.66 574.76)"><tspan x="0" y="0">PUNI</tspan><tspan class="cls-1" x="830.4" y="0">T</tspan></text>
+  <text class="cls-2" transform="translate(18.89 408.44)"><tspan x="0" y="0">DR.</tspan></text>
+  <text class="cls-5" transform="translate(0 890.31)"><tspan x="0" y="0">R</tspan><tspan class="cls-6" x="171.99" y="0">A</tspan><tspan class="cls-7" x="342.17" y="0">THORE</tspan></text>
+  <rect class="cls-4" x="18.89" y="436.38" width="189.32" height="141.12" rx="1.98" ry="1.98"/>
+</svg>
