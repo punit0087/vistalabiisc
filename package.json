@@ -21,7 +21,7 @@
     "@types/three": "^0.165.0",
     "@types/turf": "^3.5.32",
     "autoprefixer": "^10.4.19",
-    "axios": "^1.7.2",
+    "axios": "^1.7.7",
     "cheerio": "^1.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
