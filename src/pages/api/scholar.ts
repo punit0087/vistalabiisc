@@ -95,7 +95,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     console.error("Error:", error);
     res.status(500).json({
       error: "Failed to scrape data. Please try again later.",
-      details: error.message,
+      details: (error as any).message,
     });
   }
 };
