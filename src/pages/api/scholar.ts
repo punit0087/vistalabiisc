@@ -31,7 +31,13 @@ interface ScholarResponse {
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const response = await axios.get(
-      "https://scholar.google.com.au/citations?hl=en&user=2clQgooAAAAJ&view_op=list_works&sortby=pubdate"
+      "https://scholar.google.com.au/citations?hl=en&user=2clQgooAAAAJ&view_op=list_works&sortby=pubdate",
+      {
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36",
+        },
+      }
     );
 
     const html = response.data;
@@ -71,7 +77,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       i10IndexSince2019: $("#gsc_rsb_st .gsc_rsb_std").eq(5).text().trim(),
     };
 
-    // Extract the graph data by pairing years with citation counts
+    // Extract the graph data
     const years = $(".gsc_md_hist_b .gsc_g_t")
       .map((_, el) => $(el).text().trim())
       .get();
@@ -79,7 +85,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       .map((_, el) => $(el).text().trim())
       .get();
 
-    // Combine years and citations into the graphData array
     years.forEach((year, i) => {
       if (year && citations[i]) {
         graphData.push({ year, citations: citations[i] });
@@ -91,12 +96,30 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       metrics,
       graphData,
     });
-  } catch (error) {
-    console.error("Error:", error);
-    res.status(500).json({
-      error: "Failed to scrape data. Please try again later.",
-      details: (error as any).message,
-    });
+  } catch (error: unknown) {
+    // Use a type guard to check if error is an instance of Error
+    if (axios.isAxiosError(error)) {
+      // Axios error
+      console.error("Axios Error:", error.message);
+      res.status(500).json({
+        error: "Failed to scrape data. Please try again later.",
+        details: error.message,
+      });
+    } else if (error instanceof Error) {
+      // General error
+      console.error("Error:", error.message);
+      res.status(500).json({
+        error: "Failed to scrape data. Please try again later.",
+        details: error.message,
+      });
+    } else {
+      // Fallback for unknown errors
+      console.error("Unknown error:", error);
+      res.status(500).json({
+        error: "Failed to scrape data. Please try again later.",
+        details: "An unknown error occurred.",
+      });
+    }
   }
 };
 
