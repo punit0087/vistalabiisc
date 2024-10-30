@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import axios from "axios";
 import * as cheerio from "cheerio";
 
 // Define the interfaces
@@ -29,10 +30,11 @@ interface ScholarResponse {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const response = await fetch(
+    const response = await axios.get(
       "https://scholar.google.com.au/citations?hl=en&user=2clQgooAAAAJ&view_op=list_works&sortby=pubdate"
     );
-    const html = await response.text();
+
+    const html = response.data;
     const $ = cheerio.load(html);
 
     const results: PublicationResult[] = [];
@@ -92,7 +94,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({
-      error: "Failed to scrape data. Verify Google Scholar layout or IDs.",
+      error: "Failed to scrape data. Please try again later.",
+      details: error.message,
     });
   }
 };
