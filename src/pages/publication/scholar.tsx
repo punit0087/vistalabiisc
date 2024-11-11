@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import scholarData from "../scholar.json"; // Adjust the path as necessary
 
 type ScholarResult = {
   title: string;
@@ -20,8 +21,8 @@ type ScholarMetrics = {
 };
 
 type GraphData = {
-  year: number;
-  citations: number;
+  year: string;
+  citations: string;
 };
 
 type ScholarResponse = {
@@ -44,30 +45,22 @@ export default function Scholar() {
   );
 
   useEffect(() => {
-    const fetchScholarData = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch("/api/scholar"); // Adjust API path if necessary
-        const data: ScholarResponse = await response.json();
-        if (data.error) throw new Error(data.error);
-
-        setResults(data.results || []);
-        setMetrics(data.metrics);
-        setGraphData(data.graphData);
-        setFilteredResults(data.results || []);
-      } catch (err) {
-        setError("Failed to load data");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchScholarData();
+    try {
+      const data: ScholarResponse = scholarData;
+      setResults(data.results || []);
+      setMetrics(data.metrics);
+      setGraphData(data.graphData);
+      setFilteredResults(data.results || []);
+    } catch (err) {
+      setError("Failed to load data");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   const filterAndSortResults = useCallback(() => {
-    const filtered = results.filter((result) => {
+    let filtered = results.filter((result) => {
       const lowerCaseQuery = searchQuery.toLowerCase();
       const authors = result.authors.toLowerCase();
       const year = parseInt(result.publicationDate.split("-")[0], 10);
@@ -162,14 +155,15 @@ export default function Scholar() {
                 <h2 className="max-w-[70%] font-bold mb-8 sm:max-w-[90%]">
                   {result.title}
                 </h2>
-                {/* Displaying the authors' names */}
-                <p className="text-xs text-gray-400 mb-4">
-                  <b>Authors:</b> {result.authors}
+              </div>
+              <div className="flex w-[20%] flex-col justify-between pr-4 sm:w-full">
+                <p className="text-xs mb-2">
+                  <b className="text-sm">Authors:</b> <br /> {result.authors}
                 </p>
               </div>
               <div className="flex w-[20%] flex-col justify-between pr-4 sm:w-full">
                 <p className="text-xs mb-2">
-                  <b className="text-sm"> Article:</b>
+                  <b className="text-sm sm:w-full"> Article:</b>
                   <br /> {result.journal}
                 </p>
                 <p className="text-xs mb-2 sm:w-full">
