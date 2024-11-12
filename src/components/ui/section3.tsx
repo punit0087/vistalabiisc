@@ -16,7 +16,7 @@ import mit from "@/assets/brand/mit-logo.svg";
 import deakin from "@/assets/brand/deakin-university.svg";
 import melbourn from "@/assets/brand/Melbourne.svg";
 
-import scholarData from "@/pages/publication/scholar";
+import scholarData from "@/pages/scholar.json";
 
 import { useState } from "react";
 
@@ -25,27 +25,18 @@ import Link from "next/link";
 
 import React, { useEffect } from "react";
 
-interface ScholarResult {
+type ScholarResult = {
   title: string;
   link: string;
   authors: string;
   publicationDate: string;
   journal: string;
   citationCount: string;
-}
-
-interface ScholarResponse {
-  results: ScholarResult[];
-  metrics: {
-    citationsAll: string;
-    citationsSince2019: string;
-    hIndexAll: string;
-    hIndexSince2019: string;
-    i10IndexAll: string;
-    i10IndexSince2019: string;
-  };
-  graphData: { year: string; citations: string }[];
-}
+};
+type ScholarResponse = {
+  results?: ScholarResult[];
+  error?: string;
+};
 
 const itemsCurrentONE = [
   {
@@ -298,27 +289,25 @@ const itemsCurrentSEVEN = [
 
 export default function Section3() {
   const [publications, setPublications] = useState<ScholarResult[]>([]);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchPublications = async () => {
+    try {
+      // Simulate a loading state
       setLoading(true);
-      try {
-        const response = await fetch("/api/scholar"); // Fetch data from the API
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result: ScholarResponse = await response.json();
-        setPublications(result.results || []);
-      } catch (error) {
-        setError("Failed to load publications");
-      } finally {
-        setLoading(false);
-      }
-    };
 
-    fetchPublications(); // Call the function to fetch publications
+      // Directly use imported JSON data
+      const result: ScholarResponse = scholarData;
+
+      // Set publications
+      setPublications(result.results || []);
+    } catch (error) {
+      setError("Failed to load publications");
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   return (
@@ -467,7 +456,6 @@ export default function Section3() {
                   href={publication.link}
                   target="_blank"
                   className="text-sm hover:text-white"
-                  rel="noopener noreferrer"
                 >
                   <b>{publication.title}</b>
                 </a>
