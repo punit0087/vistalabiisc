@@ -1,12 +1,6 @@
 "use client";
-import {
-  TileLayer,
-  Polyline,
-  CircleMarker,
-  Tooltip,
-  useMap,
-} from "react-leaflet";
-import { useState, useEffect, useMemo, useRef } from "react";
+import { TileLayer, CircleMarker, Tooltip, useMap } from "react-leaflet";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 
@@ -43,10 +37,10 @@ const gradeColors: Record<string, string> = {
 
 const Cyclones: React.FC = () => {
   const [cycloneData, setCycloneData] = useState<CycloneDataPoint[]>([]);
-  const [year, setYear] = useState<number>(2019);
-  const [zoom, setZoom] = useState<number>(5);
+  const [year, setYear] = useState<number>(2000);
+  const [zoom, setZoom] = useState<number>(4);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
-  const [animationIndex, setAnimationIndex] = useState<number>(0); // Index to track current position in animation
+  const [animationTimestamp, setAnimationTimestamp] = useState<string>(""); // Store current timestamp
   const [isAnimating, setIsAnimating] = useState<boolean>(false); // To track whether the animation is running
 
   const animationRef = useRef<any>(null);
@@ -55,28 +49,36 @@ const Cyclones: React.FC = () => {
     fetch("/data/cyclonic_events.json")
       .then((response) => response.json())
       .then((data) => {
-        const transformedData = data.slice(1).map((row: any) => {
-          const latitude = parseFloat(row.field6);
-          const longitude = parseFloat(row.field7);
-          const windSpeed = parseFloat(row.field10) * 1.852; // Convert knots to km/h
+        const transformedData = data.map((row: any) => {
+          const latitude = parseFloat(row["latitude-lat"]);
+          const longitude = parseFloat(row["longitude-long"]);
+          const windSpeed =
+            parseFloat(row["maximumsustainedsurfacewind-kt"]) * 1.852; // Convert knots to km/h
+          const pressure =
+            parseInt(row["estimatedcentralpressurehpaorecp"]) || 0;
+          const cycloneId = parseInt(
+            row["serialnumberofsystemduringyear"] ||
+              row["serialnumberofsystemduringyear"].split(".")[0]
+          );
 
           return {
-            date: row.field4,
-            time: row.field5,
+            date: row["date-dd-mm-yyyy"],
+            time: row["time-utc"],
             latitude: !isNaN(latitude) ? latitude : null,
             longitude: !isNaN(longitude) ? longitude : null,
-            grade: row.field12,
+            grade: row["grade-text"],
             windSpeed: !isNaN(windSpeed) ? windSpeed : 0,
-            cycloneId: parseInt(row.field1 || row.field13.split(".")[0]),
-            pressure: parseInt(row.field9) || 0,
-            basin: row.field2,
-            shape: row.field8,
-            name: row.field3,
+            cycloneId: cycloneId,
+            pressure: pressure,
+            basin: row["basinoforigin"],
+            shape: row["cinoorornot"], // You can adjust this if needed for shape or other properties
+            name: row["name"] || "Unknown", // Default to "Unknown" if no name
           };
         });
 
-        const validData = transformedData.filter(
-          (point) => point.latitude !== null && point.longitude !== null
+        const validData: CycloneDataPoint[] = transformedData.filter(
+          (point: CycloneDataPoint) =>
+            point.latitude !== null && point.longitude !== null
         );
 
         setCycloneData(validData);
@@ -103,26 +105,26 @@ const Cyclones: React.FC = () => {
     [filteredData]
   );
 
-  // Animation Logic with manual control
-  useEffect(() => {
-    // Only start the animation if it's not being controlled manually
-    if (isAnimating) {
-      const maxIndex = Math.max(
-        ...Object.values(groupedData).map((points) => points.length)
-      );
+  // Get all unique timestamps
+  const uniqueTimestamps = useMemo(
+    () => [
+      ...new Set(filteredData.map((point) => `${point.date} ${point.time}`)),
+    ],
+    [filteredData]
+  );
 
-      // Animation step interval (for updating position)
-      const interval = setInterval(() => {
-        setAnimationIndex((prevIndex) => (prevIndex + 1) % maxIndex);
-      }, 1000); // Update every second
+  // Handle slider change to update timestamp
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const timestamp = uniqueTimestamps[parseInt(e.target.value)];
+    setAnimationTimestamp(timestamp);
+  };
 
-      animationRef.current = interval;
-
-      return () => {
-        clearInterval(animationRef.current);
-      };
-    }
-  }, [isAnimating, groupedData]);
+  // Find data points that match the current timestamp
+  const currentCycloneData = useMemo(() => {
+    return filteredData.filter(
+      (point) => `${point.date} ${point.time}` === animationTimestamp
+    );
+  }, [filteredData, animationTimestamp]);
 
   // Zoom hook inside MapContainer
   const ZoomComponent = ({
@@ -165,47 +167,64 @@ const Cyclones: React.FC = () => {
       >
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+          options={{
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+          }}
         />
         <ZoomComponent onZoomChange={setZoom} />
-        {Object.values(groupedData).map((points, index) => {
-          const currentPoints = points.slice(0, animationIndex); // Slice points based on animation index
+
+        {Object.entries(groupedData).map(([cycloneId, points]) => {
           return (
-            <Polyline
-              key={index}
-              positions={currentPoints.map((point) => [
-                point.latitude,
-                point.longitude,
-              ])}
-              color={gradeColors[points[0].grade] || "#000"}
-              weight={1} // Thinner line
-            >
-              {currentPoints.map((point, idx) => (
-                <CircleMarker
-                  key={idx}
-                  center={[point.latitude, point.longitude]}
-                  color={gradeColors[point.grade] || "#000"}
-                  radius={hoveredPoint === idx ? 4 : 2} // Scale dot on hover
-                  eventHandlers={{
-                    mouseover: () => setHoveredPoint(idx),
-                    mouseout: () => setHoveredPoint(null),
-                  }}
-                >
-                  <Tooltip direction="top" offset={[0, -10]} opacity={1}>
-                    <div>
-                      <strong>Date:</strong> {point.date} <br />
-                      <strong>Time:</strong> {point.time} <br />
-                      <strong>Grade:</strong> {point.grade} <br />
-                      <strong>Wind Speed:</strong> {point.windSpeed.toFixed(2)}{" "}
-                      km/h <br />
-                      <strong>Pressure:</strong> {point.pressure} hPa <br />
-                      <strong>Basin:</strong> {point.basin} <br />
-                      <strong>Name:</strong> {point.name} <br />
-                    </div>
-                  </Tooltip>
-                </CircleMarker>
-              ))}
-            </Polyline>
+            <React.Fragment key={cycloneId}>
+              {points
+                .filter(
+                  (point) =>
+                    `${point.date} ${point.time}` === animationTimestamp
+                )
+                .map((point, index) => (
+                  <React.Fragment key={index}>
+                    {/* First point is just a marker */}
+                    <CircleMarker
+                      center={[point.latitude, point.longitude]}
+                      pathOptions={{
+                        color: gradeColors[point.grade] || "#000",
+                      }}
+                      radius={hoveredPoint === index ? 4 : 2} // Scale dot on hover
+                      eventHandlers={{
+                        mouseover: () => setHoveredPoint(index),
+                        mouseout: () => setHoveredPoint(null),
+                      }}
+                    >
+                      <Tooltip>
+                        {/* Detailed data inside Tooltip */}
+                        <div>
+                          <strong>Name:</strong> {point.name}
+                          <br />
+                          <strong>Grade:</strong> {point.grade}
+                          <br />
+                          <strong>Wind Speed:</strong> {point.windSpeed} km/h
+                          <br />
+                          <strong>Pressure:</strong> {point.pressure} hPa
+                          <br />
+                          <strong>Latitude:</strong> {point.latitude}
+                          <br />
+                          <strong>Longitude:</strong> {point.longitude}
+                          <br />
+                          <strong>Basin:</strong> {point.basin}
+                          <br />
+                          <strong>Shape:</strong> {point.shape}
+                          <br />
+                          <strong>Date:</strong> {point.date}
+                          <br />
+                          <strong>Time:</strong> {point.time}
+                          <br />
+                        </div>
+                      </Tooltip>
+                    </CircleMarker>
+                  </React.Fragment>
+                ))}
+            </React.Fragment>
           );
         })}
       </DynamicMapContainer>
@@ -220,8 +239,8 @@ const Cyclones: React.FC = () => {
             <p className="w-full text-white">Year Slider</p>
             <input
               type="range"
-              min="1982"
-              max="2024"
+              min="2000"
+              max="2022"
               value={year}
               onChange={(e) => setYear(parseInt(e.target.value))}
               className="w-screen"
@@ -236,14 +255,14 @@ const Cyclones: React.FC = () => {
               className="w-screen"
               type="range"
               min="0"
-              max="100"
-              value={animationIndex}
-              onChange={(e) => setAnimationIndex(parseInt(e.target.value))}
+              max={uniqueTimestamps.length - 1}
+              value={uniqueTimestamps.indexOf(animationTimestamp)}
+              onChange={handleSliderChange}
               onMouseDown={() => setIsAnimating(false)} // Stop animation while interacting
               onMouseUp={() => setIsAnimating(true)} // Restart animation after interaction
             />
             <div className="ml-4 text-sm font-medium text-white">
-              {animationIndex}
+              {animationTimestamp}
             </div>
           </div>
         </div>
