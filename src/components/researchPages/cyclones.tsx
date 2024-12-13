@@ -4,6 +4,19 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 
+// points = {
+  // "[cyclode_id]": [{
+  // x: number
+  // y: number
+  // intensity: number
+  // }, (x,y), ...],
+// }
+
+// function which takes in cyclone id and returns the points
+// function getPoints(cycloneId) {
+//   return points[cycloneId];
+//
+
 // Dynamically import MapContainer to avoid server-side rendering issues
 const DynamicMapContainer = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
@@ -40,7 +53,8 @@ const Cyclones: React.FC = () => {
   const [year, setYear] = useState<number>(2000);
   const [zoom, setZoom] = useState<number>(4);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
-  const [animationTimestamp, setAnimationTimestamp] = useState<string>(""); // Store current timestamp
+  const [animationTimestamp, setAnimationTimestamp] =
+    useState<string>("00/00/0000"); // Store current timestamp
   const [isAnimating, setIsAnimating] = useState<boolean>(false); // To track whether the animation is running
 
   const animationRef = useRef<any>(null);
@@ -230,29 +244,34 @@ const Cyclones: React.FC = () => {
       </DynamicMapContainer>
 
       <div
-        className="absolute bottom-4 flex flex-col z-50 w-full px-32 items-center"
+        className="absolute bottom-4 flex flex-col z-50 w-full items-center"
         style={{ position: "fixed", zIndex: 999999 }}
       >
         <div className="bg-zinc-600/70 rounded-xl backdrop-blur-sm w-[80%] p-5">
           {/* Year Slider */}
           <div className="flex w-full">
             <p className="w-full text-white">Year Slider</p>
+            <div className="ml-4 w-[300px] text-sm font-medium text-white">
+              {year}
+            </div>
             <input
               type="range"
               min="2000"
               max="2022"
               value={year}
               onChange={(e) => setYear(parseInt(e.target.value))}
-              className="w-screen"
+              className="w-screen scrollbar-custom"
             />
-            <div className="ml-4 text-sm font-medium text-white">{year}</div>
           </div>
 
           {/* Animation Control Slider */}
           <div className="flex w-full">
             <p className="w-full text-white">Animation Control Slider</p>
+            <div className="ml-4 w-[300px] text-sm font-medium text-white">
+              {animationTimestamp}
+            </div>
             <input
-              className="w-screen"
+              className="w-screen scrollbar-custom"
               type="range"
               min="0"
               max={uniqueTimestamps.length - 1}
@@ -261,9 +280,6 @@ const Cyclones: React.FC = () => {
               onMouseDown={() => setIsAnimating(false)} // Stop animation while interacting
               onMouseUp={() => setIsAnimating(true)} // Restart animation after interaction
             />
-            <div className="ml-4 text-sm font-medium text-white">
-              {animationTimestamp}
-            </div>
           </div>
         </div>
       </div>

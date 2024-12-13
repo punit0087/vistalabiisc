@@ -446,7 +446,7 @@ export default function Section3() {
         {" "}
         <b className="leading-10 text-base">Publications</b>
         <p className="text-xs font-semibold text-zinc-300"> (Recent 20)</p>
-        <div className="mb-12 h-[50vh] scrollbar-custom overflow-y-auto">
+        <div className="h-[50vh] scrollbar-custom overflow-y-auto">
           {loading && <p className="text-xs">Loading...</p>}
           {error && <div className="text-red-500 mb-4">{error}</div>}
           <ul className="text-gray-400">
@@ -511,7 +511,7 @@ export default function Section3() {
       </div>
       <div id="child3" className="p-6 w-[20%] sm:w-full">
         <b className="leading-10 text-base">News & Updates</b>
-        <div className="h-[69vh] scrollbar-custom overflow-y-auto scrollbar-custom text-gray-400">
+        <div className="h-[50vh] scrollbar-custom overflow-y-auto scrollbar-custom text-gray-400">
           <Newss />
         </div>
       </div>
