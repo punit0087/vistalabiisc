@@ -152,13 +152,11 @@ const Cyclones: React.FC = () => {
     return null;
   };
 
-  const center: [number, number] = [14, 70];
-
   return (
     <div style={{ position: "relative" }}>
       <DynamicMapContainer
         className="mt-[5.5%]"
-        center={center}
+        center={[14, 70]}
         zoom={zoom}
         style={{ height: "90vh", width: "100%" }}
         dragging={false}
