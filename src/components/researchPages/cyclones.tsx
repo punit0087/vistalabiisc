@@ -1,27 +1,20 @@
 "use client";
-import { TileLayer, CircleMarker, Tooltip, useMap } from "react-leaflet";
+import {
+  TileLayer,
+  CircleMarker,
+  Tooltip,
+  useMap,
+  MapContainerProps,
+} from "react-leaflet";
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
-
-// points = {
-  // "[cyclode_id]": [{
-  // x: number
-  // y: number
-  // intensity: number
-  // }, (x,y), ...],
-// }
-
-// function which takes in cyclone id and returns the points
-// function getPoints(cycloneId) {
-//   return points[cycloneId];
-//
 
 // Dynamically import MapContainer to avoid server-side rendering issues
 const DynamicMapContainer = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
   { ssr: false }
-);
+) as React.ComponentType<MapContainerProps>;
 
 type CycloneDataPoint = {
   date: string;
@@ -54,8 +47,8 @@ const Cyclones: React.FC = () => {
   const [zoom, setZoom] = useState<number>(4);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
   const [animationTimestamp, setAnimationTimestamp] =
-    useState<string>("00/00/0000"); // Store current timestamp
-  const [isAnimating, setIsAnimating] = useState<boolean>(false); // To track whether the animation is running
+    useState<string>("00/00/0000");
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   const animationRef = useRef<any>(null);
 
@@ -85,8 +78,8 @@ const Cyclones: React.FC = () => {
             cycloneId: cycloneId,
             pressure: pressure,
             basin: row["basinoforigin"],
-            shape: row["cinoorornot"], // You can adjust this if needed for shape or other properties
-            name: row["name"] || "Unknown", // Default to "Unknown" if no name
+            shape: row["cinoorornot"],
+            name: row["name"] || "Unknown",
           };
         });
 
@@ -100,7 +93,6 @@ const Cyclones: React.FC = () => {
       .catch((error) => console.error("Error fetching cyclone data:", error));
   }, []);
 
-  // Filter and group data for the selected year
   const filteredData = useMemo(
     () =>
       cycloneData.filter(
@@ -119,7 +111,6 @@ const Cyclones: React.FC = () => {
     [filteredData]
   );
 
-  // Get all unique timestamps
   const uniqueTimestamps = useMemo(
     () => [
       ...new Set(filteredData.map((point) => `${point.date} ${point.time}`)),
@@ -127,20 +118,17 @@ const Cyclones: React.FC = () => {
     [filteredData]
   );
 
-  // Handle slider change to update timestamp
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const timestamp = uniqueTimestamps[parseInt(e.target.value)];
     setAnimationTimestamp(timestamp);
   };
 
-  // Find data points that match the current timestamp
   const currentCycloneData = useMemo(() => {
     return filteredData.filter(
       (point) => `${point.date} ${point.time}` === animationTimestamp
     );
   }, [filteredData, animationTimestamp]);
 
-  // Zoom hook inside MapContainer
   const ZoomComponent = ({
     onZoomChange,
   }: {
@@ -156,7 +144,6 @@ const Cyclones: React.FC = () => {
 
       map.on("zoomend", handleZoom);
 
-      // Cleanup function
       return () => {
         map.off("zoomend", handleZoom);
       };
@@ -165,11 +152,13 @@ const Cyclones: React.FC = () => {
     return null;
   };
 
+  const center: [number, number] = [14, 70];
+
   return (
     <div style={{ position: "relative" }}>
       <DynamicMapContainer
         className="mt-[5.5%]"
-        center={[14, 70]}
+        center={center}
         zoom={zoom}
         style={{ height: "90vh", width: "100%" }}
         dragging={false}
@@ -198,20 +187,18 @@ const Cyclones: React.FC = () => {
                 )
                 .map((point, index) => (
                   <React.Fragment key={index}>
-                    {/* First point is just a marker */}
                     <CircleMarker
                       center={[point.latitude, point.longitude]}
                       pathOptions={{
                         color: gradeColors[point.grade] || "#000",
                       }}
-                      radius={hoveredPoint === index ? 4 : 2} // Scale dot on hover
+                      radius={hoveredPoint === index ? 4 : 2}
                       eventHandlers={{
                         mouseover: () => setHoveredPoint(index),
                         mouseout: () => setHoveredPoint(null),
                       }}
                     >
                       <Tooltip>
-                        {/* Detailed data inside Tooltip */}
                         <div>
                           <strong>Name:</strong> {point.name}
                           <br />
@@ -248,7 +235,6 @@ const Cyclones: React.FC = () => {
         style={{ position: "fixed", zIndex: 999999 }}
       >
         <div className="bg-zinc-600/70 rounded-xl backdrop-blur-sm w-[80%] p-5">
-          {/* Year Slider */}
           <div className="flex w-full">
             <p className="w-full text-white">Year Slider</p>
             <div className="ml-4 w-[300px] text-sm font-medium text-white">
@@ -264,7 +250,6 @@ const Cyclones: React.FC = () => {
             />
           </div>
 
-          {/* Animation Control Slider */}
           <div className="flex w-full">
             <p className="w-full text-white">Animation Control Slider</p>
             <div className="ml-4 w-[300px] text-sm font-medium text-white">
@@ -277,8 +262,8 @@ const Cyclones: React.FC = () => {
               max={uniqueTimestamps.length - 1}
               value={uniqueTimestamps.indexOf(animationTimestamp)}
               onChange={handleSliderChange}
-              onMouseDown={() => setIsAnimating(false)} // Stop animation while interacting
-              onMouseUp={() => setIsAnimating(true)} // Restart animation after interaction
+              onMouseDown={() => setIsAnimating(false)}
+              onMouseUp={() => setIsAnimating(true)}
             />
           </div>
         </div>
