@@ -34,7 +34,7 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/png" />
         <meta property="og:url" content="https://vistalabiisc.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="VISTALAB" />
+        <meta property="og:site_name" content="VISTALABIISC" />
       </head>
 
       <body className={poppins_init.variable}>
