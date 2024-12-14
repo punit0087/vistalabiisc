@@ -1,6 +1,247 @@
 "use client";
 import { useEffect, useState } from "react";
 
+// Define types for the tabData structure
+type ListContent = {
+  type: "list";
+  items: string[];
+};
+
+type ParagraphContent = {
+  type: "paragraph";
+  text: string;
+};
+
+type PositionWithDeadline = {
+  title: string;
+  deadline: string;
+  applyLink: string;
+  content: ListContent;
+};
+
+type PositionWithoutDeadline = {
+  title: string;
+  content: ParagraphContent;
+};
+
+type Position = PositionWithDeadline | PositionWithoutDeadline;
+
+type Tab = {
+  id: string;
+  title: string;
+  positions: Position[];
+};
+
+// Example tab data
+const tabData: Tab[] = [
+  {
+    id: "tab-1",
+    title: "Project Staff",
+    positions: [
+      {
+        title:
+          "Design and Development of Instrumented Vehicle for Urban Sensing (Development of IoT Sensor System)",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline (for Project Assistant / Associate Software Engineer) ; PhD with 1+ years of experience, preferably in academia, research, or large-scale interdisciplinary projects (for Research Associate / Senior Software Engineer).",
+            "Knowledge of/prior experience in working with sensors/sensing system; signal processing, and embedded platforms; mmWave Radar systems",
+            "Strong system design; debugging; prototyping skills. ",
+            "Demonstrated capacity to work independently, and as a part of a team. ",
+            "Strong communication and presentation skills.",
+          ],
+        },
+      },
+      {
+        title:
+          "Design and Development of Instrumented Vehicle for Urban Sensing (Signal Processing)",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline with 1+ years of research experience, preferably in academia, research, or large-scale interdisciplinary projects.",
+            "Knowledge of LIDAR and RADAR sensors, data acquisition, and preprocessing methods for 3D environment sensing.",
+            "Proficiency in point cloud processing, segmentation, and 3D mapping techniques, with experience using software such as PCL (Point Cloud Library) or Open3D.",
+            "Strong programming skills in Python, C++, and experience with libraries for sensor data processing ",
+            "Experience with data filtering techniques to refine point cloud data and reduce noise in LIDAR/RADAR outputs is a plus.",
+            "Familiarity with SLAM (Simultaneous Localization and Mapping) techniques, including experience with LIDAR SLAM, Visual SLAM, or multi-sensor fusion methods is desirable.",
+          ],
+        },
+      },
+      {
+        title: "Scalable Graph Neural Networks for Traffic Flow Forecasting",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline.",
+            "Basic understanding of GNNs and graph-based models for structured data.",
+            "Proficiency in Python and familiarity with relevant machine learning libraries such as PyTorch, TensorFlow, or DGL (Deep Graph Library).",
+            "Ability to preprocess and analyze time-series and spatial data",
+            "Knowledge of graph theory, linear algebra, and probability/statistics",
+            "Basic understanding of traffic flow dynamics is a plus",
+          ],
+        },
+      },
+      {
+        title:
+          "Scalable Video Analytics for Traffic Flow Prediction and Vehicle Re-identification (ReID) from Traffic Surveillance Cameras",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline.",
+            "Familiarity with fundamental computer vision concepts, such as object detection, tracking, and image processing techniques.",
+            "Proficiency in deep learning for image and video analytics, especially using frameworks like PyTorch, TensorFlow, or Keras.",
+            "Understanding of video processing techniques, including background subtraction, frame sampling, and temporal analysis.",
+            "Proficiency in Python and experience with relevant libraries -- e.g., OpenCV, NumPy, SciPy.",
+            "Basic knowledge of ReID techniques (e.g., feature extraction, similarity metrics) and model architectures, or a strong interest in learning ReID methods for vehicle tracking is a plus.",
+          ],
+        },
+      },
+      {
+        title:
+          "Visual AI for Emission Estimation from DashCams and Traffic Surveillance Cameras",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline.",
+            "Familiarity with computer vision techniques for object detection, tracking, and classification",
+            "Proficiency in deep learning frameworks (e.g., PyTorch, TensorFlow, Keras) is must.",
+            "Fundamental knowledge of image processing, linear algebra, statistics, and probability is desirable",
+            "Basic understanding of basic environmental concepts related to emissions, pollution metrics, or air quality measurement is a plus",
+          ],
+        },
+      },
+      {
+        title:
+          "Low-Cost Sensing and Embedded System for Potholes detection and Characterization in low-visible conditions",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline.",
+            "Familiarity with embedded development platforms e.g., Arduino, Raspberry Pi, ESP32",
+            "Hands-on experience in interfacing sensors with microcontrollers",
+            "Proficiency in C/C++ and Python for hardware control and data processing is must",
+            "Basic understanding of signal processing techniques, particularly for noise reduction and feature extraction in low-light or low-visibility conditions is a plus.",
+          ],
+        },
+      },
+      {
+        title:
+          "Large Language Models for Networks Packets Inspections and Anomaly Detection",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline.",
+            "Fundamental understanding of Large Language Models (LLMs) and natural language processing techniques.",
+            "Proficiency in machine learning frameworks (e.g., TensorFlow, PyTorch) is a must.",
+            "Knowledge of networking fundamentals, including protocols (e.g., TCP/IP, HTTP, DNS) and packet inspection concepts.",
+            "Proficiency in Python, with experience in libraries such as Scikit-learn, Numpy, and Pandas.",
+            "Familiarity with tools for network traffic analysis (e.g., Wireshark, tcpdump) and packet data handling is a plus.",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "tab-2",
+    title: "Intern Positions",
+    positions: [
+      {
+        title: "Generative Adversarial Networks (GAN) based Data Augmentation",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Candidate must be pursuing Bachelor’s Degree in Science/Engineering/Technology",
+            "Possess basic knowledge of working of GANs.",
+            "Proficiency in working with libraries such as TensorFlow, PyTorch, and Keras.",
+            "Familiarity with implementing neural networks, especially GANs.",
+            "Knowledge of data preprocessing related to data augmentation techniques is a plus.",
+            "Prior experience with edge analytics is preferred.",
+          ],
+        },
+      },
+      {
+        title:
+          "Development of Online Machine Learning Algorithm for Real-Time Adaptability",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Candidate must be pursuing Bachelor’s Degree in Science/Engineering/Technology",
+            "Proficiency in Python and familiarity with machine learning libraries such as TensorFlow, PyTorch, and Scikit-learn.",
+            "Understanding of online (incremental) learning algorithms and their applications in real-time systems.",
+            "Familiarity with concepts like concept drift, model updating, and adaptive learning in dynamic environments.",
+          ],
+        },
+      },
+      {
+        title:
+          "Exploration and Development of Probabilistic Model based Outlier Detection",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Candidate must be pursuing Bachelor’s Degree in Science/Engineering/Technology",
+            "Understanding of probabilistic models (e.g., Gaussian Mixture Models, Bayesian Networks, Markov Process) and statistical techniques for anomaly detection.",
+            "Familiarity with concepts such as likelihood estimation, Bayesian inference, Density estimation, Transition Probability Modeling.",
+            "Proficiency in Python with experience in statistical and data analysis libraries such as NumPy, SciPy, Scikit-learn, and TensorFlow.",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "tab-3",
+    title: "Research Staff",
+    positions: [
+      {
+        title:
+          "Design and Development of Instrumented Vehicle for Urban Sensing (Development of IoT Sensor System)",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline (for Project Assistant / Associate Software Engineer) ; PhD with 1+ years of experience, preferably in academia, research, or large-scale interdisciplinary projects (for Research Associate / Senior Software Engineer).",
+            "Knowledge of/prior experience in working with sensors/sensing system; signal processing, and embedded platforms; mmWave Radar systems",
+            "Strong system design; debugging; prototyping skills. ",
+            "Demonstrated capacity to work independently, and as a part of a team. ",
+            "Strong communication and presentation skills.",
+          ],
+        },
+      },
+    ],
+  },
+];
+
+// Type guard for PositionWithDeadline
+const isPositionWithDeadline = (
+  position: Position,
+): position is PositionWithDeadline =>
+  "deadline" in position && "applyLink" in position;
+
+// Type guard for ListContent
+const isListContent = (
+  content: ListContent | ParagraphContent,
+): content is ListContent => content.type === "list";
+
 const Tabs = () => {
   useEffect(() => {
     if (!window.location.hash) {
@@ -16,37 +257,13 @@ const Tabs = () => {
     setOpenTab((prevTab) => (prevTab === tabId ? null : tabId));
   };
 
-  const tab1Content = [
-    {
-      title: "Project Associate in Graph Neural Networks/Computer Vision",
-      content: "",
-    },
-  ];
-
-  const tab2Content = [
-    {
-      title: "No specific position available at the moment",
-      content: "",
-    },
-  ]; // Example content, you can modify as needed
-  const tab3Content = [
-    {
-      title: "Multiple Internship Positions Available",
-      content: [
-        'Candidates currently pursuing their undergraduate degree in engineering (Computer Science/Electrical/Electronics Engineering) or Applied Mathematics are encouraged to apply. Please send me an email with the subject title "Application for <position>, <duration>" e.g., Application for Internship, April-August 2022, with your CV (that includes GPA, past/current projects, programming knowledge) with 1-2 paragraphs mentioning your research interests and how you can contribute to our lab.',
-        "I highly recommend you to apply for INSA Summer Research Fellowship, Focus Area Science Technology Summer Fellowship (FAST-SF) programs. Applications for both the programs are normally issued in October-November every year.",
-        "You may also explore research opportunities at RBCCPS and CiSTUP website. [Every year in summer and winter]",
-      ],
-    },
-  ]; // Example content, you can modify as needed
-
   return (
     <div className="p-32 pt-0 w-[90%] mx-auto sm:p-4">
       <div className="text-zinc-300 text-justify mx-auto mb-10 text-sm font-semibold">
         We are always looking for highly motivated and dynamic people interested
         in exploring challenging areas of big data analytics, unsupervised
-        learning, deep-learning, Spatio-temporal data mining, Internet of
-        Things (IoT), and Intelligent Transportation, including novel and cutting-edge
+        learning, deep-learning, Spatio-temporal data mining, Internet of Things
+        (IoT), and Intelligent Transportation, including novel and cutting-edge
         ML/DL techniques across various real-world applications such as
         transportation, autonomous systems, and healthcare. <br />
         <br /> If you are interested, you may find the following opportunities
@@ -143,159 +360,66 @@ const Tabs = () => {
       </div>
       <a
         href="#tabs"
-        className="bg-white text-black w-4/5 p-4 rounded-md animate-blink"
+        className="bg-white text-black w-4/5 rounded-md animate-blink p-5"
       >
         <button>Apply Now</button>
       </a>
       <div id="tabs" className="sm:mt-[35%] sm:p-5 h-[60vh] mt-[30vh]">
-        <span id="tab-1" className="tab-switch fixed"></span>
-        <a
-          href="#tab-1"
-          className="text-md font-bold text-zinc-300 tab-link inline-block p-4 mr-4 sm:mx-0 mb-4 no-underline hover:text-zinc-600"
-        >
-          Research Project Associate
-        </a>
-        <div className="tab-content box-border float-right hidden w-full border border-zinc-800 text-white rounded-[6px] p-8 text-sm">
-          {tab1Content.map((item, index) => (
-            <div key={index}>
-              <div
-                className="flex justify-between items-center cursor-pointer my-4"
-                onClick={() => toggleDropdown(`tab1-${index}`)}
-              >
-                <p className="text-lg font-bold text-zinc-300">
-                  {item.title} <br />
-                  <span className="text-sm text-zinc-400 font-normal">
-                    Deadline <b>5th September 2024</b>
-                  </span>
-                </p>
-                <a
-                  href="https://forms.gle/fDrJNPfX1AWWf3ot5"
-                  target="_blank"
-                  className="border border-zinc-800 text-white rounded-[6px] p-4 text-sm hover:bg-zinc-300 hover:text-black"
-                >
-                  Apply Now
-                </a>
-              </div>
-              {openTab === `tab1-${index}` && (
-                <p className="text-md text-zinc-400 w-[70%] mb-12">
-                  <ul className="list-disc ml-10">
-                    <li>
-                      Demonstrated proficiency in working with Graph Neural
-                      Networks algorithms is a must.
-                    </li>
-                    <li>
-                      Demonstrated proficiency in developing vision-based
-                      solutions.
-                    </li>
-                    <li>
-                      Knowledge and experience in working with/developing
-                      lightweight deep learning-based object detection/tracking
-                      models is a plus.
-                    </li>
-                    <li>
-                      Knowledge of state-of-the-art image processing techniques
-                      is a plus.
-                    </li>
-                    <li>Prior experience with edge analytics is preferred.</li>
-                  </ul>
-                </p>
-              )}
+        {tabData.map((tab) => (
+          <div key={tab.id}>
+            <span id={tab.id} className="tab-switch fixed"></span>
+            <a
+              href={`#${tab.id}`}
+              className="text-md font-bold text-zinc-300 tab-link inline-block p-4 sm:mx-0 mb-4 no-underline hover:text-zinc-600"
+            >
+              {tab.title}
+            </a>
+            <div className="tab-content box-border float-right hidden w-full border border-zinc-800 text-white rounded-[6px] p-8 text-sm">
+              {tab.positions.map((position, index) => (
+                <div key={index}>
+                  <div
+                    className="flex justify-between items-center cursor-pointer my-4 mb-10"
+                    onClick={() => toggleDropdown(`${tab.id}-${index}`)}
+                  >
+                    <p className="text-lg font-bold text-zinc-300">
+                      {position.title} <br />
+                      {isPositionWithDeadline(position) && (
+                        <span className="text-sm text-zinc-400 font-normal">
+                          Deadline <b>{position.deadline}</b>
+                        </span>
+                      )}
+                    </p>
+                    {isPositionWithDeadline(position) && position.applyLink && (
+                      <a
+                        href={position.applyLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-zinc-800 text-white rounded-[6px] p-4 text-sm hover:bg-zinc-300 hover:text-black"
+                      >
+                        Apply Now
+                      </a>
+                    )}
+                  </div>
+                  {openTab === `${tab.id}-${index}` && (
+                    <div className="text-md text-zinc-400 w-[70%] mb-12">
+                      {isListContent(position.content) ? (
+                        <ul className="list-disc ml-10">
+                          {position.content.items.map(
+                            (item: string, idx: number) => (
+                              <li key={idx}>{item}</li>
+                            ),
+                          )}
+                        </ul>
+                      ) : (
+                        <p>{position.content.text}</p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-
-        <span id="tab-2" className="tab-switch fixed"></span>
-        <a
-          href="#tab-2"
-          className="text-md font-bold text-zinc-300 tab-link inline-block p-4 mx-4 sm:mx-0 mb-4 no-underline hover:text-zinc-600"
-        >
-          Postdoctoral Research
-        </a>
-        <div className="tab-content box-border float-right hidden w-full border border-zinc-800 text-white rounded-[6px] p-8 text-sm">
-          {tab2Content.map((item, index) => (
-            <div key={index}>
-              <div
-                className="flex justify-between items-center cursor-pointer my-4"
-                onClick={() => toggleDropdown(`tab2-${index}`)}
-              >
-                <p className="text-lg font-semibold text-zinc-300">
-                  {item.title} <br />
-                  {/* <span className="text-sm text-zinc-400 font-normal">
-                    Deadline <b>5th September 2024</b>
-                  </span> */}
-                </p>
-
-                {/* <a
-                  href=""
-                  className="border border-zinc-800 text-white rounded-[6px] p-4 text-sm hover:bg-zinc-300 hover:text-black"
-                >
-                  Apply Now
-                </a> */}
-              </div>
-              {openTab === `tab2-${index}` && (
-                <p className="text-md text-zinc-400 w-[70%] mt-6 mb-12">
-                  However, you are encouraged to apply to our lab through the
-                  external fellowships. Please check Postdoctoral Research
-                  section above for more details.
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <span id="tab-3" className="tab-switch fixed"></span>
-        <a
-          href="#tab-3"
-          className="text-md font-bold text-zinc-300 tab-link inline-block p-4 mx-4 sm:mx-0 mb-4 no-underline hover:text-zinc-600"
-        >
-          Research Internships/Assistantships
-        </a>
-        <div className="tab-content box-border float-right hidden w-full border border-zinc-800 text-white rounded-[6px] p-8 text-sm">
-          {tab3Content.map((item, index) => (
-            <div key={index}>
-              <div
-                className="flex justify-between items-center cursor-pointer my-4"
-                onClick={() => toggleDropdown(`tab3-${index}`)}
-              >
-                <p className="text-lg font-semibold text-zinc-300">
-                  {item.title} <br />
-                  <span className="text-sm text-zinc-400 font-normal">
-                    Deadline <b>5th September 2024</b>
-                  </span>
-                </p>
-
-                <a
-                  href="https://forms.gle/fDrJNPfX1AWWf3ot5"
-                  target="_blank"
-                  className="border border-zinc-800 text-white rounded-[6px] p-4 text-sm hover:bg-zinc-300 hover:text-black"
-                >
-                  Apply Now
-                </a>
-              </div>
-              {openTab === `tab3-${index}` && (
-                <p className="text-xs text-zinc-400 w-[70%] mt-6 mb-12">
-                  Multiple internship positions are available on the following
-                  topics:
-                  <ul className="list-disc ml-10">
-                    <li>
-                      Generative Adversarial Networks (GANs) based Data
-                      Augmentation
-                    </li>
-                    <li>Graph Machine Learning (e.g., GNN, Temporal Graphs)</li>
-                    <li>
-                      Exploration and Development of Probabilistic Model based
-                      Outlier Detection
-                    </li>
-                    <li>
-                      Development of Online Machine Learning Algorithm for
-                      Real-Time Adaptability
-                    </li>
-                  </ul>
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
