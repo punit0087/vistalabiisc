@@ -14,6 +14,7 @@ type ParagraphContent = {
 
 type PositionWithDeadline = {
   title: string;
+  designation: string;
   deadline: string;
   applyLink: string;
   content: ListContent;
@@ -22,6 +23,7 @@ type PositionWithDeadline = {
 type PositionWithoutDeadline = {
   title: string;
   content: ParagraphContent;
+  designation: string;
 };
 
 type Position = PositionWithDeadline | PositionWithoutDeadline;
@@ -32,31 +34,61 @@ type Tab = {
   positions: Position[];
 };
 
-// Example tab data
 const tabData: Tab[] = [
   {
     id: "tab-1",
-    title: "Project Staff",
+    title: "Research Staff",
     positions: [
       {
-        title:
-          "Design and Development of Instrumented Vehicle for Urban Sensing (Development of IoT Sensor System)",
+        title: `Design and Development of Instrumented Vehicle for Urban Sensing --Development of IoT Sensor System / Embedded system interfacing (Instrumented-Vehicle-SensorSystem)`,
+        designation: "Research Associate / Senior Software Engineer",
         deadline: "31st December 2024",
         applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
         content: {
           type: "list",
           items: [
-            "Bachelor’s/Master’s degree in a relevant engineering discipline (for Project Assistant / Associate Software Engineer) ; PhD with 1+ years of experience, preferably in academia, research, or large-scale interdisciplinary projects (for Research Associate / Senior Software Engineer).",
-            "Knowledge of/prior experience in working with sensors/sensing system; signal processing, and embedded platforms; mmWave Radar systems",
-            "Strong system design; debugging; prototyping skills. ",
-            "Demonstrated capacity to work independently, and as a part of a team. ",
-            "Strong communication and presentation skills.",
+            "Master's degree with 2+ years of experience or PhD (ideally, with 1+ years of experience),  in academia, research, or large-scale interdisciplinary projects.",
+            "Demonstrated experience to oversee the planning, execution, and delivery of the project.",
+            "Proven ability to facilitate interdisciplinary research efforts in intelligent transportation systems, sustainable urban mobility, and related AI applications.",
+            "Familiarity with managing government-funded projects or working in a consortium model is an advantage.",
+            "Proven ability to engage with diverse stakeholders, including government, academia, and industry is a plus.",
+            "Potential job roles:",
+            "Act as the interface between IISc researchers and consortium partners, and industry stakeholders.",
+            "Coordinate with faculty, researchers, and technical teams to ensure resource optimization and adherence to project goals and timelines.",
+            "Manage procurement, funding utilization, and reporting as per project guidelines.",
+            "Maintain project documentation, including progress reports, compliance records, and financial summaries, in line with Ministry of Education requirements.",
+            "Monitor risks, address challenges, and ensure project continuity and success.",
+          ],
+        },
+      },
+    ],
+  },
+
+  {
+    id: "tab-2",
+    title: "Project Staff",
+    positions: [
+      {
+        title:
+          "Design and Development of Instrumented Vehicle for Urban Sensing --Development of IoT Sensor System / Embedded system interfacing (Instrumented-Vehicle-SensorSystem)",
+        designation: "Project Assistant / Associate Software Engineer",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "Bachelor’s/Master’s degree in a relevant engineering discipline.",
+            "Experience with IoT platforms (e.g., Arduino, Raspberry Pi, ESP32) for real-time sensor data acquisition.",
+            "Familiarity with interfacing a range of sensors with microcontrollers and IoT boards is required.",
+            "Proficiency in languages such as Python, C/C++, and JavaScript for sensor data processing and hardware control. ",
+            "Knowledge of protocols like MQTT, HTTP, or LoRaWAN for IoT data transfer and communication is a plus.",
           ],
         },
       },
       {
         title:
-          "Design and Development of Instrumented Vehicle for Urban Sensing (Signal Processing)",
+          "Design and Development of Instrumented Vehicle for Urban Sensing --Signal Processing (Instrumented-Vehicle-SignalProcessing)",
+        designation: "Project Associate / Software Engineer",
         deadline: "31st December 2024",
         applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
         content: {
@@ -72,7 +104,9 @@ const tabData: Tab[] = [
         },
       },
       {
-        title: "Scalable Graph Neural Networks for Traffic Flow Forecasting",
+        title:
+          "Scalable Graph Neural Networks for Traffic Flow Forecasting (Graph-NN)",
+        designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
         applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
         content: {
@@ -81,15 +115,16 @@ const tabData: Tab[] = [
             "Bachelor’s/Master’s degree in a relevant engineering discipline.",
             "Basic understanding of GNNs and graph-based models for structured data.",
             "Proficiency in Python and familiarity with relevant machine learning libraries such as PyTorch, TensorFlow, or DGL (Deep Graph Library).",
-            "Ability to preprocess and analyze time-series and spatial data",
+            "Ability to preprocess and analyze time-series and spatial data.",
             "Knowledge of graph theory, linear algebra, and probability/statistics",
-            "Basic understanding of traffic flow dynamics is a plus",
+            "Basic understanding of traffic flow dynamics is a plus.",
           ],
         },
       },
       {
         title:
-          "Scalable Video Analytics for Traffic Flow Prediction and Vehicle Re-identification (ReID) from Traffic Surveillance Cameras",
+          "Scalable Video Analytics for Traffic Flow Prediction and Vehicle Re-identification (ReID) from Traffic Surveillance Cameras (Vehicle-ReID)",
+        designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
         applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
         content: {
@@ -106,7 +141,8 @@ const tabData: Tab[] = [
       },
       {
         title:
-          "Visual AI for Emission Estimation from DashCams and Traffic Surveillance Cameras",
+          "Visual AI for Emission Estimation from DashCams and Traffic Surveillance Cameras (Visual-AI)",
+        designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
         applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
         content: {
@@ -115,14 +151,15 @@ const tabData: Tab[] = [
             "Bachelor’s/Master’s degree in a relevant engineering discipline.",
             "Familiarity with computer vision techniques for object detection, tracking, and classification",
             "Proficiency in deep learning frameworks (e.g., PyTorch, TensorFlow, Keras) is must.",
-            "Fundamental knowledge of image processing, linear algebra, statistics, and probability is desirable",
-            "Basic understanding of basic environmental concepts related to emissions, pollution metrics, or air quality measurement is a plus",
+            "Fundamental knowledge of image processing, linear algebra, statistics, and probability is desirable.",
+            "Basic understanding of basic environmental concepts related to emissions, pollution metrics, or air quality measurement is a plus.",
           ],
         },
       },
       {
         title:
-          "Low-Cost Sensing and Embedded System for Potholes detection and Characterization in low-visible conditions",
+          "Low-Cost Sensing and Embedded System for Potholes detection and Characterization in low-visible conditions (Pothole-Detection)",
+        designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
         applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
         content: {
@@ -138,7 +175,8 @@ const tabData: Tab[] = [
       },
       {
         title:
-          "Large Language Models for Networks Packets Inspections and Anomaly Detection",
+          "Large Language Models for Network Packet Inspection and Anomaly Detection:",
+        designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
         applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
         content: {
@@ -156,13 +194,14 @@ const tabData: Tab[] = [
     ],
   },
   {
-    id: "tab-2",
+    id: "tab-3",
     title: "Intern Positions",
     positions: [
       {
         title: "Generative Adversarial Networks (GAN) based Data Augmentation",
+        designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
         content: {
           type: "list",
           items: [
@@ -178,8 +217,9 @@ const tabData: Tab[] = [
       {
         title:
           "Development of Online Machine Learning Algorithm for Real-Time Adaptability",
+        designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
         content: {
           type: "list",
           items: [
@@ -193,8 +233,9 @@ const tabData: Tab[] = [
       {
         title:
           "Exploration and Development of Probabilistic Model based Outlier Detection",
+        designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
         content: {
           type: "list",
           items: [
@@ -202,28 +243,6 @@ const tabData: Tab[] = [
             "Understanding of probabilistic models (e.g., Gaussian Mixture Models, Bayesian Networks, Markov Process) and statistical techniques for anomaly detection.",
             "Familiarity with concepts such as likelihood estimation, Bayesian inference, Density estimation, Transition Probability Modeling.",
             "Proficiency in Python with experience in statistical and data analysis libraries such as NumPy, SciPy, Scikit-learn, and TensorFlow.",
-          ],
-        },
-      },
-    ],
-  },
-  {
-    id: "tab-3",
-    title: "Research Staff",
-    positions: [
-      {
-        title:
-          "Design and Development of Instrumented Vehicle for Urban Sensing (Development of IoT Sensor System)",
-        deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
-        content: {
-          type: "list",
-          items: [
-            "Bachelor’s/Master’s degree in a relevant engineering discipline (for Project Assistant / Associate Software Engineer) ; PhD with 1+ years of experience, preferably in academia, research, or large-scale interdisciplinary projects (for Research Associate / Senior Software Engineer).",
-            "Knowledge of/prior experience in working with sensors/sensing system; signal processing, and embedded platforms; mmWave Radar systems",
-            "Strong system design; debugging; prototyping skills. ",
-            "Demonstrated capacity to work independently, and as a part of a team. ",
-            "Strong communication and presentation skills.",
           ],
         },
       },
@@ -378,17 +397,22 @@ const Tabs = () => {
               {tab.positions.map((position, index) => (
                 <div key={index}>
                   <div
-                    className="flex justify-between items-center cursor-pointer my-4 mb-10"
+                    className="flex justify-between items-center cursor-pointer my-8"
                     onClick={() => toggleDropdown(`${tab.id}-${index}`)}
                   >
-                    <p className="text-lg font-bold text-zinc-300">
-                      {position.title} <br />
+                    <div className="flex flex-col w-[85%]">
+                      <p className="text-[1rem] font-bold text-zinc-300">
+                        {position.title} <br />
+                      </p>
+                      <p className="font-bold text-xs my-1 text-zinc-300">
+                        {position.designation}
+                      </p>
                       {isPositionWithDeadline(position) && (
-                        <span className="text-sm text-zinc-400 font-normal">
+                        <span className="text-sm text-zinc-400 font-normal mt-2">
                           Deadline <b>{position.deadline}</b>
                         </span>
                       )}
-                    </p>
+                    </div>
                     {isPositionWithDeadline(position) && position.applyLink && (
                       <a
                         href={position.applyLink}
