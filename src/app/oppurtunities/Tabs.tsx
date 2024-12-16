@@ -37,7 +37,8 @@ type Tab = {
 const tabData: Tab[] = [
   {
     id: "tab-1",
-    title: "Research Staff",
+    title: "Postdoc Research / Research Scientist",
+
     positions: [
       {
         title: `Design and Development of Instrumented Vehicle for Urban Sensing --Development of IoT Sensor System / Embedded system interfacing (Instrumented-Vehicle-SensorSystem)`,
@@ -66,7 +67,7 @@ const tabData: Tab[] = [
 
   {
     id: "tab-2",
-    title: "Project Staff",
+    title: "Research Project Associate",
     positions: [
       {
         title:
@@ -183,7 +184,7 @@ const tabData: Tab[] = [
           type: "list",
           items: [
             "Bachelor’s/Master’s degree in a relevant engineering discipline.",
-            "Fundamental understanding of Large Language Models (LLMs) and natural language processing techniques.",
+            "Demonstrated experience of using Large Language Models (LLMs) and natural language processing techniques is required.",
             "Proficiency in machine learning frameworks (e.g., TensorFlow, PyTorch) is a must.",
             "Knowledge of networking fundamentals, including protocols (e.g., TCP/IP, HTTP, DNS) and packet inspection concepts.",
             "Proficiency in Python, with experience in libraries such as Scikit-learn, Numpy, and Pandas.",
@@ -195,7 +196,7 @@ const tabData: Tab[] = [
   },
   {
     id: "tab-3",
-    title: "Intern Positions",
+    title: "Research Internships / Assistants",
     positions: [
       {
         title: "Generative Adversarial Networks (GAN) based Data Augmentation",
