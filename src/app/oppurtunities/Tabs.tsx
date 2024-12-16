@@ -233,13 +233,13 @@ const tabData: Tab[] = [
 
 // Type guard for PositionWithDeadline
 const isPositionWithDeadline = (
-  position: Position,
+  position: Position
 ): position is PositionWithDeadline =>
   "deadline" in position && "applyLink" in position;
 
 // Type guard for ListContent
 const isListContent = (
-  content: ListContent | ParagraphContent,
+  content: ListContent | ParagraphContent
 ): content is ListContent => content.type === "list";
 
 const Tabs = () => {
@@ -370,7 +370,7 @@ const Tabs = () => {
             <span id={tab.id} className="tab-switch fixed"></span>
             <a
               href={`#${tab.id}`}
-              className="text-md font-bold text-zinc-300 tab-link inline-block p-4 sm:mx-0 mb-4 no-underline hover:text-zinc-600"
+              className="flex text-md font-bold text-zinc-300 tab-link p-4 sm:mx-0 mb-4 no-underline hover:text-zinc-600"
             >
               {tab.title}
             </a>
@@ -407,7 +407,7 @@ const Tabs = () => {
                           {position.content.items.map(
                             (item: string, idx: number) => (
                               <li key={idx}>{item}</li>
-                            ),
+                            )
                           )}
                         </ul>
                       ) : (
