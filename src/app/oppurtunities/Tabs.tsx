@@ -247,6 +247,24 @@ const tabData: Tab[] = [
           ],
         },
       },
+      {
+        title:
+          "Large Language Models for Network Packet Inspection and Anomaly Detection:",
+        designation: "Intern",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
+        content: {
+          type: "list",
+          items: [
+            "Candidate must be pursuing Bachelor’s Degree in Science/Engineering/Technology",
+            "Demonstrated experience of using Large Language Models (LLMs) and natural language processing techniques is required.",
+            "Proficiency in machine learning frameworks (e.g., TensorFlow, PyTorch) is a must.",
+            "Knowledge of networking fundamentals, including protocols (e.g., TCP/IP, HTTP, DNS) and packet inspection concepts.",
+            "Proficiency in Python, with experience in libraries such as Scikit-learn, Numpy, and Pandas.",
+            "Familiarity with tools for network traffic analysis (e.g., Wireshark, tcpdump) and packet data handling is a plus.",
+          ],
+        },
+      },
     ],
   },
 ];
