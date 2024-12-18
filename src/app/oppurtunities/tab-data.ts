@@ -40,7 +40,7 @@ export const tabData: Tab[] = [
           ],
         },},
       {
-        title: `Graph Machine Learning for Anti Money Laundering in FinTech (Graph-FinTech)`
+        title: `Graph Machine Learning for Anti Money Laundering in FinTech (Graph-FinTech)`,
         designation: "Project Scientist/Research Associate/Postdoctoral Fellow",
         deadline: "31st December 2024",
         applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
