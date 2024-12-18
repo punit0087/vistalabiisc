@@ -38,8 +38,21 @@ export const tabData: Tab[] = [
             "Maintain project documentation, including progress reports, compliance records, and financial summaries, in line with Ministry of Education requirements.",
             "Monitor risks, address challenges, and ensure project continuity and success.",
           ],
-        },
-      },
+        },},
+      {
+        title: `Graph Machine Learning for Anti Money Laundering in FinTech (Graph-FinTech)`
+        designation: "Project Scientist/Research Associate/Postdoctoral Fellow",
+        deadline: "31st December 2024",
+        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        content: {
+          type: "list",
+          items: [
+            "B.Tech/MTech/PhD in CS/AI/ECE or related fields with a strong background in machine/deep learning and graph neural networks (GNNs).",
+            "Proficiency in coding and hands-on experience in PyTorch.",
+            "Proficiency in Python programming and familiarity with graph analytics libraries/tools (e.g., Pytorch, Geometric, DGL etc.) are highly desirable.",
+            "Highly motivated and self-driven with the ability to quickly learn on the fly.",
+          ],
+        },},
     ],
   },
 
