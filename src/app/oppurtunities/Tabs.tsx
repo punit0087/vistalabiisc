@@ -156,7 +156,7 @@ export default function JobListings() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Apply Now
+                    Closed
                   </a>
                 </Button>
               </div>
