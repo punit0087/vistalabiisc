@@ -26,6 +26,67 @@ export default function JobListings() {
 
   return (
     <div className="w-full px-[20%] sm:px-[8%] mx-auto p-6 text-white">
+       <div className="mb-40">
+        <h2 className="text-2xl font-semibold text-zinc-300 mb-4">
+          Recruitment Timeline
+        </h2>
+        <div className="rounded-lg border border-zinc-600">
+          <table className="table-auto w-full border-collapse p-8 rounded-lg border border-zinc-600">
+            <thead className="bg-zinc-300">
+              <tr>
+                <th className="p-8 border border-zinc-600 px-4 py-2 text-left text-zinc-800 font-medium">
+                  Step
+                </th>
+                <th className="p-8 border border-zinc-600 px-4 py-2 text-left text-zinc-800  font-medium">
+                  Date(s)
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-sm text-zinc-300">
+              <tr className="">
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  Oppurtunity Announcement
+                </td>
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  18th December 2024
+                </td>
+              </tr>
+              <tr className="">
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  Submission Deadline
+                </td>
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  31st December 2024
+                </td>
+              </tr>
+              <tr className="">
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  First Stage of Screening Results
+                </td>
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  7th January 2025
+                </td>
+              </tr>
+              <tr className="">
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  Interview
+                </td>
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  8th to 12th January 2025
+                </td>
+              </tr>
+              <tr className="">
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  Final Results
+                </td>
+                <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
+                  15th January 2025
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <Tabs defaultValue={jobs[0].id} className="w-full">
         <TabsList className="grid w-full grid-cols-3 sm:grid-cols-1">
           {jobs.map((tab) => (
