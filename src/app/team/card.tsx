@@ -440,8 +440,7 @@ const data: Person[] = [
     designation: "M.Tech in Artificial Intelligence (Started Aug 2023)",
     designationLabel: "M.Tech",
     email: "ssidhant@iisc.ac.in",
-    research:
-      "Machine Learning,  Representation Learning, Deep Learning.",
+    research: "Machine Learning,  Representation Learning, Deep Learning.",
     linkedin: "https://www.linkedin.com/in/sidhant-sharma-415806210/",
     github: "https://github.com/sidhantjsr98",
     scholar: "",
@@ -540,7 +539,7 @@ export default function CardP() {
             className="p-4 text-sm border-none bg-zinc-900 text-white outline-none rounded-md mr-4 select-none sm:w-full"
           >
             <option value="">All</option>
-            <option value="Lab Head">Lab Convener</option>
+            <option value="Lab Convener">Lab Convener</option>
             <option value="Research Staff">Research Staff</option>
             <option value="Research Scholar">Research Scholar</option>
             <option value="M.Tech">M.Tech</option>

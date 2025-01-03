@@ -30,6 +30,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/project/un.js"
-  ],
+, "compileExcelSheetsToCsv.js"  ],
   "exclude": ["node_modules"]
 }
