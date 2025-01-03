@@ -26,7 +26,7 @@ export default function JobListings() {
 
   return (
     <div className="w-full px-[20%] sm:px-[8%] mx-auto p-6 text-white">
-       <div className="mb-40">
+      <div className="mb-40">
         <h2 className="text-2xl font-semibold text-zinc-300 mb-4">
           Recruitment Timeline
         </h2>
@@ -153,7 +153,7 @@ export default function JobListings() {
                 <Button className="mt-4 items-center" asChild>
                   <a
                     href={position.applyLink}
-                    target="_blank"
+                    // target="_blank"
                     rel="noopener noreferrer"
                   >
                     Closed
