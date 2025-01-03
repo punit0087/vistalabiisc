@@ -6,6 +6,8 @@ export interface Tab {
     designation: string;
     deadline: string;
     applyLink: string;
+    content: {
+      type: string;
       items: string[];
     };
   }[];
@@ -36,7 +38,8 @@ export const tabData: Tab[] = [
             "Maintain project documentation, including progress reports, compliance records, and financial summaries, in line with Ministry of Education requirements.",
             "Monitor risks, address challenges, and ensure project continuity and success.",
           ],
-        },},
+        },
+      },
       {
         title: `Graph Machine Learning for Anti Money Laundering in FinTech (Graph-FinTech)`,
         designation: "Project Scientist/Research Associate/Postdoctoral Fellow",
@@ -50,7 +53,8 @@ export const tabData: Tab[] = [
             "Proficiency in Python programming and familiarity with graph analytics libraries/tools (e.g., Pytorch, Geometric, DGL etc.) are highly desirable.",
             "Highly motivated and self-driven with the ability to quickly learn on the fly.",
           ],
-        },},
+        },
+      },
     ],
   },
 
@@ -191,7 +195,7 @@ export const tabData: Tab[] = [
         title: "Generative Adversarial Networks (GAN) based Data Augmentation",
         designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "",
+        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
         content: {
           type: "list",
           items: [
@@ -209,7 +213,7 @@ export const tabData: Tab[] = [
           "Development of Online Machine Learning Algorithm for Real-Time Adaptability",
         designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "",
+        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
         content: {
           type: "list",
           items: [
@@ -225,7 +229,7 @@ export const tabData: Tab[] = [
           "Exploration and Development of Probabilistic Model based Outlier Detection",
         designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "",
+        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
         content: {
           type: "list",
           items: [
@@ -241,7 +245,7 @@ export const tabData: Tab[] = [
           "Large Language Models for Network Packet Inspection and Anomaly Detection",
         designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "",
+        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
         content: {
           type: "list",
           items: [
