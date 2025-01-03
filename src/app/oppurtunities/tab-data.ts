@@ -6,8 +6,6 @@ export interface Tab {
     designation: string;
     deadline: string;
     applyLink: string;
-    content: {
-      type: string;
       items: string[];
     };
   }[];
@@ -22,7 +20,7 @@ export const tabData: Tab[] = [
         title: `Design and Development of Instrumented Vehicle for Urban Sensing --Development of IoT Sensor System / Embedded system interfacing (Instrumented-Vehicle-SensorSystem)`,
         designation: "Research Associate / Senior Software Engineer",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -43,7 +41,7 @@ export const tabData: Tab[] = [
         title: `Graph Machine Learning for Anti Money Laundering in FinTech (Graph-FinTech)`,
         designation: "Project Scientist/Research Associate/Postdoctoral Fellow",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -65,7 +63,7 @@ export const tabData: Tab[] = [
           "Design and Development of Instrumented Vehicle for Urban Sensing --Development of IoT Sensor System / Embedded system interfacing (Instrumented-Vehicle-SensorSystem)",
         designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -82,7 +80,7 @@ export const tabData: Tab[] = [
           "Design and Development of Instrumented Vehicle for Urban Sensing --Signal Processing (Instrumented-Vehicle-SignalProcessing)",
         designation: "Project Associate / Software Engineer",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -100,7 +98,7 @@ export const tabData: Tab[] = [
           "Scalable Graph Neural Networks for Traffic Flow Forecasting (Graph-NN)",
         designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -118,7 +116,7 @@ export const tabData: Tab[] = [
           "Scalable Video Analytics for Traffic Flow Prediction and Vehicle Re-identification (ReID) from Traffic Surveillance Cameras (Vehicle-ReID)",
         designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -136,7 +134,7 @@ export const tabData: Tab[] = [
           "Visual AI for Emission Estimation from DashCams and Traffic Surveillance Cameras (Visual-AI)",
         designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -153,7 +151,7 @@ export const tabData: Tab[] = [
           "Low-Cost Sensing and Embedded System for Potholes detection and Characterization in low-visible conditions (Pothole-Detection)",
         designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -170,7 +168,7 @@ export const tabData: Tab[] = [
           "Large Language Models for Network Packet Inspection and Anomaly Detection",
         designation: "Project Assistant / Associate Software Engineer",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/xGAtJqFgS1cbgBTj9",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -193,7 +191,7 @@ export const tabData: Tab[] = [
         title: "Generative Adversarial Networks (GAN) based Data Augmentation",
         designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -211,7 +209,7 @@ export const tabData: Tab[] = [
           "Development of Online Machine Learning Algorithm for Real-Time Adaptability",
         designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -227,7 +225,7 @@ export const tabData: Tab[] = [
           "Exploration and Development of Probabilistic Model based Outlier Detection",
         designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -243,7 +241,7 @@ export const tabData: Tab[] = [
           "Large Language Models for Network Packet Inspection and Anomaly Detection",
         designation: "Intern",
         deadline: "31st December 2024",
-        applyLink: "https://forms.gle/DR61GnxqB7GY5GW66",
+        applyLink: "",
         content: {
           type: "list",
           items: [
