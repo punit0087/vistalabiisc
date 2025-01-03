@@ -1,6 +1,14 @@
 {
   "results": [
     {
+      "title": "STEAM: Squeeze and Transform Enhanced Attention Module",
+      "link": "https://scholar.google.com.au/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:IWHjjKOFINEC",
+      "authors": "Rishabh Sabharwal, Parikshit Singh Rathore, Punit Rathore",
+      "publicationDate": "2024",
+      "journal": "arXiv preprint arXiv:2412.09023",
+      "citationCount": "0"
+    },
+    {
       "title": "A Visual-Analytical Approach for Automatic Detection of Cyclonic Events in Satellite Observations",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:ZeXyd9-uunAC",
       "authors": "A Agrawal, M Mohapatra, A Raja, P Tiwari, V Pattanaik, N Jaiswal, ...",
@@ -14,7 +22,7 @@
       "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
       "publicationDate": "2024",
       "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "2"
+      "citationCount": "3"
     },
     {
       "title": "Adding Explainability to Visual Clustering Tendency Assessment (VAT) Methods Through Feature Importance",
