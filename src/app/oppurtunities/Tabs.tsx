@@ -45,7 +45,7 @@ export default function JobListings() {
             <tbody className="text-sm text-zinc-300">
               <tr className="">
                 <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
-                  Oppurtunity Announcement
+                  Opportunity Announcement
                 </td>
                 <td className="p-8 rounded-lg border border-zinc-600 px-4 py-2">
                   18th December 2024
