@@ -12,6 +12,7 @@ import Image8 from "@/assets/gallery/File_8.jpeg";
 import Image9 from "@/assets/gallery/File_9.jpeg";
 import Image10 from "@/assets/gallery/File_10.jpg";
 import Image11 from "@/assets/gallery/File_11.jpg";
+import Image12 from "@/assets/gallery/File_12.jpg";
 
 import close from "@/assets/close.svg";
 import download from "@/assets/download.svg";
@@ -30,6 +31,7 @@ const images = [
   { src: Image9, alt: "Image 9" },
   { src: Image10, alt: "Image 10" },
   { src: Image11, alt: "Image 11" },
+  { src: Image12, alt: "Image 12" },
 ];
 
 const Gallery: React.FC = () => {
