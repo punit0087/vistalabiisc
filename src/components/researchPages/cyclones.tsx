@@ -69,7 +69,8 @@ const gradeColors: Record<string, string> = {
   SuCS: "#8e44ad",
 };
 
-const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
+const MAPBOX_TOKEN =
+  "pk.eyJ1IjoibGVva29uZGEiLCJhIjoiY200c3RjanQ2MDN3YjJxczRjbnFweTVhciJ9.OrD4H7eWIrHnABf_Y1Nn4A";
 const initialViewState = { longitude: 68, latitude: 15, zoom: 4 };
 
 export default function Cyclones() {
