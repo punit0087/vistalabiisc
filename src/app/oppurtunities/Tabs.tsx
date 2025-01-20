@@ -28,6 +28,19 @@ export default function JobListings() {
     <div className="w-full px-[20%] sm:px-[8%] mx-auto p-6 text-white">
       <div className="mb-40">
         <h2 className="text-2xl font-semibold text-zinc-300 mb-4">
+          Internship Recruitment Results
+        </h2>
+        <p className="text-zinc-300 text-sm mb-20">
+          <span className="font-semibold">
+            Shortlisted candidates have been notified of their selection.
+          </span>
+          <br />
+          <span className="text-zinc-500">
+            If you have not received a notification, we encourage you to apply
+            in the next recruitment cycle. <br /> Thank you for your interest!
+          </span>
+        </p>
+        <h2 className="text-2xl font-semibold text-zinc-300 mb-4">
           Recruitment Timeline
         </h2>
         <div className="rounded-lg border border-zinc-600">
