@@ -104,3 +104,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.no-bg-popup .mapboxgl-popup-content {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.no-bg-popup .mapboxgl-popup-tip {
+  display: none !important; /* or also background: transparent !important; */
+}

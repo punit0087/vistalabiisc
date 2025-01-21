@@ -30,6 +30,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/project/un.js"
-  ],
+, "sortCsv.js"  ],
   "exclude": ["node_modules"]
 }
