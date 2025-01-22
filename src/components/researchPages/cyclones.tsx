@@ -5,19 +5,17 @@ import { Popup, Layer, Source } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/image";
 
-import { ManualOverlay } from "@/components/ui/ManualOverlay";
-
 // shadcn/ui Switch
 import { Switch } from "@/components/ui/switch";
 
-// Assets
+import { ManualOverlay } from "@/components/ui/ManualOverlay";
+import Legend from "../ui/legend";
+
 import trash from "@/assets/delete.svg";
 import playIcon from "@/assets/play.svg";
 import pauseIcon from "@/assets/pause.svg";
 import resetIcon from "@/assets/reset.svg";
-
 import infoIcon from "@/assets/info.svg";
-import Legend from "../ui/legend";
 
 // If using react-map-gl v7 with named exports, adjust accordingly:
 const ReactMapGL = require("react-map-gl").default;
@@ -52,11 +50,6 @@ interface UniqueCyclone {
   serial: string;
 }
 
-interface ManualOverlayProps {
-  onClose: () => void;
-}
-
-/** For the triple toggle: "showYear" | "single" | "cumulative" */
 type DisplayMode = "showYear" | "single" | "cumulative";
 
 const gradeColors: Record<string, string> = {
@@ -69,69 +62,50 @@ const gradeColors: Record<string, string> = {
   SuCS: "#8e44ad",
 };
 
-const MAPBOX_TOKEN =
-  "pk.eyJ1IjoibGVva29uZGEiLCJhIjoiY200c3RjanQ2MDN3YjJxczRjbnFweTVhciJ9.OrD4H7eWIrHnABf_Y1Nn4A";
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 const initialViewState = { longitude: 68, latitude: 15, zoom: 4 };
 
 export default function Cyclones() {
   const [showManual, setShowManual] = useState(false);
-
-  /**************************************************************
-   * Overlay: "Start Experience"
-   **************************************************************/
   const [hasStarted, setHasStarted] = useState(false);
 
-  /**************************************************************
-   * Data / Animation States
-   **************************************************************/
+  // Data / states
   const [rawData, setRawData] = useState<CycloneData[]>([]);
   const [years, setYears] = useState<number[]>([]);
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [currentTime, setCurrentTime] = useState<Date | null>(null);
 
-  // For searching & comparing cyclones
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCyclones, setSelectedCyclones] = useState<string[]>([]);
 
-  // Animation playback
   const [isPlaying, setIsPlaying] = useState(false);
   const [sliderValue, setSliderValue] = useState(0);
 
-  // Hover info for the popup
+  const [displayMode, setDisplayMode] = useState<DisplayMode>("cumulative");
+  const [showAIPrediction, setShowAIPrediction] = useState(false);
+
   const [hoverInfo, setHoverInfo] = useState<{
     longitude: number;
     latitude: number;
     info?: CycloneData;
-    isAI?: boolean;
+    isAI?: {
+      name: string;
+      latitudePlus: number;
+      longitudePlus: number;
+      gradeText: string;
+    };
   } | null>(null);
 
-  /**************************************************************
-   * Triple Toggle
-   * (left) showYear = "Entire Year"
-   * (center) single = "Single Events"
-   * (right) cumulative = "Cumulative"
-   * Default = "cumulative"
-   **************************************************************/
-  const [displayMode, setDisplayMode] = useState<DisplayMode>("cumulative");
-
-  // Whether user has selected any cyclones to compare
+  // If user has at least one selected cyclone => comparing
   const isComparing = selectedCyclones.length > 0;
 
-  /**************************************************************
-   * Toggle for AI predictions
-   **************************************************************/
-  const [showAIPrediction, setShowAIPrediction] = useState(false);
-
-  /**************************************************************
-   * Load CSV
-   **************************************************************/
   useEffect(() => {
     Papa.parse("/data/combined.csv", {
       download: true,
       header: true,
       skipEmptyLines: true,
       complete: (result) => {
-        const cleaned: CycloneData[] = result.data
+        const cleaned = result.data
           .filter(
             (d: any) => d["date-dd-mm-yyyy"] && d["time-utc"] && d["grade-text"]
           )
@@ -164,13 +138,14 @@ export default function Cyclones() {
               ),
               gradeText: d["grade-text"],
               datetime: dt,
-              // AI columns
+              // AI coords
               latitudePlus: parseFloat(d["latitude-lat-plus"]) || 0,
               longitudePlus: parseFloat(d["longitude-long-plus"]) || 0,
             } as CycloneData;
           });
 
         setRawData(cleaned);
+
         const distinctYears = Array.from(
           new Set(cleaned.map((d) => d.datetime.getUTCFullYear()))
         ).sort();
@@ -182,30 +157,27 @@ export default function Cyclones() {
     });
   }, []);
 
-  /**************************************************************
-   * Derived Data
-   **************************************************************/
-  // Filter by selectedYear
+  // Derived: filter by year
   const yearData = useMemo(() => {
     if (!selectedYear) return [];
     return rawData.filter((d) => d.datetime.getUTCFullYear() === selectedYear);
   }, [selectedYear, rawData]);
 
-  // Sort by time ascending
+  // Sort year data by time
   const sortedYearData = useMemo(() => {
     return [...yearData].sort(
       (a, b) => a.datetime.getTime() - b.datetime.getTime()
     );
   }, [yearData]);
 
-  // Initialize currentTime if not set
+  // If we haven't set currentTime, default to earliest
   useEffect(() => {
     if (sortedYearData.length > 0 && !currentTime) {
       setCurrentTime(sortedYearData[0].datetime);
     }
   }, [sortedYearData, currentTime]);
 
-  // currentIndex = where currentTime is in sortedYearData
+  // Find the index of currentTime in sortedYearData
   const currentIndex = useMemo(() => {
     if (!currentTime || sortedYearData.length === 0) return 0;
     const idx = sortedYearData.findIndex(
@@ -214,14 +186,14 @@ export default function Cyclones() {
     return idx >= 0 ? idx : 0;
   }, [currentTime, sortedYearData]);
 
-  // Sync sliderValue with currentIndex
+  // Keep sliderValue in sync
   useEffect(() => {
     if (sortedYearData.length > 0) {
       setSliderValue(currentIndex);
     }
   }, [currentIndex, sortedYearData.length]);
 
-  // On slider change => set currentTime
+  // On slider => set currentTime
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(e.target.value, 10);
     setSliderValue(val);
@@ -230,35 +202,29 @@ export default function Cyclones() {
     }
   };
 
-  /**************************************************************
-   * Auto-play effect
-   **************************************************************/
+  // Auto-play logic
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
     if (isPlaying && sortedYearData.length > 0) {
       timer = setInterval(() => {
         setSliderValue((prev) => {
           let next = prev + 1;
-          // Stop after last frame (no looping)
           if (next >= sortedYearData.length) {
             clearInterval(timer!);
             setIsPlaying(false);
-            return prev;
+            return prev; // remain on last
           }
           setCurrentTime(sortedYearData[next].datetime);
           return next;
         });
-      }, 200); // slower if you want
+      }, 200);
     }
     return () => {
       if (timer) clearInterval(timer);
     };
   }, [isPlaying, sortedYearData]);
 
-  /**************************************************************
-   * Search & Compare Cyclones
-   **************************************************************/
-  // Unique cyclones
+  // Searching & comparing
   const uniqueCyclones: UniqueCyclone[] = useMemo(() => {
     const map = new Map<string, UniqueCyclone>();
     for (const d of rawData) {
@@ -277,7 +243,6 @@ export default function Cyclones() {
     return Array.from(map.values());
   }, [rawData]);
 
-  // Filter by search
   const filteredCyclones = useMemo(() => {
     if (!searchQuery) return uniqueCyclones;
     const q = searchQuery.toLowerCase();
@@ -286,7 +251,6 @@ export default function Cyclones() {
     );
   }, [uniqueCyclones, searchQuery]);
 
-  // Add to compare
   const selectCyclone = (c: UniqueCyclone) => {
     if (selectedCyclones.length >= 4) {
       alert("You can compare up to 4 cyclones only.");
@@ -297,12 +261,10 @@ export default function Cyclones() {
     }
   };
 
-  // Remove from compare
   const removeCyclone = (id: string) => {
     setSelectedCyclones(selectedCyclones.filter((cid) => cid !== id));
   };
 
-  // Detailed list of selected cyclones
   const selectedCycloneDetails = useMemo(() => {
     const map = new Map<string, UniqueCyclone>();
     for (const c of uniqueCyclones) {
@@ -313,27 +275,18 @@ export default function Cyclones() {
       .filter((c): c is UniqueCyclone => !!c);
   }, [selectedCyclones, uniqueCyclones]);
 
-  /**************************************************************
-   * Decide what data to display (points & lines)
-   **************************************************************/
-  // For normal year-based mode (not comparing)
+  // Decide displayed data
   const displayedPointsYearMode = useMemo(() => {
     if (!currentTime || sortedYearData.length === 0) return [];
-
     switch (displayMode) {
       case "showYear":
-        // Show the entire year's points
         return sortedYearData;
-
       case "single":
-        // Show only points exactly at currentTime
         return sortedYearData.filter(
           (d) => d.datetime.getTime() === currentTime.getTime()
         );
-
       case "cumulative":
       default:
-        // Show all points up to currentTime
         return sortedYearData.filter(
           (d) => d.datetime.getTime() <= currentTime.getTime()
         );
@@ -342,32 +295,27 @@ export default function Cyclones() {
 
   const displayedLinesYearMode = useMemo(() => {
     if (!currentTime || sortedYearData.length === 0) return [];
-
     switch (displayMode) {
       case "showYear":
-        // entire year lines
         return sortedYearData;
-
-      case "single":
-        // partial lines up to currentTime (to form a short track)
-        const currentTimeValue = currentTime.getTime();
+      case "single": {
+        const tVal = currentTime.getTime();
         const exactMatches = sortedYearData.filter(
-          (d) => d.datetime.getTime() === currentTimeValue
+          (d) => d.datetime.getTime() === tVal
         );
         if (exactMatches.length === 0) return [];
         const result: CycloneData[] = [];
         for (const match of exactMatches) {
-          const cycloneId = match.serialnumberofsystemduringyear;
-          // gather all points of that cyclone up to currentTime
+          const cid = match.serialnumberofsystemduringyear;
           const partial = sortedYearData.filter(
             (d) =>
-              d.serialnumberofsystemduringyear === cycloneId &&
-              d.datetime.getTime() <= currentTimeValue
+              d.serialnumberofsystemduringyear === cid &&
+              d.datetime <= match.datetime
           );
           result.push(...partial);
         }
         return result;
-
+      }
       case "cumulative":
       default:
         return sortedYearData.filter(
@@ -376,7 +324,7 @@ export default function Cyclones() {
     }
   }, [displayMode, sortedYearData, currentTime]);
 
-  // If comparing => show only selected cyclones
+  // If comparing => only selected
   const displayedDataSelectedMode = useMemo(() => {
     const selectedSet = new Set(selectedCyclones);
     return rawData.filter((d) => {
@@ -386,7 +334,6 @@ export default function Cyclones() {
     });
   }, [rawData, selectedCyclones]);
 
-  // Choose final displayed data
   const displayedPoints = isComparing
     ? displayedDataSelectedMode
     : displayedPointsYearMode;
@@ -394,9 +341,7 @@ export default function Cyclones() {
     ? displayedDataSelectedMode
     : displayedLinesYearMode;
 
-  /**************************************************************
-   * Build GeoJSON Features
-   **************************************************************/
+  // Group by ID
   function groupByCycloneId(data: CycloneData[]) {
     const groups: Record<string, CycloneData[]> = {};
     for (const d of data) {
@@ -418,7 +363,7 @@ export default function Cyclones() {
 
   // Actual lines
   const lineFeaturesActual: any[] = [];
-  for (const [_, items] of Object.entries(lineGroups)) {
+  for (const items of Object.values(lineGroups)) {
     const sorted = [...items].sort(
       (a, b) => a.datetime.getTime() - b.datetime.getTime()
     );
@@ -443,20 +388,27 @@ export default function Cyclones() {
 
   // Actual points
   const pointFeaturesActual: any[] = [];
-  for (const [_, items] of Object.entries(pointGroups)) {
+  for (const items of Object.values(pointGroups)) {
     for (const p of items) {
       pointFeaturesActual.push({
         type: "Feature",
         geometry: { type: "Point", coordinates: [p.longitude, p.latitude] },
-        properties: { ...p, color: gradeColors[p.gradeText] || "#fff" },
+        properties: {
+          ...p,
+          color: gradeColors[p.gradeText] || "#fff",
+        },
       });
     }
   }
 
-  // AI lines (if user toggles showAIPrediction)
+  /****************** AI Lines & Points ********************/
+  // Build AI lines only if showAIPrediction is on
   let lineFeaturesAI: any[] = [];
+  let pointFeaturesAI: any[] = [];
+
   if (showAIPrediction) {
-    for (const [_, items] of Object.entries(lineGroups)) {
+    // AI lines
+    for (const items of Object.values(lineGroups)) {
       const sorted = [...items].sort(
         (a, b) => a.datetime.getTime() - b.datetime.getTime()
       );
@@ -479,21 +431,43 @@ export default function Cyclones() {
         });
       }
     }
+
+    // AI points
+    for (const items of Object.values(pointGroups)) {
+      for (const p of items) {
+        // Add a separate point using latPlus/longPlus
+        // so we can style them or show a popup
+        pointFeaturesAI.push({
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [p.longitudePlus, p.latitudePlus],
+          },
+          properties: {
+            name: p.name,
+            latitudePlus: p.latitudePlus,
+            longitudePlus: p.longitudePlus,
+            gradeText: p.gradeText,
+            color: gradeColors[p.gradeText] || "#ccc",
+            ai: true,
+          },
+        });
+      }
+    }
   }
 
-  // Combine them into GeoJSON
+  // Combine them
   const geojsonActual = {
     type: "FeatureCollection",
     features: [...lineFeaturesActual, ...pointFeaturesActual],
   };
+
   const geojsonAI = {
     type: "FeatureCollection",
-    features: lineFeaturesAI,
+    features: [...lineFeaturesAI, ...pointFeaturesAI],
   };
 
-  /**************************************************************
-   * Event Handlers
-   **************************************************************/
+  /****************** Handlers ********************/
   const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const yr = parseInt(e.target.value, 10);
     setSelectedYear(yr);
@@ -508,47 +482,32 @@ export default function Cyclones() {
     }
   };
 
-  // Hover logic
-  const onHover = useCallback((event: any) => {
-    const { features } = event;
-    if (!features || !features.length) {
-      setHoverInfo(null);
-      return;
+  // Single button with 3 states: Play, Pause, Reset
+  function handleReset() {
+    setIsPlaying(false);
+    setSliderValue(0);
+    if (sortedYearData.length > 0) {
+      setCurrentTime(sortedYearData[0].datetime);
     }
-    const f = features[0];
+  }
 
-    // If geometry is a point
-    if (f.geometry.type === "Point" && f.properties) {
-      const coords = f.geometry.coordinates;
-      if (!coords || coords.length < 2) {
-        setHoverInfo(null);
-        return;
-      }
-      const info: CycloneData = {
-        ...f.properties,
-        // Convert string => Date
-        datetime: new Date(f.properties.datetime),
-      };
-      setHoverInfo({
-        longitude: coords[0],
-        latitude: coords[1],
-        info,
-        isAI: false,
-      });
-    }
-    // If geometry is AI line
-    else if (f.layer && f.layer.id === "lines-layer-ai") {
-      setHoverInfo({
-        longitude: event.lngLat.lng,
-        latitude: event.lngLat.lat,
-        isAI: true,
-      });
+  function handleSingleButtonClick() {
+    if (sliderValue === sortedYearData.length - 1) {
+      // at the end => reset
+      handleReset();
     } else {
-      setHoverInfo(null);
+      setIsPlaying(!isPlaying);
     }
-  }, []);
+  }
 
-  // Current date/time string
+  let buttonIcon = playIcon;
+  if (isPlaying) {
+    buttonIcon = pauseIcon;
+  }
+  if (sliderValue === sortedYearData.length - 1) {
+    buttonIcon = resetIcon;
+  }
+
   const maxIndex = sortedYearData.length > 0 ? sortedYearData.length - 1 : 0;
   const currentDateString = useMemo(() => {
     if (!currentTime) return "";
@@ -559,10 +518,55 @@ export default function Cyclones() {
     );
   }, [currentTime]);
 
-  /**************************************************************
-   * Render
-   **************************************************************/
-  // 1) Overlay if not started
+  // On hover
+  const onHover = useCallback((event: any) => {
+    const { features } = event;
+    if (!features || features.length === 0) {
+      setHoverInfo(null);
+      return;
+    }
+
+    const f = features[0];
+    if (!f.geometry || !f.geometry.coordinates) {
+      setHoverInfo(null);
+      return;
+    }
+
+    const coords = f.geometry.coordinates;
+    if (f.geometry.type === "Point" && f.properties) {
+      // Check if it's from the AI layer
+      if (f.layer?.id === "points-layer-ai") {
+        // AI point
+        setHoverInfo({
+          longitude: coords[0],
+          latitude: coords[1],
+          isAI: {
+            name: f.properties.name || "AI-Point",
+            latitudePlus: coords[1],
+            longitudePlus: coords[0],
+            gradeText: f.properties.gradeText || "D",
+          },
+        });
+      } else if (f.layer?.id === "points-layer-actual") {
+        // actual point
+        const info: CycloneData = {
+          ...f.properties,
+          datetime: new Date(f.properties.datetime),
+        };
+        setHoverInfo({
+          longitude: coords[0],
+          latitude: coords[1],
+          info,
+        });
+      } else {
+        setHoverInfo(null);
+      }
+    } else {
+      setHoverInfo(null);
+    }
+  }, []);
+
+  // Overlay if not started
   if (!hasStarted) {
     return (
       <div className="relative w-full h-[90vh] flex items-center justify-center bg-black text-white">
@@ -594,37 +598,6 @@ export default function Cyclones() {
     { label: "Super Cyclonic Storm", color: "#8e44ad" },
   ];
 
-  function handleReset() {
-    // Stop playing
-    setIsPlaying(false);
-    // Reset slider to 0
-    setSliderValue(0);
-    // Reset currentTime if we have data
-    if (sortedYearData.length > 0) {
-      setCurrentTime(sortedYearData[0].datetime);
-    }
-  }
-
-  function handleSingleButtonClick() {
-    // If we're at the last frame, reset
-    if (sliderValue === maxIndex) {
-      handleReset();
-    } else {
-      // Otherwise toggle play/pause
-      setIsPlaying(!isPlaying);
-    }
-  }
-
-  // Pick the icon to show
-  let buttonIcon = playIcon;
-  if (isPlaying) {
-    buttonIcon = pauseIcon; // if playing => show pause icon
-  }
-  if (sliderValue === maxIndex) {
-    buttonIcon = resetIcon; // if at end => show reset icon
-  }
-
-  // 2) Main UI
   return (
     <div className="h-[89vh] flex mt-[6%]">
       {/* Left side: Map & top bar */}
@@ -649,12 +622,10 @@ export default function Cyclones() {
             </div>
           )}
 
-          {/* === Triple Toggle === (hide if comparing) */}
+          {/* Triple Toggle (hide if comparing) */}
           {!isComparing && (
             <div className="flex items-center space-x-2">
-              {/* Single label for entire toggle: "Entire Year | Single Events | Cumulative" */}
               <div className="relative w-[350px] h-10 border border-zinc-600 rounded-full flex items-center">
-                {/* The "circle" that moves left, center, or right */}
                 <div
                   className="absolute w-[107px] h-8 bg-zinc-600 rounded-full transition-all"
                   style={{
@@ -665,25 +636,19 @@ export default function Cyclones() {
                         ? "calc(50% - 54px)"
                         : "calc(100% - 110px)",
                   }}
-                ></div>
-
-                {/* Left button: "Entire Year" */}
+                />
                 <button
                   className="relative text-sm text-zinc-200 w-1/3"
                   onClick={() => setDisplayMode("showYear")}
                 >
                   Entire Year
                 </button>
-
-                {/* Middle button: "Single Events" */}
                 <button
                   className="relative text-sm text-zinc-200 w-1/3"
                   onClick={() => setDisplayMode("single")}
                 >
                   Single Events
                 </button>
-
-                {/* Right button: "Cumulative" */}
                 <button
                   className="relative text-sm text-zinc-200 w-1/3"
                   onClick={() => setDisplayMode("cumulative")}
@@ -694,6 +659,7 @@ export default function Cyclones() {
             </div>
           )}
 
+          {/* Single Button (Play/Pause/Reset), hide if showYear or comparing */}
           {displayMode !== "showYear" && !isComparing && (
             <button onClick={handleSingleButtonClick}>
               <Image
@@ -705,7 +671,7 @@ export default function Cyclones() {
             </button>
           )}
 
-          {/* Slider (only if not "show entire year" and not comparing) */}
+          {/* Slider (only if not "show entire year" & not comparing) */}
           {displayMode !== "showYear" &&
             sortedYearData.length > 0 &&
             currentTime &&
@@ -726,7 +692,7 @@ export default function Cyclones() {
               </div>
             )}
 
-          {/* AI Predictions Switch */}
+          {/* AI Toggle */}
           <div className="flex items-center space-x-2">
             <label className="font-semibold">AI-Predictions:</label>
             <Switch
@@ -735,7 +701,7 @@ export default function Cyclones() {
             />
           </div>
 
-          {/* Button to open the manual */}
+          {/* Manual Overlay Trigger */}
           <button
             onClick={() => setShowManual(true)}
             className="flex items-center space-x-2 px-3 py-2"
@@ -743,25 +709,27 @@ export default function Cyclones() {
             <Image src={infoIcon} alt="Info" width={16} height={16} />
             <span className="text-sm">Manual</span>
           </button>
-          {/* Conditionally render the overlay if showManual is true */}
           {showManual && <ManualOverlay onClose={() => setShowManual(false)} />}
         </div>
 
-        {/* Map Container */}
+        {/* Map */}
         <div className="flex-1 relative">
           <ReactMapGL
             initialViewState={initialViewState}
             mapStyle="mapbox://styles/mapbox/dark-v10"
             mapboxAccessToken={MAPBOX_TOKEN}
+            // Add "points-layer-ai" to interactiveLayers if you want to hover them
             interactiveLayerIds={[
               "lines-layer-actual",
               "points-layer-actual",
-              // Include AI lines in interaction if we want popups on AI
               "lines-layer-ai",
+              "points-layer-ai",
             ]}
             onMouseMove={onHover}
+            // Force the default arrow cursor instead of a pointer
+            getCursor={() => "default"}
           >
-            {/* Actual data source */}
+            {/* Actual source/layers */}
             <Source id="cyclones-actual" type="geojson" data={geojsonActual}>
               <Layer
                 id="lines-layer-actual"
@@ -783,7 +751,7 @@ export default function Cyclones() {
               />
             </Source>
 
-            {/* AI data source (lines only) */}
+            {/* AI source/layers (only if toggled on) */}
             {showAIPrediction && (
               <Source id="cyclones-ai" type="geojson" data={geojsonAI}>
                 <Layer
@@ -796,24 +764,50 @@ export default function Cyclones() {
                     "line-color": ["get", "color"],
                   }}
                 />
+                <Layer
+                  id="points-layer-ai"
+                  type="circle"
+                  filter={["==", "$type", "Point"]}
+                  paint={{
+                    "circle-radius": 3,
+                    "circle-color": ["get", "color"],
+                  }}
+                />
               </Source>
             )}
 
             {/* Popups */}
+            {/* AI Popup */}
             {hoverInfo && hoverInfo.isAI && (
               <Popup
                 className="no-bg-popup"
-                longitude={hoverInfo.longitude}
-                latitude={hoverInfo.latitude}
+                longitude={hoverInfo.isAI.longitudePlus}
+                latitude={hoverInfo.isAI.latitudePlus}
                 closeButton={false}
                 closeOnClick={false}
                 anchor="top"
               >
-                <div className="text-xs text-zinc-200 font-semibold p-2 bg-zinc-700">
-                  AI Predicted
+                <div
+                  className="text-xs text-white p-2"
+                  style={{
+                    backgroundColor:
+                      gradeColors[hoverInfo.isAI.gradeText] || "#ccc",
+                  }}
+                >
+                  <div>
+                    <b>Name:</b> {hoverInfo.isAI.name}
+                  </div>
+                  <div>
+                    <b>Latitude:</b> {hoverInfo.isAI.latitudePlus}
+                  </div>
+                  <div>
+                    <b>Longitude:</b> {hoverInfo.isAI.longitudePlus}
+                  </div>
                 </div>
               </Popup>
             )}
+
+            {/* Actual Data Popup */}
             {hoverInfo && hoverInfo.info && (
               <Popup
                 className="no-bg-popup"
@@ -822,12 +816,12 @@ export default function Cyclones() {
                 closeButton={false}
                 closeOnClick={false}
                 anchor="top"
-                style={{ padding: "0px" }}
               >
                 <div
                   className="text-xs text-white p-2"
                   style={{
-                    backgroundColor: gradeColors[hoverInfo.info.gradeText],
+                    backgroundColor:
+                      gradeColors[hoverInfo.info.gradeText] || "#fff",
                   }}
                 >
                   <div>
@@ -842,10 +836,6 @@ export default function Cyclones() {
                     {hoverInfo.info.datetime.toUTCString()}
                   </div>
                   <div>
-                    <strong>Pressure:</strong>{" "}
-                    {hoverInfo.info.estimatedcentralpressurehpaorecp}
-                  </div>
-                  <div>
                     <strong>Wind (kt):</strong>{" "}
                     {hoverInfo.info.maximumsustainedsurfacewind}
                   </div>
@@ -855,11 +845,23 @@ export default function Cyclones() {
           </ReactMapGL>
         </div>
       </div>
-      <Legend legendItems={legendItems} />;{/* Sidebar (Compare Cyclones) */}
+
+      {/* Legend */}
+      <Legend
+        legendItems={[
+          { label: "Depression", color: "#78c6a3" },
+          { label: "Deep Depression", color: "#61a2de" },
+          { label: "Cyclonic Storm", color: "#f39c12" },
+          { label: "Severe Cyclonic Storm", color: "#d35400" },
+          { label: "Very Severe Cyclonic Storm", color: "#e74c3c" },
+          { label: "Extremely Severe Cyclonic Storm", color: "#c0392b" },
+          { label: "Super Cyclonic Storm", color: "#8e44ad" },
+        ]}
+      />
+
+      {/* Sidebar (Compare Cyclones) */}
       <div className="z-[9] fixed left-4 bottom-4 rounded-xl w-[18vw] h-[35vh] bg-zinc-800/80 backdrop-blur-sm p-4 flex flex-col">
         <h2 className="text-white text-sm mb-5">Compare Cyclones</h2>
-
-        {/* Search Bar */}
         <input
           type="text"
           placeholder="Search by name/year"
@@ -885,6 +887,7 @@ export default function Cyclones() {
           ))}
         </div>
       </div>
+
       {/* Selected Cyclones Box */}
       <div className="z-[9] fixed right-4 bottom-4 w-[18vw] bg-zinc-800/80 backdrop-blur-sm p-4 rounded-xl text-zinc-300">
         <h3 className="font-semibold text-zinc-200 text-sm mb-4">
