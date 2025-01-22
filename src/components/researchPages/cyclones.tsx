@@ -760,7 +760,7 @@ export default function Cyclones() {
                   type="line"
                   filter={["==", "$type", "LineString"]}
                   paint={{
-                    "line-width": 2,
+                    "line-width": 1,
                     "line-dasharray": [2, 2],
                     "line-color": ["get", "color"],
                   }}
@@ -770,7 +770,7 @@ export default function Cyclones() {
                   type="circle"
                   filter={["==", "$type", "Point"]}
                   paint={{
-                    "circle-radius": 3,
+                    "circle-radius": 2,
                     "circle-color": ["get", "color"],
                   }}
                 />
