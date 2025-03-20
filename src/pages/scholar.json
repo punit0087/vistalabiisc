@@ -1,11 +1,27 @@
 {
   "results": [
     {
+      "title": "Density-Adaptive Fuzzy Clustering with Isolation Kernel",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:hFOr9nPyWt4C",
+      "authors": "P Tiwari, R Kachroo, P Rathore",
+      "publicationDate": "2025",
+      "journal": "ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …, 2025",
+      "citationCount": "0"
+    },
+    {
+      "title": "Monitoring of Speed Breaker Violations with RoadHAWK",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:-f6ydRqryjwC",
+      "authors": "RC Mahalik, P Misra, P Rathore",
+      "publicationDate": "2025",
+      "journal": "2025 17th International Conference on COMmunication Systems and NETworks …, 2025",
+      "citationCount": "0"
+    },
+    {
       "title": "STEAM: Squeeze and Transform Enhanced Attention Module",
-      "link": "https://scholar.google.com.au/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:IWHjjKOFINEC",
-      "authors": "Rishabh Sabharwal, Parikshit Singh Rathore, Punit Rathore",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:IWHjjKOFINEC",
+      "authors": "R Sabharwal, PS Rathore, P Rathore",
       "publicationDate": "2024",
-      "journal": "arXiv preprint arXiv:2412.09023",
+      "journal": "arXiv preprint arXiv:2412.09023, 2024",
       "citationCount": "0"
     },
     {
@@ -22,7 +38,7 @@
       "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
       "publicationDate": "2024",
       "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "3"
+      "citationCount": "4"
     },
     {
       "title": "Adding Explainability to Visual Clustering Tendency Assessment (VAT) Methods Through Feature Importance",
@@ -33,12 +49,12 @@
       "citationCount": "0"
     },
     {
-      "title": "HaVAT: Automatic Cluster Structure Assessment in Unlabeled data",
+      "title": "Havat: Automatic cluster structure assessment in unlabeled data",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:QIV2ME_5wuYC",
       "authors": "KM Pagadala, P Rathore",
       "publicationDate": "2024",
       "journal": "Proceedings of the 7th Joint International Conference on Data Science …, 2024",
-      "citationCount": "1"
+      "citationCount": "2"
     },
     {
       "title": "Learning Low-Rank Latent Spaces with Simple Deterministic Autoencoder: Theoretical and Empirical Insights",
@@ -54,7 +70,7 @@
       "authors": "S Jeyakumar, E Yugarajah, A Charles, P Rathore, M PALANISWAMI, ...",
       "publicationDate": "2023",
       "journal": "Authorea Preprints, 2023",
-      "citationCount": "1"
+      "citationCount": "4"
     },
     {
       "title": "Machine learning-based predictions of yield strength for neutron-irradiated ferritic/martensitic steels",
@@ -65,9 +81,9 @@
       "citationCount": "5"
     },
     {
-      "title": "Convergence of ADAM with Constant Step Size in Non-Convex Settings: A Simple Proof",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:Wp0gIr-vW9MC",
-      "authors": "A Mazumder, B Kumar, M Tayal, P Rathore",
+      "title": "A Theoretical and Empirical Study on the Convergence of Adam with an\" Exact\" Constant Step Size in Non-Convex Settings",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:hC7cP41nSMkC",
+      "authors": "A Mazumder, R Sabharwal, M Tayal, B Kumar, P Rathore",
       "publicationDate": "2023",
       "journal": "arXiv preprint arXiv:2309.08339, 2023",
       "citationCount": "0"
@@ -78,7 +94,7 @@
       "authors": "NJ Sai, P Rathore, A Chauhan",
       "publicationDate": "2023",
       "journal": "Scripta Materialia 226, 115214, 2023",
-      "citationCount": "33"
+      "citationCount": "40"
     },
     {
       "title": "DeepVAT: A Self-Supervised Technique for Cluster Assessment in Image Datasets",
@@ -86,6 +102,14 @@
       "authors": "A Mazumder, T Baruah, AK Singh, PK Murthy, V Pattanaik, P Rathore",
       "publicationDate": "2023",
       "journal": "Proceedings of the IEEE/CVF International Conference on Computer Vision, 187-195, 2023",
+      "citationCount": "0"
+    },
+    {
+      "title": "Convergence of ADAM with Constant Step Size in Non-Convex Settings: A Simple Proof.",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:Wp0gIr-vW9MC",
+      "authors": "A Mazumder, B Kumar, M Tayal, P Rathore",
+      "publicationDate": "2023",
+      "journal": "CoRR, 2023",
       "citationCount": "0"
     },
     {
@@ -126,7 +150,7 @@
       "authors": "S Milardo, P Rathore, M Amorim, U Fugiglando, P Santi, C Ratti",
       "publicationDate": "2021",
       "journal": "IEEE Transactions on Intelligent Transportation Systems 23 (9), 14570-14581, 2021",
-      "citationCount": "15"
+      "citationCount": "20"
     },
     {
       "title": "An unsupervised approach for driving behavior analysis of professional truck drivers",
@@ -135,55 +159,48 @@
       "publicationDate": "2021",
       "journal": "International Conference on Intelligent Transport Systems, 44-56, 2021",
       "citationCount": "1"
-    },
-    {
-      "title": "Identifying groups of fake reviewers using a semisupervised approach",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:kNdYIx-mwKoC",
-      "authors": "P Rathore, J Soni, N Prabakar, M Palaniswami, P Santi",
-      "publicationDate": "2021",
-      "journal": "IEEE Transactions on Computational Social Systems 8 (6), 1369-1378, 2021",
-      "citationCount": "38"
-    },
-    {
-      "title": "Shapelet based visual assessment of cluster tendency in analyzing complex upper limb motion",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:3fE2CSJIrl8C",
-      "authors": "S Datta, C Karmakar, P Rathore, M Palaniswami",
-      "publicationDate": "2021",
-      "journal": "ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and …, 2021",
-      "citationCount": "1"
-    },
-    {
-      "title": "Fast Cluster Tendency Assessment for Big, High-dimensional Data",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:0EnyYjriUFMC",
-      "authors": "P Rathore, JC Bezdek, M Palaniswami",
-      "publicationDate": "2020",
-      "journal": "Fuzzy Approaches for Soft Computing and Approximate Reasoning: Theories and …, 2020",
-      "citationCount": "5"
-    },
-    {
-      "title": "Understanding the Dynamics of Drivers' Locations for Passengers Pickup Performance: A Case Study",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:8k81kl-MbHgC",
-      "authors": "P Rathore, A Zonoozi, O Geramifard, TK Lee",
-      "publicationDate": "2020",
-      "journal": "arXiv preprint arXiv:2009.04108, 2020",
-      "citationCount": "0"
     }
   ],
   "metrics": {
-    "citationsAll": "554",
-    "citationsSince2019": "527",
+    "citationsAll": "597",
+    "citationsSince2019": "528",
     "hIndexAll": "12",
     "hIndexSince2019": "12",
-    "i10IndexAll": "12",
-    "i10IndexSince2019": "12"
+    "i10IndexAll": "13",
+    "i10IndexSince2019": "13"
   },
   "graphData": [
-    { "year": "2018", "citations": "26" },
-    { "year": "2019", "citations": "40" },
-    { "year": "2020", "citations": "66" },
-    { "year": "2021", "citations": "76" },
-    { "year": "2022", "citations": "114" },
-    { "year": "2023", "citations": "124" },
-    { "year": "2024", "citations": "105" }
+    {
+      "year": "2018",
+      "citations": "26"
+    },
+    {
+      "year": "2019",
+      "citations": "41"
+    },
+    {
+      "year": "2020",
+      "citations": "68"
+    },
+    {
+      "year": "2021",
+      "citations": "70"
+    },
+    {
+      "year": "2022",
+      "citations": "114"
+    },
+    {
+      "year": "2023",
+      "citations": "119"
+    },
+    {
+      "year": "2024",
+      "citations": "124"
+    },
+    {
+      "year": "2025",
+      "citations": "33"
+    }
   ]
 }

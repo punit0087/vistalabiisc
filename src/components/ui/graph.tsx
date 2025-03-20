@@ -20,7 +20,7 @@ const Graph: React.FC<GraphProps> = ({ data, width, height }) => {
   useEffect(() => {
     if (!graphRef.current) return;
 
-    const margin = { top: 20, right: 30, bottom: 30, left: 40 };
+    const margin = { top: 20, right: 30, bottom: 30, left: 30 };
     const svgWidth = width - margin.left - margin.right;
     const svgHeight = height - margin.top - margin.bottom;
 
@@ -31,7 +31,7 @@ const Graph: React.FC<GraphProps> = ({ data, width, height }) => {
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const x = d3.scaleLinear().domain([2018, 2024]).range([0, svgWidth]);
+    const x = d3.scaleLinear().domain([2018, 2025]).range([0, svgWidth]);
 
     const y = d3
       .scaleLinear()
