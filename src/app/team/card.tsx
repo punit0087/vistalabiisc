@@ -26,6 +26,10 @@ import syedlateef from "@/assets/profile/potrait/SyedLateef.jpg";
 import Areddy from "@/assets/profile/potrait/reddy.jpg";
 import Dprofile from "@/assets/profile/default-profile.svg";
 
+import Bdebnath from "@/assets/profile/potrait/BiswadeepDebnath.png";
+import ilana from "@/assets/profile/potrait/IlaAnanta.jpeg";
+import ritwik from "@/assets/profile/potrait/RithwikPradeep.jpg";
+
 interface Person {
   image: string;
   name: string;
@@ -440,8 +444,7 @@ const data: Person[] = [
     designation: "M.Tech in Artificial Intelligence (Started Aug 2023)",
     designationLabel: "M.Tech",
     email: "ssidhant@iisc.ac.in",
-    research:
-      "Machine Learning,  Representation Learning, Deep Learning.",
+    research: "Machine Learning,  Representation Learning, Deep Learning.",
     linkedin: "https://www.linkedin.com/in/sidhant-sharma-415806210/",
     github: "https://github.com/sidhantjsr98",
     scholar: "",
@@ -457,6 +460,45 @@ const data: Person[] = [
       "Computer Vision, Natural Language Processing, Optimisation, Deep Learning and pattern recognition",
     linkedin: "https://www.linkedin.com/in/syed-lateef-47676539/",
     github: "https://github.com/Syed-Lateef",
+    scholar: "",
+    portfolio: "",
+  },
+
+  {
+    image: Bdebnath.src,
+    name: "Biswadeep Debnath",
+    designation: "M.Tech in Robotics and Autonomous Systems",
+    designationLabel: "M.Tech",
+    email: "biswadeepd@iisc.ac.in",
+    research: "Machine Learning, Computer Vision, Edge AI",
+    linkedin: "https://www.linkedin.com/in/biswadeep-debnath-03634b202",
+    github: "https://www.github.com/biswa2001github",
+    scholar: "",
+    portfolio: "",
+  },
+
+  {
+    image: ilana.src,
+    name: "Ila Ananta",
+    designation: "M.Tech in Robotics and Autonomous Systems",
+    designationLabel: "M.Tech",
+    email: "ilaananta@iisc.ac.in",
+    research:
+      "Reinforcement Learning, ML, AI, Deep Learning, Statistical Modeling, Data Science, Decision-Making Systems",
+    linkedin: "https://www.linkedin.com/in/ila-ananta-padha-98a687137/",
+    github: "",
+    scholar: "https://scholar.google.com/citations?user=wZnOtJ0AAAAJ&hl=en",
+    portfolio: "",
+  },
+  {
+    image: ritwik.src,
+    name: "Rithwik Pradeep",
+    designation: "M.Tech in Robotics and Autonomous Systems",
+    designationLabel: "M.Tech",
+    email: "rithwikp@iisc.ac.in",
+    research: "Computer Vision, Edge AI",
+    linkedin: "https://www.linkedin.com/in/rithwik-pradeep/",
+    github: "",
     scholar: "",
     portfolio: "",
   },

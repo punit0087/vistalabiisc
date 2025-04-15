@@ -155,6 +155,21 @@ const itemsCurrentFIVE = [
     name: "Romit Bhaumik",
   },
   { id: 6, url: "", name: "Kunal Ajay Wasnik" },
+  {
+    id: 7,
+    url: "https://www.linkedin.com/in/biswadeep-debnath-03634b202",
+    name: "Biswadeep Debnath",
+  },
+  {
+    id: 8,
+    url: "https://www.linkedin.com/in/ila-ananta-padha-98a687137/",
+    name: "Ila Ananta",
+  },
+  {
+    id: 9,
+    url: "https://www.linkedin.com/in/rithwik-pradeep/",
+    name: "rithwik-pradeep",
+  },
 ];
 
 const itemsCurrentSIX = [
@@ -232,7 +247,7 @@ const itemsCurrentSEVEN = [
   {
     id: 14,
     url: "https://www.linkedin.com/in/abhay-kumar-singh-474731201/?trk=public_profile_browsemap&originalSubdomain=in",
-    name: " Abhay Kumar Singh",
+    name: "Abhay Kumar Singh",
   },
   {
     id: 15,
