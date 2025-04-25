@@ -29,6 +29,8 @@ import Dprofile from "@/assets/profile/default-profile.svg";
 import Bdebnath from "@/assets/profile/potrait/BiswadeepDebnath.png";
 import ilana from "@/assets/profile/potrait/IlaAnanta.jpeg";
 import ritwik from "@/assets/profile/potrait/RithwikPradeep.jpg";
+import Arnab from "@/assets/profile/potrait/ArnabRoy.jpg";
+import Srikar from "@/assets/profile/potrait/VedantamSrikar.jpg";
 
 interface Person {
   image: string;
@@ -209,7 +211,7 @@ const data: Person[] = [
   {
     image: alok.src,
     name: "Alokendu Mazumder",
-    designation: "PMRF-PhD Scholar (Started Aug 2021)",
+    designation: "PMRF-PhD Scholar (Started 2021)",
     designationLabel: "Research Scholar",
     email: "alokendum@iisc.ac.in",
     research: "Computer Vision, 3D-Object Detection and Tracking, GANs.",
@@ -220,7 +222,7 @@ const data: Person[] = [
   {
     image: paritosh.src,
     name: "Paritosh Tiwari",
-    designation: "PhD Scholar (Started Aug 2022)",
+    designation: "PhD Scholar (Started 2022)",
     designationLabel: "Research Scholar",
     email: "paritosht@iisc.ac.in",
     research: "Clustering, Unsupervised Learning and Data Analytics",
@@ -232,7 +234,7 @@ const data: Person[] = [
   {
     image: tirthajit.src,
     name: "Tirthajit Baruah",
-    designation: "PhD Scholar (Started Aug 2023)",
+    designation: "PhD Scholar (Started 2023)",
     designationLabel: "Research Scholar",
     email: "tirthajitb@iisc.ac.in",
     research:
@@ -245,7 +247,7 @@ const data: Person[] = [
   {
     image: srs.src,
     name: "Sourav Ranjan Saraf",
-    designation: "PhD Scholar (Started Aug 2023)",
+    designation: "PhD Scholar (Started 2023)",
     designationLabel: "Research Scholar",
     email: "souravr@iisc.ac.in",
     research: "Deep Learning",
@@ -257,7 +259,7 @@ const data: Person[] = [
   {
     image: rankit.src,
     name: "Rankit Kachroo",
-    designation: "PhD Scholar (Started Aug 2024)",
+    designation: "PhD Scholar (Started 2024)",
     designationLabel: "Research Scholar",
     email: "rankitk@iisc.ac.in",
     research:
@@ -271,7 +273,7 @@ const data: Person[] = [
   {
     image: Dprofile.src,
     name: "Shailja Sharma",
-    designation: "M.Tech Research (Started Aug 2024)",
+    designation: "M.Tech Research (Started 2024)",
     designationLabel: "Research Scholar",
     email: "",
     research: "Unsupervised Learning, Computer Vision, Cyber-Security",
@@ -284,7 +286,7 @@ const data: Person[] = [
   {
     image: Romit.src,
     name: "Romit Bhaumik",
-    designation: "M.Tech in Robotics and Autonomous Systems (Started Aug 2023)",
+    designation: "M.Tech in Robotics and Autonomous Systems (Started 2023)",
     designationLabel: "M.Tech",
     email: "romitbhaumik@iisc.ac.in",
     research: "Deep Learning, Image Processing, Multimodal Models",
@@ -296,7 +298,7 @@ const data: Person[] = [
   {
     image: kunal.src,
     name: "Kunal Wasnik",
-    designation: "M.Tech in Robotics and Autonomous Systems (Started Aug 2023)",
+    designation: "M.Tech in Robotics and Autonomous Systems (Started 2023)",
     designationLabel: "M.Tech",
     email: "kunalajay@iisc.ac.in",
     research: "Unsupervised Machine Learning, Cyber Security, Edge AI",
@@ -348,7 +350,7 @@ const data: Person[] = [
   {
     image: jyotish.src,
     name: "Jyotish Ranjan",
-    designation: "M.Tech in Artificial Intelligence (Started Aug 2023)",
+    designation: "M.Tech in Artificial Intelligence (Started 2023)",
     designationLabel: "M.Tech",
     email: "jyotishr@iisc.ac.in",
     research: "Computer Vision, NLP, ML",
@@ -361,7 +363,7 @@ const data: Person[] = [
   {
     image: Dprofile.src,
     name: "Ashhar Zaman",
-    designation: "M.Tech in Mobility Engineering (Started Aug 2023)",
+    designation: "M.Tech in Mobility Engineering (Started 2023)",
     designationLabel: "M.Tech",
     email: "ashharzaman@iisc.ac.in",
     research: "Cyber-Security, ML, Mobility, Transportation",
@@ -441,7 +443,7 @@ const data: Person[] = [
   {
     image: sidhant.src,
     name: "Sidhant Sharma",
-    designation: "M.Tech in Artificial Intelligence (Started Aug 2023)",
+    designation: "M.Tech in Artificial Intelligence (Started 2023)",
     designationLabel: "M.Tech",
     email: "ssidhant@iisc.ac.in",
     research: "Machine Learning,  Representation Learning, Deep Learning.",
@@ -453,7 +455,7 @@ const data: Person[] = [
   {
     image: syedlateef.src,
     name: "Syed Lateef",
-    designation: "M.Tech in Artificial Intelligence (Started Aug 2023)",
+    designation: "M.Tech in Artificial Intelligence (Started 2023)",
     designationLabel: "M.Tech",
     email: "syedlateef@iisc.ac.in",
     research:
@@ -467,7 +469,7 @@ const data: Person[] = [
   {
     image: Bdebnath.src,
     name: "Biswadeep Debnath",
-    designation: "M.Tech in Robotics and Autonomous Systems",
+    designation: "M.Tech in Robotics and Autonomous Systems (Started 2024)",
     designationLabel: "M.Tech",
     email: "biswadeepd@iisc.ac.in",
     research: "Machine Learning, Computer Vision, Edge AI",
@@ -480,7 +482,7 @@ const data: Person[] = [
   {
     image: ilana.src,
     name: "Ila Ananta",
-    designation: "M.Tech in Robotics and Autonomous Systems",
+    designation: "M.Tech in Robotics and Autonomous Systems (Started 2024)",
     designationLabel: "M.Tech",
     email: "ilaananta@iisc.ac.in",
     research:
@@ -493,7 +495,7 @@ const data: Person[] = [
   {
     image: ritwik.src,
     name: "Rithwik Pradeep",
-    designation: "M.Tech in Robotics and Autonomous Systems",
+    designation: "M.Tech in Robotics and Autonomous Systems (Started 2024)",
     designationLabel: "M.Tech",
     email: "rithwikp@iisc.ac.in",
     research: "Computer Vision, Edge AI",
@@ -502,7 +504,30 @@ const data: Person[] = [
     scholar: "",
     portfolio: "",
   },
-
+  {
+    image: Arnab.src,
+    name: "Arnab Roy",
+    designation: "M.Tech in Artificial Intelligence (Started 2024)",
+    designationLabel: "M.Tech",
+    email: "arnabroy@iisc.ac.in",
+    research: "",
+    linkedin: "",
+    github: "",
+    scholar: "",
+    portfolio: "",
+  },
+  {
+    image: Srikar.src,
+    name: "Srikar Vedantam",
+    designation: "M.Tech in Artificial Intelligence (Started 2024)",
+    designationLabel: "M.Tech",
+    email: "srikarv@iisc.ac.in",
+    research: "Graph Machine Learning",
+    linkedin: "https://www.linkedin.com/in/rithwik-pradeep/",
+    github: "",
+    scholar: "",
+    portfolio: "",
+  },
   {
     image: ram.src,
     name: "Ram Samarth B B",

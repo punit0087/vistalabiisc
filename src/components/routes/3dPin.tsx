@@ -30,27 +30,27 @@ import iitR from "@/assets/brand/iit_roorkee.svg";
 
 import ericsson from "@/assets/brand/Ericsson.svg";
 import toyota from "@/assets/brand/Toyota.svg";
+import npci from "@/assets/brand/npci.svg";
 
 import { BackgroundCellAnimation } from "@/components/ui/BackgroundRippleEffect";
 
-import npci from "@/assets/brand/npci.svg";
+import academic from "@/assets/collaborators/academic(collaborators).svg";
+import industry from "@/assets/collaborators/industry.svg";
+import government from "@/assets/collaborators/government.svg";
 
 export function AnimatedPin() {
   return (
     <>
       <BackgroundCellAnimation />
-
-      
-      <div className="flex justify-between sm:flex-col">
-        <div
-          className="flex items-start w-[10%] mt-60 -ml-20 sm:ml-8 sm:mt-4"
-          id="left"
-        >
-          <div className="transform -rotate-90 text-[6rem] font-semibold border-b-2 sm:rotate-0 sm:text-[2rem]">
-            ACADEMIC
-          </div>
+      <div className="flex sm:flex-col">
+        <div className="flex mt-8 sm:rotate-90 sm:mt-32" id="left">
+          <Image
+            src={academic}
+            className="w-48 h-fit ml-8 -mr-4 sm:w-12 "
+            alt=""
+          />
         </div>
-        <div className="w-[80%] ml-16 sm:ml-10" id="right">
+        <div className="w-fit ml-16 sm:ml-10 sm:-mt-40" id="right">
           <div className="mb-6 flex items-center justify-center sm:flex-col">
             <PinContainer title="Massachusetts Institute of Technology (MIT), Cambridge, USA">
               <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[16rem]">
@@ -205,16 +205,15 @@ export function AnimatedPin() {
         </div>
       </div>
 
-      <div className="flex justify-between sm:flex-col">
-        <div
-          className="flex items-start w-[10%] mt-60 -ml-20 sm:ml-8 sm:mt-4"
-          id="left"
-        >
-          <div className="transform -rotate-90 text-[6rem] font-semibold border-b-2 sm:rotate-0 sm:text-[2rem]">
-            INDUSTRY
-          </div>
+      <div className="flex sm:flex-col">
+        <div className="flex mt-8 sm:rotate-90 sm:mt-32" id="left">
+          <Image
+            src={industry}
+            className="w-48 h-fit ml-8 -mr-4 sm:w-12 "
+            alt=""
+          />
         </div>
-        <div className="w-[80%] ml-16 sm:ml-10" id="right">
+        <div className="w-fit ml-16 sm:ml-10 sm:-mt-40" id="right">
           <div className="mb-6 flex items-center justify-center sm:flex-col">
             <PinContainer title="Bosch">
               <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[16rem]">
@@ -287,16 +286,15 @@ export function AnimatedPin() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between mt-20 sm:flex-col">
-        <div
-          className="flex items-start w-[10%] mt-60 -ml-40 sm:ml-8 sm:mt-4"
-          id="left"
-        >
-          <div className="transform -rotate-90 text-[6rem] font-semibold border-b-2 sm:rotate-0 sm:text-[2rem]">
-            GOVERNMENT
-          </div>
+      <div className="flex mt-20 sm:flex-col">
+        <div className="flex mt-8 sm:rotate-90 sm:mt-32" id="left">
+          <Image
+            src={government}
+            className="w-48 h-fit ml-8 -mr-4 sm:w-12 "
+            alt=""
+          />
         </div>
-        <div className="w-[80%] ml-16 sm:ml-10" id="right">
+        <div className="w-fit ml-16 sm:ml-10 sm:-mt-40" id="right">
           <div className="mb-6 flex items-center justify-center sm:flex-col">
             <PinContainer title="NPCI">
               <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[16rem] ">
