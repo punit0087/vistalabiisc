@@ -113,3 +113,21 @@ body {
 .no-bg-popup .mapboxgl-popup-tip {
   display: none !important; /* or also background: transparent !important; */
 }
+
+/* Always show spinner for number inputs */
+.spinner-always::-webkit-inner-spin-button,
+.spinner-always::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* Optional: Ensure spinners always visible and styled consistently */
+.spinner-always {
+  -moz-appearance: textfield; /* reset firefox default */
+  position: relative;
+}
+
+.spinner-always::-webkit-inner-spin-button {
+  opacity: 1 !important;
+  display: block;
+  margin-right: 8px;
+}
