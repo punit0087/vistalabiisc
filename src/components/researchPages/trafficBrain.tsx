@@ -79,24 +79,24 @@ const vehicleTypes: Record<number, VehicleClass> = {
 // starting coords, stop‑lines … UNCHANGED
 const xCoords: Record<Direction, number[]> = {
   right: [0, 0, 0],
-  down: [755, 710, 686],
+  down: [755, 713, 690],
   left: [1366, 1366, 1366],
-  up: [650, 642, 662],
+  up: [660, 643, 665],
 };
 const yCoords: Record<Direction, number[]> = {
-  right: [300, 302, 324],
+  right: [300, 300, 322],
   down: [0, 0, 0],
-  left: [300, 348, 370],
+  left: [300, 346, 368],
   up: [768, 768, 768],
 };
 const stopLines: Record<Direction, number> = {
-  right: 565,
+  right: 560,
   down: 220,
   left: 802,
   up: 460,
 };
 const defaultStop: Record<Direction, number> = {
-  right: 560,
+  right: 555,
   down: 210,
   left: 812,
   up: 470,
@@ -229,9 +229,9 @@ const signals: TrafficSignal[] = [
 
 const signalCoords: [number, number][] = [
   [516, 180],
-  [739, 162],
-  [754, 390],
-  [529, 402],
+  [742, 162],
+  [759, 390],
+  [529, 408],
 ];
 
 const stoppingGap = 5;
@@ -1557,16 +1557,17 @@ export default function TrafficSimulation() {
         }}
       >
         <div>
-          <strong>Spawned Vehicles:</strong> {spawnedCount} / {TOTAL_VEHICLES}
+          <strong>Generated Vehicles:</strong> {spawnedCount} / {TOTAL_VEHICLES}
         </div>
         <div>
           <strong>Crossed Vehicles:</strong> {totalPassed} / {TOTAL_VEHICLES}
         </div>
         <div>
-          <strong>Vehicles in Simulation:</strong> {onScreenCount} visible
+          <strong>Active Vehicles:</strong> {onScreenCount} / {TOTAL_VEHICLES}
         </div>
         <div>
-          <strong>Waiting Vehicles:</strong> {spawnedCount - totalPassed}
+          <strong>Waiting Vehicles:</strong> {spawnedCount - totalPassed} /{" "}
+          {TOTAL_VEHICLES}
         </div>
         <div>
           <strong>Time (seconds):</strong> {timeElapsed.toFixed(1)} / 292.0
