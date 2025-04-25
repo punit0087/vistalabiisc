@@ -1542,7 +1542,7 @@ export default function TrafficSimulation() {
       <LogsWindow />
 
       <div
-        className="bg-zinc-800 backdrop-blur-sm text-xs text-zinc-400"
+        className="bg-zinc-800 backdrop-blur-sm text-xs text-zinc-300"
         style={{
           position: "absolute",
           bottom: 0,
