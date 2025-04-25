@@ -1372,6 +1372,9 @@ export default function TrafficSimulation() {
               left: "1.7rem",
             }}
           >
+            <p className="absolute z-10 -mt-6 font-semibold text-xs text-zinc-300 ml-5">
+              (in seconds)
+            </p>
             <div
               className="absolute w-full h-10 rounded text-center text-white focus:outline-none border text-sm 
                    bg-zinc-500 border-zinc-400"
@@ -1557,18 +1560,16 @@ export default function TrafficSimulation() {
           <strong>Spawned Vehicles:</strong> {spawnedCount} / {TOTAL_VEHICLES}
         </div>
         <div>
-          <strong>Vehicles crossed Signal:</strong> {totalPassed} /{" "}
-          {TOTAL_VEHICLES}
+          <strong>Crossed Vehicles:</strong> {totalPassed} / {TOTAL_VEHICLES}
         </div>
         <div>
           <strong>Vehicles in Simulation:</strong> {onScreenCount} visible
         </div>
         <div>
-          <strong>Vehicles not crossed Signal:</strong>{" "}
-          {spawnedCount - totalPassed}
+          <strong>Waiting Vehicles:</strong> {spawnedCount - totalPassed}
         </div>
         <div>
-          <strong>Time (sec):</strong> {timeElapsed.toFixed(1)} / 292.0
+          <strong>Time (seconds):</strong> {timeElapsed.toFixed(1)} / 292.0
         </div>
       </div>
       {/* {(["right", "down", "left", "up"] as Direction[]).map((dir) => (
