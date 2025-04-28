@@ -185,6 +185,11 @@ const itemsCurrentSIX = [
   },
 
   { id: 3, url: "", name: "Chinmay Mhatre" },
+  {
+    id: 4,
+    url: "https://www.linkedin.com/in/snehilseenu/",
+    name: "Snehil Seenu",
+  },
 ];
 
 const itemsCurrentSEVEN = [
@@ -196,7 +201,7 @@ const itemsCurrentSEVEN = [
   {
     id: 2,
     url: "https://www.linkedin.com/in/pranay-pandey-085176141/",
-    name: " Pranay Pandey",
+    name: "Pranay Pandey",
   },
   {
     id: 3,
@@ -206,7 +211,7 @@ const itemsCurrentSEVEN = [
   {
     id: 4,
     url: "https://www.linkedin.com/in/akash-agrawal-059307143/?originalSubdomain=in",
-    name: " Akash Agrawal",
+    name: "Akash Agrawal",
   },
   {
     id: 5,
