@@ -32,18 +32,25 @@ import Link from "next/link";
 export function EvervaultCards() {
   const projects = [
     {
-      name: "Vehicle REID",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/reid",
-      img: vehiclereid,
-    },
-    {
       name: "CycloAI",
       year: "2023-25",
       //description: "Funded by: Anusandhan National Research Foundation (previously SERB)",
       url: "/P_portfolio/research/cyc",
       img: Cyc,
+    },
+    {
+      name: "TrafficBrain",
+      year: "2023-25",
+      //description: "Funded by: Bharat Electronics Limited (BEL)",
+      url: "/P_portfolio/research/TB",
+      img: tfo,
+    },
+    {
+      name: "Vehicle REID",
+      year: "2023-25",
+      // description: "Funded By: Indian Space Research Organisation (ISRO)",
+      url: "/P_portfolio/research/reid",
+      img: vehiclereid,
     },
     {
       name: "Deep-Clustering",
@@ -81,13 +88,6 @@ export function EvervaultCards() {
       //description: "Funded by: Bharat Electronics Limited (BEL)",
       url: "/P_portfolio/research/CW",
       img: eauav,
-    },
-    {
-      name: "TrafficBrain",
-      year: "2023-25",
-      //description: "Funded by: Bharat Electronics Limited (BEL)",
-      url: "/P_portfolio/research/TB",
-      img: tfo,
     },
     {
       name: "UPGRID",
