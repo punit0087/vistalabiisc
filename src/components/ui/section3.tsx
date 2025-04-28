@@ -57,7 +57,7 @@ const itemsCurrentTWO = [
     url: "https://www.linkedin.com/in/pruthvish-rajput-435636187/",
     name: "Pruthvish Rajput - Research Associate",
   },
-  { id: 3, url: "", name: "Aravind Reddy - Research Associate" },
+  { id: 3, url: "", name: "Aravinda Reddy - Research Associate" },
   {
     id: 4,
     url: "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/",
@@ -96,11 +96,11 @@ const itemsCurrentFOUR = [
     url: "https://www.linkedin.com/in/mayesh-mohapatra/",
     name: "Mayesh Mohapatra",
   },
-  {
-    id: 2,
-    url: "https://www.linkedin.com/in/shaurya374/",
-    name: "Shaurya Pratap Singh",
-  },
+  // {
+  //   id: 2,
+  //   url: "https://www.linkedin.com/in/shaurya374/",
+  //   name: "Shaurya Pratap Singh",
+  // },
   {
     id: 3,
     url: "https://www.linkedin.com/in/adityaarvind5696/",
@@ -125,6 +125,11 @@ const itemsCurrentFOUR = [
     id: 7,
     url: "https://www.linkedin.com/in/anushtha-tamrakar/",
     name: "Anushtha Tamrakar",
+  },
+  {
+    id: 7,
+    url: "https://www.linkedin.com/in/anushtha-tamrakar/",
+    name: "Siddhant Saxena",
   },
 ];
 
@@ -193,6 +198,11 @@ const itemsCurrentSIX = [
 ];
 
 const itemsCurrentSEVEN = [
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/shaurya374/",
+    name: "Shaurya Pratap Singh",
+  },
   {
     id: 1,
     url: "https://www.linkedin.com/in/crishna0401/?originalSubdomain=in",

@@ -168,19 +168,19 @@ const data: Person[] = [
     portfolio: "",
   },
 
-  {
-    image: shaurya.src,
-    name: "Shaurya Pratap Singh",
-    designation: "Project Associate",
-    designationLabel: "Research Staff",
-    email: "shauryaprat1@iisc.ac.in",
-    research:
-      "Computer Vision, Advanced Driver Assistance Systems (ADAS), Sensor Fusion, ML For Constrained Devices",
-    linkedin: "https://in.linkedin.com/in/shaurya374",
-    github: "https://github.com/asfriendlyascarbon",
-    scholar: "",
-    portfolio: "",
-  },
+  // {
+  //   image: shaurya.src,
+  //   name: "Shaurya Pratap Singh",
+  //   designation: "Project Associate",
+  //   designationLabel: "Research Staff",
+  //   email: "shauryaprat1@iisc.ac.in",
+  //   research:
+  //     "Computer Vision, Advanced Driver Assistance Systems (ADAS), Sensor Fusion, ML For Constrained Devices",
+  //   linkedin: "https://in.linkedin.com/in/shaurya374",
+  //   github: "https://github.com/asfriendlyascarbon",
+  //   scholar: "",
+  //   portfolio: "",
+  // },
 
   {
     image: rishab.src,

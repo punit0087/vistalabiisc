@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 
+import bel from "@/assets/brand/bharatelectronics.png";
+
 //
 // ──────────────────────────────────────────────────────────────────────────
 //  CONSTANTS, TYPES,  INITIAL‑SETUP (UNCHANGED)
@@ -1535,6 +1537,35 @@ export default function TrafficSimulation() {
               )
             )
           )}
+        </div>
+      </div>
+
+      {/* funded by */}
+      <div
+        className="absolute right-4 top-14 flex flex-col"
+        style={{ width: "276px" }}
+      >
+        <div className="flex flex-col items-center rounded-xl bg-zinc-800/80 backdrop-blur-sm p-4">
+          <a
+            href="https://bel-india.in"
+            target="_blank"
+            className="text-xs font-semibold text-zinc-400 no-underline"
+          >
+            <Image src={bel} alt="" className="px-3" />{" "}
+            <p className="flex mt-3 items-center justify-center text-xs">
+              Funded by Bharat Electronics Limited
+            </p>
+          </a>
+          {/* <p className="text-xs font-semibold text-zinc-400 mt-2">
+              &thinsp; | &thinsp;
+            </p>
+            <a
+              href="https://www.mosdac.gov.in/"
+              target="_blank"
+              className="text-xs font-semibold text-zinc-400 mt-2 no-underline"
+            >
+              Supported by MOSDAC
+            </a> */}
         </div>
       </div>
 
