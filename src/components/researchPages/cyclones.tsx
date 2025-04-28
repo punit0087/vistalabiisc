@@ -59,13 +59,13 @@ const gradeColors: Record<string, string> = {
 };
 
 const aiGradeColors: Record<string, string> = {
-  D: "#094063",
-  DD: "#35687a",
-  CS: "#237d7d",
-  SCS: "#547854",
-  VSCS: "#7a6840",
-  ESCS: "#70323d",
-  SuCS: "#443966",
+  D: "#1491de",
+  DD: "#6ec1ea",
+  CS: "#4cffff",
+  SCS: "#c0ffbf",
+  VSCS: "#ffd98c",
+  ESCS: "#ff738a",
+  SuCS: "#a188fc",
 };
 
 const MAPBOX_TOKEN =
@@ -1015,7 +1015,7 @@ export default function Cyclones() {
                   type="line"
                   filter={["==", "$type", "LineString"]}
                   paint={{
-                    "line-width": 1,
+                    "line-width": 2,
                     "line-dasharray": [2, 2],
                     "line-color": ["get", "color"],
                   }}
