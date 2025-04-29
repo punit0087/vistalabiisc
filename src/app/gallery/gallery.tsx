@@ -73,7 +73,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
       {/* LIGHTBOX */}
       {selectedImage && (
         <div className="fixed inset-0 flex flex-col bg-black bg-opacity-90 z-50">
-          <div className="flex justify-around items-start mt-32">
+          <div className="flex justify-around items-start mt-20">
             <div className="grid space-y-96">
               <button onClick={handleClose} className="rounded">
                 <Image src={close} alt="Close" width={48} height={48} />
@@ -84,12 +84,10 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
             </div>
 
             <div className="flex items-center justify-center sm:mt-10">
-              <Image
+              <img
                 src={selectedImage}
                 alt={images[selectedIndex].alt}
-                className="object-contain rounded-lg"
-                width={800}
-                height={600}
+                className="object-contain rounded-lg w-[70vw] h-[74vh]"
               />
             </div>
 
