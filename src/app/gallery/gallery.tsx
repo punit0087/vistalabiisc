@@ -122,9 +122,7 @@ const Gallery: React.FC = () => {
               <Image
                 src={selectedImage as StaticImageData}
                 alt="Selected Image"
-                width={1000}
-                height={1000}
-                className="object-contain rounded-lg"
+                className="object-contain rounded-lg w-auto h-[50%]"
               />
             </div>
             <div className="grid space-y-96">

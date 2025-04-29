@@ -17,6 +17,14 @@
       "citationCount": "0"
     },
     {
+      "title": "Benchmarking Object Detection and Tracking for UAVs: An Algorithmic Comparison",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:HDshCWvjkbEC",
+      "authors": "PS Rathore, A Balana, R Bhaumik, V Pattanaik, P Rathore",
+      "publicationDate": "2024",
+      "journal": "2024 IEEE International Conference on Vehicular Electronics and Safety …, 2024",
+      "citationCount": "0"
+    },
+    {
       "title": "STEAM: Squeeze and Transform Enhanced Attention Module",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:IWHjjKOFINEC",
       "authors": "R Sabharwal, PS Rathore, P Rathore",
@@ -38,7 +46,7 @@
       "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
       "publicationDate": "2024",
       "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "4"
+      "citationCount": "24"
     },
     {
       "title": "Adding Explainability to Visual Clustering Tendency Assessment (VAT) Methods Through Feature Importance",
@@ -62,7 +70,7 @@
       "authors": "A Mazumder, T Baruah, B Kumar, R Sharma, V Pattanaik, P Rathore",
       "publicationDate": "2024",
       "journal": "Proceedings of the IEEE/CVF Winter Conference on Applications of Computer …, 2024",
-      "citationCount": "0"
+      "citationCount": "1"
     },
     {
       "title": "Feature Engineering for Anomaly Detection and Classification of Blockchain Transactions",
@@ -78,7 +86,7 @@
       "authors": "NJ Sai, P Rathore, K Sridharan, A Chauhan",
       "publicationDate": "2023",
       "journal": "Fusion Engineering and Design 195, 113964, 2023",
-      "citationCount": "5"
+      "citationCount": "6"
     },
     {
       "title": "A Theoretical and Empirical Study on the Convergence of Adam with an\" Exact\" Constant Step Size in Non-Convex Settings",
@@ -94,7 +102,7 @@
       "authors": "NJ Sai, P Rathore, A Chauhan",
       "publicationDate": "2023",
       "journal": "Scripta Materialia 226, 115214, 2023",
-      "citationCount": "40"
+      "citationCount": "42"
     },
     {
       "title": "DeepVAT: A Self-Supervised Technique for Cluster Assessment in Image Datasets",
@@ -151,23 +159,15 @@
       "publicationDate": "2021",
       "journal": "IEEE Transactions on Intelligent Transportation Systems 23 (9), 14570-14581, 2021",
       "citationCount": "20"
-    },
-    {
-      "title": "An unsupervised approach for driving behavior analysis of professional truck drivers",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:ULOm3_A8WrAC",
-      "authors": "S Milardo, P Rathore, P Santi, R Buteau, C Ratti",
-      "publicationDate": "2021",
-      "journal": "International Conference on Intelligent Transport Systems, 44-56, 2021",
-      "citationCount": "1"
     }
   ],
   "metrics": {
-    "citationsAll": "597",
-    "citationsSince2019": "528",
-    "hIndexAll": "12",
+    "citationsAll": "631",
+    "citationsSince2019": "562",
+    "hIndexAll": "13",
     "hIndexSince2019": "12",
-    "i10IndexAll": "13",
-    "i10IndexSince2019": "13"
+    "i10IndexAll": "14",
+    "i10IndexSince2019": "14"
   },
   "graphData": [
     {
@@ -184,7 +184,7 @@
     },
     {
       "year": "2021",
-      "citations": "70"
+      "citations": "72"
     },
     {
       "year": "2022",
@@ -192,15 +192,15 @@
     },
     {
       "year": "2023",
-      "citations": "119"
+      "citations": "118"
     },
     {
       "year": "2024",
-      "citations": "124"
+      "citations": "126"
     },
     {
       "year": "2025",
-      "citations": "33"
+      "citations": "64"
     }
   ]
 }
