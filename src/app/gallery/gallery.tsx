@@ -104,7 +104,10 @@ const Gallery: React.FC = () => {
       </div>
 
       {selectedImage && (
-        <div className="fixed inset-0 flex flex-col bg-black bg-opacity-90">
+        <div
+          className="fixed inset-0 flex flex-col bg-black bg-opacity-90"
+          style={{ zIndex: 99 }}
+        >
           <div className="flex justify-around items-start mt-32">
             <div className="grid space-y-96">
               <button className="rounded" onClick={handleClose}>
