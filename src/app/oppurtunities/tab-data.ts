@@ -16,7 +16,7 @@ export interface Tab {
 export const tabData: Tab[] = [
   {
     id: "tab-1",
-    title: "Intern / Assistant",
+    title: "Research Intern / Assistant",
     positions: [
       // {
       //   title: `Design and Development of Instrumented Vehicle for Urban Sensing --Development of IoT Sensor System / Embedded system interfacing (Instrumented-Vehicle-SensorSystem)`,
