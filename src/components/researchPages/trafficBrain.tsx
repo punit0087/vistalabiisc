@@ -52,6 +52,15 @@ interface Vehicle {
   color: string;
 }
 
+// Part 3 – session summary logs
+interface SessionLog {
+  pattern: string;
+  mode: ModeType;
+  green: number;
+  yellow: number;
+  duration: number;
+}
+
 // --- vehicle specs, coords, helpers … UNCHANGED ----------------------------------
 
 const vehicleSpecs: Record<
@@ -103,6 +112,12 @@ const defaultStop: Record<Direction, number> = {
   left: 812,
   up: 470,
 };
+
+const spawnPatterns = [
+  { label: "Pattern 1", pattern: [2, 1, 2, 1] }, //w-n-e-s
+  { label: "Pattern 2", pattern: [1, 2, 2, 1] }, //w-n-e-s
+  { label: "Pattern 3", pattern: [1, 1, 3, 1] }, //w-n-e-s
+];
 
 function StopLineVisual({
   direction,
@@ -164,16 +179,17 @@ function isInViewport(v: Vehicle) {
     xRight >= 0 && v.x <= canvasWidth && yBottom >= 0 && v.y <= canvasHeight
   );
 }
-
-// Logs for each cycle
-const cycleLogs: {
+// ── in place of your old cycleLogs ──
+interface CycleLog {
   cycleNumber: number;
-  westOrigin: number;
-  northOrigin: number;
-  eastOrigin: number;
-  southOrigin: number;
-  totalPassed: number;
-}[] = [];
+  generated: number;
+  crossed: number;
+  cycleTime: number;
+}
+const cycleLogs: CycleLog[] = [];
+
+// new var to track spawns per cycle
+let previousSpawnedCount = 0;
 
 // --- data‑structures for vehicles, turns, etc.  (UNCHANGED) ----------------------
 
@@ -256,104 +272,6 @@ function setDefaultCycleTimes() {
   currentGreen = 2;
   currentYellow = 0;
   nextGreen = 3;
-}
-
-//
-// ------- SIGNAL & CYCLE FUNCTIONS -------
-//
-
-function finishCurrentDirection(simTime: number) {
-  // Reset the current green
-  signals[currentGreen].green = 10;
-  signals[currentGreen].yellow = 2;
-  signals[currentGreen].red = 36;
-
-  // Exactly like your Python code does:
-  // "When the current green finishes, reset .stop = defaultStop"
-  // for all vehicles in that direction (so next cycle doesn't push them further).
-  const dirStr = directionNumbers[currentGreen];
-  for (let lane = 0; lane < 3; lane++) {
-    const arr = vehiclesObj[dirStr][lane as 0 | 1 | 2];
-    for (let i = 0; i < arr.length; i++) {
-      arr[i].stop = defaultStop[dirStr];
-    }
-  }
-
-  // Move to next direction
-  cycleIndex = (cycleIndex + 1) % 4;
-  currentGreen = signalSequence[cycleIndex];
-  currentYellow = 0;
-  nextGreen = signalSequence[(cycleIndex + 1) % 4];
-  signals[currentGreen].red = 0;
-
-  // If we cycle back to West=2 => new cycle
-  if (currentGreen === 2) {
-    cycleCount++;
-    const westOrigin = directionOriginCounts.left;
-    const northOrigin = directionOriginCounts.up;
-    const eastOrigin = directionOriginCounts.right;
-    const southOrigin = directionOriginCounts.down;
-
-    const totalPassedNow =
-      vehiclesObj.right.crossed +
-      vehiclesObj.down.crossed +
-      vehiclesObj.left.crossed +
-      vehiclesObj.up.crossed;
-    const passedThisCycle = totalPassedNow - previousTotalPassed;
-    previousTotalPassed = totalPassedNow;
-
-    cycleLogs.push({
-      cycleNumber: cycleCount,
-      westOrigin,
-      northOrigin,
-      eastOrigin,
-      southOrigin,
-      totalPassed: passedThisCycle,
-    });
-
-    cycleStartTime = simTime;
-  }
-}
-
-function updateSignalTimers(simTime: number) {
-  const sg = signals[currentGreen];
-  // Decrement green, then go to yellow
-  if (currentYellow === 0) {
-    sg.green -= 1;
-    if (sg.green <= 0) {
-      currentYellow = 1;
-    }
-  } else {
-    sg.yellow -= 1;
-    if (sg.yellow <= 0) {
-      finishCurrentDirection(simTime);
-    }
-  }
-  // Decrement red for all others
-  for (let i = 0; i < 4; i++) {
-    if (i !== currentGreen && signals[i].red > 0) {
-      signals[i].red -= 1;
-    }
-  }
-}
-
-//
-// ------- VEHICLE SPAWNING -------
-//
-
-// 6 vehicles/second => East(0)x2, West(2)x2, North(3)x1, South(1)x1
-function spawnVehiclesPerSecond() {
-  if (remainingToSpawn <= 0) return;
-  const needed = Math.min(6, remainingToSpawn);
-
-  const directions = [0, 0, 2, 2, 3, 1];
-  for (let i = 0; i < needed; i++) {
-    const v = spawnVehicleForDirection(directions[i]);
-    if (v) {
-      spawnedCount++;
-      remainingToSpawn--;
-    }
-  }
 }
 
 // We replicate Python logic: 40% chance to turn if lane=1 or lane=2
@@ -881,15 +799,12 @@ function LogsWindow() {
     e.stopPropagation();
     e.preventDefault();
   };
-
   const display = cycleLogs.map((c) => (
     <div key={c.cycleNumber} style={{ marginBottom: 8 }}>
-      <strong>Cycle {c.cycleNumber}</strong>
-      <div>West origin: {c.westOrigin}</div>
-      <div>North origin: {c.northOrigin}</div>
-      <div>East origin: {c.eastOrigin}</div>
-      <div>South origin: {c.southOrigin}</div>
-      <div>Vehicle Passed: {c.totalPassed}</div>
+      <strong>Cycle {c.cycleNumber}:</strong>
+      <div>Generated Vehicles: {c.generated}</div>
+      <div>Crossed Vehicles: {c.crossed}</div>
+      <div>Cycle Time: {c.cycleTime.toFixed(1)} seconds</div>
     </div>
   ));
 
@@ -986,6 +901,136 @@ export default function TrafficSimulation() {
   const lastFrameRef = React.useRef(0);
   const spawnAccumulatorRef = React.useRef(0);
   const signalAccumulatorRef = React.useRef(0);
+  const [spawnPatternIndex, setSpawnPatternIndex] = React.useState(0);
+  const [sessionLogs, setSessionLogs] = React.useState<SessionLog[]>([]);
+
+  const simTimeRef = React.useRef(0); // running simulation clock (sec)
+  const cycleStartRef = React.useRef(0); // start-time of current cycle (sec)
+
+  // when simulation stops & timeElapsed reached full run, record one entry
+  React.useEffect(() => {
+    if (!running && allDone()) {
+      setSessionLogs((prev) => [
+        ...prev,
+        {
+          pattern: spawnPatterns[spawnPatternIndex].pattern.join("→"),
+          mode,
+          green: tempGreen,
+          yellow: tempYellow,
+          duration: timeElapsed,
+        },
+      ]);
+    }
+  }, [running]);
+
+  //
+  // ------- VEHICLE SPAWNING -------
+  //
+
+  function spawnVehiclesPerSecond() {
+    if (remainingToSpawn <= 0) return;
+    const pattern = spawnPatterns[spawnPatternIndex].pattern;
+    const totalThisSec = pattern.reduce((a, b) => a + b, 0);
+    const needed = Math.min(totalThisSec, remainingToSpawn);
+
+    // build direction array [0×E,1×S,2×W,3×N]
+    const directions: number[] = [];
+    pattern.forEach((count, dirIdx) => {
+      for (let j = 0; j < count; j++) directions.push(dirIdx);
+    });
+
+    for (let i = 0; i < needed; i++) {
+      const v = spawnVehicleForDirection(directions[i]);
+      if (v) {
+        spawnedCount++;
+        remainingToSpawn--;
+      }
+    }
+  }
+
+  //
+  // ------- SIGNAL & CYCLE FUNCTIONS -------
+  //
+
+  function finishCurrentDirection() {
+    const g = tempGreen;
+    const y = tempYellow;
+    const cycleSpan = g + y;
+
+    signals[currentGreen].green = g;
+    signals[currentGreen].yellow = y;
+    signals[currentGreen].red = 3 * cycleSpan;
+
+    const dirStr = directionNumbers[currentGreen];
+    for (let lane = 0; lane < 3; lane++) {
+      const arr = vehiclesObj[dirStr][lane as 0 | 1 | 2];
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].stop = defaultStop[dirStr];
+      }
+    }
+
+    // Move to next direction
+    cycleIndex = (cycleIndex + 1) % 4;
+    currentGreen = signalSequence[cycleIndex];
+    currentYellow = 0;
+    nextGreen = signalSequence[(cycleIndex + 1) % 4];
+    signals[currentGreen].red = 0;
+
+    if (currentGreen === 2) {
+      // completed a full W→N→E→S cycle
+      cycleCount++;
+
+      // totals right now
+      const totalPassedNow =
+        vehiclesObj.right.crossed +
+        vehiclesObj.down.crossed +
+        vehiclesObj.left.crossed +
+        vehiclesObj.up.crossed;
+      const passedThisCycle = totalPassedNow - previousTotalPassed;
+
+      const totalSpawnedNow = spawnedCount;
+      const generatedThisCycle = totalSpawnedNow - previousSpawnedCount;
+
+      // *** use the ref for timing ***
+      const cycleDuration = simTimeRef.current - cycleStartRef.current;
+
+      cycleLogs.push({
+        cycleNumber: cycleCount,
+        generated: generatedThisCycle,
+        crossed: passedThisCycle,
+        cycleTime: cycleDuration,
+      });
+
+      // update “previous” trackers
+      previousTotalPassed = totalPassedNow;
+      previousSpawnedCount = totalSpawnedNow;
+
+      // start time for the next cycle
+      cycleStartRef.current = simTimeRef.current;
+    }
+  }
+
+  function updateSignalTimers() {
+    const sg = signals[currentGreen];
+    // Decrement green, then go to yellow
+    if (currentYellow === 0) {
+      sg.green -= 1;
+      if (sg.green <= 0) {
+        currentYellow = 1;
+      }
+    } else {
+      sg.yellow -= 1;
+      if (sg.yellow <= 0) {
+        finishCurrentDirection();
+      }
+    }
+    // Decrement red for all others
+    for (let i = 0; i < 4; i++) {
+      if (i !== currentGreen && signals[i].red > 0) {
+        signals[i].red -= 1;
+      }
+    }
+  }
 
   // ——————————————————— AI presets ————————————————————
   const aiPresets = [
@@ -1044,12 +1089,24 @@ export default function TrafficSimulation() {
       signals[idx].yellow = y;
       signals[idx].red = i * (g + y); // 0, 1·(g+y), 2·(g+y), 3·(g+y)
     }
-
-    /* ---------- NEW:  start the sim if it’s idle ---------- */
     if (!running) {
       // (<‑‑ add these three lines)
       startSimulation();
     }
+  }
+
+  function allDone() {
+    const totalPassedNow =
+      vehiclesObj.right.crossed +
+      vehiclesObj.down.crossed +
+      vehiclesObj.left.crossed +
+      vehiclesObj.up.crossed;
+
+    return (
+      spawnedCount === TOTAL_VEHICLES && // a) everyone generated
+      totalPassedNow === TOTAL_VEHICLES && // b) everyone crossed
+      getActiveVehicleCount() === 0 // c) no one still visible
+    );
   }
 
   // ——————————————————— animation‑loop ————————————————————
@@ -1071,6 +1128,9 @@ export default function TrafficSimulation() {
 
     // Perform fixed-step updates (movement and logic)
     while (deltaMs >= FIXED_DT * 1000) {
+      // advance the sim clock by one fixed step
+      simTimeRef.current += FIXED_DT;
+
       setTimeElapsed((t) => {
         const next = Math.min(t + FIXED_DT, 292);
         if (next >= 292) stopSimulation();
@@ -1088,7 +1148,11 @@ export default function TrafficSimulation() {
       // update signal timers exactly once per second
       if (signalAccumulatorRef.current >= 1) {
         signalAccumulatorRef.current -= 1;
-        updateSignalTimers(Math.floor(timeElapsed));
+        updateSignalTimers();
+        if (allDone()) {
+          stopSimulation(); // halts the loop
+          return; // abort further physics this frame
+        }
       }
 
       // critical: movement logic always with FIXED_DT
@@ -1102,10 +1166,17 @@ export default function TrafficSimulation() {
 
   function startSimulation() {
     if (running) return;
+    // ✱ initialise timers *before* the first RAF
+    simTimeRef.current = 0; // reset global clock
+    cycleStartRef.current = 0; // start counting Cycle-1 now
+    previousTotalPassed = 0; // nothing crossed yet
+    previousSpawnedCount = 0; // nothing spawned yet
+
     setRunning(true);
     lastFrameRef.current = 0;
     animationFrameRef.current = requestAnimationFrame(animateFrame);
   }
+
   function stopSimulation() {
     setRunning(false);
     if (animationFrameRef.current !== null) {
@@ -1116,6 +1187,9 @@ export default function TrafficSimulation() {
 
   // —— resetAll (UNCHANGED except it calls handleDefaultMode at end) ————
   function resetAll() {
+    simTimeRef.current = 0;
+    cycleStartRef.current = 0;
+
     stopSimulation();
     setTimeElapsed(0);
     cycleLogs.length = 0;
@@ -1124,6 +1198,7 @@ export default function TrafficSimulation() {
     spawnedCount = 0;
     remainingToSpawn = TOTAL_VEHICLES;
     previousTotalPassed = 0;
+    previousSpawnedCount = 0;
 
     // Clear
     for (let d = 0; d < 4; d++) {
@@ -1218,6 +1293,12 @@ export default function TrafficSimulation() {
     );
   }
 
+  // inside TrafficSimulation(), right under the other handlers
+  const handlePatternChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    resetAll(); // ❶ wipe the current run
+    setSpawnPatternIndex(+e.target.value); // ❷ store the new pattern
+  };
+
   // ▒▒▒  Main canvas  ▒▒▒
   return (
     <div
@@ -1293,6 +1374,23 @@ export default function TrafficSimulation() {
           </div>
         </div>
 
+        {/* ── Spawn-pattern selector ── */}
+        <div className="flex items-center text-xs text-zinc-200 space-x-2">
+          <label htmlFor="spawn-mode">Spawn Pattern:</label>
+          <select
+            id="spawn-mode"
+            className="bg-zinc-800 border border-zinc-600 rounded px-2 py-1"
+            value={spawnPatternIndex}
+            onChange={handlePatternChange}
+          >
+            {spawnPatterns.map((sp, i) => (
+              <option key={i} value={i}>
+                {sp.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
         {/* ——— Play / Pause ——— */}
         <div className="flex items-center gap-4 transition-all duration-300">
           {/* Play/Pause (or “Set” in manual mode) */}
@@ -1312,6 +1410,7 @@ export default function TrafficSimulation() {
               onClick={() =>
                 mode === "manual" ? handleSet() : startSimulation()
               }
+              disabled={allDone()}
               className="transition-transform hover:scale-105"
             >
               <img
@@ -1620,6 +1719,38 @@ export default function TrafficSimulation() {
           />
         </React.Fragment>
       ))} */}
+
+      {sessionLogs.length > 0 && (
+        <div className="p-4 mt-[90vh] text-white absolute">
+          <h2 className="text-lg font-semibold mb-2">Session Summary</h2>
+          <table className="table-auto w-full border-collapse">
+            <thead>
+              <tr>
+                <th className="border px-4 py-2">Mode</th>
+                <th className="border px-4 py-2">
+                  Pattern (E-{">"}S-{">"}W-{">"}N)
+                </th>
+                <th className="border px-4 py-2">Green Time</th>
+                <th className="border px-4 py-2">Yellow Time</th>
+                <th className="border px-4 py-2">Sim Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sessionLogs.map((s, i) => (
+                <tr key={i}>
+                  <td className="border px-4 py-2">{s.mode}</td>
+                  <td className="border px-4 py-2">{s.pattern}</td>
+                  <td className="border px-4 py-2">{s.green} seconds</td>
+                  <td className="border px-4 py-2">{s.yellow} seconds</td>
+                  <td className="border px-4 py-2">
+                    {s.duration.toFixed(1)} seconds
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
