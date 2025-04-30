@@ -26,7 +26,7 @@ export default function JobListings() {
 
   return (
     <div className="w-full px-[20%] sm:px-[8%] mx-auto p-6 text-white">
-      <div className="mb-40">
+      {/* <div className="mb-40">
         <h2 className="text-2xl font-semibold text-zinc-300 mb-4">
           Internship Recruitment Results
         </h2>
@@ -99,7 +99,7 @@ export default function JobListings() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
       <Tabs defaultValue={jobs[0].id} className="w-full">
         <TabsList className="grid w-full grid-cols-3 sm:grid-cols-1">
           {jobs.map((tab) => (
@@ -168,8 +168,9 @@ export default function JobListings() {
                     href={position.applyLink}
                     // target="_blank"
                     rel="noopener noreferrer"
+                    target="_blank"
                   >
-                    Closed
+                    Apply Now
                   </a>
                 </Button>
               </div>
