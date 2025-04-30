@@ -197,7 +197,8 @@ export default function JobListings() {
         positions and if I did not respond to you within a week, I request you
         to send a reminder email. If you don't hear from me within a week after
         the reminder email, this means I have seen your application carefully
-        but did not find it suitable for the advertised positions. <br /> <br />
+        but did not find it suitable for the advertised positions. <br /> <br />{" "}
+        <br />
         <p className="text-xl font-bold text-zinc-200">
           Graduate Research (M.Tech (Research) / PhD)
         </p>
@@ -208,7 +209,7 @@ export default function JobListings() {
           <a href="https://admissions.iisc.ac.in">admissions.iisc.ac.in</a>{" "}
           during March-April and September-October of every year. Admission
           announcements are made at{" "}
-          <a href="https://iisc.ac.in/admissions/">iisc.ac.in/admissions/</a>.
+          <a href="https://iisc.ac.in/admissions/">https://iisc.ac.in/admissions/</a>.
         </p>
         <p>
           <br />

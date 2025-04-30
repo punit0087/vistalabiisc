@@ -45,7 +45,7 @@ export const tabData: Tab[] = [
 
   {
     id: "tab-2",
-    title: "Research Project Assistant / Associate",
+    title: "Project / Research Associate",
     positions: [
       {
         title:
@@ -129,7 +129,7 @@ export const tabData: Tab[] = [
   },
   {
     id: "tab-3",
-    title: "Research Scientist / Assistant",
+    title: "Project / Research Scientist",
     positions: [
       {
         title:
