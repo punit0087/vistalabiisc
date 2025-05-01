@@ -906,9 +906,21 @@ export default function TrafficSimulation() {
   const simTimeRef = React.useRef(0); // running simulation clock (sec)
   const cycleStartRef = React.useRef(0); // start-time of current cycle (sec)
 
+  const [showScrollIndicator, setShowScrollIndicator] = React.useState(false);
+
+  // when sessionLogs first becomes non-empty, show the indicator
+  React.useEffect(() => {
+    if (sessionLogs.length > 0) {
+      setShowScrollIndicator(true);
+    }
+  }, [sessionLogs.length]);
+
+  const MAX_SIM_TIME = 292; // seconds
+
   // when simulation stops & timeElapsed reached full run, record one entry
   React.useEffect(() => {
-    if (!running && allDone()) {
+    // when the sim stops AND either everyone crossed OR time ran out
+    if (!running && (allDone() || timeElapsed >= MAX_SIM_TIME)) {
       setSessionLogs((prev) => [
         ...prev,
         {
@@ -1185,9 +1197,73 @@ export default function TrafficSimulation() {
   }
 
   // —— resetAll (UNCHANGED except it calls handleDefaultMode at end) ————
+  function resetPattern() {
+    simTimeRef.current = 0;
+    cycleStartRef.current = 0;
+    setShowScrollIndicator(false);
+
+    stopSimulation();
+    setTimeElapsed(0);
+    cycleLogs.length = 0;
+    cycleCount = 0;
+    cycleStartTime = 0;
+    spawnedCount = 0;
+    remainingToSpawn = TOTAL_VEHICLES;
+    previousTotalPassed = 0;
+    previousSpawnedCount = 0;
+
+    // Clear
+    for (let d = 0; d < 4; d++) {
+      const dir = directionNumbers[d];
+      vehiclesObj[dir][0] = [];
+      vehiclesObj[dir][1] = [];
+      vehiclesObj[dir][2] = [];
+      vehiclesObj[dir].crossed = 0;
+    }
+    (["right", "down", "left", "up"] as Direction[]).forEach((dir) => {
+      vehiclesTurned[dir][1] = [];
+      vehiclesTurned[dir][2] = [];
+      vehiclesNotTurned[dir][1] = [];
+      vehiclesNotTurned[dir][2] = [];
+    });
+    directionOriginCounts.right = 0;
+    directionOriginCounts.down = 0;
+    directionOriginCounts.left = 0;
+    directionOriginCounts.up = 0;
+
+    // Reset signals
+    signals[2] = { red: 0, green: 10, yellow: 2 };
+    signals[3] = { red: 12, green: 10, yellow: 2 };
+    signals[0] = { red: 24, green: 10, yellow: 2 };
+    signals[1] = { red: 36, green: 10, yellow: 2 };
+
+    cycleIndex = 0;
+    currentGreen = 2;
+    currentYellow = 0;
+    nextGreen = 3;
+    setTempGreen(10);
+    setTempYellow(2);
+
+    spawnAccumulatorRef.current = 0;
+    signalAccumulatorRef.current = 0;
+    lastFrameRef.current = 0;
+
+    // Also reset xCoords,yCoords so new spawn starts fresh
+    xCoords.right = [0, 0, 0];
+    xCoords.down = [755, 710, 686];
+    xCoords.left = [1366, 1366, 1366];
+    xCoords.up = [650, 642, 662];
+
+    yCoords.right = [300, 302, 324];
+    yCoords.down = [0, 0, 0];
+    yCoords.left = [300, 348, 370];
+    yCoords.up = [768, 768, 768];
+  }
+
   function resetAll() {
     simTimeRef.current = 0;
     cycleStartRef.current = 0;
+    setShowScrollIndicator(false);
 
     stopSimulation();
     setTimeElapsed(0);
@@ -1294,7 +1370,7 @@ export default function TrafficSimulation() {
 
   // inside TrafficSimulation(), right under the other handlers
   const handlePatternChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    resetAll(); // ❶ wipe the current run
+    resetPattern();
     setSpawnPatternIndex(+e.target.value); // ❷ store the new pattern
   };
 
@@ -1331,6 +1407,7 @@ export default function TrafficSimulation() {
           className="flex items-center space-x-2"
           style={{ opacity: running ? 1 : 1 /* always active */ }}
         >
+          <p>Signal Control Mode:</p>
           <div className="relative w-[350px] h-8 border border-zinc-600 rounded-full flex items-center">
             <div
               className="absolute w-[107px] h-6 bg-zinc-600 rounded-full transition-all"
@@ -1424,7 +1501,7 @@ export default function TrafficSimulation() {
         {/* ——— speed buttons ——— */}
         <div style={{ width: "16rem" }}>
           <span style={{ marginRight: 6 }}>Speed:</span>
-          {[1, 2, 3, 5, 10, 20, 30].map((mult) => (
+          {[1, 2, 3, 5, 10].map((mult) => (
             <button
               key={mult}
               onClick={() => setTimeScale(mult)}
@@ -1719,8 +1796,27 @@ export default function TrafficSimulation() {
         </React.Fragment>
       ))} */}
 
+      {/* ─── Scroll-down arrow ─── */}
+      {showScrollIndicator && sessionLogs.length > 0 && (
+        <button
+          onClick={() => {
+            const el = document.getElementById("session-summary");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+            setShowScrollIndicator(false);
+          }}
+          className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-50 bg-zinc-800 p-4 rounded-sm text-xl"
+          aria-label="Scroll to session summary"
+        >
+          <span className="text-white animate-bounce">↓</span>
+          <span className="text-white mt-1">Scroll for session summary</span>
+        </button>
+      )}
+
       {sessionLogs.length > 0 && (
-        <div className="p-4 mt-[90vh] text-zinc-300 absolute bg-zinc-800">
+        <div
+          id="session-summary"
+          className="p-4 mt-[90vh] text-zinc-300 absolute bg-zinc-800"
+        >
           <h2 className="text-lg font-semibold mb-2">Session Summary</h2>
           <table className="table-auto w-full border-collapse border border-zinc-600">
             <thead>
@@ -1731,7 +1827,7 @@ export default function TrafficSimulation() {
                 </th>
                 <th className="border px-4 py-2">Green Time</th>
                 <th className="border px-4 py-2">Yellow Time</th>
-                <th className="border px-4 py-2">Sim Duration</th>
+                <th className="border px-4 py-2">Total Simulation Duration</th>
               </tr>
             </thead>
             <tbody>
