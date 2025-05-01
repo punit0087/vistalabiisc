@@ -24,7 +24,7 @@ const pauseIcon = "/images/pause.svg";
 
 type VehicleClass = "car" | "bus" | "truck" | "bike";
 type Direction = "right" | "down" | "left" | "up";
-type ModeType = "default" | "manual" | "ai";
+type ModeType = "Default" | "Manual" | "AI";
 
 interface TrafficSignal {
   red: number;
@@ -123,18 +123,18 @@ function StopLineVisual({
   direction,
   position,
   color = "red",
-  type = "stop", // "stop" or "default"
+  type = "stop", // "stop" or "Default"
 }: {
   direction: Direction;
   position: number;
   color?: string;
-  type?: "stop" | "default";
+  type?: "stop" | "Default";
 }) {
   const thickness = 2;
   const lineStyle = {
     position: "absolute" as const,
     backgroundColor: color,
-    opacity: type === "default" ? 0.5 : 1,
+    opacity: type === "Default" ? 0.5 : 1,
     zIndex: 5,
   };
 
@@ -165,8 +165,7 @@ function StopLineVisual({
           }}
         />
       );
-    default:
-      return null;
+      Default: return null;
   }
 }
 
@@ -744,28 +743,28 @@ function ModeToggle({
         className="absolute w-[107px] h-8 bg-zinc-600 rounded-full transition-all"
         style={{
           left:
-            mode === "default"
+            mode === "Default"
               ? "4px"
-              : mode === "manual"
+              : mode === "Manual"
               ? "calc(50% - 54px)"
               : "calc(100% - 110px)",
         }}
       />
       <button
         className="relative w-1/3 text-zinc-200"
-        onClick={() => setMode("default")}
+        onClick={() => setMode("Default")}
       >
         Default
       </button>
       <button
         className="relative w-1/3 text-zinc-200"
-        onClick={() => setMode("manual")}
+        onClick={() => setMode("Manual")}
       >
         Manual
       </button>
       <button
         className="relative w-1/3 text-zinc-200"
-        onClick={() => setMode("ai")}
+        onClick={() => setMode("AI")}
       >
         AI
       </button>
@@ -819,7 +818,7 @@ function LogsWindow() {
         border: "1px solid #aaa",
         zIndex: 9999,
         borderRadius: "10px",
-        cursor: dragging ? "move" : "default",
+        cursor: dragging ? "move" : "Default",
       }}
       className="text-sm"
       onMouseMove={onMouseMove}
@@ -895,7 +894,7 @@ export default function TrafficSimulation() {
 
   const [tempGreen, setTempGreen] = React.useState(10);
   const [tempYellow, setTempYellow] = React.useState(2);
-  const [mode, setMode] = React.useState<ModeType>("default");
+  const [mode, setMode] = React.useState<ModeType>("Default");
 
   const animationFrameRef = React.useRef<number | null>(null);
   const lastFrameRef = React.useRef(0);
@@ -913,7 +912,7 @@ export default function TrafficSimulation() {
       setSessionLogs((prev) => [
         ...prev,
         {
-          pattern: spawnPatterns[spawnPatternIndex].pattern.join("→"),
+          pattern: spawnPatterns[spawnPatternIndex].pattern.join("--"),
           mode,
           green: tempGreen,
           yellow: tempYellow,
@@ -1043,7 +1042,7 @@ export default function TrafficSimulation() {
 
   // ——————————————————— helpers to switch mode ————————————————————
   function handleDefaultMode() {
-    setMode("default");
+    setMode("Default");
     setTempGreen(10);
     setTempYellow(2);
     setDefaultCycleTimes();
@@ -1051,7 +1050,7 @@ export default function TrafficSimulation() {
 
   function handleAI() {
     const preset = aiPresets[Math.floor(Math.random() * aiPresets.length)];
-    setMode("ai");
+    setMode("AI");
     setTempGreen(preset.green);
     setTempYellow(preset.yellow);
 
@@ -1068,11 +1067,11 @@ export default function TrafficSimulation() {
 
   // manual: we only enable UI; actual apply is via “Set” button
   function handleManualToggle() {
-    setMode("manual");
+    setMode("Manual");
   }
 
   function handleSet() {
-    if (mode !== "manual") return; // safety guard
+    if (mode !== "Manual") return; // safety guard
 
     const g = tempGreen;
     const y = tempYellow;
@@ -1229,7 +1228,7 @@ export default function TrafficSimulation() {
     currentGreen = 2;
     currentYellow = 0;
     nextGreen = 3;
-    setMode("default");
+    setMode("Default");
     setTempGreen(10);
     setTempYellow(2);
 
@@ -1337,9 +1336,9 @@ export default function TrafficSimulation() {
               className="absolute w-[107px] h-6 bg-zinc-600 rounded-full transition-all"
               style={{
                 left:
-                  mode === "default"
+                  mode === "Default"
                     ? "4px"
-                    : mode === "manual"
+                    : mode === "Manual"
                     ? "calc(50% - 54px)"
                     : "calc(100% - 110px)",
               }}
@@ -1376,7 +1375,7 @@ export default function TrafficSimulation() {
 
         {/* ── Spawn-pattern selector ── */}
         <div className="flex items-center text-xs text-zinc-200 space-x-2">
-          <label htmlFor="spawn-mode">Spawn Pattern:</label>
+          <label htmlFor="spawn-mode">Traffic Pattern:</label>
           <select
             id="spawn-mode"
             className="bg-zinc-800 border border-zinc-600 rounded px-2 py-1"
@@ -1401,21 +1400,21 @@ export default function TrafficSimulation() {
             >
               <img
                 src={pauseIcon}
-                alt={mode === "manual" ? "Set" : "Pause"}
+                alt={mode === "Manual" ? "Set" : "Pause"}
                 style={{ width: 18, height: 18 }}
               />
             </button>
           ) : (
             <button
               onClick={() =>
-                mode === "manual" ? handleSet() : startSimulation()
+                mode === "Manual" ? handleSet() : startSimulation()
               }
               disabled={allDone()}
               className="transition-transform hover:scale-105"
             >
               <img
                 src={playIcon}
-                alt={mode === "manual" ? "Set" : "Start"}
+                alt={mode === "Manual" ? "Set" : "Start"}
                 style={{ width: 18, height: 18 }}
               />
             </button>
@@ -1425,7 +1424,7 @@ export default function TrafficSimulation() {
         {/* ——— speed buttons ——— */}
         <div style={{ width: "16rem" }}>
           <span style={{ marginRight: 6 }}>Speed:</span>
-          {[1, 2, 3, 5, 10].map((mult) => (
+          {[1, 2, 3, 5, 10, 20, 30].map((mult) => (
             <button
               key={mult}
               onClick={() => setTimeScale(mult)}
@@ -1458,7 +1457,7 @@ export default function TrafficSimulation() {
       >
         <div
           className="flex items-center gap-2"
-          style={{ opacity: mode === "manual" ? 1 : 0.8 }}
+          style={{ opacity: mode === "Manual" ? 1 : 0.8 }}
         >
           <img
             src={signaln}
@@ -1498,11 +1497,11 @@ export default function TrafficSimulation() {
               type="number"
               min={1}
               title={
-                mode === "manual" ? "Enter values to begin manual mode" : ""
+                mode === "Manual" ? "Enter values to begin manual mode" : ""
               }
               className="spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none border border-zinc-400 text-sm mt-4 "
               value={tempYellow}
-              disabled={running || mode !== "manual"}
+              disabled={running || mode !== "Manual"}
               onChange={(e) => setTempYellow(+e.target.value)}
             />
             {/* green input */}
@@ -1510,10 +1509,10 @@ export default function TrafficSimulation() {
               type="number"
               min={1}
               title={
-                mode === "manual" ? "Enter values to begin manual mode" : ""
+                mode === "Manual" ? "Enter values to begin manual mode" : ""
               }
               value={tempGreen}
-              disabled={running || mode !== "manual"}
+              disabled={running || mode !== "Manual"}
               onChange={(e) => setTempGreen(+e.target.value)}
               className="spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none mt-4 border border-zinc-400 text-sm"
             />
@@ -1521,7 +1520,7 @@ export default function TrafficSimulation() {
             {/* Set button */}
             {/* <button
               onClick={handleSet}
-              disabled={running || mode !== "manual"}
+              disabled={running || mode !== "Manual"}
               className="w-full h-7 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none mt-4 border border-zinc-400 text-sm"
             >
               Set
@@ -1539,7 +1538,7 @@ export default function TrafficSimulation() {
           right: 0,
           bottom: 45,
           border: `1px solid ${
-            mode === "ai" ? "#a142f5" : mode === "manual" ? "orange" : "white"
+            mode === "AI" ? "#a142f5" : mode === "Manual" ? "orange" : "white"
           }`,
           overflow: "hidden",
         }}
@@ -1715,20 +1714,20 @@ export default function TrafficSimulation() {
             direction={dir}
             position={defaultStop[dir]}
             color="blue"
-            type="default"
+            type="Default"
           />
         </React.Fragment>
       ))} */}
 
       {sessionLogs.length > 0 && (
-        <div className="p-4 mt-[90vh] text-white absolute">
+        <div className="p-4 mt-[90vh] text-zinc-300 absolute bg-zinc-800">
           <h2 className="text-lg font-semibold mb-2">Session Summary</h2>
-          <table className="table-auto w-full border-collapse">
+          <table className="table-auto w-full border-collapse border border-zinc-600">
             <thead>
               <tr>
                 <th className="border px-4 py-2">Mode</th>
                 <th className="border px-4 py-2">
-                  Pattern (E-{">"}S-{">"}W-{">"}N)
+                  Traffic Pattern (vehicles per second: E--S--W--N)
                 </th>
                 <th className="border px-4 py-2">Green Time</th>
                 <th className="border px-4 py-2">Yellow Time</th>
