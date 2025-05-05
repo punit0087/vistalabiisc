@@ -896,6 +896,8 @@ export default function TrafficSimulation() {
   const [tempYellow, setTempYellow] = React.useState(2);
   const [mode, setMode] = React.useState<ModeType>("Default");
 
+  const [manualStarted, setManualStarted] = React.useState(false);
+
   const animationFrameRef = React.useRef<number | null>(null);
   const lastFrameRef = React.useRef(0);
   const spawnAccumulatorRef = React.useRef(0);
@@ -1103,6 +1105,7 @@ export default function TrafficSimulation() {
     if (!running) {
       // (<‑‑ add these three lines)
       startSimulation();
+      setManualStarted(true);
     }
   }
 
@@ -1198,6 +1201,7 @@ export default function TrafficSimulation() {
 
   // —— resetAll (UNCHANGED except it calls handleDefaultMode at end) ————
   function resetPattern() {
+    const wasPatternMode = mode === "Manual" || mode === "AI";
     simTimeRef.current = 0;
     cycleStartRef.current = 0;
     setShowScrollIndicator(false);
@@ -1258,6 +1262,20 @@ export default function TrafficSimulation() {
     yCoords.down = [0, 0, 0];
     yCoords.left = [300, 348, 370];
     yCoords.up = [768, 768, 768];
+
+    if (wasPatternMode) {
+      if (mode === "Manual") {
+        setManualStarted(false);
+      }
+      if (mode === "AI") {
+        handleAI();
+      }
+    } else {
+      setMode("Default");
+      setTempGreen(10);
+      setTempYellow(2);
+      setDefaultCycleTimes();
+    }
   }
 
   function resetAll() {
@@ -1520,7 +1538,7 @@ export default function TrafficSimulation() {
 
         {/* ——— reset ——— */}
         <button
-          onClick={resetAll}
+          onClick={mode === "Default" ? resetAll : resetPattern}
           className="text-xs font-semibold hover:scale-105 transition-all duration-300 h-6 border border-zinc-600 px-2 rounded-full"
         >
           Reset Simulation
@@ -1534,7 +1552,7 @@ export default function TrafficSimulation() {
       >
         <div
           className="flex items-center gap-2"
-          style={{ opacity: mode === "Manual" ? 1 : 0.8 }}
+          style={{ opacity: mode === "Manual" ? 1 : 0.7 }}
         >
           <img
             src={signaln}
@@ -1573,12 +1591,14 @@ export default function TrafficSimulation() {
             <input
               type="number"
               min={1}
+              disabled={mode !== "Manual" || manualStarted}
               title={
                 mode === "Manual" ? "Enter values to begin manual mode" : ""
               }
-              className="spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none border border-zinc-400 text-sm mt-4 "
+              className={`spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none border border-zinc-400 text-sm mt-4 ${
+                manualStarted ? "cursor-not-allowed bg-opacity-90" : ""
+              }`}
               value={tempYellow}
-              disabled={running || mode !== "Manual"}
               onChange={(e) => setTempYellow(+e.target.value)}
             />
             {/* green input */}
@@ -1589,10 +1609,18 @@ export default function TrafficSimulation() {
                 mode === "Manual" ? "Enter values to begin manual mode" : ""
               }
               value={tempGreen}
-              disabled={running || mode !== "Manual"}
+              disabled={mode !== "Manual" || manualStarted}
               onChange={(e) => setTempGreen(+e.target.value)}
-              className="spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none mt-4 border border-zinc-400 text-sm"
+              className={`spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none border border-zinc-400 text-sm mt-4 ${
+                manualStarted ? "cursor-not-allowed bg-opacity-90" : ""
+              }`}
             />
+
+            {mode === "Manual" && manualStarted && (
+              <p className="mt-2 text-xs text-yellow-300">
+                Reset simulation to change values
+              </p>
+            )}
 
             {/* Set button */}
             {/* <button
