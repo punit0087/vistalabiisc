@@ -899,7 +899,7 @@ export default function Cyclones() {
           </div>
           <button
             style={{}}
-            className="pl-3 pr-3 py-2 font-semibold"
+            className="text-xs font-semibold hover:scale-105 transition-all duration-300 h-6 border border-zinc-600 px-2 rounded-full"
             onClick={handleMapResetButton}
           >
             Reset View

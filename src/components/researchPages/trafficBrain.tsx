@@ -59,6 +59,8 @@ interface SessionLog {
   green: number;
   yellow: number;
   duration: number;
+  activeVehicles: number;
+  waitingVehicles: number;
 }
 
 // --- vehicle specs, coords, helpers … UNCHANGED ----------------------------------
@@ -931,6 +933,8 @@ export default function TrafficSimulation() {
           green: tempGreen,
           yellow: tempYellow,
           duration: timeElapsed,
+          activeVehicles: getActiveVehicleCount(),
+          waitingVehicles: spawnedCount - totalPassed,
         },
       ]);
     }
@@ -1395,371 +1399,380 @@ export default function TrafficSimulation() {
   // ▒▒▒  Main canvas  ▒▒▒
   return (
     <div
-      style={{
-        position: "relative",
-        width: "1366px",
-        height: "768px",
-        backgroundColor: "#ccc",
-        marginTop: "103px",
-        zIndex: 999,
-      }}
+      className="relative mt-[103px] w-full flex justify-center bg-black"
+      style={{ zIndex: 999 }}
     >
-      {/* ─── TOP TOOLBAR ────────────────────────────────────────── */}
       <div
-        className="bg-zinc-800 backdrop-blur-sm text-xs text-zinc-300"
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 45,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "8px 2rem",
+          position: "relative",
+          width: "1366px",
+          height: "768px",
+          backgroundColor: "#ccc",
           zIndex: 999,
         }}
       >
-        {/* ——— triple‑toggle for mode ——— */}
+        {/* ─── TOP TOOLBAR ────────────────────────────────────────── */}
         <div
-          className="flex items-center space-x-2"
-          style={{ opacity: running ? 1 : 1 /* always active */ }}
+          className="bg-zinc-800 backdrop-blur-sm text-xs text-zinc-300"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 45,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "8px 2rem",
+            zIndex: 999,
+          }}
         >
-          <p>Signal Control Mode:</p>
-          <div className="relative w-[350px] h-8 border border-zinc-600 rounded-full flex items-center">
-            <div
-              className="absolute w-[107px] h-6 bg-zinc-600 rounded-full transition-all"
-              style={{
-                left:
-                  mode === "Default"
-                    ? "4px"
-                    : mode === "Manual"
-                    ? "calc(50% - 54px)"
-                    : "calc(100% - 110px)",
-              }}
-            />
-            <button
-              className="relative text-zinc-300 w-1/3"
-              onClick={() => {
-                resetAll();
-                handleDefaultMode();
-              }}
-            >
-              Default
-            </button>
-            <button
-              className="relative text-zinc-300 w-1/3"
-              onClick={() => {
-                resetAll();
-                handleManualToggle();
-              }}
-            >
-              Manual
-            </button>
-            <button
-              className="relative text-zinc-300 w-1/3"
-              onClick={() => {
-                resetAll();
-                handleAI();
-              }}
-            >
-              AI
-            </button>
-          </div>
-        </div>
-
-        {/* ── Spawn-pattern selector ── */}
-        <div className="flex items-center text-xs text-zinc-200 space-x-2">
-          <label htmlFor="spawn-mode">Traffic Pattern:</label>
-          <select
-            id="spawn-mode"
-            className="bg-zinc-800 border border-zinc-600 rounded px-2 py-1"
-            value={spawnPatternIndex}
-            onChange={handlePatternChange}
-          >
-            {spawnPatterns.map((sp, i) => (
-              <option key={i} value={i}>
-                {sp.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* ——— Play / Pause ——— */}
-        <div className="flex items-center gap-4 transition-all duration-300">
-          {/* Play/Pause (or “Set” in manual mode) */}
-          {running ? (
-            <button
-              onClick={() => stopSimulation()}
-              className="transition-transform hover:scale-105"
-            >
-              <img
-                src={pauseIcon}
-                alt={mode === "Manual" ? "Set" : "Pause"}
-                style={{ width: 18, height: 18 }}
-              />
-            </button>
-          ) : (
-            <button
-              onClick={() =>
-                mode === "Manual" ? handleSet() : startSimulation()
-              }
-              disabled={allDone()}
-              className="transition-transform hover:scale-105"
-            >
-              <img
-                src={playIcon}
-                alt={mode === "Manual" ? "Set" : "Start"}
-                style={{ width: 18, height: 18 }}
-              />
-            </button>
-          )}
-        </div>
-
-        {/* ——— speed buttons ——— */}
-        <div style={{ width: "16rem" }}>
-          <span style={{ marginRight: 6 }}>Speed:</span>
-          {[1, 2, 3, 5, 10].map((mult) => (
-            <button
-              key={mult}
-              onClick={() => setTimeScale(mult)}
-              style={{
-                marginRight: 4,
-                backgroundColor: timeScale === mult ? "#3f3f46" : "",
-                padding: "6px",
-                borderRadius: 4,
-                color: timeScale === mult ? "#fff" : "",
-              }}
-            >
-              {mult}x
-            </button>
-          ))}
-        </div>
-
-        {/* ——— reset ——— */}
-        <button
-          onClick={mode === "Default" ? resetAll : resetPattern}
-          className="text-xs font-semibold hover:scale-105 transition-all duration-300 h-6 border border-zinc-600 px-2 rounded-full"
-        >
-          Reset Simulation
-        </button>
-      </div>
-
-      {/* ─── MANUAL‑MODE CONTROL CARD (drills into the signal image) ─── */}
-      <div
-        className="absolute"
-        style={{ top: "2.7rem", left: "2rem", zIndex: 9 }}
-      >
-        <div
-          className="flex items-center gap-2"
-          style={{ opacity: mode === "Manual" ? 1 : 0.7 }}
-        >
-          <img
-            src={signaln}
-            alt=""
-            style={{ width: "18rem", marginTop: "1rem" }}
-          />
+          {/* ——— triple‑toggle for mode ——— */}
           <div
-            className="flex flex-col w-[40%] absolute"
-            style={{
-              marginLeft: "5.75rem",
-              top: "3rem",
-              left: "1.7rem",
-            }}
+            className="flex items-center space-x-2"
+            style={{ opacity: running ? 1 : 1 /* always active */ }}
           >
-            <p className="absolute z-10 -mt-6 font-semibold text-xs text-zinc-300 ml-5">
-              (in seconds)
-            </p>
-            <div
-              className="absolute w-full h-10 rounded text-center text-white focus:outline-none border text-sm 
-                   bg-zinc-500 border-zinc-400"
-            ></div>
-            {/* red‑preview boxes */}
-            <div className="flex justify-between">
-              {redPreview.map((val, idx) => (
-                <div
-                  key={idx}
-                  className="w-full h-10 flex items-center justify-center text-zinc-300 text-xs mx-1 z-10 cursor-pointer"
-                  title={`Lane ${idx} red timer`}
-                >
-                  {val}
-                </div>
-              ))}
+            <b>Signal Control Mode:</b>
+            <div className="relative w-[350px] h-8 border border-zinc-600 rounded-full flex items-center">
+              <div
+                className="absolute w-[107px] h-6 bg-zinc-600 rounded-full transition-all"
+                style={{
+                  left:
+                    mode === "Default"
+                      ? "4px"
+                      : mode === "Manual"
+                      ? "calc(50% - 54px)"
+                      : "calc(100% - 110px)",
+                }}
+              />
+              <button
+                className="relative text-zinc-300 w-1/3"
+                onClick={() => {
+                  resetAll();
+                  handleDefaultMode();
+                }}
+              >
+                Default
+              </button>
+              <button
+                className="relative text-zinc-300 w-1/3"
+                onClick={() => {
+                  resetAll();
+                  handleManualToggle();
+                }}
+              >
+                Manual
+              </button>
+              <button
+                className="relative text-zinc-300 w-1/3"
+                onClick={() => {
+                  resetAll();
+                  handleAI();
+                }}
+              >
+                AI
+              </button>
             </div>
+          </div>
 
-            {/* yellow input */}
-            <input
-              type="number"
-              min={1}
-              disabled={mode !== "Manual" || manualStarted}
-              title={
-                mode === "Manual" ? "Enter values to begin manual mode" : ""
-              }
-              className={`spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none border border-zinc-400 text-sm mt-4 ${
-                manualStarted ? "cursor-not-allowed bg-opacity-90" : ""
-              }`}
-              value={tempYellow}
-              onChange={(e) => setTempYellow(+e.target.value)}
-            />
-            {/* green input */}
-            <input
-              type="number"
-              min={1}
-              title={
-                mode === "Manual" ? "Enter values to begin manual mode" : ""
-              }
-              value={tempGreen}
-              disabled={mode !== "Manual" || manualStarted}
-              onChange={(e) => setTempGreen(+e.target.value)}
-              className={`spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none border border-zinc-400 text-sm mt-4 ${
-                manualStarted ? "cursor-not-allowed bg-opacity-90" : ""
-              }`}
-            />
+          {/* ── Spawn-pattern selector ── */}
+          <div className="flex items-center text-xs text-zinc-200 space-x-2">
+            <b>Traffic Pattern:</b>
+            <select
+              id="spawn-mode"
+              className="bg-zinc-800 border border-zinc-600 rounded px-2 py-1"
+              value={spawnPatternIndex}
+              onChange={handlePatternChange}
+            >
+              {spawnPatterns.map((sp, i) => (
+                <option key={i} value={i}>
+                  {sp.label}
+                </option>
+              ))}
+            </select>
+          </div>
 
-            {mode === "Manual" && manualStarted && (
-              <p className="mt-2 text-xs text-yellow-300">
-                Reset simulation to change values
-              </p>
+          {/* ——— Play / Pause ——— */}
+          <div className="flex items-center gap-4 transition-all duration-300">
+            {/* Play/Pause (or “Set” in manual mode) */}
+            {running ? (
+              <button
+                onClick={() => stopSimulation()}
+                className="transition-transform hover:scale-105"
+              >
+                <img
+                  src={pauseIcon}
+                  alt={mode === "Manual" ? "Set" : "Pause"}
+                  style={{ width: 18, height: 18 }}
+                />
+              </button>
+            ) : (
+              <button
+                onClick={() =>
+                  mode === "Manual" ? handleSet() : startSimulation()
+                }
+                disabled={allDone()}
+                className="transition-transform hover:scale-105"
+              >
+                <img
+                  src={playIcon}
+                  alt={mode === "Manual" ? "Set" : "Start"}
+                  style={{ width: 18, height: 18 }}
+                />
+              </button>
             )}
+          </div>
 
-            {/* Set button */}
-            {/* <button
+          {/* ——— speed buttons ——— */}
+          <div style={{ width: "16rem" }}>
+            <b style={{ marginRight: 6 }}>Speed:</b>
+            {[1, 2, 3, 5, 10].map((mult) => (
+              <button
+                key={mult}
+                onClick={() => setTimeScale(mult)}
+                style={{
+                  marginRight: 4,
+                  backgroundColor: timeScale === mult ? "#3f3f46" : "",
+                  padding: "6px",
+                  borderRadius: 4,
+                  color: timeScale === mult ? "#fff" : "",
+                }}
+              >
+                {mult}x
+              </button>
+            ))}
+          </div>
+
+          {/* ——— reset ——— */}
+          <button
+            onClick={mode === "Default" ? resetAll : resetPattern}
+            className="text-xs font-semibold hover:scale-105 transition-all duration-300 h-6 border border-zinc-600 px-2 rounded-full"
+          >
+            Reset Simulation
+          </button>
+        </div>
+
+        {/* ─── MANUAL‑MODE CONTROL CARD (drills into the signal image) ─── */}
+        <div
+          className="absolute"
+          style={{ top: "2.7rem", left: "2rem", zIndex: 9 }}
+        >
+          <div
+            className="flex items-center gap-2"
+            style={{ opacity: mode === "Manual" ? 1 : 0.7 }}
+          >
+            <img
+              src={signaln}
+              alt=""
+              style={{ width: "18rem", marginTop: "1rem" }}
+            />
+            <div
+              className="flex flex-col w-[40%] absolute"
+              style={{
+                marginLeft: "5.75rem",
+                top: "3rem",
+                left: "1.7rem",
+              }}
+            >
+              <p className="absolute z-10 -mt-6 font-semibold text-xs text-zinc-300 ml-5">
+                (in seconds)
+              </p>
+              <div
+                className="absolute w-full h-10 rounded text-center text-white focus:outline-none border text-sm 
+                   bg-zinc-500 border-zinc-400"
+              ></div>
+              {/* red‑preview boxes */}
+              <div className="flex justify-between">
+                {redPreview.map((val, idx) => (
+                  <div
+                    key={idx}
+                    className="w-full h-10 flex items-center justify-center text-zinc-300 text-xs mx-1 z-10 cursor-pointer"
+                    title={`Lane ${idx} red timer`}
+                  >
+                    {val}
+                  </div>
+                ))}
+              </div>
+
+              {/* yellow input */}
+              <input
+                type="number"
+                min={1}
+                disabled={mode !== "Manual" || manualStarted}
+                title={
+                  mode === "Manual" ? "Enter values to begin manual mode" : ""
+                }
+                className={`spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none border border-zinc-400 text-sm mt-4 ${
+                  manualStarted ? "cursor-not-allowed bg-opacity-90" : ""
+                }`}
+                value={tempYellow}
+                onChange={(e) => setTempYellow(+e.target.value)}
+              />
+              {/* green input */}
+              <input
+                type="number"
+                min={1}
+                title={
+                  mode === "Manual" ? "Enter values to begin manual mode" : ""
+                }
+                value={tempGreen}
+                disabled={mode !== "Manual" || manualStarted}
+                onChange={(e) => setTempGreen(+e.target.value)}
+                className={`spinner-always w-full h-10 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none border border-zinc-400 text-sm mt-4 ${
+                  manualStarted ? "cursor-not-allowed bg-opacity-90" : ""
+                }`}
+              />
+
+              {mode === "Manual" && manualStarted && (
+                <p className="mt-2 text-xs text-yellow-300">
+                  Reset simulation to change values
+                </p>
+              )}
+
+              {/* Set button */}
+              {/* <button
               onClick={handleSet}
               disabled={running || mode !== "Manual"}
               className="w-full h-7 bg-zinc-500 rounded text-center text-zinc-300 focus:outline-none mt-4 border border-zinc-400 text-sm"
             >
               Set
             </button> */}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ─── INTERSECTION ────────────────────────────────────── */}
-      <div
-        style={{
-          position: "absolute",
-          top: 45,
-          left: 0,
-          right: 0,
-          bottom: 45,
-          border: `1px solid ${
-            mode === "AI" ? "#a142f5" : mode === "Manual" ? "orange" : "white"
-          }`,
-          overflow: "hidden",
-        }}
-      >
-        {/* background */}
+        {/* ─── INTERSECTION ────────────────────────────────────── */}
         <div
           style={{
-            width: "100%",
-            height: "100%",
-            backgroundImage: `url("${BACKGROUND_SRC}")`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            position: "absolute",
+            top: 45,
+            left: 0,
+            right: 0,
+            bottom: 45,
+            border: `1px solid ${
+              mode === "AI" ? "#a142f5" : mode === "Manual" ? "orange" : "white"
+            }`,
+            overflow: "hidden",
           }}
         >
-          {/* signals (UNCHANGED render logic) */}
-          {signals.map((sg, idx) => {
-            let imgSrc = RED_SIGNAL_SRC;
-            let timeLeft = 0;
-            if (idx === currentGreen) {
-              if (currentYellow === 1) {
-                imgSrc = YELLOW_SIGNAL_SRC;
-                timeLeft = sg.yellow;
+          {/* background */}
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url("${BACKGROUND_SRC}")`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* signals (UNCHANGED render logic) */}
+            {signals.map((sg, idx) => {
+              let imgSrc = RED_SIGNAL_SRC;
+              let timeLeft = 0;
+              if (idx === currentGreen) {
+                if (currentYellow === 1) {
+                  imgSrc = YELLOW_SIGNAL_SRC;
+                  timeLeft = sg.yellow;
+                } else {
+                  imgSrc = GREEN_SIGNAL_SRC;
+                  timeLeft = sg.green;
+                }
               } else {
-                imgSrc = GREEN_SIGNAL_SRC;
-                timeLeft = sg.green;
+                imgSrc = RED_SIGNAL_SRC;
+                timeLeft = sg.red;
               }
-            } else {
-              imgSrc = RED_SIGNAL_SRC;
-              timeLeft = sg.red;
-            }
-            const [sx, sy] = signalCoords[idx];
-            const rotation =
-              idx === 1 ? 90 : idx === 0 ? 0 : idx === 3 ? 270 : 180;
+              const [sx, sy] = signalCoords[idx];
+              const rotation =
+                idx === 1 ? 90 : idx === 0 ? 0 : idx === 3 ? 270 : 180;
 
-            return (
-              <React.Fragment key={idx}>
-                <img
-                  src={imgSrc}
-                  alt="signal"
-                  style={{
-                    position: "absolute",
-                    left: sx,
-                    top: sy,
-                    width: 90,
-                    height: 110,
-                    transform: `rotate(${rotation}deg)`,
-                    transformOrigin: "center",
-                    pointerEvents: "none",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    left:
-                      sx +
-                      (idx === 0 ? 20 : idx === 1 ? 62 : idx === 2 ? 20 : -23),
-                    top:
-                      sy +
-                      (idx === 0 ? 2 : idx === 1 ? 44 : idx === 2 ? 86 : 44),
-                    width: 50,
-                    textAlign: "center",
-                    fontWeight: "bold",
-                    color: "#a1a1aa",
-                    fontSize: 14,
-                    pointerEvents: "none",
-                  }}
-                >
-                  {timeLeft}
-                </div>
-              </React.Fragment>
-            );
-          })}
-
-          {/* vehicles (UNCHANGED) */}
-          {Object.keys(vehiclesObj).map((dirKey) =>
-            [0, 1, 2].map((lane) =>
-              vehiclesObj[dirKey as Direction][lane as 0 | 1 | 2].map(
-                (v, idx) => (
-                  <div
-                    key={`${dirKey}-${lane}-${idx}`}
+              return (
+                <React.Fragment key={idx}>
+                  <img
+                    src={imgSrc}
+                    alt="signal"
                     style={{
                       position: "absolute",
-                      left: v.x,
-                      top: v.y,
-                      width: v.width,
-                      height: v.height,
-                      borderRadius: "50%",
-                      backgroundColor: v.color,
-                      transform: `rotate(${v.rotateAngle}deg)`,
+                      left: sx,
+                      top: sy,
+                      width: 90,
+                      height: 110,
+                      transform: `rotate(${rotation}deg)`,
+                      transformOrigin: "center",
+                      pointerEvents: "none",
                     }}
                   />
+                  <div
+                    style={{
+                      position: "absolute",
+                      left:
+                        sx +
+                        (idx === 0
+                          ? 20
+                          : idx === 1
+                          ? 62
+                          : idx === 2
+                          ? 20
+                          : -23),
+                      top:
+                        sy +
+                        (idx === 0 ? 2 : idx === 1 ? 44 : idx === 2 ? 86 : 44),
+                      width: 50,
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      color: "#a1a1aa",
+                      fontSize: 14,
+                      pointerEvents: "none",
+                    }}
+                  >
+                    {timeLeft}
+                  </div>
+                </React.Fragment>
+              );
+            })}
+
+            {/* vehicles (UNCHANGED) */}
+            {Object.keys(vehiclesObj).map((dirKey) =>
+              [0, 1, 2].map((lane) =>
+                vehiclesObj[dirKey as Direction][lane as 0 | 1 | 2].map(
+                  (v, idx) => (
+                    <div
+                      key={`${dirKey}-${lane}-${idx}`}
+                      style={{
+                        position: "absolute",
+                        left: v.x,
+                        top: v.y,
+                        width: v.width,
+                        height: v.height,
+                        borderRadius: "50%",
+                        backgroundColor: v.color,
+                        transform: `rotate(${v.rotateAngle}deg)`,
+                      }}
+                    />
+                  )
                 )
               )
-            )
-          )}
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* funded by */}
-      <div
-        className="absolute right-4 top-14 flex flex-col"
-        style={{ width: "276px" }}
-      >
-        <div className="flex flex-col items-center rounded-xl bg-zinc-800/80 backdrop-blur-sm p-4">
-          <a
-            href="https://bel-india.in"
-            target="_blank"
-            className="text-xs font-semibold text-zinc-400 no-underline"
-          >
-            <Image src={bel} alt="" className="px-3" />{" "}
-            <p className="flex mt-3 items-center justify-center text-xs">
-              Funded by Bharat Electronics Limited
-            </p>
-          </a>
-          {/* <p className="text-xs font-semibold text-zinc-400 mt-2">
+        {/* funded by */}
+        <div
+          className="absolute right-4 top-14 flex flex-col"
+          style={{ width: "276px" }}
+        >
+          <div className="flex flex-col items-center rounded-xl bg-zinc-800/80 backdrop-blur-sm p-4">
+            <a
+              href="https://bel-india.in"
+              target="_blank"
+              className="text-xs font-semibold text-zinc-400 no-underline"
+            >
+              <Image src={bel} alt="" className="px-3" />{" "}
+              <p className="flex mt-3 items-center justify-center text-xs">
+                Funded by Bharat Electronics Limited
+              </p>
+            </a>
+            {/* <p className="text-xs font-semibold text-zinc-400 mt-2">
               &thinsp; | &thinsp;
             </p>
             <a
@@ -1769,45 +1782,46 @@ export default function TrafficSimulation() {
             >
               Supported by MOSDAC
             </a> */}
+          </div>
         </div>
-      </div>
 
-      {/* ─── Logs window & bottom toolbar (UNCHANGED) ─── */}
-      <LogsWindow />
+        {/* ─── Logs window & bottom toolbar (UNCHANGED) ─── */}
+        <LogsWindow />
 
-      <div
-        className="bg-zinc-800 backdrop-blur-sm text-xs text-zinc-300"
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 45,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-around",
-          padding: "8px",
-          zIndex: 999,
-        }}
-      >
-        <div>
-          <strong>Generated Vehicles:</strong> {spawnedCount} / {TOTAL_VEHICLES}
+        <div
+          className="bg-zinc-800 backdrop-blur-sm text-xs text-zinc-300"
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 45,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+            padding: "8px",
+            zIndex: 999,
+          }}
+        >
+          <div>
+            <strong>Generated Vehicles:</strong> {spawnedCount} /{" "}
+            {TOTAL_VEHICLES}
+          </div>
+          <div>
+            <strong>Crossed Vehicles:</strong> {totalPassed} / {TOTAL_VEHICLES}
+          </div>
+          <div>
+            <strong>Active Vehicles:</strong> {onScreenCount} / {TOTAL_VEHICLES}
+          </div>
+          <div>
+            <strong>Waiting Vehicles:</strong> {spawnedCount - totalPassed} /{" "}
+            {TOTAL_VEHICLES}
+          </div>
+          <div>
+            <strong>Time (seconds):</strong> {timeElapsed.toFixed(1)} / 292.0
+          </div>
         </div>
-        <div>
-          <strong>Crossed Vehicles:</strong> {totalPassed} / {TOTAL_VEHICLES}
-        </div>
-        <div>
-          <strong>Active Vehicles:</strong> {onScreenCount} / {TOTAL_VEHICLES}
-        </div>
-        <div>
-          <strong>Waiting Vehicles:</strong> {spawnedCount - totalPassed} /{" "}
-          {TOTAL_VEHICLES}
-        </div>
-        <div>
-          <strong>Time (seconds):</strong> {timeElapsed.toFixed(1)} / 292.0
-        </div>
-      </div>
-      {/* {(["right", "down", "left", "up"] as Direction[]).map((dir) => (
+        {/* {(["right", "down", "left", "up"] as Direction[]).map((dir) => (
         <React.Fragment key={dir}>
           <StopLineVisual
             direction={dir}
@@ -1824,56 +1838,66 @@ export default function TrafficSimulation() {
         </React.Fragment>
       ))} */}
 
-      {/* ─── Scroll-down arrow ─── */}
-      {showScrollIndicator && sessionLogs.length > 0 && (
-        <button
-          onClick={() => {
-            const el = document.getElementById("session-summary");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-            setShowScrollIndicator(false);
-          }}
-          className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-50 bg-zinc-800 p-4 rounded-sm text-xl"
-          aria-label="Scroll to session summary"
-        >
-          <span className="text-white animate-bounce">↓</span>
-          <span className="text-white mt-1">Scroll for session summary</span>
-        </button>
-      )}
+        {/* ─── Scroll-down arrow ─── */}
+        {showScrollIndicator && sessionLogs.length > 0 && (
+          <button
+            onClick={() => {
+              const el = document.getElementById("session-summary");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+              setShowScrollIndicator(false);
+            }}
+            className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-50 bg-zinc-800 p-4 rounded-sm text-xl"
+            aria-label="Scroll to session summary"
+          >
+            <span className="text-white animate-bounce">↓</span>
+            <span className="text-white mt-1">Scroll for session summary</span>
+          </button>
+        )}
 
-      {sessionLogs.length > 0 && (
-        <div
-          id="session-summary"
-          className="p-4 mt-[90vh] text-zinc-300 absolute bg-zinc-800"
-        >
-          <h2 className="text-lg font-semibold mb-2">Session Summary</h2>
-          <table className="table-auto w-full border-collapse border border-zinc-600">
-            <thead>
-              <tr>
-                <th className="border px-4 py-2">Mode</th>
-                <th className="border px-4 py-2">
-                  Traffic Pattern (vehicles per second: E--S--W--N)
-                </th>
-                <th className="border px-4 py-2">Green Time</th>
-                <th className="border px-4 py-2">Yellow Time</th>
-                <th className="border px-4 py-2">Total Simulation Duration</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sessionLogs.map((s, i) => (
-                <tr key={i}>
-                  <td className="border px-4 py-2">{s.mode}</td>
-                  <td className="border px-4 py-2">{s.pattern}</td>
-                  <td className="border px-4 py-2">{s.green} seconds</td>
-                  <td className="border px-4 py-2">{s.yellow} seconds</td>
-                  <td className="border px-4 py-2">
-                    {s.duration.toFixed(1)} seconds
-                  </td>
+        {sessionLogs.length > 0 && (
+          <div
+            id="session-summary"
+            className="p-4 mt-[90vh] text-zinc-300 absolute bg-zinc-800"
+          >
+            <h2 className="text-lg font-semibold mb-2">Session Summary</h2>
+            <table className="table-auto w-full border-collapse border border-zinc-600">
+              <thead>
+                <tr>
+                  <th className="border px-4 py-2">Mode</th>
+                  <th className="border px-4 py-2 text-left">
+                    Traffic Pattern <br />{" "}
+                    <span className="text-sm">
+                      (vehicles per second: E--S--W--N)
+                    </span>
+                  </th>
+                  <th className="border px-4 py-2">Green Time</th>
+                  <th className="border px-4 py-2">Yellow Time</th>
+                  <th className="border px-4 py-2 text-left">
+                    Total Simulation <br /> Duration
+                  </th>
+                  <th className="border px-4 py-2">Active Vehicles</th>
+                  <th className="border px-4 py-2">Waiting Vehicles</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+              </thead>
+              <tbody>
+                {sessionLogs.map((s, i) => (
+                  <tr key={i}>
+                    <td className="border px-4 py-2">{s.mode}</td>
+                    <td className="border px-4 py-2">{s.pattern}</td>
+                    <td className="border px-4 py-2">{s.green} seconds</td>
+                    <td className="border px-4 py-2">{s.yellow} seconds</td>
+                    <td className="border px-4 py-2">
+                      {s.duration.toFixed(1)} seconds
+                    </td>
+                    <td className="border px-4 py-2">{s.activeVehicles}</td>
+                    <td className="border px-4 py-2">{s.waitingVehicles}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
