@@ -1575,7 +1575,7 @@ export default function TrafficSimulation() {
               }}
             >
               <p className="absolute w-full z-10 -mt-10 text-center text-xs text-zinc-300">
-                Signal Timinig <br />
+                Signal Timing <br />
                 (seconds)
               </p>
               <div
