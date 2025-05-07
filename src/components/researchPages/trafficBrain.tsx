@@ -1858,7 +1858,7 @@ export default function TrafficSimulation() {
         {sessionLogs.length > 0 && (
           <div
             id="session-summary"
-            className="mt-[90vh] text-zinc-300 absolute bg-zinc-800"
+            className="mt-[92vh] text-zinc-300 absolute bg-zinc-800"
           >
             <h2 className="text-lg font-semibold mb-2 px-6 py-4">
               Session Summary
