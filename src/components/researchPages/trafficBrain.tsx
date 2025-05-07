@@ -1546,7 +1546,7 @@ export default function TrafficSimulation() {
           {/* ——— reset ——— */}
           <button
             onClick={mode === "Default" ? resetAll : resetPattern}
-            className="text-xs font-semibold hover:scale-105 transition-all duration-300 h-6 border border-zinc-600 px-2 rounded-full"
+            className="text-xs font-semibold transition-all duration-300 h-8 border border-zinc-600 px-4 rounded-full"
           >
             Reset Simulation
           </button>
@@ -1570,12 +1570,13 @@ export default function TrafficSimulation() {
               className="flex flex-col w-[40%] absolute"
               style={{
                 marginLeft: "5.75rem",
-                top: "3rem",
+                top: "4rem",
                 left: "1.7rem",
               }}
             >
-              <p className="absolute z-10 -mt-6 font-semibold text-xs text-zinc-300 ml-5">
-                (in seconds)
+              <p className="absolute w-full z-10 -mt-10 text-center text-xs text-zinc-300">
+                Signal Timinig <br />
+                (seconds)
               </p>
               <div
                 className="absolute w-full h-10 rounded text-center text-white focus:outline-none border text-sm 
@@ -1624,7 +1625,7 @@ export default function TrafficSimulation() {
               />
 
               {mode === "Manual" && manualStarted && (
-                <p className="mt-2 text-xs text-yellow-300">
+                <p className="mt-2 text-xs text-yellow-300 text-center">
                   Reset simulation to change values
                 </p>
               )}
@@ -1857,14 +1858,16 @@ export default function TrafficSimulation() {
         {sessionLogs.length > 0 && (
           <div
             id="session-summary"
-            className="p-4 mt-[90vh] text-zinc-300 absolute bg-zinc-800"
+            className="mt-[90vh] text-zinc-300 absolute bg-zinc-800"
           >
-            <h2 className="text-lg font-semibold mb-2">Session Summary</h2>
-            <table className="table-auto w-full border-collapse border border-zinc-600">
+            <h2 className="text-lg font-semibold mb-2 px-6 py-4">
+              Session Summary
+            </h2>
+            <table className="table-auto w-[1366px] border-collapse border border-zinc-600 text-center">
               <thead>
                 <tr>
                   <th className="border px-4 py-2">Mode</th>
-                  <th className="border px-4 py-2 text-left">
+                  <th className="border px-4 py-2 text-center">
                     Traffic Pattern <br />{" "}
                     <span className="text-sm">
                       (vehicles per second: E--S--W--N)
@@ -1872,7 +1875,7 @@ export default function TrafficSimulation() {
                   </th>
                   <th className="border px-4 py-2">Green Time</th>
                   <th className="border px-4 py-2">Yellow Time</th>
-                  <th className="border px-4 py-2 text-left">
+                  <th className="border px-4 py-2 text-center">
                     Total Simulation <br /> Duration
                   </th>
                   <th className="border px-4 py-2">Active Vehicles</th>
@@ -1889,8 +1892,12 @@ export default function TrafficSimulation() {
                     <td className="border px-4 py-2">
                       {s.duration.toFixed(1)} seconds
                     </td>
-                    <td className="border px-4 py-2">{s.activeVehicles}</td>
-                    <td className="border px-4 py-2">{s.waitingVehicles}</td>
+                    <td className="border px-4 py-2">
+                      {s.activeVehicles} / 1440
+                    </td>
+                    <td className="border px-4 py-2">
+                      {s.waitingVehicles} / 1440
+                    </td>
                   </tr>
                 ))}
               </tbody>
