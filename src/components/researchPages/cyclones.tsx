@@ -69,7 +69,7 @@ const aiGradeColors: Record<string, string> = {
 };
 
 const MAPBOX_TOKEN =
-  "pk.eyJ1IjoibGVva29uZGEiLCJhIjoiY200c3RjanQ2MDN3YjJxczRjbnFweTVhciJ9.OrD4H7eWIrHnABf_Y1Nn4A";
+  "pk.eyJ1IjoidmlzdGFsYWItaWlzYyIsImEiOiJjbWFheG9obmoxdHgxMmxzZ2Zza290dHJrIn0.uPvPdmED4J1bHNLUTkfOyw";
 
 const initialViewState = { longitude: 76, latitude: 15, zoom: 4 };
 
