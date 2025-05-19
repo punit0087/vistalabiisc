@@ -51,7 +51,7 @@ export const tabData: Tab[] = [
         title:
           "Prediction Analysis of Cyclonic Events in Satellite Observations (Cyclonic Observations)",
         designation: "1 Project Associate / Software Engineer",
-        deadline: "15th May 2025",
+        deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
         content: {
@@ -69,7 +69,7 @@ export const tabData: Tab[] = [
         title:
           "Development of LLM based Network Traffic Analysis and Cyber Attack Detection (LLM Packet Inspection)",
         designation: "1 Project Associate / Research Associate",
-        deadline: "15th May 2025",
+        deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
         content: {
@@ -89,7 +89,7 @@ export const tabData: Tab[] = [
           "AI/ML and Statistical Analysis for Driving-related Multi-modal Data. (Driving Behaviour Analysis)",
         designation:
           "1 Project Associate / Project Scientist / Research Associate",
-        deadline: "15th May 2025",
+        deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
         content: {
@@ -108,7 +108,7 @@ export const tabData: Tab[] = [
         title:
           "Road Infrastructure Assessment using ML/Computer Vision Models on Crowd-Sensing Data Collection through Instrumented Vehicle (Road Computer Vision)",
         designation: "1 Project Scientist / Software Engineer",
-        deadline: "15th May 2025",
+        deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
         content: {
@@ -136,7 +136,7 @@ export const tabData: Tab[] = [
           "AI/ML and Statistical Analysis for Driving-related Multi-modal Data. (Driving Behaviour Analysis)",
         designation:
           "1 Project Associate / Project Scientist / Research Associate",
-        deadline: "15th May 2025",
+        deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
         content: {
