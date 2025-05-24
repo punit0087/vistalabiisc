@@ -18,28 +18,22 @@ export const tabData: Tab[] = [
     id: "tab-1",
     title: "Research Intern / Assistant",
     positions: [
-      // {
-      //   title: `Design and Development of Instrumented Vehicle for Urban Sensing --Development of IoT Sensor System / Embedded system interfacing (Instrumented-Vehicle-SensorSystem)`,
-      //   designation: "Research Associate / Senior Software Engineer",
-      //   deadline: "31st December 2024",
-      //   applyLink: "",
-      //   content: {
-      //     type: "list",
-      //     items: [
-      //       "Master's degree with 2+ years of experience or PhD (ideally, with 1+ years of experience),  in academia, research, or large-scale interdisciplinary projects.",
-      //       "Demonstrated experience to oversee the planning, execution, and delivery of the project.",
-      //       "Proven ability to facilitate interdisciplinary research efforts in intelligent transportation systems, sustainable urban mobility, and related AI applications.",
-      //       "Familiarity with managing government-funded projects or working in a consortium model is an advantage.",
-      //       "Proven ability to engage with diverse stakeholders, including government, academia, and industry is a plus.",
-      //       "Potential job roles:",
-      //       "Act as the interface between IISc researchers and consortium partners, and industry stakeholders.",
-      //       "Coordinate with faculty, researchers, and technical teams to ensure resource optimization and adherence to project goals and timelines.",
-      //       "Manage procurement, funding utilization, and reporting as per project guidelines.",
-      //       "Maintain project documentation, including progress reports, compliance records, and financial summaries, in line with Ministry of Education requirements.",
-      //       "Monitor risks, address challenges, and ensure project continuity and success.",
-      //     ],
-      //   },
-      // },
+      {
+        title: `Data preparation for CV/ML model training`,
+        designation: "Research Intern / Assistant",
+        deadline: "May 27, 2025, 11:59 PM IST",
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSeFD5LQXqCVZTNrAUlApqCN8gmn4rrSkAXkREnSTNDtw-AciQ/viewform",
+        content: {
+          type: "list",
+          items: [
+            "Currently enrolled in a program in Computer Science, Data Science, Engineering, or a related field.",
+            "Familiarity with image annotation tools and a basic understanding of computer vision concepts. ",
+            "Attention to detail and a commitment to producing high-quality work. ",
+            "Prior experience with annotation projects is a plus, but not mandatory.",
+          ],
+        },
+      },
     ],
   },
 
