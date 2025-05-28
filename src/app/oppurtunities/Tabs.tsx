@@ -170,7 +170,7 @@ export default function JobListings() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    Apply Now
+                    Closed
                   </a>
                 </Button>
               </div>
@@ -209,7 +209,10 @@ export default function JobListings() {
           <a href="https://admissions.iisc.ac.in">admissions.iisc.ac.in</a>{" "}
           during March-April and September-October of every year. Admission
           announcements are made at{" "}
-          <a href="https://iisc.ac.in/admissions/">https://iisc.ac.in/admissions/</a>.
+          <a href="https://iisc.ac.in/admissions/">
+            https://iisc.ac.in/admissions/
+          </a>
+          .
         </p>
         <p>
           <br />

@@ -47,7 +47,7 @@ export const tabData: Tab[] = [
         designation: "1 Project Associate / Software Engineer",
         deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
-          "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
+          "",
         content: {
           type: "list",
           items: [
@@ -65,7 +65,7 @@ export const tabData: Tab[] = [
         designation: "1 Project Associate / Research Associate",
         deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
-          "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
+          "",
         content: {
           type: "list",
           items: [
@@ -85,7 +85,7 @@ export const tabData: Tab[] = [
           "1 Project Associate / Project Scientist / Research Associate",
         deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
-          "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
+          "",
         content: {
           type: "list",
           items: [
@@ -104,7 +104,7 @@ export const tabData: Tab[] = [
         designation: "1 Project Scientist / Software Engineer",
         deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
-          "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
+          "",
         content: {
           type: "list",
           items: [
@@ -132,7 +132,7 @@ export const tabData: Tab[] = [
           "1 Project Associate / Project Scientist / Research Associate",
         deadline: "25th May 2025, 11:59 PM IST",
         applyLink:
-          "https://docs.google.com/forms/d/e/1FAIpQLScvZo0wBiHqTl2D5tRXl0zj_l_0vDx38aBJNOkdIrnx7MhEeQ/viewform",
+          "",
         content: {
           type: "list",
           items: [
