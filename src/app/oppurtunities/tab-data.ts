@@ -1,16 +1,19 @@
+// tab-data.ts
+export interface Position {
+  title: string;
+  designation: string;
+  deadlineIso: string;
+  applyLink: string;
+  content: {
+    type: string;
+    items: string[];
+  };
+}
+
 export interface Tab {
   id: string;
   title: string;
-  positions: {
-    title: string;
-    designation: string;
-    deadline: string;
-    applyLink: string;
-    content: {
-      type: string;
-      items: string[];
-    };
-  }[];
+  positions: Position[];
 }
 
 export const tabData: Tab[] = [
@@ -21,15 +24,15 @@ export const tabData: Tab[] = [
       {
         title: `Data preparation for CV/ML model training`,
         designation: "Research Intern / Assistant",
-        deadline: "May 27, 2025, 11:59 PM IST",
+        deadlineIso: "2025-05-27T23:59:00+05:30",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLSeFD5LQXqCVZTNrAUlApqCN8gmn4rrSkAXkREnSTNDtw-AciQ/viewform",
         content: {
           type: "list",
           items: [
             "Currently enrolled in a program in Computer Science, Data Science, Engineering, or a related field.",
-            "Familiarity with image annotation tools and a basic understanding of computer vision concepts. ",
-            "Attention to detail and a commitment to producing high-quality work. ",
+            "Familiarity with image annotation tools and a basic understanding of computer vision concepts.",
+            "Attention to detail and a commitment to producing high-quality work.",
             "Prior experience with annotation projects is a plus, but not mandatory.",
           ],
         },
@@ -45,9 +48,8 @@ export const tabData: Tab[] = [
         title:
           "Prediction Analysis of Cyclonic Events in Satellite Observations (Cyclonic Observations)",
         designation: "1 Project Associate / Software Engineer",
-        deadline: "25th May 2025, 11:59 PM IST",
-        applyLink:
-          "",
+        deadlineIso: "2025-05-25T23:59:00+05:30",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -63,9 +65,8 @@ export const tabData: Tab[] = [
         title:
           "Development of LLM based Network Traffic Analysis and Cyber Attack Detection (LLM Packet Inspection)",
         designation: "1 Project Associate / Research Associate",
-        deadline: "25th May 2025, 11:59 PM IST",
-        applyLink:
-          "",
+        deadlineIso: "2025-05-25T23:59:00+05:30",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -83,9 +84,8 @@ export const tabData: Tab[] = [
           "AI/ML and Statistical Analysis for Driving-related Multi-modal Data. (Driving Behaviour Analysis)",
         designation:
           "1 Project Associate / Project Scientist / Research Associate",
-        deadline: "25th May 2025, 11:59 PM IST",
-        applyLink:
-          "",
+        deadlineIso: "2025-05-25T23:59:00+05:30",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -102,9 +102,8 @@ export const tabData: Tab[] = [
         title:
           "Road Infrastructure Assessment using ML/Computer Vision Models on Crowd-Sensing Data Collection through Instrumented Vehicle (Road Computer Vision)",
         designation: "1 Project Scientist / Software Engineer",
-        deadline: "25th May 2025, 11:59 PM IST",
-        applyLink:
-          "",
+        deadlineIso: "2025-05-25T23:59:00+05:30",
+        applyLink: "",
         content: {
           type: "list",
           items: [
@@ -130,9 +129,8 @@ export const tabData: Tab[] = [
           "AI/ML and Statistical Analysis for Driving-related Multi-modal Data. (Driving Behaviour Analysis)",
         designation:
           "1 Project Associate / Project Scientist / Research Associate",
-        deadline: "25th May 2025, 11:59 PM IST",
-        applyLink:
-          "",
+        deadlineIso: "2025-05-25T23:59:00+05:30",
+        applyLink: "",
         content: {
           type: "list",
           items: [
