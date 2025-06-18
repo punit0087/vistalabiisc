@@ -209,6 +209,20 @@ const data: Person[] = [
   },
 
   {
+    image: Dprofile.src,
+    name: "Siddhant Saxena",
+    designation: "Project staff",
+    designationLabel: "Research Staff",
+    email: "mrsiddy.py@gmail.com",
+    research:
+      "Geometric Deep Learning, Neural Algorithmic Reasoning, LLMs, Computer Vision, Combinatorial Optimizations",
+    linkedin: "",
+    github: "https://github.com/mr-siddy",
+    scholar: "",
+    portfolio: "https://sites.google.com/view/siddhant-saxena/",
+  },
+
+  {
     image: alok.src,
     name: "Alokendu Mazumder",
     designation: "PMRF-PhD Scholar (Started 2021)",
