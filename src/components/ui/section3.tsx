@@ -180,6 +180,11 @@ const itemsCurrentFIVE = [
 const itemsCurrentSIX = [
   {
     id: 1,
+    url: "https://www.linkedin.com/in/snehilseenu/",
+    name: "Snehil Seenu",
+  },
+  {
+    id: 1,
     url: "https://www.linkedin.com/in/mohithkumarss/",
     name: "Mohith Kumar S.S.",
   },
@@ -198,6 +203,16 @@ const itemsCurrentSIX = [
 ];
 
 const itemsCurrentSEVEN = [
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/rish01/",
+    name: "Rishab Rajesh Sharma",
+  },
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/",
+    name: "Dr. Nidhi Ahlawat",
+  },
   {
     id: 1,
     url: "https://www.linkedin.com/in/shaurya374/",

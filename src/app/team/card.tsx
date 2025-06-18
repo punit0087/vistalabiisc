@@ -27,7 +27,7 @@ import Areddy from "@/assets/profile/potrait/reddy.jpg";
 import Dprofile from "@/assets/profile/default-profile.svg";
 
 import Bdebnath from "@/assets/profile/potrait/BiswadeepDebnath.png";
-import ilana from "@/assets/profile/potrait/IlaAnanta.jpeg";
+import ilana from "@/assets/profile/potrait/IlaAnanta.jpg";
 import ritwik from "@/assets/profile/potrait/RithwikPradeep.jpg";
 import Arnab from "@/assets/profile/potrait/ArnabRoy.jpg";
 import Srikar from "@/assets/profile/potrait/VedantamSrikar.jpg";
@@ -101,19 +101,19 @@ const data: Person[] = [
     portfolio: "",
   },
 
-  {
-    image: Dprofile.src,
-    name: "Dr. Nidhi Ahlawat",
-    designation: "Post-Doctoral Fellow",
-    designationLabel: "Research Staff",
-    email: "aravindapn@iisc.ac.in",
-    research: "Unsupervised Learning, Clustering, Anomaly Detection",
-    linkedin:
-      "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/?originalSubdomain=in",
-    github: "",
-    scholar: "https://scholar.google.com/citations?user=kit17koAAAAJ&hl=en",
-    portfolio: "",
-  },
+  // {
+  //   image: Dprofile.src,
+  //   name: "Dr. Nidhi Ahlawat",
+  //   designation: "Post-Doctoral Fellow",
+  //   designationLabel: "Research Staff",
+  //   email: "aravindapn@iisc.ac.in",
+  //   research: "Unsupervised Learning, Clustering, Anomaly Detection",
+  //   linkedin:
+  //     "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/?originalSubdomain=in",
+  //   github: "",
+  //   scholar: "https://scholar.google.com/citations?user=kit17koAAAAJ&hl=en",
+  //   portfolio: "",
+  // },
 
   {
     image: adityaA.src,
@@ -182,18 +182,18 @@ const data: Person[] = [
   //   portfolio: "",
   // },
 
-  {
-    image: rishab.src,
-    name: "Rishab Rajesh Sharma",
-    designation: "Project Associate (Kotak AI-ML Pre-Doctoral Fellow)",
-    designationLabel: "Research Staff",
-    email: "rishabrajes1@iisc.ac.in",
-    research: "Computer Vision",
-    linkedin: "https://www.linkedin.com/in/rish01/",
-    github: "https://github.com/Rish-01",
-    scholar: "https://scholar.google.com/citations?user=G_2yPOkAAAAJ&hl=en",
-    portfolio: "https://rish-01.github.io/",
-  },
+  // {
+  //   image: rishab.src,
+  //   name: "Rishab Rajesh Sharma",
+  //   designation: "Project Associate (Kotak AI-ML Pre-Doctoral Fellow)",
+  //   designationLabel: "Research Staff",
+  //   email: "rishabrajes1@iisc.ac.in",
+  //   research: "Computer Vision",
+  //   linkedin: "https://www.linkedin.com/in/rish01/",
+  //   github: "https://github.com/Rish-01",
+  //   scholar: "https://scholar.google.com/citations?user=G_2yPOkAAAAJ&hl=en",
+  //   portfolio: "https://rish-01.github.io/",
+  // },
 
   {
     image: rishabsabharwal.src,
