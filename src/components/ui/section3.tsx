@@ -58,11 +58,11 @@ const itemsCurrentTWO = [
     name: "Pruthvish Rajput - Research Associate",
   },
   { id: 3, url: "", name: "Aravinda Reddy - Research Associate" },
-  {
-    id: 4,
-    url: "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/",
-    name: "Nidhi Ahlawat - Research Associate",
-  },
+  // {
+  //   id: 4,
+  //   url: "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/",
+  //   name: "Nidhi Ahlawat - Research Associate",
+  // },
 ];
 
 const itemsCurrentTHREE = [
@@ -91,26 +91,13 @@ const itemsCurrentTHREE = [
 ];
 
 const itemsCurrentFOUR = [
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/mayesh-mohapatra/",
-    name: "Mayesh Mohapatra",
-  },
   // {
   //   id: 2,
   //   url: "https://www.linkedin.com/in/shaurya374/",
   //   name: "Shaurya Pratap Singh",
   // },
-  {
-    id: 3,
-    url: "https://www.linkedin.com/in/adityaarvind5696/",
-    name: "Aditya Arvind",
-  },
-  {
-    id: 4,
-    url: "https://www.linkedin.com/in/rish01/",
-    name: "Rishab Rajesh Sharma",
-  },
+  { id: 3, url: "", name: "Chinmay Mhatre" },
+
   {
     id: 5,
     url: "https://www.linkedin.com/in/parikshit-singh-rathore/",
@@ -134,6 +121,113 @@ const itemsCurrentFOUR = [
 ];
 
 const itemsCurrentFIVE = [
+  {
+    id: 7,
+    url: "https://www.linkedin.com/in/biswadeep-debnath-03634b202",
+    name: "Biswadeep Debnath",
+  },
+  {
+    id: 8,
+    url: "https://www.linkedin.com/in/ila-ananta-padha-98a687137/",
+    name: "Ila Ananta",
+  },
+  {
+    id: 9,
+    url: "https://www.linkedin.com/in/rithwik-pradeep/",
+    name: "Rithwik Pradeep",
+  },
+  {
+    id: 9,
+    url: "https://www.linkedin.com/in/arnab-roy-9b0930220/",
+    name: "Arnab Roy",
+  },
+  {
+    id: 9,
+    url: "",
+    name: "V Srimugdha",
+  },
+  {
+    id: 9,
+    url: "https://www.linkedin.com/in/b-srinath-achary-652654193/?originalSubdomain=in",
+    name: "B Srinath Achary",
+  },
+  {
+    id: 9,
+    url: "https://www.linkedin.com/in/srikar-vedantam/",
+    name: "Vedantam Srikar",
+  },
+  {
+    id: 9,
+    url: "https://www.linkedin.com/in/raju-bhookya-641abb338/",
+    name: "Bhookya Raju",
+  },
+];
+
+const itemsCurrentSIX = [
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/snehilseenu/",
+    name: "Snehil Seenu",
+  },
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/mohithkumarss/",
+    name: "Mohith Kumar S.S.",
+  },
+  {
+    id: 2,
+    url: "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
+    name: "Ram Samarth B.B.",
+  },
+
+  {
+    id: 4,
+    url: "https://www.linkedin.com/in/snehilseenu/",
+    name: "Snehil Seenu",
+  },
+];
+
+const itemsCurrentSEVEN = [
+  {
+    id: 3,
+    url: "https://www.linkedin.com/in/adityaarvind5696/",
+    name: "Aditya Arvind",
+  },
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/syed-lateef-47676539/",
+    name: "Syed Lateef",
+  },
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/sidhant-sharma-415806210/",
+    name: "Sidhant Sharma",
+  },
+  {
+    id: 1,
+    url: "https://in.linkedin.com/in/ashharzaman/",
+    name: "Ashhar Zaman",
+  },
+  {
+    id: 1,
+    url: "https://in.linkedin.com/in/jyotish-ranjan-110a22211",
+    name: "Jyotish Ranjan",
+  },
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/kunal-wasnik",
+    name: "Kunal Wasnik",
+  },
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/romit-bhaumik-24a039217",
+    name: "Romit Bhaumik",
+  },
+  {
+    id: 1,
+    url: "https://www.linkedin.com/in/mayesh-mohapatra/",
+    name: "Mayesh Mohapatra",
+  },
   {
     id: 1,
     url: "https://www.linkedin.com/in/jyotish-ranjan-110a22211/",
@@ -160,49 +254,6 @@ const itemsCurrentFIVE = [
     name: "Romit Bhaumik",
   },
   { id: 6, url: "", name: "Kunal Ajay Wasnik" },
-  {
-    id: 7,
-    url: "https://www.linkedin.com/in/biswadeep-debnath-03634b202",
-    name: "Biswadeep Debnath",
-  },
-  {
-    id: 8,
-    url: "https://www.linkedin.com/in/ila-ananta-padha-98a687137/",
-    name: "Ila Ananta",
-  },
-  {
-    id: 9,
-    url: "https://www.linkedin.com/in/rithwik-pradeep/",
-    name: "rithwik-pradeep",
-  },
-];
-
-const itemsCurrentSIX = [
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/snehilseenu/",
-    name: "Snehil Seenu",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/mohithkumarss/",
-    name: "Mohith Kumar S.S.",
-  },
-  {
-    id: 2,
-    url: "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
-    name: "Ram Samarth B.B.",
-  },
-
-  { id: 3, url: "", name: "Chinmay Mhatre" },
-  {
-    id: 4,
-    url: "https://www.linkedin.com/in/snehilseenu/",
-    name: "Snehil Seenu",
-  },
-];
-
-const itemsCurrentSEVEN = [
   {
     id: 1,
     url: "https://www.linkedin.com/in/rish01/",

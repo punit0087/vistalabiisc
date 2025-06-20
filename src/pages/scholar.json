@@ -1,6 +1,14 @@
 {
   "results": [
     {
+      "title": "Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:TQgYirikUcIC",
+      "authors": "A Mazumder, K Vyas, P Rathore",
+      "publicationDate": "2025",
+      "journal": "Authorea Preprints, 2025",
+      "citationCount": "0"
+    },
+    {
       "title": "Density-Adaptive Fuzzy Clustering with Isolation Kernel",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:hFOr9nPyWt4C",
       "authors": "P Tiwari, R Kachroo, P Rathore",
@@ -46,7 +54,7 @@
       "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
       "publicationDate": "2024",
       "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "24"
+      "citationCount": "27"
     },
     {
       "title": "Adding Explainability to Visual Clustering Tendency Assessment (VAT) Methods Through Feature Importance",
@@ -102,7 +110,7 @@
       "authors": "NJ Sai, P Rathore, A Chauhan",
       "publicationDate": "2023",
       "journal": "Scripta Materialia 226, 115214, 2023",
-      "citationCount": "42"
+      "citationCount": "45"
     },
     {
       "title": "DeepVAT: A Self-Supervised Technique for Cluster Assessment in Image Datasets",
@@ -134,7 +142,7 @@
       "authors": "VA Kanthuru, S Rajasegarar, P Rathore, RRM Doss, L Pan, B Ray, ...",
       "publicationDate": "2022",
       "journal": "International Conference on Advanced Data Mining and Applications, 118-130, 2022",
-      "citationCount": "3"
+      "citationCount": "4"
     },
     {
       "title": "A Data-Driven Framework for Driving Style Classification",
@@ -151,19 +159,11 @@
       "publicationDate": "2022",
       "journal": "2022 44th Annual International Conference of the IEEE Engineering in …, 2022",
       "citationCount": "1"
-    },
-    {
-      "title": "Understanding drivers’ stress and interactions with vehicle systems through naturalistic data analysis",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:Zph67rFs4hoC",
-      "authors": "S Milardo, P Rathore, M Amorim, U Fugiglando, P Santi, C Ratti",
-      "publicationDate": "2021",
-      "journal": "IEEE Transactions on Intelligent Transportation Systems 23 (9), 14570-14581, 2021",
-      "citationCount": "20"
     }
   ],
   "metrics": {
-    "citationsAll": "631",
-    "citationsSince2019": "562",
+    "citationsAll": "650",
+    "citationsSince2019": "581",
     "hIndexAll": "13",
     "hIndexSince2019": "12",
     "i10IndexAll": "14",
@@ -180,7 +180,7 @@
     },
     {
       "year": "2020",
-      "citations": "68"
+      "citations": "67"
     },
     {
       "year": "2021",
@@ -188,19 +188,19 @@
     },
     {
       "year": "2022",
-      "citations": "114"
+      "citations": "115"
     },
     {
       "year": "2023",
-      "citations": "118"
+      "citations": "119"
     },
     {
       "year": "2024",
-      "citations": "126"
+      "citations": "127"
     },
     {
       "year": "2025",
-      "citations": "64"
+      "citations": "81"
     }
   ]
 }
