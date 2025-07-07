@@ -96,7 +96,7 @@ export function NavigationMenuu() {
         </Link>
         <Link
           className="block m-4 sm:m-10"
-          href="/oppurtunities"
+          href="/opportunities"
           onClick={closeMenu}
         >
           Opportunities
