@@ -22,18 +22,69 @@ export const tabData: Tab[] = [
     title: "Research Intern / Assistant",
     positions: [
       {
-        title: `Data preparation for CV/ML model training`,
+        title: "Artificial Intelligence or Machine Learning (AI/ML)",
         designation: "Research Intern / Assistant",
-        deadlineIso: "2025-05-27T23:59:00+05:30",
+        deadlineIso: "2025-07-15T23:59:00+05:30",
         applyLink:
-          "https://docs.google.com/forms/d/e/1FAIpQLSeFD5LQXqCVZTNrAUlApqCN8gmn4rrSkAXkREnSTNDtw-AciQ/viewform",
+          "https://docs.google.com/forms/d/e/1FAIpQLSdleO536d2gHCc5VgYiXVt1bR6RHHcXVoWEEgXkO7wAGCTxxA/viewform",
         content: {
           type: "list",
           items: [
-            "Currently enrolled in a program in Computer Science, Data Science, Engineering, or a related field.",
-            "Familiarity with image annotation tools and a basic understanding of computer vision concepts.",
-            "Attention to detail and a commitment to producing high-quality work.",
-            "Prior experience with annotation projects is a plus, but not mandatory.",
+            "Candidate must be pursuing Bachelor’s Degree in Science/Engineering/Technology  with relevant coursework in artificial intelligence or machine learning.",
+            "Proficiency in Python and ML libraries (e.g., NumPy, Pandas, Scikit-learn, TensorFlow or PyTorch).",
+            "Good understanding of supervised/unsupervised learning algorithms and model evaluation techniques.",
+            "Basic knowledge of linear algebra, probability, statistics, and optimization techniques used in ML.",
+            "Experience with data preprocessing, feature engineering, and visualizing results using tools like Matplotlib or Seaborn is desirable.",
+            "Prior hands-on experience in ML projects is a plus.",
+          ],
+        },
+      },
+      {
+        title: "Computer Vision (CV)",
+        designation: "Research Intern / Assistant",
+        deadlineIso: "2025-07-15T23:59:00+05:30",
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSdleO536d2gHCc5VgYiXVt1bR6RHHcXVoWEEgXkO7wAGCTxxA/viewform",
+        content: {
+          type: "list",
+          items: [
+            "Candidate must be pursuing Bachelor’s Degree in Science/Engineering/Technology  with relevant coursework in computer vision, image processing, or machine learning.",
+            "Proficiency in Python and libraries such as OpenCV, NumPy, Matplotlib, and deep learning frameworks like PyTorch or TensorFlow.",
+            "Understanding of key concepts such as image classification, object detection, segmentation, feature extraction, and image transformations.",
+            "Hands-on experience in computer vision projects involving tasks like object tracking, facial recognition, or image/video analysis is preferable.",
+            "Familiarity with pre-trained models, annotation tools, and deployment techniques is a plus.",
+          ],
+        },
+      },
+      {
+        title: "Large Language Models (LLMs)",
+        designation: "Research Intern / Assistant",
+        deadlineIso: "2025-07-15T23:59:00+05:30",
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSdleO536d2gHCc5VgYiXVt1bR6RHHcXVoWEEgXkO7wAGCTxxA/viewform",
+        content: {
+          type: "list",
+          items: [
+            "Candidate must be pursuing Bachelor’s Degree in Science/Engineering/Technology with a coursework in natural language processing (NLP) or deep learning.",
+            "Proficiency in Python and experience with NLP/ML libraries, PyTorch, or TensorFlow.",
+            "Familiarity with foundational concepts of transformers, attention mechanisms, pretraining/fine-tuning, and prompt engineering.",
+            "Demonstrated experience of using Large Language Models (LLMs) and natural language processing techniques is a plus.",
+          ],
+        },
+      },
+      {
+        title: "Statistical Modeling (Model)",
+        designation: "Research Intern / Assistant",
+        deadlineIso: "2025-07-15T23:59:00+05:30",
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSdleO536d2gHCc5VgYiXVt1bR6RHHcXVoWEEgXkO7wAGCTxxA/viewform",
+        content: {
+          type: "list",
+          items: [
+            "Candidate must be pursuing Bachelor’s Degree in Science/Engineering/Technology with coursework in statistical inference, probability, and data analysis.",
+            "Proficiency in Python with experience using libraries like statsmodels, SciPy, NumPy, and Pandas.",
+            "Understanding of techniques such as linear and logistic regression, time series analysis, Bayesian modeling, hypothesis testing, and confidence intervals.",
+            "Experience with data preprocessing, exploratory data analysis (EDA), and visualizing statistical relationships using tools like Matplotlib, Seaborn, or ggplot2 is a plus.",
           ],
         },
       },
