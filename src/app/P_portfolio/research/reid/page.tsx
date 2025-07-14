@@ -9,19 +9,21 @@ export default function Fake_r() {
   return (
     <div className="bodyy flex justify-center mt-[8%] sm:mt-[50%]">
       <BackButton />
-      <div className="w-[80%] flex flex-col shadow-box p-[60px] sm:p-10">
+      <div className="w-[80%] flex justify-between shadow-box p-[60px] sm:p-10">
         <div className="mb-10">
-          <p className="text-[2.2rem] mb-3 font-bold text-zinc-300">
+          <p className="text-3xl mb-3 font-bold text-zinc-300">
             Vehicle ReID
           </p>
-          <p className="text-xs">Live Interactive Demo: Coming Soon</p>
+          <p className="">
+            Live Interactive Demo: <br /> Coming Soon
+          </p>
         </div>
         <iframe
           width="560"
           height="600"
           src="https://www.youtube.com/embed/FInVA32gMa4?autoplay=1&mute=1&loop=1&playlist=FInVA32gMa4&controls=0&modestbranding=1&rel=0"
           allow="autoplay; encrypted-media; fullscreen"
-          className="rounded-xl border-4 border-zinc-500 w-full"
+          className="rounded-xl border-4 border-zinc-500 w-[80%]"
         />
 
         {/* <p className="text-sm text-justify p-4">
