@@ -10,11 +10,17 @@ export default function Fake_r() {
     <div className="bodyy flex justify-center mt-[8%] sm:mt-[50%]">
       <BackButton />
       <div className="w-[80%] flex flex-col shadow-box p-[60px] sm:p-10">
-        <p className="text-2xl font-bold mb-10 text-zinc-300">Vehicle REID</p>
-        <a href="https://www.youtube.com/watch?v=FInVA32gMa4" target="_blank">
-          https://www.youtube.com/watch?v=FInVA32gMa4
-        </a>
-        <p className="text-xl mt-20">Live Interactive Demo: Coming Soon</p>
+        <div className="flex items-center mb-10">
+          <p className="text-2xl font-bold text-zinc-300">Vehicle ReID</p>
+          <p className="text-sm ml-6">Live Interactive Demo: Coming Soon</p>
+        </div>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/FInVA32gMa4?si=3jPLlN89S7QIgQGq"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
         {/* <p className="text-sm text-justify p-4">
           The widespread use of global positioning system (GPS) navigation
           systems and wireless communication technology-enabled vehicles have

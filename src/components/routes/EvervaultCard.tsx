@@ -46,7 +46,7 @@ export function EvervaultCards() {
       img: tfo,
     },
     {
-      name: "Vehicle REID",
+      name: "Vehicle ReID",
       year: "2023-25",
       // description: "Funded By: Indian Space Research Organisation (ISRO)",
       url: "/P_portfolio/research/reid",
