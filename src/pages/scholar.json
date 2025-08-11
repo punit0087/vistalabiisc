@@ -1,6 +1,14 @@
 {
   "results": [
     {
+      "title": "PrefixCAN-Signal: PrefixSpan-based Automatic Controller Area Network Signal Extraction",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:R3hNpaxXUhUC",
+      "authors": "PR Rajput, A Zaman, V Katewa, P Rathore",
+      "publicationDate": "2025",
+      "journal": "2025 IEEE International Conference on Intelligent Transportation Systems (ITSC), 2025",
+      "citationCount": "0"
+    },
+    {
       "title": "Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:TQgYirikUcIC",
       "authors": "A Mazumder, K Vyas, P Rathore",
@@ -54,7 +62,7 @@
       "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
       "publicationDate": "2024",
       "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "27"
+      "citationCount": "28"
     },
     {
       "title": "Adding Explainability to Visual Clustering Tendency Assessment (VAT) Methods Through Feature Importance",
@@ -78,7 +86,7 @@
       "authors": "A Mazumder, T Baruah, B Kumar, R Sharma, V Pattanaik, P Rathore",
       "publicationDate": "2024",
       "journal": "Proceedings of the IEEE/CVF Winter Conference on Applications of Computer …, 2024",
-      "citationCount": "1"
+      "citationCount": "2"
     },
     {
       "title": "Feature Engineering for Anomaly Detection and Classification of Blockchain Transactions",
@@ -86,7 +94,7 @@
       "authors": "S Jeyakumar, E Yugarajah, A Charles, P Rathore, M PALANISWAMI, ...",
       "publicationDate": "2023",
       "journal": "Authorea Preprints, 2023",
-      "citationCount": "4"
+      "citationCount": "5"
     },
     {
       "title": "Machine learning-based predictions of yield strength for neutron-irradiated ferritic/martensitic steels",
@@ -94,7 +102,7 @@
       "authors": "NJ Sai, P Rathore, K Sridharan, A Chauhan",
       "publicationDate": "2023",
       "journal": "Fusion Engineering and Design 195, 113964, 2023",
-      "citationCount": "6"
+      "citationCount": "9"
     },
     {
       "title": "A Theoretical and Empirical Study on the Convergence of Adam with an\" Exact\" Constant Step Size in Non-Convex Settings",
@@ -110,7 +118,7 @@
       "authors": "NJ Sai, P Rathore, A Chauhan",
       "publicationDate": "2023",
       "journal": "Scripta Materialia 226, 115214, 2023",
-      "citationCount": "45"
+      "citationCount": "50"
     },
     {
       "title": "DeepVAT: A Self-Supervised Technique for Cluster Assessment in Image Datasets",
@@ -151,19 +159,11 @@
       "publicationDate": "2022",
       "journal": "International Conference on Advanced Data Mining and Applications, 253-265, 2022",
       "citationCount": "3"
-    },
-    {
-      "title": "Scalable Cluster Tendency Assessment for Streaming Activity Data Using Recurring Shapelets",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:YOwf2qJgpHMC",
-      "authors": "S Dutta, C Karmakar, P Rathore, M Palaniswami",
-      "publicationDate": "2022",
-      "journal": "2022 44th Annual International Conference of the IEEE Engineering in …, 2022",
-      "citationCount": "1"
     }
   ],
   "metrics": {
-    "citationsAll": "650",
-    "citationsSince2019": "581",
+    "citationsAll": "670",
+    "citationsSince2019": "604",
     "hIndexAll": "13",
     "hIndexSince2019": "12",
     "i10IndexAll": "14",
@@ -176,11 +176,11 @@
     },
     {
       "year": "2019",
-      "citations": "41"
+      "citations": "39"
     },
     {
       "year": "2020",
-      "citations": "67"
+      "citations": "69"
     },
     {
       "year": "2021",
@@ -188,19 +188,19 @@
     },
     {
       "year": "2022",
-      "citations": "115"
+      "citations": "113"
     },
     {
       "year": "2023",
-      "citations": "119"
+      "citations": "116"
     },
     {
       "year": "2024",
-      "citations": "127"
+      "citations": "130"
     },
     {
       "year": "2025",
-      "citations": "81"
+      "citations": "104"
     }
   ]
 }
