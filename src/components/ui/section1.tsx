@@ -3,11 +3,12 @@ export default function Section1() {
     <>
       <div className="text-gray-300 mt-32 text-[17px] font-serif sm:mt-32">
         <div id="a1" className="pl-10 text-[18px]">
-          <i>
+           <i>
             <u className="text-[20px]">V</u>isual{" "}
-            <u className="text-[20px]">I</u>ntelligence, Learning and their{" "}
-            <u className="text-[20px]">S</u>ocie<u className="text-[20px]">t</u>
-            al Impact <u className="text-[20px]">A</u>pplications
+            <u className="text-[20px]">I</u>ntelligence, Learning for{" "}
+            <u className="text-[20px]">S</u>ocietal{" "}
+            <u className="text-[20px]">T</u>ransform
+            <u className="text-[20px]">A</u>tion{" "}
           </i>
         </div>
 
