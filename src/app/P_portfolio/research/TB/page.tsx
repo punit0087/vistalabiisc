@@ -1,5 +1,5 @@
 import React from "react";
-import TrafficSimulation from "@/components/researchPages/trafficBrain";
+import TrafficSimulation from "@/components/projectSimulation/trafficBrain";
 
 const TrafficBrain = () => {
   return (

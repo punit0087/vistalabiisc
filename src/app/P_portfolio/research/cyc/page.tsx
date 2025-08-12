@@ -57,7 +57,7 @@
 //   );
 // }
 
-import Cyclones from "@/components/researchPages/cyclones";
+import Cyclones from "@/components/projectSimulation/cyclones";
 import React from "react";
 
 const page = () => {
