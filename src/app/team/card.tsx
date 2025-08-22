@@ -115,18 +115,18 @@ const data: Person[] = [
   //   portfolio: "",
   // },
 
-  {
-    image: adityaA.src,
-    name: "Aditya Arvind",
-    designation: "Project Scientist",
-    designationLabel: "Research Staff",
-    email: "adityaarvind@iisc.ac.in",
-    research: "Big Data Analytics, Predictive Maintenance, Computer Vision",
-    linkedin: "https://www.linkedin.com/in/adityaarvind5696",
-    github: "https://github.com/aarvind14",
-    scholar: "",
-    portfolio: "",
-  },
+  // {
+  //   image: adityaA.src,
+  //   name: "Aditya Arvind",
+  //   designation: "Project Scientist",
+  //   designationLabel: "Research Staff",
+  //   email: "adityaarvind@iisc.ac.in",
+  //   research: "Big Data Analytics, Predictive Maintenance, Computer Vision",
+  //   linkedin: "https://www.linkedin.com/in/adityaarvind5696",
+  //   github: "https://github.com/aarvind14",
+  //   scholar: "",
+  //   portfolio: "",
+  // },
 
   // {
   //   image: mayesh.src,
@@ -195,18 +195,18 @@ const data: Person[] = [
   //   portfolio: "https://rish-01.github.io/",
   // },
 
-  {
-    image: rishabsabharwal.src,
-    name: "Rishabh Sabharwal",
-    designation: "Project Associate (Kotak AI-ML Pre-Doctoral Fellow)",
-    designationLabel: "Research Staff",
-    email: "rishabs@iisc.ac.in",
-    research: "Computer Vision, Graph Neural Networks, Optimization Theory",
-    linkedin: "https://www.linkedin.com/in/rishabh-sabharwal-a129b41ba/",
-    github: "https://github.com/iN8mare",
-    scholar: "https://scholar.google.com/citations?hl=en&user=x-uH2B8AAAAJ",
-    portfolio: "",
-  },
+  // {
+  //   image: rishabsabharwal.src,
+  //   name: "Rishabh Sabharwal",
+  //   designation: "Project Associate (Kotak AI-ML Pre-Doctoral Fellow)",
+  //   designationLabel: "Research Staff",
+  //   email: "rishabs@iisc.ac.in",
+  //   research: "Computer Vision, Graph Neural Networks, Optimization Theory",
+  //   linkedin: "https://www.linkedin.com/in/rishabh-sabharwal-a129b41ba/",
+  //   github: "https://github.com/iN8mare",
+  //   scholar: "https://scholar.google.com/citations?hl=en&user=x-uH2B8AAAAJ",
+  //   portfolio: "",
+  // },
 
   {
     image: Dprofile.src,

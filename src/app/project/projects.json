@@ -24,12 +24,7 @@
       "id": 2,
       "name": "Indian ADAS",
       "description": "The usefulness of ADAS or advanced driver warning systems under Heterogeneous Disordered Traffic (HDT) conditions is still not well understood in scientific literature. Too many ADAS warnings can have detrimental effects on drivers’ behaviour, particularly when driving larger vehicles (like buses) under densely packed HDT conditions, like on Indian roads. This work will allow us to optimize ADAS for Indian drivers and traffic conditions, reducing driver fatigue and making the drivers more aware of their surroundings, thus improving the overall road safety of bus drivers. For BMTC (Bangalore Metropolitan Transport Corporation), this will allow them to understand the best ADAS warnings and modalities for their bus drivers.",
-      "researchers": [
-        "Aditya Arvind",
-        "Rishab Sharma",
-        "Vishwajeet Pattanaik",
-        "Aravinda Reddy"
-      ],
+      "researchers": ["Vishwajeet Pattanaik", "Aravinda Reddy", "Ojaswee"],
       "tech": [
         "Computer Vision",
         "Generative AI",
@@ -101,7 +96,7 @@
       "id": 6,
       "name": "VehicleSec",
       "description": "Modern automobile systems are integrated with advanced communication and computational capabilities, and as a result, they come with many advanced features. However, these advancements render the automobile systems more prone to cyber-attacks. This project focuses on developing unsupervised learning technique on edge device (ECU) to detect and prevent attacks by monitoring the CAN bus traffic data in a car.",
-      "researchers": ["Ashhar Zaman", "Pruthvish Rajput"],
+      "researchers": ["Pruthvish Rajput"],
       "tech": [
         "Unsupervised Learning",
         "Clustering",
@@ -118,9 +113,8 @@
       "description": "The project aims to develop an advanced Machine Learning (ML)-based Intrusion Detection System (IDS) to safeguard power grids in India against cyber-attacks. Given the increasing vulnerability of modern power grids due to the integration of Computing and Communication (CC) devices, the project will focus on devising unsupervised learning models capable of detecting anomalies across various communication protocols. By leveraging state-of-the-art techniques like isolation forest, One-Class Support Vector Machine (OCSVM), and auto-encoders, the project seeks to enhance the specificity and sensitivity of the detection system. The research involves extensive data analysis using open datasets and synthetic data generation from power grid simulators. The developed models will be evaluated using standard metrics and deployed over GPU-accelerated computing platforms for real-time monitoring. Ultimately, the project’s goal is to create a robust and adaptive solution that can effectively detect and prevent cyber threats in the Indian power grid, making it more resilient to dynamic and sophisticated attacks.",
       "researchers": [
         "Anushtha Tamrakar",
-        "Syed Lateef",
-        "Kunal Ajay Wasnik",
         "Shailja Sharma",
+        "V Srimugdha Mahalakshmi Vabhiram",
         "Vishwajeet Pattanaik"
       ],
       "tech": ["Unsupervised Learning", "Clustering", "Anomaly Detection"],
@@ -147,7 +141,7 @@
       "id": 9,
       "name": "RoadDNA",
       "description": "This project explores prototyping and development of a sensing platform with multiple modalities. It also involves computer vision techniques which will be used for road surface monitoring applications under adverse weather conditions to enhance existing ADAS systems.",
-      "researchers": ["Shaurya Pratap Singh", "Prasant Misra"],
+      "researchers": ["Yash Soni", "Prasant Misra"],
       "tech": [
         "Multimodal Machine Learning",
         "Representation Learning",
