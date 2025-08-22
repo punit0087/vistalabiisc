@@ -29,7 +29,7 @@ import vehiclereid from "@/app/P_portfolio/assets/VehicleREID.jpeg";
 
 import Link from "next/link";
 
-export function EvervaultCards() {
+export default function Section2() {
   const projects = [
     {
       name: "CycloAI",

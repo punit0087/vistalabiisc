@@ -10,17 +10,17 @@ import bel from "@/assets/brand/bharatelectronics.png";
 // ──────────────────────────────────────────────────────────────────────────
 //
 
-const BACKGROUND_SRC = "/images/intersection.svg";
-const RED_SIGNAL_SRC = "/images/signals/red.svg";
-const YELLOW_SIGNAL_SRC = "/images/signals/yellow.svg";
-const GREEN_SIGNAL_SRC = "/images/signals/green.svg";
-const Drag = "/images/draggable.svg";
-const signal = "/images/signals/signals.svg";
-const signaln = "/images/signals/signals_n.svg";
+const BACKGROUND_SRC = "/TrafficBrain_Assets/intersection.svg";
+const RED_SIGNAL_SRC = "/TrafficBrain_Assets/signals/red.svg";
+const YELLOW_SIGNAL_SRC = "/TrafficBrain_Assets/signals/yellow.svg";
+const GREEN_SIGNAL_SRC = "/TrafficBrain_Assets/signals/green.svg";
+const Drag = "/TrafficBrain_Assets/draggable.svg";
+const signal = "/TrafficBrain_Assets/signals/signals.svg";
+const signaln = "/TrafficBrain_Assets/signals/signals_n.svg";
 
-const resetIcon = "/images/reset.svg";
-const playIcon = "/images/play.svg";
-const pauseIcon = "/images/pause.svg";
+const resetIcon = "/TrafficBrain_Assets/reset.svg";
+const playIcon = "/TrafficBrain_Assets/play.svg";
+const pauseIcon = "/TrafficBrain_Assets/pause.svg";
 
 type VehicleClass = "car" | "bus" | "truck" | "bike";
 type Direction = "right" | "down" | "left" | "up";
