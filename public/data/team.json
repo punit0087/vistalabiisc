@@ -171,6 +171,21 @@
       }
     },
     {
+      "name": "Adharsh Narayana",
+      "designation": "Project Assistant",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "adharshnarayana1@gmail.com",
+      "research": "",
+      "projects": [
+        "Indian ADAS"
+      ],
+      "links": {
+        "linkedin": "https://in.linkedin.com/in/adharsh-narayana-12b795247",
+        "github": "https://github.com/adharsh-narayana"
+      }
+    },
+    {
       "name": "Alokendu Mazumder",
       "designation": "PMRF-PhD Scholar (Started 2021)",
       "designationLabel": "Research Scholar",
