@@ -12,7 +12,15 @@
         "github": "https://github.com/punit0087",
         "scholar": "https://scholar.google.com/citations?user=2clQgooAAAAJ&hl=en",
         "portfolio": "/P_portfolio/"
-      }
+      },
+      "projects": [
+        "Big Data Cluster Analysis",
+        "Online Clustering",
+        "Spam Detection",
+        "ST Estimation",
+        "Traj-Pred",
+        "Urban Sensing using IOT"
+      ]
     },
     {
       "name": "Dr. Vishwajeet Pattanaik",
@@ -25,10 +33,19 @@
         "linkedin": "https://www.linkedin.com/in/vishwajeet-pattanaik/",
         "github": "https://github.com/vpattanaik",
         "scholar": "https://scholar.google.com/citations?user=J5OFv5EAAAAJ&hl=en&oi=ao"
-      }
+      },
+      "projects": [
+        "CityWatch",
+        "CycloAI",
+        "DriverDNA",
+        "Indian ADAS",
+        "TrafficBrain",
+        "UPGRID",
+        "Vehicle REID"
+      ]
     },
     {
-      "name": "Dr. Pruthvish Singh Rajput",
+      "name": "Dr. Pruthvish Rajput",
       "designation": "Post-Doctoral Fellow",
       "designationLabel": "Research Staff",
       "status": "current",
@@ -37,10 +54,13 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/pruthvish-rajput-435636187/?originalSubdomain=in",
         "scholar": "https://scholar.google.co.in/citations?user=zYOX7yYAAAAJ&hl=en"
-      }
+      },
+      "projects": [
+        "VehicleSec"
+      ]
     },
     {
-      "name": "Dr. Aravind Reddy",
+      "name": "Dr. Aravinda Reddy",
       "designation": "Post-Doctoral Fellow",
       "designationLabel": "Research Staff",
       "status": "current",
@@ -50,7 +70,29 @@
         "linkedin": "https://www.linkedin.com/in/aravind-reddy-p-n-ab758315a/",
         "github": "https://github.com/Aravinda27",
         "scholar": "https://scholar.google.com/citations?user=R6r5Pb4AAAAJ&hl=en"
-      }
+      },
+      "projects": [
+        "CityWatch",
+        "CycloAI",
+        "Driver-Vehicle Interaction",
+        "Indian ADAS",
+        "TrafficBrain",
+        "UPGRID",
+        "Vehicle REID"
+      ]
+    },
+    {
+      "name": "Dr. Debashis Ray Sarkar",
+      "designation": "Post-Doctoral Fellow",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "drsredefine@gmail.com",
+      "research": "Driving Behavior, Traffic Engineering, Traffic Simulation, Road Safety",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/debashisraysarkar/",
+        "scholar": "https://scholar.google.com/citations?user=lZo3d1AAAAAJ&hl=en"
+      },
+      "projects": []
     },
     {
       "name": "Parikshit Singh Rathore",
@@ -59,6 +101,9 @@
       "status": "current",
       "email": "parikshits@iisc.ac.in",
       "research": "Self-Supervised Learning, AI for Good, Edge AI, Computer Vision",
+      "projects": [
+        "CityWatch"
+      ],
       "links": {
         "linkedin": "https://www.linkedin.com/in/parikshit-singh-rathore/",
         "github": "https://github.com/parikshit14",
@@ -73,6 +118,9 @@
       "status": "current",
       "email": "anushtha@fsid-iisc.in",
       "research": " Machine Learning, Data Science, Deep Learning, Computer Vision.",
+      "projects": [
+        "UPGRID"
+      ],
       "links": {
         "linkedin": "https://www.linkedin.com/in/anushtha-tamrakar-86b17319a/",
         "github": "https://github.com/Anushtha18"
@@ -88,6 +136,38 @@
       "links": {
         "github": "https://github.com/mr-siddy",
         "portfolio": "https://sites.google.com/view/siddhant-saxena/"
+      },
+      "projects": []
+    },
+    {
+      "name": "Ojaswee",
+      "designation": "Project Associate",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "ojojaswee@gmail.com",
+      "research": "Geometric Deep Learning, Neural Algorithmic Reasoning, LLMs, Computer Vision, Combinatorial Optimizations",
+      "projects": [
+        "Indian ADAS"
+      ],
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/ojaswee-263448190",
+        "scholar": "https://scholar.google.co.in/citations?hl=en&user=Dk1eOugAAAAJ",
+        "github": "https://github.com/ojojaswee"
+      }
+    },
+    {
+      "name": "Yash Soni",
+      "designation": "Project Associate",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "yashsoni@iisc.ac.in",
+      "research": "Radar Signal Processing, Radar Imaging",
+      "projects": [
+        "RoadDNA"
+      ],
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/yash-soni-z7b860270/",
+        "scholar": "https://scholar.google.com/citations?user=EL-4wMEr7MMC&hl=en"
       }
     },
     {
@@ -97,6 +177,9 @@
       "status": "current",
       "email": "alokendum@iisc.ac.in",
       "research": "Computer Vision, 3D-Object Detection and Tracking, GANs.",
+      "projects": [
+        "Deep-Clustering"
+      ],
       "links": {
         "github": "https://github.com/alokendumazumder",
         "scholar": "https://scholar.google.com/citations?user=N_kcD4cAAAAJ&hl=en",
@@ -110,6 +193,11 @@
       "status": "current",
       "email": "paritosht@iisc.ac.in",
       "research": "Clustering, Unsupervised Learning and Data Analytics",
+      "projects": [
+        "AML WatchDog",
+        "CycloAI",
+        "Deep-Clustering"
+      ],
       "links": {
         "linkedin": "https://www.linkedin.com/in/paritosh-tiwari-101/",
         "github": "https://github.com/paritosh-101",
@@ -118,11 +206,14 @@
     },
     {
       "name": "Ram Samarth B B",
-      "designation": "Visiting Researcher (Started 2025)",
-      "designationLabel": "Research Staff",
+      "designation": "PhD Scholar (Started 2025)",
+      "designationLabel": "Research Scholar",
       "status": "current",
       "email": "ramsamarthbb@iisc.ac.in",
       "research": "Graph Neural Network, Geometric Deep Learning, Parameterised Differential Equations, Federated Learning",
+      "projects": [
+        "AML WatchDog"
+      ],
       "links": {
         "linkedin": "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
         "github": "https://github.com/achiverram28/"
@@ -135,6 +226,9 @@
       "status": "current",
       "email": "tirthajitb@iisc.ac.in",
       "research": "AI for healthcare, Medical image processing, Computer vision, Representation learning.",
+      "projects": [
+        "Deep-Clustering"
+      ],
       "links": {
         "linkedin": "linkedin.com/in/tirthajit-baruah",
         "github": "https://github.com/tirthajit",
@@ -147,7 +241,10 @@
       "designationLabel": "Research Scholar",
       "status": "current",
       "email": "souravr@iisc.ac.in",
-      "research": "Deep Learning"
+      "research": "Deep Learning",
+      "projects": [
+        "Deep-Clustering"
+      ]
     },
     {
       "name": "Rankit Kachroo",
@@ -156,6 +253,9 @@
       "status": "current",
       "email": "rankitk@iisc.ac.in",
       "research": "Human-Computer Interaction, Computational Sensorimotor Learning, Representation Learning, Unsupervised Learning",
+      "projects": [
+        "TrafficBrain"
+      ],
       "links": {
         "linkedin": "https://in.linkedin.com/in/rankit-kachroo-156956178"
       }
@@ -167,6 +267,9 @@
       "status": "current",
       "email": "",
       "research": "Unsupervised Learning, Computer Vision, Cyber-Security",
+      "projects": [
+        "UPGRID"
+      ],
       "links": {
         "linkedin": "https://in.linkedin.com/in/rankit-kachroo-156956178"
       }
@@ -181,7 +284,8 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/biswadeep-debnath-03634b202",
         "github": "https://www.github.com/biswa2001github"
-      }
+      },
+      "projects": []
     },
     {
       "name": "Ila Ananta",
@@ -193,7 +297,8 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/ila-ananta-padha-98a687137/",
         "scholar": "https://scholar.google.com/citations?user=wZnOtJ0AAAAJ&hl=en"
-      }
+      },
+      "projects": []
     },
     {
       "name": "Rithwik Pradeep",
@@ -204,7 +309,8 @@
       "research": "Computer Vision, Edge AI",
       "links": {
         "linkedin": "https://www.linkedin.com/in/rithwik-pradeep/"
-      }
+      },
+      "projects": []
     },
     {
       "name": "Arnab Roy",
@@ -212,7 +318,8 @@
       "designationLabel": "M.Tech",
       "status": "current",
       "email": "arnabroy@iisc.ac.in",
-      "research": ""
+      "research": "",
+      "projects": []
     },
     {
       "name": "Srikar Vedantam",
@@ -223,7 +330,8 @@
       "research": "Graph Machine Learning",
       "links": {
         "linkedin": "https://www.linkedin.com/in/rithwik-pradeep/"
-      }
+      },
+      "projects": []
     },
     {
       "name": "V Srimugdha Mahalakshmi Vabhiram",
@@ -231,7 +339,10 @@
       "designationLabel": "M.Tech",
       "status": "current",
       "email": "srimugdhav@iisc.ac.in",
-      "research": ""
+      "research": "",
+      "projects": [
+        "UPGRID"
+      ]
     },
     {
       "name": "Raju Bhookya",
@@ -242,7 +353,8 @@
       "research": "",
       "links": {
         "linkedin": "https://www.linkedin.com/in/raju-bhookya-641abb338/"
-      }
+      },
+      "projects": []
     },
     {
       "name": "Aditya Arvind",
@@ -250,7 +362,9 @@
       "designationLabel": "Research Staff",
       "status": "previous",
       "email": "adityaarvind@iisc.ac.in",
-      "links": { "linkedin": "https://www.linkedin.com/in/adityaarvind5696/" }
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/adityaarvind5696/"
+      }
     },
     {
       "name": "Syed Lateef",
@@ -278,7 +392,9 @@
       "designationLabel": "M.Tech",
       "status": "previous",
       "email": "ashharzaman@iisc.ac.in",
-      "links": { "linkedin": "https://in.linkedin.com/in/ashharzaman/" }
+      "links": {
+        "linkedin": "https://in.linkedin.com/in/ashharzaman/"
+      }
     },
     {
       "name": "Jyotish Ranjan",
@@ -295,13 +411,18 @@
       "designation": "",
       "designationLabel": "M.Tech",
       "status": "previous",
-      "links": { "linkedin": "https://www.linkedin.com/in/kunal-wasnik" }
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/kunal-wasnik"
+      }
     },
     {
       "name": "Romit Bhaumik",
       "designation": "",
       "designationLabel": "M.Tech",
       "status": "previous",
+      "projects": [
+        "CityWatch"
+      ],
       "links": {
         "linkedin": "https://www.linkedin.com/in/romit-bhaumik-24a039217"
       }
@@ -311,21 +432,30 @@
       "designation": "",
       "designationLabel": "Research Staff",
       "status": "previous",
-      "links": { "linkedin": "https://www.linkedin.com/in/mayesh-mohapatra/" }
+      "projects": [
+        "CycloAI"
+      ],
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/mayesh-mohapatra/"
+      }
     },
     {
       "name": "Kunal Ajay Wasnik",
       "designation": "",
       "designationLabel": "M.Tech",
       "status": "previous",
-      "links": { "linkedin": "" }
+      "links": {
+        "linkedin": ""
+      }
     },
     {
       "name": "Rishab Rajesh Sharma",
       "designation": "Project Associate (Kotak AI-ML Pre-Doctoral Fellow)",
       "designationLabel": "Research Staff",
       "status": "previous",
-      "links": { "linkedin": "https://www.linkedin.com/in/rish01/" }
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/rish01/"
+      }
     },
     {
       "name": "Dr. Nidhi Ahlawat",
@@ -341,7 +471,9 @@
       "designation": "Project Associate",
       "designationLabel": "Research Staff",
       "status": "previous",
-      "links": { "linkedin": "https://www.linkedin.com/in/shaurya374/" }
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/shaurya374/"
+      }
     },
     {
       "name": "Pagadala Murthy Krishna",
@@ -375,6 +507,9 @@
       "designation": "",
       "designationLabel": "Research Scholar",
       "status": "previous",
+      "projects": [
+        "CycloAI"
+      ],
       "links": {
         "linkedin": "https://www.linkedin.com/in/akash-agrawal-059307143/?originalSubdomain=in"
       }
@@ -420,7 +555,9 @@
       "designation": "",
       "designationLabel": "Research Staff",
       "status": "previous",
-      "links": { "linkedin": "" }
+      "links": {
+        "linkedin": ""
+      }
     },
     {
       "name": "Anish Ghule",
@@ -445,7 +582,9 @@
       "designation": "",
       "designationLabel": "M.Tech",
       "status": "previous",
-      "links": { "linkedin": "https://www.linkedin.com/in/aditya-uppal/" }
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/aditya-uppal/"
+      }
     },
     {
       "name": "Abhay Kumar Singh",
@@ -506,7 +645,9 @@
       "designation": "Started Jun 2024",
       "designationLabel": "PhD Scholar",
       "status": "previous",
-      "links": { "portfolio": "https://akhil-sharma30.github.io/" }
+      "links": {
+        "portfolio": "https://akhil-sharma30.github.io/"
+      }
     },
     {
       "name": "Agamdeep Singh",
@@ -531,14 +672,18 @@
       "designation": "Started Jan 2024",
       "designationLabel": "Research Staff",
       "status": "previous",
-      "links": { "linkedin": "https://www.linkedin.com/in/kunal-kumar-sahoo/" }
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/kunal-kumar-sahoo/"
+      }
     },
     {
       "name": "Gokul Adethya T",
       "designation": "",
       "designationLabel": "M.Tech",
       "status": "previous",
-      "links": { "linkedin": "" }
+      "links": {
+        "linkedin": ""
+      }
     }
   ]
 }

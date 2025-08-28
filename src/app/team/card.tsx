@@ -31,6 +31,9 @@ import ilana from "@/assets/profile/potrait/IlaAnanta.jpg";
 import ritwik from "@/assets/profile/potrait/RithwikPradeep.jpg";
 import Arnab from "@/assets/profile/potrait/ArnabRoy.jpg";
 import Srikar from "@/assets/profile/potrait/VedantamSrikar.jpg";
+import ojaswee from "@/assets/profile/potrait/ojaswee.jpg";
+import debashis from "@/assets/profile/potrait/Debashis.jpg";
+import yash from "@/assets/profile/potrait/yashsoni.jpg";
 import { fetchPublicJson } from "@/lib/publicData";
 
 type Person = {
@@ -50,8 +53,8 @@ type Person = {
 const imageByName: Record<string, string> = {
   "Dr. Punit Rathore": punith.src,
   "Dr. Vishwajeet Pattanaik": viswajeet.src,
-  "Dr. Pruthvish Singh Rajput": pruthvish.src,
-  "Dr. Aravind Reddy": Areddy.src,
+  "Dr. Pruthvish Rajput": pruthvish.src,
+  "Dr. Aravinda Reddy": Areddy.src,
   "Parikshit Singh Rathore": parikshit.src,
   "Anushtha Tamrakar": anushtha.src,
   "Siddhant Saxena": Dprofile.src,
@@ -70,6 +73,9 @@ const imageByName: Record<string, string> = {
   "Vedantam Srikar": Srikar.src,
   "V Srimugdha Mahalakshmi Vabhiram": Dprofile.src,
   "Raju Bhookya": Dprofile.src,
+  "Ojaswee": ojaswee.src,
+  "Dr. Debashis Ray Sarkar": debashis.src,
+  "Yash Soni": yash.src,
 };
 
 export default function CardP() {
