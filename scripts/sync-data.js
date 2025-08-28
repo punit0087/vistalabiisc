@@ -222,12 +222,17 @@ function runSync() {
     (m) => m && m.status === "current" && m.name
   );
 
-  // Sort as requested
+  // Sort as requested: group by designation rank, and within each group
+  // preserve the visual order from team.json
+  const teamIndexByRef = new Map();
+  members.forEach((m, i) => teamIndexByRef.set(m, i));
   currentMembers.sort((a, b) => {
     const ra = rankOf(a.designationLabel);
     const rb = rankOf(b.designationLabel);
     if (ra !== rb) return ra - rb;
-    return a.name.localeCompare(b.name);
+    const ia = teamIndexByRef.get(a) ?? 1e9;
+    const ib = teamIndexByRef.get(b) ?? 1e9;
+    return ia - ib;
   });
 
   const newResearchers = currentMembers.map((m) => {

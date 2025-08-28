@@ -4,25 +4,15 @@ import { BackgroundGradient } from "../../components/ui/card";
 import Image from "next/image";
 import punith from "@/assets/profile/potrait/punit_rathore.jpg";
 import viswajeet from "@/assets/profile/potrait/viswajeet.jpg";
-import mayesh from "@/assets/profile/mayesh.jpg";
 import alok from "@/assets/profile/potrait/AlokenduMazumder.jpg";
 import paritosh from "@/assets/profile/potrait/ParitoshTiwari.jpg";
 import tirthajit from "@/assets/profile/potrait/TirthajitBaruah.jpg";
 import srs from "@/assets/profile/potrait/SouravRanjan.jpg";
-import adityaA from "@/assets/profile/potrait/AdityaArvind.jpg";
 import parikshit from "@/assets/profile/potrait/ParikshitSinghRathore.jpg";
 import rankit from "@/assets/profile/potrait/Rankit.jpg";
 import anushtha from "@/assets/profile/potrait/AnushthaTamrakar.jpg";
 import pruthvish from "@/assets/profile/potrait/pruthvish.jpg";
-import rishab from "@/assets/profile/potrait/RishabRajeshSharma.jpg";
-import kunal from "@/assets/profile/Kunal.jpg";
-import Romit from "@/assets/profile/Romit Bhaumik.jpg";
-import jyotish from "@/assets/profile/potrait/Jyotish.jpg";
 import ram from "@/assets/profile/potrait/Ram Samarth B B.jpg";
-import rishabsabharwal from "@/assets/profile/potrait/RishabhSabharwal.jpg";
-import shaurya from "@/assets/profile/potrait/Shaurya.jpg";
-import sidhant from "@/assets/profile/potrait/SidhantSharma.jpg";
-import syedlateef from "@/assets/profile/potrait/SyedLateef.jpg";
 import Areddy from "@/assets/profile/potrait/reddy.jpg";
 import Dprofile from "@/assets/profile/default-profile.svg";
 
@@ -73,7 +63,7 @@ const imageByName: Record<string, string> = {
   "Vedantam Srikar": Srikar.src,
   "V Srimugdha Mahalakshmi Vabhiram": Dprofile.src,
   "Raju Bhookya": Dprofile.src,
-  "Ojaswee": ojaswee.src,
+  Ojaswee: ojaswee.src,
   "Dr. Debashis Ray Sarkar": debashis.src,
   "Yash Soni": yash.src,
 };

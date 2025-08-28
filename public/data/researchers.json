@@ -1,8 +1,16 @@
 {
   "researchers": [
     {
-      "id": 16,
-      "name": "Anushtha Tamrakar"
+      "id": 46,
+      "name": "Dr. Punit Rathore"
+    },
+    {
+      "id": 33,
+      "name": "Dr. Vishwajeet Pattanaik"
+    },
+    {
+      "id": 45,
+      "name": "Dr. Pruthvish Rajput"
     },
     {
       "id": 44,
@@ -13,28 +21,20 @@
       "name": "Dr. Debashis Ray Sarkar"
     },
     {
-      "id": 45,
-      "name": "Dr. Pruthvish Rajput"
-    },
-    {
-      "id": 32,
-      "name": "Dr. Punit Rathore"
-    },
-    {
-      "id": 33,
-      "name": "Dr. Vishwajeet Pattanaik"
-    },
-    {
-      "id": 27,
-      "name": "Ojaswee"
-    },
-    {
       "id": 10,
       "name": "Parikshit Singh Rathore"
     },
     {
+      "id": 16,
+      "name": "Anushtha Tamrakar"
+    },
+    {
       "id": 34,
       "name": "Siddhant Saxena"
+    },
+    {
+      "id": 27,
+      "name": "Ojaswee"
     },
     {
       "id": 43,
@@ -53,20 +53,20 @@
       "name": "Ram Samarth B B"
     },
     {
-      "id": 12,
-      "name": "Rankit Kachroo"
+      "id": 14,
+      "name": "Tirthajit Baruah"
     },
     {
       "id": 25,
       "name": "Sourav Ranjan Saraf"
     },
     {
-      "id": 14,
-      "name": "Tirthajit Baruah"
+      "id": 12,
+      "name": "Rankit Kachroo"
     },
     {
-      "id": 35,
-      "name": "Arnab Roy"
+      "id": 24,
+      "name": "Shailja Sharma"
     },
     {
       "id": 36,
@@ -77,16 +77,12 @@
       "name": "Ila Ananta"
     },
     {
-      "id": 38,
-      "name": "Raju Bhookya"
-    },
-    {
       "id": 39,
       "name": "Rithwik Pradeep"
     },
     {
-      "id": 24,
-      "name": "Shailja Sharma"
+      "id": 35,
+      "name": "Arnab Roy"
     },
     {
       "id": 40,
@@ -95,6 +91,10 @@
     {
       "id": 41,
       "name": "V Srimugdha Mahalakshmi Vabhiram"
+    },
+    {
+      "id": 38,
+      "name": "Raju Bhookya"
     }
   ]
 }
