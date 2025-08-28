@@ -1,189 +1,106 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
-import cyclone from "@/assets/cyclone.png";
-import hvad from "@/assets/HV_ADAS_Image.png";
-import ith from "@/assets/ITHVS_Image.jpg";
-import roadsurfacepro from "@/assets/gif/RoadSurfacePro.gif";
-import adas from "@/assets/gif/ADAS.gif";
-import powerG from "@/assets/gif/PowerGrid-IDS.gif";
-import eauav from "@/assets/gif/Edge-Analytics-for-UAVs.gif";
-import tfo from "@/assets/gif/Traffic-Flow-Optimizer.gif";
-
-import watchdog from "@/assets/gif/amlwatchdog.gif";
-import wreck from "@/assets/gif/wreckanalyzer.gif";
-import deep from "@/assets/gif/deep_clustering.gif";
-import Vsec from "@/assets/gif/tata.gif";
-
-import Cyc from "@/assets/gif/cyclone.gif";
-
-import dbshmi from "@/app/P_portfolio/assets/Driving_Behaviour_T_ITS.png";
-import dba from "@/app/P_portfolio/assets/udb.png";
-import sd from "@/app/P_portfolio/assets/Fake_review.png";
-import big from "@/app/P_portfolio/assets/bigdata.png";
-import traj from "@/app/P_portfolio/assets/TrajectoryClusteringDiagram.png";
-import st from "@/app/P_portfolio/assets/drift.png";
-import urban from "@/app/P_portfolio/assets/fitzroyvis.jpg";
-
-import vehiclereid from "@/app/P_portfolio/assets/VehicleREID.jpeg";
 
 import Link from "next/link";
+import { fetchPublicJson } from "@/lib/publicData";
+
+type Project = {
+  id: number;
+  name: string;
+  description?: string;
+  researchers?: string[];
+  tech?: string[];
+  data?: string[];
+  fundedBy?: string[];
+  url: string;
+};
+
+type ProjectsPayload = {
+  projects: Project[];
+};
 
 export default function Section2() {
-  const projects = [
-    {
-      name: "CycloAI",
-      year: "2023-25",
-      //description: "Funded by: Anusandhan National Research Foundation (previously SERB)",
-      url: "/P_portfolio/research/cyc",
-      img: Cyc,
-    },
-    {
-      name: "TrafficBrain",
-      year: "2023-25",
-      //description: "Funded by: Bharat Electronics Limited (BEL)",
-      url: "/P_portfolio/research/TB",
-      img: tfo,
-    },
-    {
-      name: "Vehicle ReID",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/reid",
-      img: vehiclereid,
-    },
-    {
-      name: "Deep-Clustering",
-      year: "2023-25",
-      //description: "Funded by: Anusandhan National Research Foundation (previously SERB)",
-      url: "/P_portfolio/research/DC",
-      img: deep,
-    },
-
-    {
-      name: "AML Watchdog",
-      year: "2023-25",
-      //description: "Funded by: National Payments Corporation of India (NPCI)",
-      url: "/P_portfolio/research/AMLWD",
-      img: watchdog,
-    },
-    {
-      name: "VehicleSec",
-      year: "2023-25",
-      //description: "Funded by: Tata Elxsi Ltd.",
-      url: "/P_portfolio/research/VSec",
-      img: Vsec,
-    },
-
-    {
-      name: "Indian ADAS",
-      year: "2023-2025",
-      //description: "Funded by: Volvo Group India Private Ltd. and CiSTUP, IISc",
-      url: "/P_portfolio/research/IADS",
-      img: adas,
-    },
-    {
-      name: "CityWatch",
-      year: "2023-25",
-      //description: "Funded by: Bharat Electronics Limited (BEL)",
-      url: "/P_portfolio/research/CW",
-      img: eauav,
-    },
-    {
-      name: "UPGRID",
-      year: "2023-25",
-      //description: "Funded by: POWERGRID Centre of Excellence (PGCoE), IISc",
-      url: "/P_portfolio/research/upgrid",
-      img: powerG,
-    },
-
-    {
-      name: "Wreck Analyzer",
-      year: "2023-25",
-      //description: "Funded by: Tata Elxsi Ltd.",
-      url: "/P_portfolio/research/WAna",
-      img: wreck,
-    },
-
-    {
-      name: "RoadDNA",
-      year: "2024-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/roadDNA",
-      img: roadsurfacepro,
-    },
-
-    {
-      name: "Driver-Vehicle Interaction",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/dbshmi",
-      img: dbshmi,
-    },
-
-    {
-      name: "Driver DNA",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/dba",
-      img: dba,
-    },
-    {
-      name: "Spam Detection",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/frcd",
-      img: sd,
-    },
-    {
-      name: "Big Data Cluster Analysis",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/bdca",
-      img: big,
-    },
-    {
-      name: "Traj-Pred",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/lstp",
-      img: traj,
-    },
-    {
-      name: "ST Estimation",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/sme",
-      img: st,
-    },
-    {
-      name: "Urban Sensing using IOT",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/iot",
-      img: urban,
-    },
-    {
-      name: "Online Clustering",
-      year: "2023-25",
-      // description: "Funded By: Indian Space Research Organisation (ISRO)",
-      url: "/P_portfolio/research/sasd",
-      img: big,
-    },
-  ];
-
+  const [projects, setProjects] = useState<Project[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const filteredProjects = projects.filter(
-    (project) =>
-      project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.year.toString().includes(searchQuery)
+  // Map known research route slugs to images
+  const imageBySlug = useMemo(
+    () => ({
+      cyc: "/P_portfolio/img/cyclone.gif",
+      TB: "/P_portfolio/img/Traffic-Flow-Optimizer.gif",
+      reid: "/P_portfolio/img/VehicleREID.jpeg",
+      DC: "/P_portfolio/img/deep_clustering.gif",
+      AMLWD: "/P_portfolio/img/amlwatchdog.gif",
+      VSec: "/P_portfolio/img/vehiclesec.gif",
+      IADS: "/P_portfolio/img/ADAS.gif",
+      CW: "/P_portfolio/img/Edge-Analytics-for-UAVs.gif",
+      upgrid: "/P_portfolio/img/PowerGrid-IDS.gif",
+      WAna: "/P_portfolio/img/wreckanalyzer.gif",
+      roadDNA: "/P_portfolio/img/RoadSurfacePro.gif",
+      dbshmi: "/P_portfolio/img/Driving_Behaviour_T_ITS.png",
+      dba: "/P_portfolio/img/udb.png",
+      frcd: "/P_portfolio/img/Fake_review.png",
+      bdca: "/P_portfolio/img/bigdata.png",
+      lstp: "/P_portfolio/img/TrajectoryClusteringDiagram.png",
+      sme: "/P_portfolio/img/drift.png",
+      iot: "/P_portfolio/img/fitzroyvis.jpg",
+      sasd: "/P_portfolio/img/bigdata.png",
+    }),
+    []
   );
+
+  // Fallback URL mapping when projects.json has placeholder '#'
+  const fallbackUrlByName = useMemo(
+    () => ({
+      "AML WatchDog": "/P_portfolio/research/AMLWD",
+      RoadDNA: "/P_portfolio/research/roadDNA",
+    }),
+    []
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const data = await fetchPublicJson<ProjectsPayload>(
+          "/data/projects.json"
+        );
+        if (cancelled) return;
+        setProjects(data.projects || []);
+      } catch (e: any) {
+        if (cancelled) return;
+        setError(e?.message || "Failed to load projects");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const filteredProjects = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return projects;
+    return projects.filter((p) => {
+      const inName = p.name?.toLowerCase().includes(q);
+      const inFunder = (p.fundedBy || []).some((f) =>
+        f.toLowerCase().includes(q)
+      );
+      const inTech = (p.tech || []).some((t) => t.toLowerCase().includes(q));
+      return inName || inFunder || inTech;
+    });
+  }, [projects, searchQuery]);
 
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="bg-black overflow-x-auto scrollbar-custom overflow-y-hidden sm:mt-20">
+      {/* Optional: simple error/empty states without changing layout */}
+      {error && <div className="text-red-400 text-sm px-6">{error}</div>}
       <div className="mr-20 delay-500 absolute right-0 border-b sm:mr-10">
         <input
           className={`pb-2 searchtext outline-none bg-transparent text-white text-xs placeholder-white focus:outline-none transition-all duration-500 ease-in-out ${
@@ -192,7 +109,7 @@ export default function Section2() {
           type="text"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          placeholder="Search by name or year"
+          placeholder="Search by name, tech, or funder"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
@@ -239,22 +156,34 @@ export default function Section2() {
         </button>
       </div>
       <div className="flex mt-24 pb-6">
-        {filteredProjects.map((project, index) => (
-          <Link href={project.url} key={index}>
-            <div className="h-[27vh] border border-white/[0.2] flex flex-col items-start mx-auto p-4 relative z-30 ml-4 rounded-lg sm:h-full">
-              {/* <Icon className="absolute h- w- -top-3 -left-3 text-white" />
+        {filteredProjects.map((project, index) => {
+          const url =
+            project.url && project.url !== "#"
+              ? project.url
+              : fallbackUrlByName[
+                  project.name as keyof typeof fallbackUrlByName
+                ] || "#";
+          const slug = url.split("/").filter(Boolean).pop() || "";
+          const image =
+            imageBySlug[slug as keyof typeof imageBySlug] ||
+            "/P_portfolio/img/bigdata.png";
+          return (
+            <Link href={url} key={`${project.id}-${index}`}>
+              <div className="h-[27vh] border border-white/[0.2] flex flex-col items-start mx-auto p-4 relative z-30 ml-4 rounded-lg sm:h-full">
+                {/* <Icon className="absolute h- w- -top-3 -left-3 text-white" />
               <Icon className="absolute h- w- -bottom-3 -left-3 text-white" />
               <Icon className="absolute h- w- -top-3 -right-3 text-white" />
               <Icon className="absolute h- w- -bottom-3 -right-3 text-white" /> */}
 
-              <EvervaultCard key={index} image={project.img} />
+                <EvervaultCard key={index} image={image} />
 
-              <h2 className="text-white mt-4 text-base font-light">
-                {project.name}
-              </h2>
-            </div>
-          </Link>
-        ))}
+                <h2 className="text-white mt-4 text-base font-light">
+                  {project.name}
+                </h2>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

@@ -16,9 +16,9 @@ import mit from "@/assets/brand/mit-logo.svg";
 import deakin from "@/assets/brand/deakin-university.svg";
 import melbourn from "@/assets/brand/Melbourne.svg";
 
-import scholarData from "@/pages/scholar.json";
+// Publications come from a single source of truth in public/data
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import Newss from "@/app/P_portfolio/news/page";
 import Link from "next/link";
@@ -38,373 +38,92 @@ type ScholarResponse = {
   error?: string;
 };
 
-const itemsCurrentONE = [
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/punit0000/",
-    name: "Dr. Punit Rathore - Assistant Professor",
-  },
-];
+type TeamMember = {
+  name: string;
+  designation: string;
+  designationLabel: string; // e.g., Lab Head, Research Staff, Research Scholar, M.Tech
+  status: "current" | "previous";
+  email?: string;
+  research?: string;
+  links?: { linkedin?: string; portfolio?: string; scholar?: string; github?: string };
+};
 
-const itemsCurrentTWO = [
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/vishwajeet-pattanaik/",
-    name: "Vishwajeet Pattanaik - Specialist Scientist",
-  },
-  {
-    id: 2,
-    url: "https://www.linkedin.com/in/pruthvish-rajput-435636187/",
-    name: "Pruthvish Rajput - Research Associate",
-  },
-  { id: 3, url: "", name: "Aravinda Reddy - Research Associate" },
-  // {
-  //   id: 4,
-  //   url: "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/",
-  //   name: "Nidhi Ahlawat - Research Associate",
-  // },
-];
-
-const itemsCurrentTHREE = [
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/paritosh-tiwari-101/",
-    name: "Paritosh Tiwari",
-  },
-  {
-    id: 2,
-    url: "https://www.linkedin.com/in/alok-mazumder-778723192/",
-    name: "Alokendu Mazumder",
-  },
-  {
-    id: 3,
-    url: "https://www.linkedin.com/in/tirthajit-baruah/",
-    name: "Tirthajit Baruah",
-  },
-  { id: 4, url: "", name: "Sourav Ranjan Saraf" },
-  {
-    id: 4,
-    url: "https://www.linkedin.com/in/rankit-kachroo-156956178/",
-    name: "Rankit Kachroo",
-  },
-  { id: 6, url: "", name: "Shailja Sharma" },
-];
-
-const itemsCurrentFOUR = [
-  // {
-  //   id: 2,
-  //   url: "https://www.linkedin.com/in/shaurya374/",
-  //   name: "Shaurya Pratap Singh",
-  // },
-  { id: 3, url: "", name: "Chinmay Mhatre" },
-
-  {
-    id: 5,
-    url: "https://www.linkedin.com/in/parikshit-singh-rathore/",
-    name: "Parikshit Singh Rathore",
-  },
-  {
-    id: 6,
-    url: "https://www.linkedin.com/in/rishabh-sabharwal-a129b41ba/",
-    name: "Rishabh Sabharwal",
-  },
-  {
-    id: 7,
-    url: "https://www.linkedin.com/in/anushtha-tamrakar/",
-    name: "Anushtha Tamrakar",
-  },
-  {
-    id: 7,
-    url: "https://www.linkedin.com/in/anushtha-tamrakar/",
-    name: "Siddhant Saxena",
-  },
-];
-
-const itemsCurrentFIVE = [
-  {
-    id: 7,
-    url: "https://www.linkedin.com/in/biswadeep-debnath-03634b202",
-    name: "Biswadeep Debnath",
-  },
-  {
-    id: 8,
-    url: "https://www.linkedin.com/in/ila-ananta-padha-98a687137/",
-    name: "Ila Ananta",
-  },
-  {
-    id: 9,
-    url: "https://www.linkedin.com/in/rithwik-pradeep/",
-    name: "Rithwik Pradeep",
-  },
-  {
-    id: 9,
-    url: "https://www.linkedin.com/in/arnab-roy-9b0930220/",
-    name: "Arnab Roy",
-  },
-  {
-    id: 9,
-    url: "",
-    name: "V Srimugdha",
-  },
-  {
-    id: 9,
-    url: "https://www.linkedin.com/in/b-srinath-achary-652654193/?originalSubdomain=in",
-    name: "B Srinath Achary",
-  },
-  {
-    id: 9,
-    url: "https://www.linkedin.com/in/srikar-vedantam/",
-    name: "Vedantam Srikar",
-  },
-  {
-    id: 9,
-    url: "https://www.linkedin.com/in/raju-bhookya-641abb338/",
-    name: "Bhookya Raju",
-  },
-];
-
-const itemsCurrentSIX = [
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/snehilseenu/",
-    name: "Snehil Seenu",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/mohithkumarss/",
-    name: "Mohith Kumar S.S.",
-  },
-  {
-    id: 2,
-    url: "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
-    name: "Ram Samarth B.B.",
-  },
-
-  {
-    id: 4,
-    url: "https://www.linkedin.com/in/snehilseenu/",
-    name: "Snehil Seenu",
-  },
-];
-
-const itemsCurrentSEVEN = [
-  {
-    id: 3,
-    url: "https://www.linkedin.com/in/adityaarvind5696/",
-    name: "Aditya Arvind",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/syed-lateef-47676539/",
-    name: "Syed Lateef",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/sidhant-sharma-415806210/",
-    name: "Sidhant Sharma",
-  },
-  {
-    id: 1,
-    url: "https://in.linkedin.com/in/ashharzaman/",
-    name: "Ashhar Zaman",
-  },
-  {
-    id: 1,
-    url: "https://in.linkedin.com/in/jyotish-ranjan-110a22211",
-    name: "Jyotish Ranjan",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/kunal-wasnik",
-    name: "Kunal Wasnik",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/romit-bhaumik-24a039217",
-    name: "Romit Bhaumik",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/mayesh-mohapatra/",
-    name: "Mayesh Mohapatra",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/jyotish-ranjan-110a22211/",
-    name: "Jyotish Ranjan",
-  },
-  {
-    id: 2,
-    url: "https://www.linkedin.com/in/sidhant-sharma-415806210/",
-    name: "Sidhant Sharma",
-  },
-  {
-    id: 3,
-    url: "https://www.linkedin.com/in/ashharzaman/",
-    name: "Ashhar Zaman",
-  },
-  {
-    id: 4,
-    url: "https://www.linkedin.com/in/syed-lateef-47676539/",
-    name: "Syed Lateef",
-  },
-  {
-    id: 5,
-    url: "https://www.linkedin.com/in/romit-bhaumik-24a039217/",
-    name: "Romit Bhaumik",
-  },
-  { id: 6, url: "", name: "Kunal Ajay Wasnik" },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/rish01/",
-    name: "Rishab Rajesh Sharma",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/",
-    name: "Dr. Nidhi Ahlawat",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/shaurya374/",
-    name: "Shaurya Pratap Singh",
-  },
-  {
-    id: 1,
-    url: "https://www.linkedin.com/in/crishna0401/?originalSubdomain=in",
-    name: " Pagadala Murthy Krishna",
-  },
-  {
-    id: 2,
-    url: "https://www.linkedin.com/in/pranay-pandey-085176141/",
-    name: "Pranay Pandey",
-  },
-  {
-    id: 3,
-    url: "https://www.linkedin.com/in/i-navin-kumar-5bb775167/?originalSubdomain=in",
-    name: " I Navin Kumar",
-  },
-  {
-    id: 4,
-    url: "https://www.linkedin.com/in/akash-agrawal-059307143/?originalSubdomain=in",
-    name: "Akash Agrawal",
-  },
-  {
-    id: 5,
-    url: "https://www.linkedin.com/in/sudarshan-bandyopadhyay-11628a13a/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in",
-    name: " Sudarshan Bandhyopadhyay",
-  },
-  {
-    id: 6,
-    url: "https://www.linkedin.com/in/b-srinath-achary-652654193/?originalSubdomain=in",
-    name: " B. Srinath Achary",
-  },
-  {
-    id: 7,
-    url: "https://www.linkedin.com/in/piyush-kumar-singh-998819153/?originalSubdomain=in",
-    name: " Piyush Kumar",
-  },
-  {
-    id: 8,
-    url: "https://www.linkedin.com/in/alice-laguri/?originalSubdomain=in",
-    name: " Alice Laguri",
-  },
-  { id: 9, url: "", name: " Deepak Yadav" },
-  {
-    id: 10,
-    url: "https://www.linkedin.com/in/anishghule/?originalSubdomain=in",
-    name: " Anish Ghule",
-  },
-  {
-    id: 11,
-    url: "https://www.linkedin.com/in/ishan-tiwari-2357361a3/?originalSubdomain=in",
-    name: " Ishaan Tiwari",
-  },
-  {
-    id: 12,
-    url: "https://www.linkedin.com/in/aditya-uppal/",
-    name: " Aditya Uppal",
-  },
-  {
-    id: 14,
-    url: "https://www.linkedin.com/in/abhay-kumar-singh-474731201/?trk=public_profile_browsemap&originalSubdomain=in",
-    name: "Abhay Kumar Singh",
-  },
-  {
-    id: 15,
-    url: "https://www.linkedin.com/in/singhchan/?originalSubdomain=in",
-    name: " Akash Kumar Singh",
-  },
-  {
-    id: 16,
-    url: "https://www.linkedin.com/in/abhinav-raja-2300471ab/?originalSubdomain=in",
-    name: " Abhinav Raja",
-  },
-  {
-    id: 17,
-    url: "https://www.linkedin.com/in/uday-kasturi-552867195/?originalSubdomain=in",
-    name: " Uday Kasturi",
-  },
-  {
-    id: 19,
-    url: "https://www.linkedin.com/in/sreekar-praneeth-marri-aab40b203/?originalSubdomain=in",
-    name: " Sreekar Praneeth",
-  },
-  {
-    id: 20,
-    url: "https://www.linkedin.com/in/singhchan/?originalSubdomain=in",
-    name: " Akash Kumar Singh",
-  },
-  {
-    id: 21,
-    url: "https://www.linkedin.com/in/bhavyaasharma/?originalSubdomain=in",
-    name: " Bhavyaa Sharma",
-  },
-  { id: 22, url: "https://akhil-sharma30.github.io/", name: " Akhil Sharma" },
-  {
-    id: 24,
-    url: "https://www.linkedin.com/in/agamdeep-iiser/?originalSubdomain=in",
-    name: " Agamdeep Singh",
-  },
-  {
-    id: 25,
-    url: "https://www.linkedin.com/in/chirag-garg-23488625a/",
-    name: "Chirag Garg",
-  },
-  {
-    id: 26,
-    url: "https://www.linkedin.com/in/kunal-kumar-sahoo/",
-    name: "Kunal Kunar Sahoo",
-  },
-  {
-    id: 27,
-    url: "",
-    name: "Gokul Adethya T",
-  },
-];
+// Derived dropdowns from team.json
+const useTeamDropdowns = (members: TeamMember[]) => {
+  const current = members.filter((m) => m.status === "current");
+  const previous = members.filter((m) => m.status === "previous");
+  const byLabel = (label: string) =>
+    current.filter((m) => m.designationLabel === label);
+  const mapToItems = (arr: TeamMember[]) =>
+    arr.map((m, i) => ({
+      id: i + 1,
+      url:
+        m.links?.linkedin ||
+        m.links?.portfolio ||
+        m.links?.scholar ||
+        m.links?.github ||
+        "#",
+      name:
+        labelPrefix(m.designationLabel) +
+        (m.designationLabel === "Lab Head"
+          ? ` ${m.name} - ${m.designation}`
+          : ` ${m.name}`),
+    }));
+  const labelPrefix = (label: string) => {
+    switch (label) {
+      case "Lab Head":
+        return "";
+      case "Research Staff":
+        return "";
+      case "Research Scholar":
+        return "";
+      case "M.Tech":
+        return "";
+      default:
+        return "";
+    }
+  };
+  return {
+    labHead: mapToItems(byLabel("Lab Head")),
+    researchStaff: mapToItems(byLabel("Research Staff")),
+    researchScholars: mapToItems(byLabel("Research Scholar")),
+    mtech: mapToItems(byLabel("M.Tech")),
+    interns: [] as { id: number; url: string; name: string }[],
+    previous: mapToItems(previous),
+  };
+};
 
 export default function Section3() {
   const [publications, setPublications] = useState<ScholarResult[]>([]);
+  const [members, setMembers] = useState<TeamMember[]>([]);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    try {
-      // Simulate a loading state
-      setLoading(true);
-
-      // Directly use imported JSON data
-      const result: ScholarResponse = scholarData;
-
-      // Set publications
-      setPublications(result.results || []);
-    } catch (error) {
-      setError("Failed to load publications");
-    } finally {
-      setLoading(false);
-    }
+    const load = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("/data/scholar.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to fetch scholar data");
+        const result: ScholarResponse = await res.json();
+        setPublications(result.results || []);
+        // Load team members
+        const teamRes = await fetch("/data/team.json", { cache: "no-store" });
+        if (teamRes.ok) {
+          const teamJson = await teamRes.json();
+          setMembers(teamJson.members || []);
+        }
+      } catch (error) {
+        setError("Failed to load publications");
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
   }, []);
+
+  const dropdowns = useTeamDropdowns(members);
 
   return (
     <div id="parent" className="mt-[6rem] p-8 text-white flex sm:flex-col">
@@ -506,34 +225,29 @@ export default function Section3() {
         </ul>
         {/* <p className="text-gray-400 text-sm font-semibold mt-6 mb-2">Members</p> */}
         <div className="ml-2">
-          {/* <div className="mb-2">
-            <DynamicDropdown title="Lab Head" items={itemsCurrentONE} />
-          </div> */}
+          {/* <div className="mb-2"> */}
+          {/*   <DynamicDropdown title="Lab Head" items={dropdowns.labHead} /> */}
+          {/* </div> */}
           <div className="mb-2">
             <DynamicDropdown
-              title="Senior Research Staff"
-              items={itemsCurrentTWO}
+              title="Research Staff"
+              items={dropdowns.researchStaff}
             />
           </div>
           <div className="mb-2">
             <DynamicDropdown
               title="Research Students"
-              items={itemsCurrentTHREE}
+              items={dropdowns.researchScholars}
             />
           </div>
           <div className="mb-2">
-            <DynamicDropdown title="Research Staff" items={itemsCurrentFOUR} />
+            <DynamicDropdown title="M.Tech Students" items={dropdowns.mtech} />
           </div>
-          <div className="mb-2">
-            <DynamicDropdown title="M.Tech Students" items={itemsCurrentFIVE} />
-          </div>
-          <div className="mb-2">
-            <DynamicDropdown title="Interns" items={itemsCurrentSIX} />
-          </div>
+          {/* Interns kept empty for now; add label in team.json if needed */}
           <div className="mb-2">
             <DynamicDropdown
               title="Previous Members"
-              items={itemsCurrentSEVEN}
+              items={dropdowns.previous}
             />
           </div>
         </div>

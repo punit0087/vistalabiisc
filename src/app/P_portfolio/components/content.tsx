@@ -54,7 +54,7 @@ export default function Content() {
                 <div className="info-box shadow-box m-2 h-72 w-72 sm:w-full sm:h-fit">
                   <Link
                     className="overlay-link"
-                    href="/P_portfolio/research"
+                    href="/research"
                   ></Link>
                   <Image
                     decoding="async"

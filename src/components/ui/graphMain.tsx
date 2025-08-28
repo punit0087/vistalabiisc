@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Graph from "@/components/ui/graph";
-import scholarData from "@/pages/scholar.json"; // Import the JSON data directly
 
 const GraphData = () => {
   const [data, setData] = useState<{ year: number; citations: number }[]>([]);
@@ -16,35 +15,34 @@ const GraphData = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    try {
-      // Simulate a loading state
-      setLoading(true);
+    const load = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("/data/scholar.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to fetch scholar data");
+        const result = await res.json();
 
-      // Directly use imported JSON data
-      const result = scholarData;
+        setMetrics({
+          citationsAll: result.metrics?.citationsAll || "0",
+          citationsSince2019: result.metrics?.citationsSince2019 || "0",
+          hIndexAll: result.metrics?.hIndexAll || "0",
+          hIndexSince2019: result.metrics?.hIndexSince2019 || "0",
+          i10IndexAll: result.metrics?.i10IndexAll || "0",
+          i10IndexSince2019: result.metrics?.i10IndexSince2019 || "0",
+        });
 
-      // Set metrics
-      setMetrics({
-        citationsAll: result.metrics?.citationsAll || "0",
-        citationsSince2019: result.metrics?.citationsSince2019 || "0",
-        hIndexAll: result.metrics?.hIndexAll || "0",
-        hIndexSince2019: result.metrics?.hIndexSince2019 || "0",
-        i10IndexAll: result.metrics?.i10IndexAll || "0",
-        i10IndexSince2019: result.metrics?.i10IndexSince2019 || "0",
-      });
-
-      // Transform data into the format required by the Graph component
-      const transformedData = result.graphData.map((item: any) => ({
-        year: parseInt(item.year, 10),
-        citations: parseInt(item.citations, 10),
-      }));
-
-      setData(transformedData);
-    } catch (error) {
-      setError("Failed to load data");
-    } finally {
-      setLoading(false);
-    }
+        const transformedData = (result.graphData || []).map((item: any) => ({
+          year: parseInt(item.year, 10),
+          citations: parseInt(item.citations, 10),
+        }));
+        setData(transformedData);
+      } catch (error) {
+        setError("Failed to load data");
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
   }, []);
 
   if (loading) return <p>Loading...</p>;

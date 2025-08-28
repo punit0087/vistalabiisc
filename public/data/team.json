@@ -1,0 +1,552 @@
+{
+  "members": [
+    {
+      "name": "Dr. Punit Rathore",
+      "designation": "Assistant Professor",
+      "designationLabel": "Lab Head",
+      "status": "current",
+      "email": "prathore@iisc.ac.in",
+      "research": "Big data analytics, Un/Semi/Self-supervised learning, Visual Analytics.",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/punit0000/",
+        "github": "https://github.com/punit0087",
+        "scholar": "https://scholar.google.com/citations?user=2clQgooAAAAJ&hl=en",
+        "portfolio": "/P_portfolio/"
+      }
+    },
+    {
+      "name": "Dr. Vishwajeet Pattanaik",
+      "designation": "Specialist Scientist",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "vishwajeetp@iisc.ac.in",
+      "research": "Machine Learning, Image Processing, Ubiquitous Computing, Collective Intelligence, Human-Computer Interaction",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/vishwajeet-pattanaik/",
+        "github": "https://github.com/vpattanaik",
+        "scholar": "https://scholar.google.com/citations?user=J5OFv5EAAAAJ&hl=en&oi=ao"
+      }
+    },
+    {
+      "name": "Dr. Pruthvish Singh Rajput",
+      "designation": "Post-Doctoral Fellow",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "pruthvishr@iisc.ac.in",
+      "research": "Intelligent Transportation Systems, Machine Learning, Internet of Things, Embedded Systems.",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/pruthvish-rajput-435636187/?originalSubdomain=in",
+        "scholar": "https://scholar.google.co.in/citations?user=zYOX7yYAAAAJ&hl=en"
+      }
+    },
+    {
+      "name": "Dr. Aravind Reddy",
+      "designation": "Post-Doctoral Fellow",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "aravindapn@iisc.ac.in",
+      "research": "Intelligent Transportation Systems, Machine Learning, Internet of Things, Embedded Systems.",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/aravind-reddy-p-n-ab758315a/",
+        "github": "https://github.com/Aravinda27",
+        "scholar": "https://scholar.google.com/citations?user=R6r5Pb4AAAAJ&hl=en"
+      }
+    },
+    {
+      "name": "Parikshit Singh Rathore",
+      "designation": "Junior Research Fellow",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "parikshits@iisc.ac.in",
+      "research": "Self-Supervised Learning, AI for Good, Edge AI, Computer Vision",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/parikshit-singh-rathore/",
+        "github": "https://github.com/parikshit14",
+        "scholar": "https://scholar.google.com/citations?user=Lw_B56oAAAAJ&hl=en&oi=ao",
+        "portfolio": "https://sites.google.com/view/parikshit-singh-rathore"
+      }
+    },
+    {
+      "name": "Anushtha Tamrakar",
+      "designation": "Project Associate",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "anushtha@fsid-iisc.in",
+      "research": " Machine Learning, Data Science, Deep Learning, Computer Vision.",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/anushtha-tamrakar-86b17319a/",
+        "github": "https://github.com/Anushtha18"
+      }
+    },
+    {
+      "name": "Siddhant Saxena",
+      "designation": "Project staff",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "mrsiddy.py@gmail.com",
+      "research": "Geometric Deep Learning, Neural Algorithmic Reasoning, LLMs, Computer Vision, Combinatorial Optimizations",
+      "links": {
+        "github": "https://github.com/mr-siddy",
+        "portfolio": "https://sites.google.com/view/siddhant-saxena/"
+      }
+    },
+    {
+      "name": "Alokendu Mazumder",
+      "designation": "PMRF-PhD Scholar (Started 2021)",
+      "designationLabel": "Research Scholar",
+      "status": "current",
+      "email": "alokendum@iisc.ac.in",
+      "research": "Computer Vision, 3D-Object Detection and Tracking, GANs.",
+      "links": {
+        "github": "https://github.com/alokendumazumder",
+        "scholar": "https://scholar.google.com/citations?user=N_kcD4cAAAAJ&hl=en",
+        "portfolio": "https://alokendumazumder.github.io"
+      }
+    },
+    {
+      "name": "Paritosh Tiwari",
+      "designation": "PhD Scholar (Started 2022)",
+      "designationLabel": "Research Scholar",
+      "status": "current",
+      "email": "paritosht@iisc.ac.in",
+      "research": "Clustering, Unsupervised Learning and Data Analytics",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/paritosh-tiwari-101/",
+        "github": "https://github.com/paritosh-101",
+        "scholar": "https://scholar.google.com/citations?user=HlDP3CcAAAAJ&hl=en"
+      }
+    },
+    {
+      "name": "Ram Samarth B B",
+      "designation": "Visiting Researcher (Started 2025)",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "ramsamarthbb@iisc.ac.in",
+      "research": "Graph Neural Network, Geometric Deep Learning, Parameterised Differential Equations, Federated Learning",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
+        "github": "https://github.com/achiverram28/"
+      }
+    },
+    {
+      "name": "Tirthajit Baruah",
+      "designation": "PhD Scholar (Started 2023)",
+      "designationLabel": "Research Scholar",
+      "status": "current",
+      "email": "tirthajitb@iisc.ac.in",
+      "research": "AI for healthcare, Medical image processing, Computer vision, Representation learning.",
+      "links": {
+        "linkedin": "linkedin.com/in/tirthajit-baruah",
+        "github": "https://github.com/tirthajit",
+        "scholar": "https://scholar.google.com/citations?hl=en&authuser=1&user=gDr0VrYAAAAJ"
+      }
+    },
+    {
+      "name": "Sourav Ranjan Saraf",
+      "designation": "PhD Scholar (Started 2023)",
+      "designationLabel": "Research Scholar",
+      "status": "current",
+      "email": "souravr@iisc.ac.in",
+      "research": "Deep Learning"
+    },
+    {
+      "name": "Rankit Kachroo",
+      "designation": "PhD Scholar (Started 2024)",
+      "designationLabel": "Research Scholar",
+      "status": "current",
+      "email": "rankitk@iisc.ac.in",
+      "research": "Human-Computer Interaction, Computational Sensorimotor Learning, Representation Learning, Unsupervised Learning",
+      "links": {
+        "linkedin": "https://in.linkedin.com/in/rankit-kachroo-156956178"
+      }
+    },
+    {
+      "name": "Shailja Sharma",
+      "designation": "M.Tech Research (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "",
+      "research": "Unsupervised Learning, Computer Vision, Cyber-Security",
+      "links": {
+        "linkedin": "https://in.linkedin.com/in/rankit-kachroo-156956178"
+      }
+    },
+    {
+      "name": "Biswadeep Debnath",
+      "designation": "M.Tech in Robotics and Autonomous Systems (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "biswadeepd@iisc.ac.in",
+      "research": "Machine Learning, Computer Vision, Edge AI",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/biswadeep-debnath-03634b202",
+        "github": "https://www.github.com/biswa2001github"
+      }
+    },
+    {
+      "name": "Ila Ananta",
+      "designation": "M.Tech in Robotics and Autonomous Systems (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "ilaananta@iisc.ac.in",
+      "research": "Reinforcement Learning, ML, AI, Deep Learning, Statistical Modeling, Data Science, Decision-Making Systems",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/ila-ananta-padha-98a687137/",
+        "scholar": "https://scholar.google.com/citations?user=wZnOtJ0AAAAJ&hl=en"
+      }
+    },
+    {
+      "name": "Rithwik Pradeep",
+      "designation": "M.Tech in Robotics and Autonomous Systems (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "rithwikp@iisc.ac.in",
+      "research": "Computer Vision, Edge AI",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/rithwik-pradeep/"
+      }
+    },
+    {
+      "name": "Arnab Roy",
+      "designation": "M.Tech in Artificial Intelligence (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "arnabroy@iisc.ac.in",
+      "research": ""
+    },
+    {
+      "name": "Srikar Vedantam",
+      "designation": "M.Tech in Artificial Intelligence (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "srikarv@iisc.ac.in",
+      "research": "Graph Machine Learning",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/rithwik-pradeep/"
+      }
+    },
+    {
+      "name": "V Srimugdha Mahalakshmi Vabhiram",
+      "designation": "M.Tech in Artificial Intelligence (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "srimugdhav@iisc.ac.in",
+      "research": ""
+    },
+    {
+      "name": "Vedantam Srikar",
+      "designation": "M.Tech in Artificial Intelligence (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "srikarv@iisc.ac.in",
+      "research": ""
+    },
+    {
+      "name": "Raju Bhookya",
+      "designation": "M.Tech in Artificial Intelligence (Started 2024)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "bhookyaraju@iisc.ac.in",
+      "research": "",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/raju-bhookya-641abb338/"
+      }
+    },
+    {
+      "name": "Aditya Arvind",
+      "designation": "Project Scientist",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "email": "adityaarvind@iisc.ac.in",
+      "links": { "linkedin": "https://www.linkedin.com/in/adityaarvind5696/" }
+    },
+    {
+      "name": "Syed Lateef",
+      "designation": "M.Tech in Artificial Intelligence (Started 2023)",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "email": "syedlateef@iisc.ac.in",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/syed-lateef-47676539/"
+      }
+    },
+    {
+      "name": "Sidhant Sharma",
+      "designation": "M.Tech in Artificial Intelligence (Started 2023)",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "email": "ssidhant@iisc.ac.in",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/sidhant-sharma-415806210/"
+      }
+    },
+    {
+      "name": "Ashhar Zaman",
+      "designation": "M.Tech in Mobility Engineering (Started 2023)",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "email": "ashharzaman@iisc.ac.in",
+      "links": { "linkedin": "https://in.linkedin.com/in/ashharzaman/" }
+    },
+    {
+      "name": "Jyotish Ranjan",
+      "designation": "M.Tech in Artificial Intelligence (Started 2023)",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "email": "jyotishr@iisc.ac.in",
+      "links": {
+        "linkedin": "https://in.linkedin.com/in/jyotish-ranjan-110a22211"
+      }
+    },
+    {
+      "name": "Kunal Wasnik",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": { "linkedin": "https://www.linkedin.com/in/kunal-wasnik" }
+    },
+    {
+      "name": "Romit Bhaumik",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/romit-bhaumik-24a039217"
+      }
+    },
+    {
+      "name": "Mayesh Mohapatra",
+      "designation": "",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "links": { "linkedin": "https://www.linkedin.com/in/mayesh-mohapatra/" }
+    },
+    {
+      "name": "Kunal Ajay Wasnik",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": { "linkedin": "" }
+    },
+    {
+      "name": "Rishab Rajesh Sharma",
+      "designation": "Project Associate (Kotak AI-ML Pre-Doctoral Fellow)",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "links": { "linkedin": "https://www.linkedin.com/in/rish01/" }
+    },
+    {
+      "name": "Dr. Nidhi Ahlawat",
+      "designation": "Post-Doctoral Fellow",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/nidhi-ahlawat-4b6629249/"
+      }
+    },
+    {
+      "name": "Shaurya Pratap Singh",
+      "designation": "Project Associate",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "links": { "linkedin": "https://www.linkedin.com/in/shaurya374/" }
+    },
+    {
+      "name": "Pagadala Murthy Krishna",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/crishna0401/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Pranay Pandey",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/pranay-pandey-085176141/"
+      }
+    },
+    {
+      "name": "I Navin Kumar",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/i-navin-kumar-5bb775167/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Akash Agrawal",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/akash-agrawal-059307143/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Sudarshan Bandhyopadhyay",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/sudarshan-bandyopadhyay-11628a13a/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in"
+      }
+    },
+    {
+      "name": "B. Srinath Achary",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/b-srinath-achary-652654193/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Piyush Kumar",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/piyush-kumar-singh-998819153/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Alice Laguri",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alice-laguri/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Deepak Yadav",
+      "designation": "",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "links": { "linkedin": "" }
+    },
+    {
+      "name": "Anish Ghule",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/anishghule/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Ishaan Tiwari",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/ishan-tiwari-2357361a3/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Aditya Uppal",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": { "linkedin": "https://www.linkedin.com/in/aditya-uppal/" }
+    },
+    {
+      "name": "Abhay Kumar Singh",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/abhay-kumar-singh-474731201/?trk=public_profile_browsemap&originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Akash Kumar Singh",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/singhchan/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Abhinav Raja",
+      "designation": "Research Associate-I",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/abhinav-raja-2300471ab/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Uday Kasturi",
+      "designation": "",
+      "designationLabel": "Research Scholar",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/uday-kasturi-552867195/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Sreekar Praneeth",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/sreekar-praneeth-marri-aab40b203/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Bhavyaa Sharma",
+      "designation": "",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/bhavyaasharma/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Akhil Sharma",
+      "designation": "Started Jun 2024",
+      "designationLabel": "PhD Scholar",
+      "status": "previous",
+      "links": { "portfolio": "https://akhil-sharma30.github.io/" }
+    },
+    {
+      "name": "Agamdeep Singh",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/agamdeep-iiser/?originalSubdomain=in"
+      }
+    },
+    {
+      "name": "Chirag Garg",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/chirag-garg-23488625a/"
+      }
+    },
+    {
+      "name": "Kunal Kumar Sahoo",
+      "designation": "Started Jan 2024",
+      "designationLabel": "Research Staff",
+      "status": "previous",
+      "links": { "linkedin": "https://www.linkedin.com/in/kunal-kumar-sahoo/" }
+    },
+    {
+      "name": "Gokul Adethya T",
+      "designation": "",
+      "designationLabel": "M.Tech",
+      "status": "previous",
+      "links": { "linkedin": "" }
+    }
+  ]
+}

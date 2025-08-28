@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import scholarData from "../scholar.json"; // Adjust the path as necessary
 
 type ScholarResult = {
   title: string;
@@ -45,18 +44,23 @@ export default function Scholar() {
   );
 
   useEffect(() => {
-    try {
-      const data: ScholarResponse = scholarData;
-      setResults(data.results || []);
-      setMetrics(data.metrics);
-      setGraphData(data.graphData);
-      setFilteredResults(data.results || []);
-    } catch (err) {
-      setError("Failed to load data");
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+    const load = async () => {
+      try {
+        const res = await fetch("/data/scholar.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to fetch scholar data");
+        const data: ScholarResponse = await res.json();
+        setResults(data.results || []);
+        setMetrics(data.metrics);
+        setGraphData(data.graphData);
+        setFilteredResults(data.results || []);
+      } catch (err) {
+        setError("Failed to load data");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
   }, []);
 
   const filterAndSortResults = useCallback(() => {

@@ -10,7 +10,7 @@ export const EvervaultCard = ({
   text,
   className,
 }: {
-  image: StaticImageData;
+  image: StaticImageData | string;
   text?: string;
   className?: string;
 }) => {
@@ -56,6 +56,8 @@ export const EvervaultCard = ({
               src={image}
               alt="image"
               className="w-32 h-32 rounded-[50%] object-cover loop-infinite"
+              width={200}
+              height={200}
               unoptimized 
             />
           </span>

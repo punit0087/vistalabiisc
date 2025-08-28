@@ -35,13 +35,14 @@ interface Researcher {
 
 const fetchData = async () => {
   const [projectsResponse, researchersResponse] = await Promise.all([
-    fetch("/api/projects"),
-    fetch("/api/researchers"),
+    fetch("/data/projects.json", { cache: "no-store" }),
+    fetch("/data/researchers.json", { cache: "no-store" }),
   ]);
-
+  if (!projectsResponse.ok || !researchersResponse.ok) {
+    throw new Error("Failed to fetch projects or researchers data");
+  }
   const { projects } = await projectsResponse.json();
   const { researchers } = await researchersResponse.json();
-
   return { projects, researchers };
 };
 
