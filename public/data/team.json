@@ -127,17 +127,35 @@
       }
     },
     {
-      "name": "Siddhant Saxena",
-      "designation": "Project staff",
+      "name": "Mohith Kumar S S",
+      "designation": "Project Associate",
       "designationLabel": "Research Staff",
       "status": "current",
-      "email": "mrsiddy.py@gmail.com",
-      "research": "Geometric Deep Learning, Neural Algorithmic Reasoning, LLMs, Computer Vision, Combinatorial Optimizations",
+      "email": "ssmohithkumar@gmail.com",
+      "research": "Computer vision, web technologies, and their interdisciplinary applications",
+      "projects": [
+        "Indian ADAS"
+      ],
       "links": {
-        "github": "https://github.com/mr-siddy",
-        "portfolio": "https://sites.google.com/view/siddhant-saxena/"
-      },
-      "projects": []
+        "linkedin": "https://www.linkedin.com/in/mohithkumarss/",
+        "github": "https://github.com/mohithkumarss",
+        "portfolio": "https://www.mohithkumarss.tech/"
+      }
+    },
+    {
+      "name": "Chinmay P. Mhatre",
+      "designation": "Project Associate",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "chinmaymhatre111@gmail.com",
+      "research": "Software Development, Scalable System Design, Edge AI, Human-Computer Interaction",
+      "projects": [
+        "Vehicle REID"
+      ],
+      "links": {
+        "linkedin": "http://www.linkedin.com/in/chinmay-mhatre-952720223",
+        "github": "https://github.com/chinmay-1302"
+      }
     },
     {
       "name": "Ojaswee",
@@ -184,6 +202,19 @@
         "linkedin": "https://in.linkedin.com/in/adharsh-narayana-12b795247",
         "github": "https://github.com/adharsh-narayana"
       }
+    },
+    {
+      "name": "Siddhant Saxena",
+      "designation": "Project staff",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "mrsiddy.py@gmail.com",
+      "research": "Geometric Deep Learning, Neural Algorithmic Reasoning, LLMs, Computer Vision, Combinatorial Optimizations",
+      "links": {
+        "github": "https://github.com/mr-siddy",
+        "portfolio": "https://sites.google.com/view/siddhant-saxena/"
+      },
+      "projects": []
     },
     {
       "name": "Alokendu Mazumder",

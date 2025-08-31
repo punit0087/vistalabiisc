@@ -24,6 +24,9 @@ import Srikar from "@/assets/profile/potrait/VedantamSrikar.jpg";
 import ojaswee from "@/assets/profile/potrait/ojaswee.jpg";
 import debashis from "@/assets/profile/potrait/Debashis.jpg";
 import yash from "@/assets/profile/potrait/yashsoni.jpg";
+import adarsh from "@/assets/profile/potrait/AdharshNarayana.jpg";
+import Mohith from "@/assets/profile/potrait/MohithKumar.png";
+import chinmay from "@/assets/profile/potrait/chinmay.jpeg";
 import { fetchPublicJson } from "@/lib/publicData";
 
 type Person = {
@@ -66,6 +69,9 @@ const imageByName: Record<string, string> = {
   Ojaswee: ojaswee.src,
   "Dr. Debashis Ray Sarkar": debashis.src,
   "Yash Soni": yash.src,
+  "Adharsh Narayana": adarsh.src,
+  "Mohith Kumar S S": Mohith.src,
+  "Chinmay P. Mhatre": chinmay.src,
 };
 
 export default function CardP() {
