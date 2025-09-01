@@ -5,12 +5,9 @@
       "name": "CycloAI",
       "description": "The comprehensive research project is aimed at leveraging self-supervised deep learning techniques to enhance cyclone intensity classification and improve disaster management in the fields of geological and climate sciences. The project will involve the development of advanced Scientific Machine Learning models, and collaboration with the Indian Space Research Organisation (ISRO) to analyze meteorological data. The ultimate goal is to provide accurate predictions, enable effective decision-making, and contribute to scientific advancements in cyclone analysis and disaster mitigation. The increasing frequency and intensity of cyclonic events demand more accurate and timely predictions to enhance disaster management efforts. This research project aims to utilize the power of ML techniques to improve cyclone intensity classification, cyclone genesis forecast and cyclone tracking, enabling effective mitigation strategies in geological and climate sciences. Collaboration with ISRO will provide access to rich meteorological data for analysis and validation.",
       "researchers": [
-        "Akash Agrawal",
-        "Mayesh Mohapatra",
-        "Paritosh Tiwari",
-        "Aravinda Reddy",
+        "Dr. Aravinda Reddy",
         "Dr. Vishwajeet Pattanaik",
-        "Dr. Aravinda Reddy"
+        "Paritosh Tiwari"
       ],
       "tech": [
         "Self-Supervised Learning",
@@ -31,10 +28,9 @@
       "name": "TrafficBrain",
       "description": "In the era of rapid urbanization driving globalization, the emphasis on smart cities has become central to this process. India, as a developing nation, is poised to construct a significant number of smart cities. However, the pressing challenge remains in designing and implementing an intelligent traffic management system, particularly in densely populated and chaotic traffic scenarios like those in India. The escalating traffic congestion, fuel consumption, and economic losses have underscored the urgent need for an efficient traffic control paradigm. Traditional traffic control methods with signal transitions have proven inadequate, necessitating a paradigm shift towards an automated traffic management system. Considering these aspects, this project aims to develop an innovative data-driven traffic control solution for a selected Indian city, targeting around 40 to 50 major traffic intersections, with the primary objective of ensuring a seamless and optimized traffic flow.",
       "researchers": [
-        "Rankit Kachroo",
-        "Aravinda Reddy",
+        "Dr. Aravinda Reddy",
         "Dr. Vishwajeet Pattanaik",
-        "Dr. Aravinda Reddy"
+        "Rankit Kachroo"
       ],
       "tech": [
         "Reinforcement Learning",
@@ -56,12 +52,9 @@
       "name": "Vehicle REID",
       "description": "",
       "researchers": [
-        "P. Rathore",
-        "Rishab Sharma",
-        "Aravinda Reddy",
-        "Dr. Vishwajeet Pattanaik",
+        "Chinmay P Mhatre",
         "Dr. Aravinda Reddy",
-        "Chinmay P. Mhatre"
+        "Dr. Vishwajeet Pattanaik"
       ],
       "tech": [],
       "data": [],
@@ -75,10 +68,8 @@
       "researchers": [
         "Alokendu Mazumder",
         "Paritosh Tiwari",
-        "Tirthajit Baruah",
-        "Siddhant Sharma",
         "Sourav Ranjan Saraf",
-        "Nidhi Ahlawat"
+        "Tirthajit Baruah"
       ],
       "tech": [
         "Contrastive Learning",
@@ -141,11 +132,11 @@
       "name": "Indian ADAS",
       "description": "The usefulness of ADAS or advanced driver warning systems under Heterogeneous Disordered Traffic (HDT) conditions is still not well understood in scientific literature. Too many ADAS warnings can have detrimental effects on drivers’ behaviour, particularly when driving larger vehicles (like buses) under densely packed HDT conditions, like on Indian roads. This work will allow us to optimize ADAS for Indian drivers and traffic conditions, reducing driver fatigue and making the drivers more aware of their surroundings, thus improving the overall road safety of bus drivers. For BMTC (Bangalore Metropolitan Transport Corporation), this will allow them to understand the best ADAS warnings and modalities for their bus drivers.",
       "researchers": [
-        "Dr. Aravinda Reddy",
-        "Ojaswee",
         "Adharsh Narayana",
+        "Dr. Aravinda Reddy",
+        "Dr. Debashis Ray Sarkar",
         "Dr. Vishwajeet Pattanaik",
-        "Mohith Kumar S S"
+        "Ojaswee"
       ],
       "tech": [
         "Computer Vision",
@@ -155,7 +146,7 @@
       ],
       "data": [
         "Telematics",
-        "Images",
+        "Videos",
         "Physiological Sensors",
         "Eye Tracking Data"
       ],
@@ -170,10 +161,9 @@
       "name": "CityWatch",
       "description": "The project aims to leverage the capabilities of Unmanned Aerial Vehicles (UAVs) to create an automated surveillance system. Drones, equipped with high-resolution cameras and AI software, will be used for accurate object detection and tracking, including vehicles and people, even under challenging conditions such as partial occlusion and varied viewpoints. The project specifically targets two critical objectives: (i) real-time tracking of vehicles and individuals on roads and (ii) precise estimation of vehicle queue lengths in dense traffic. Emphasis will be placed on developing efficient algorithms for embedded systems, ensuring optimal performance without overloading the UAV’s hardware. By addressing these challenges, the project seeks to contribute to the advancement of effective UAV-based surveillance systems for diverse applications, including traffic monitoring and security.",
       "researchers": [
-        "Parikshit Singh Rathore",
-        "Romit Bhaumik",
         "Dr. Aravinda Reddy",
-        "Dr. Vishwajeet Pattanaik"
+        "Dr. Vishwajeet Pattanaik",
+        "Parikshit Singh Rathore"
       ],
       "tech": [
         "Computer Vision",
@@ -194,10 +184,9 @@
       "description": "The project aims to develop an advanced Machine Learning (ML)-based Intrusion Detection System (IDS) to safeguard power grids in India against cyber-attacks. Given the increasing vulnerability of modern power grids due to the integration of Computing and Communication (CC) devices, the project will focus on devising unsupervised learning models capable of detecting anomalies across various communication protocols. By leveraging state-of-the-art techniques like isolation forest, One-Class Support Vector Machine (OCSVM), and auto-encoders, the project seeks to enhance the specificity and sensitivity of the detection system. The research involves extensive data analysis using open datasets and synthetic data generation from power grid simulators. The developed models will be evaluated using standard metrics and deployed over GPU-accelerated computing platforms for real-time monitoring. Ultimately, the project’s goal is to create a robust and adaptive solution that can effectively detect and prevent cyber threats in the Indian power grid, making it more resilient to dynamic and sophisticated attacks.",
       "researchers": [
         "Anushtha Tamrakar",
-        "Shailja Sharma",
-        "V Srimugdha Mahalakshmi Vabhiram",
         "Dr. Vishwajeet Pattanaik",
-        "Dr. Aravinda Reddy"
+        "Shailja Sharma",
+        "V Srimugdha Mahalakshmi Vabhiram"
       ],
       "tech": [
         "Unsupervised Learning",
@@ -205,7 +194,7 @@
         "Anomaly Detection"
       ],
       "data": [
-        ""
+        "IEC 61850, IEC 60870-5-104, Powergrid Substation Data"
       ],
       "fundedBy": [
         "POWERGRID Centre of Excellence (PGCoE), IISc"
@@ -216,10 +205,7 @@
       "id": 11,
       "name": "Wreck Analyzer",
       "description": "The Ministry of Road Transport and Highways (MoRTH) has recently launched the Integrated Road Accident Database (iRAD) initiative, aimed at enhancing road safety across the country. The iRAD system will gather comprehensive accident data from every region, enabling data analytics to generate insights that improve road safety. This information will provide critical input to various stakeholders, including the Transport Department, Health Department, Highway Authorities, and others, to support decision-making and policy formulation. This project also involves advanced technologies such as multi-drone energy-aware scheduling, path planning, crash analysis algorithms, autonomous flying, and autonomous data collection. When the police receive an SOS about an accident within their jurisdiction, they quickly arrive at the scene and deploy a drone to assist with data collection, including capturing video footage of the site. The drone is designed to perform this task autonomously.",
-      "researchers": [
-        "Rishabh Sabharwal",
-        "Vijay G. Kovali"
-      ],
+      "researchers": [],
       "tech": [
         "Trajectory Planning",
         "Objects Detection and Tracking",
@@ -240,13 +226,12 @@
       "name": "RoadDNA",
       "description": "This project explores prototyping and development of a sensing platform with multiple modalities. It also involves computer vision techniques which will be used for road surface monitoring applications under adverse weather conditions to enhance existing ADAS systems.",
       "researchers": [
-        "Yash Soni",
-        "Prasant Misra"
+        "Yash Soni"
       ],
       "tech": [
-        "Multimodal Machine Learning",
+        "Signal Processing",
         "Representation Learning",
-        "ML for Constrained Devices"
+        "Radar Imaging"
       ],
       "data": [
         "Heterogeneous Data"
@@ -402,6 +387,28 @@
       "data": [],
       "fundedBy": [],
       "url": "/research/sasd"
+    },
+    {
+      "id": 23,
+      "name": "RoadInfraAPI",
+      "description": "India’s roads are constantly changing, but today’s methods of checking their condition—such as survey vehicles and central databases—are slow, expensive, and limited. At the same time, almost every modern truck, bus, or car already carries powerful sensors: accelerometers, GPS, cameras, onboard diagnostics, and often a human driver with a smartphone. Aftermarket devices and roadside CCTVs also generate valuable data. The problem is that all this information remains scattered across silos. This project aims to build an open and standardised API that can bring these different data sources together and make them usable for road monitoring at scale. By collecting simple sensor signals—such as raw accelerometer readings, GPS location, and camera feeds—we can crowdsource insights about road roughness, potholes, parked vehicles on highways, and sudden diversions. The API will be lightweight enough to run on both high-end and low-cost devices, designed to comply with Indian regulations, and resilient to patchy network conditions (so data can still be captured in low-connectivity areas). Ultimately, the project envisions turning vehicle fleets into rolling surveyors of India’s roads—creating a scalable, vendor-neutral way to monitor infrastructure, improve safety, and enable smarter planning.",
+      "researchers": [
+        "Arindam Chakraborty",
+        "Chinmay P Mhatre",
+        "Dr. Punit Rathore",
+        "Dr. Vishwajeet Pattanaik"
+      ],
+      "tech": [
+        "Open APIs",
+        "Streaming Data",
+        "Crowdsourcing",
+        "Scalable Infrastructure"
+      ],
+      "data": [],
+      "fundedBy": [
+        "Volvo Group India Private Ltd."
+      ],
+      "url": "/research/roadinfraapi"
     }
   ]
 }

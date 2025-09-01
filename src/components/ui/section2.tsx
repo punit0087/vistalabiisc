@@ -48,6 +48,7 @@ export default function Section2() {
       sme: "/P_portfolio/img/drift.png",
       iot: "/P_portfolio/img/fitzroyvis.jpg",
       sasd: "/P_portfolio/img/bigdata.png",
+      roadinfraapi: "/P_portfolio/img/roadinfraapi.png",
     }),
     []
   );

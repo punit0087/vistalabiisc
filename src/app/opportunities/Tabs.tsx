@@ -24,7 +24,7 @@ export default function JobListings() {
 
   return (
     <div className="w-full px-[20%] sm:px-[8%] mx-auto p-6 text-white">
-      <Tabs defaultValue={tabData[0].id} className="w-full">
+      <Tabs defaultValue={tabData[1].id} className="w-full">
         <TabsList className="grid w-full grid-cols-3 sm:grid-cols-1">
           {tabData.map((tab) => (
             <TabsTrigger key={tab.id} value={tab.id}>

@@ -86,44 +86,17 @@ function runSync() {
   const projectByName = new Map();
   projects.forEach((p, idx) => projectByName.set(normalize(p.name), idx));
 
-  // Build researcher->projects map from projects.json using normalized name (w/o titles)
-  const researcherToProjectsFromProjects = new Map();
-  projects.forEach((p) => {
-    const pname = p.name;
-    (p.researchers || []).forEach((r) => {
-      if (!r) return;
-      const key = normalize(stripTitles(r));
-      if (!researcherToProjectsFromProjects.has(key)) {
-        researcherToProjectsFromProjects.set(key, new Set());
-      }
-      researcherToProjectsFromProjects.get(key).add(pname);
-    });
-  });
+  // Note: team.json is the source of truth for CURRENT members' project assignments.
+  // External/non-current names listed in projects.json will be preserved.
 
-  // Canonical names map from projects.json (preferred source of truth for display names)
-  const canonicalNameByNorm = new Map();
-  projects.forEach((p) => {
-    (p.researchers || []).forEach((r) => {
-      if (!r) return;
-      const norm = normalize(stripTitles(r));
-      const existing = canonicalNameByNorm.get(norm);
-      // Prefer the longest non-initial form
-      if (!existing) {
-        canonicalNameByNorm.set(norm, r);
-      } else {
-        const keepExisting = looksInitialName(existing) && !looksInitialName(r) ? false : existing.length >= r.length;
-        if (!keepExisting) canonicalNameByNorm.set(norm, r);
-      }
-    });
-  });
+  // Names: team.json is the source of truth for CURRENT member display names.
 
-  // We'll maintain project->researchers set as the union of current team assignments + existing researchers in projects.json
+  // We'll rebuild project->researchers sets strictly from CURRENT members' team.json assignments.
+  // This removes duplicates/old variants and excludes previous/external names.
+  const currentMembersList = members.filter((m) => m && m.status === "current" && m.name);
   const projResearchers = new Map();
   projects.forEach((p) => {
-    projResearchers.set(
-      normalize(p.name),
-      new Set((p.researchers || []).filter(Boolean))
-    );
+    projResearchers.set(normalize(p.name), new Set());
   });
 
   // Build a fast lookup of current members by normalized no-title name
@@ -134,52 +107,15 @@ function runSync() {
     }
   }
 
-  // For each current member, align name to canonical from projects.json when confidently matched,
-  // compute union of existing team projects + inferred from projects.json and update team.json
+  // For each current member, use team.json name as-is and only team.json projects
   for (const m of members) {
     if (!m || m.status !== "current") continue; // only keep current members in sync
-    // 1) Canonicalize name if we can confidently map to projects.json
-    const normNoTitle = normalize(stripTitles(m.name));
-    let canonical = canonicalNameByNorm.get(normNoTitle);
-    if (!canonical) {
-      // Attempt fuzzy: match on last name exact and first name within small edit distance
-      const teamToks = tokens(stripTitles(m.name));
-      const lastTeam = (teamToks[teamToks.length - 1] || "").toLowerCase();
-      let best = null;
-      for (const [norm, display] of canonicalNameByNorm.entries()) {
-        const projToks = tokens(display);
-        const lastProj = (projToks[projToks.length - 1] || "").toLowerCase();
-        if (!lastTeam || lastProj !== lastTeam) continue;
-        const fTeam = (teamToks[0] || "").toLowerCase();
-        const fProj = (projToks[0] || "").toLowerCase();
-        const dist = levenshtein(fTeam, fProj);
-        if (dist <= 2) {
-          const score = (looksInitialName(display) ? 1 : 2) + Math.min(2, 2 - dist) + Math.min(2, projToks.length);
-          if (!best || score > best.score) best = { display, score };
-        }
-      }
-      if (best) canonical = best.display;
-    }
-    if (canonical && canonical !== m.name) {
-      m.name = canonical;
-    }
-
-    // 2) Merge assigned projects
+    // Use ONLY team-specified projects (source of truth). Filter to known projects.
     const assigned = new Set(
       (Array.isArray(m.projects) ? m.projects : [])
         .filter(Boolean)
         .filter((p) => projectByName.has(normalize(p)))
     );
-    const inferred = researcherToProjectsFromProjects.get(
-      normalize(stripTitles(m.name))
-    );
-    if (inferred) {
-      for (const p of inferred) {
-        if (projectByName.has(normalize(p))) assigned.add(p);
-      }
-    }
-    // Persist merged, sorted list back to member
-    m.projects = Array.from(assigned).sort((a, b) => a.localeCompare(b));
 
     // Also make sure project.researchers includes this member for the assigned projects
     for (const projName of assigned) {
@@ -193,11 +129,10 @@ function runSync() {
   projects.forEach((p) => {
     const key = normalize(p.name);
     const set = projResearchers.get(key) || new Set();
-    p.researchers = Array.from(set);
+    p.researchers = Array.from(set).sort((a, b) => String(a).localeCompare(String(b)));
   });
 
-  // Write back updated team.json (with current members' projects merged)
-  writeJson(TEAM_PATH, { members });
+  // Do NOT write back team.json; it is the source of truth and should not be modified by sync
 
   writeJson(PROJECTS_PATH, { projects });
 
@@ -208,7 +143,7 @@ function runSync() {
     if (r.id > maxId) maxId = r.id;
   }
 
-  // Researchers.json should contain ONLY CURRENT team members,
+  // Researchers.json should contain ONLY CURRENT team members (names as in team.json),
   // ordered by designation: Research Staff, then Research Scholar, then M.Tech, then others.
   const rankOf = (label) => {
     const l = String(label || "").toLowerCase();
@@ -245,7 +180,9 @@ function runSync() {
 
   writeJson(RESEARCHERS_PATH, { researchers: newResearchers });
 
-  console.log(`Sync complete: ${projects.length} projects and ${newResearchers.length} researchers updated.`);
+  console.log(
+    `Sync complete: ${projects.length} projects and ${newResearchers.length} researchers updated (team.json is source for current members' project memberships).`
+  );
 }
 
 // If started with --watch, watch team and projects files and re-run on change

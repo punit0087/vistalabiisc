@@ -19,7 +19,8 @@
         "Spam Detection",
         "ST Estimation",
         "Traj-Pred",
-        "Urban Sensing using IOT"
+        "Urban Sensing using IOT",
+        "RoadInfraAPI"
       ]
     },
     {
@@ -41,7 +42,8 @@
         "Indian ADAS",
         "TrafficBrain",
         "UPGRID",
-        "Vehicle REID"
+        "Vehicle REID",
+        "RoadInfraAPI"
       ]
     },
     {
@@ -55,9 +57,7 @@
         "linkedin": "https://www.linkedin.com/in/pruthvish-rajput-435636187/?originalSubdomain=in",
         "scholar": "https://scholar.google.co.in/citations?user=zYOX7yYAAAAJ&hl=en"
       },
-      "projects": [
-        "VehicleSec"
-      ]
+      "projects": ["VehicleSec"]
     },
     {
       "name": "Dr. Aravinda Reddy",
@@ -77,7 +77,6 @@
         "Driver-Vehicle Interaction",
         "Indian ADAS",
         "TrafficBrain",
-        "UPGRID",
         "Vehicle REID"
       ]
     },
@@ -92,7 +91,7 @@
         "linkedin": "https://www.linkedin.com/in/debashisraysarkar/",
         "scholar": "https://scholar.google.com/citations?user=lZo3d1AAAAAJ&hl=en"
       },
-      "projects": []
+      "projects": ["Indian ADAS"]
     },
     {
       "name": "Parikshit Singh Rathore",
@@ -100,10 +99,8 @@
       "designationLabel": "Research Staff",
       "status": "current",
       "email": "parikshits@iisc.ac.in",
-      "research": "Self-Supervised Learning, AI for Good, Edge AI, Computer Vision",
-      "projects": [
-        "CityWatch"
-      ],
+      "research": "Representation Learning, AI for Good, Edge AI, Computer Vision",
+      "projects": ["CityWatch"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/parikshit-singh-rathore/",
         "github": "https://github.com/parikshit14",
@@ -118,9 +115,7 @@
       "status": "current",
       "email": "anushtha@fsid-iisc.in",
       "research": " Machine Learning, Data Science, Deep Learning, Computer Vision.",
-      "projects": [
-        "UPGRID"
-      ],
+      "projects": ["UPGRID"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/anushtha-tamrakar-86b17319a/",
         "github": "https://github.com/Anushtha18"
@@ -133,9 +128,7 @@
       "status": "current",
       "email": "ssmohithkumar@gmail.com",
       "research": "Computer vision, web technologies, and their interdisciplinary applications",
-      "projects": [
-        "Indian ADAS"
-      ],
+      "projects": [""],
       "links": {
         "linkedin": "https://www.linkedin.com/in/mohithkumarss/",
         "github": "https://github.com/mohithkumarss",
@@ -143,15 +136,13 @@
       }
     },
     {
-      "name": "Chinmay P. Mhatre",
+      "name": "Chinmay P Mhatre",
       "designation": "Project Associate",
       "designationLabel": "Research Staff",
       "status": "current",
       "email": "chinmaymhatre111@gmail.com",
       "research": "Software Development, Scalable System Design, Edge AI, Human-Computer Interaction",
-      "projects": [
-        "Vehicle REID"
-      ],
+      "projects": ["Vehicle REID", "RoadInfraAPI"],
       "links": {
         "linkedin": "http://www.linkedin.com/in/chinmay-mhatre-952720223",
         "github": "https://github.com/chinmay-1302"
@@ -163,10 +154,8 @@
       "designationLabel": "Research Staff",
       "status": "current",
       "email": "ojojaswee@gmail.com",
-      "research": "Geometric Deep Learning, Neural Algorithmic Reasoning, LLMs, Computer Vision, Combinatorial Optimizations",
-      "projects": [
-        "Indian ADAS"
-      ],
+      "research": "Computer Vision, Adversarial Machine Learning, Deep Learning",
+      "projects": ["Indian ADAS"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/ojaswee-263448190",
         "scholar": "https://scholar.google.co.in/citations?hl=en&user=Dk1eOugAAAAJ",
@@ -180,9 +169,7 @@
       "status": "current",
       "email": "yashsoni@iisc.ac.in",
       "research": "Radar Signal Processing, Radar Imaging",
-      "projects": [
-        "RoadDNA"
-      ],
+      "projects": ["RoadDNA"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/yash-soni-z7b860270/",
         "scholar": "https://scholar.google.com/citations?user=EL-4wMEr7MMC&hl=en"
@@ -194,27 +181,25 @@
       "designationLabel": "Research Staff",
       "status": "current",
       "email": "adharshnarayana1@gmail.com",
-      "research": "",
-      "projects": [
-        "Indian ADAS"
-      ],
+      "research": "Deep Learning, Computer Vision, LLMs",
+      "projects": ["Indian ADAS"],
       "links": {
         "linkedin": "https://in.linkedin.com/in/adharsh-narayana-12b795247",
         "github": "https://github.com/adharsh-narayana"
       }
     },
     {
-      "name": "Siddhant Saxena",
-      "designation": "Project staff",
+      "name": "Arindam Chakraborty",
+      "designation": "Project Associate",
       "designationLabel": "Research Staff",
       "status": "current",
-      "email": "mrsiddy.py@gmail.com",
-      "research": "Geometric Deep Learning, Neural Algorithmic Reasoning, LLMs, Computer Vision, Combinatorial Optimizations",
+      "email": "arindamchakraborty6.10@gmail.com",
+      "research": "Software Development, Scalable System Design, Computer Vision, Edge based Inferencing",
+      "projects": ["RoadInfraAPI"],
       "links": {
-        "github": "https://github.com/mr-siddy",
-        "portfolio": "https://sites.google.com/view/siddhant-saxena/"
-      },
-      "projects": []
+        "linkedin": "https://www.linkedin.com/in/arindm007",
+        "github": "https://github.com/arindm007"
+      }
     },
     {
       "name": "Alokendu Mazumder",
@@ -222,10 +207,8 @@
       "designationLabel": "Research Scholar",
       "status": "current",
       "email": "alokendum@iisc.ac.in",
-      "research": "Computer Vision, 3D-Object Detection and Tracking, GANs.",
-      "projects": [
-        "Deep-Clustering"
-      ],
+      "research": "Representation Learning, Stocahastic Optimization.",
+      "projects": ["Deep-Clustering"],
       "links": {
         "github": "https://github.com/alokendumazumder",
         "scholar": "https://scholar.google.com/citations?user=N_kcD4cAAAAJ&hl=en",
@@ -238,12 +221,8 @@
       "designationLabel": "Research Scholar",
       "status": "current",
       "email": "paritosht@iisc.ac.in",
-      "research": "Clustering, Unsupervised Learning and Data Analytics",
-      "projects": [
-        "AML WatchDog",
-        "CycloAI",
-        "Deep-Clustering"
-      ],
+      "research": "Clustering, Unsupervised and Self-Supervised Learning",
+      "projects": ["AML WatchDog", "CycloAI", "Deep-Clustering"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/paritosh-tiwari-101/",
         "github": "https://github.com/paritosh-101",
@@ -257,9 +236,7 @@
       "status": "current",
       "email": "ramsamarthbb@iisc.ac.in",
       "research": "Graph Neural Network, Geometric Deep Learning, Parameterised Differential Equations, Federated Learning",
-      "projects": [
-        "AML WatchDog"
-      ],
+      "projects": ["AML WatchDog"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
         "github": "https://github.com/achiverram28/"
@@ -272,9 +249,7 @@
       "status": "current",
       "email": "tirthajitb@iisc.ac.in",
       "research": "AI for healthcare, Medical image processing, Computer vision, Representation learning.",
-      "projects": [
-        "Deep-Clustering"
-      ],
+      "projects": ["Deep-Clustering"],
       "links": {
         "linkedin": "linkedin.com/in/tirthajit-baruah",
         "github": "https://github.com/tirthajit",
@@ -288,9 +263,7 @@
       "status": "current",
       "email": "souravr@iisc.ac.in",
       "research": "Deep Learning",
-      "projects": [
-        "Deep-Clustering"
-      ]
+      "projects": ["Deep-Clustering"]
     },
     {
       "name": "Rankit Kachroo",
@@ -299,9 +272,7 @@
       "status": "current",
       "email": "rankitk@iisc.ac.in",
       "research": "Human-Computer Interaction, Computational Sensorimotor Learning, Representation Learning, Unsupervised Learning",
-      "projects": [
-        "TrafficBrain"
-      ],
+      "projects": ["TrafficBrain"],
       "links": {
         "linkedin": "https://in.linkedin.com/in/rankit-kachroo-156956178"
       }
@@ -311,14 +282,10 @@
       "designation": "M.Tech Research (Started 2024)",
       "designationLabel": "M.Tech",
       "status": "current",
-      "email": "",
+      "email": "sshailja@iisc.ac.in",
       "research": "Unsupervised Learning, Computer Vision, Cyber-Security",
-      "projects": [
-        "UPGRID"
-      ],
-      "links": {
-        "linkedin": "https://in.linkedin.com/in/rankit-kachroo-156956178"
-      }
+      "projects": ["UPGRID"],
+      "links": {}
     },
     {
       "name": "Biswadeep Debnath",
@@ -386,9 +353,7 @@
       "status": "current",
       "email": "srimugdhav@iisc.ac.in",
       "research": "",
-      "projects": [
-        "UPGRID"
-      ]
+      "projects": ["UPGRID"]
     },
     {
       "name": "Raju Bhookya",
@@ -466,9 +431,7 @@
       "designation": "",
       "designationLabel": "M.Tech",
       "status": "previous",
-      "projects": [
-        "CityWatch"
-      ],
+      "projects": ["CityWatch"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/romit-bhaumik-24a039217"
       }
@@ -478,9 +441,7 @@
       "designation": "",
       "designationLabel": "Research Staff",
       "status": "previous",
-      "projects": [
-        "CycloAI"
-      ],
+      "projects": ["CycloAI"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/mayesh-mohapatra/"
       }
@@ -553,9 +514,7 @@
       "designation": "",
       "designationLabel": "Research Scholar",
       "status": "previous",
-      "projects": [
-        "CycloAI"
-      ],
+      "projects": ["CycloAI"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/akash-agrawal-059307143/?originalSubdomain=in"
       }

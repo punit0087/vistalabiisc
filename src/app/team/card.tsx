@@ -27,6 +27,7 @@ import yash from "@/assets/profile/potrait/yashsoni.jpg";
 import adarsh from "@/assets/profile/potrait/AdharshNarayana.jpg";
 import Mohith from "@/assets/profile/potrait/MohithKumar.png";
 import chinmay from "@/assets/profile/potrait/chinmay.jpeg";
+import arindam from "@/assets/profile/potrait/Arindam.jpg";
 import { fetchPublicJson } from "@/lib/publicData";
 
 type Person = {
@@ -71,7 +72,8 @@ const imageByName: Record<string, string> = {
   "Yash Soni": yash.src,
   "Adharsh Narayana": adarsh.src,
   "Mohith Kumar S S": Mohith.src,
-  "Chinmay P. Mhatre": chinmay.src,
+  "Chinmay P Mhatre": chinmay.src,
+  "Arindam Chakraborty": arindam.src,
 };
 
 export default function CardP() {
