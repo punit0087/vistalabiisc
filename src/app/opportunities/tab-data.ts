@@ -47,7 +47,7 @@ export const tabData: Tab[] = [
       },
       {
         title:
-          "Graph Machine Learning for Anti Money Laundering in FinTech (Graph-FinTech)",
+          "Anomaly Detection on Large-Scale Data  for Anti Money Laundering in FinTech",
         designation:
           "1 Project Associate / Software Engineer / Research Associate",
         deadlineIso: "2025-09-10T23:59:00+05:30",
@@ -72,7 +72,7 @@ export const tabData: Tab[] = [
     positions: [
       {
         title:
-          "Graph Machine Learning for Anti Money Laundering in FinTech (Graph-FinTech)",
+          "Anomaly Detection on Large-Scale Data  for Anti Money Laundering in FinTech",
         designation: "1 Project Scientist / Postdoctoral Fellow",
         deadlineIso: "2025-09-10T23:59:00+05:30",
         applyLink:
