@@ -230,19 +230,6 @@
       }
     },
     {
-      "name": "Ram Samarth B B",
-      "designation": "PhD Scholar (Started 2025)",
-      "designationLabel": "Research Scholar",
-      "status": "current",
-      "email": "ramsamarthbb@iisc.ac.in",
-      "research": "Graph Neural Network, Geometric Deep Learning, Parameterised Differential Equations, Federated Learning",
-      "projects": ["AML WatchDog"],
-      "links": {
-        "linkedin": "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
-        "github": "https://github.com/achiverram28/"
-      }
-    },
-    {
       "name": "Tirthajit Baruah",
       "designation": "PhD Scholar (Started 2023)",
       "designationLabel": "Research Scholar",
@@ -275,6 +262,19 @@
       "projects": ["TrafficBrain"],
       "links": {
         "linkedin": "https://in.linkedin.com/in/rankit-kachroo-156956178"
+      }
+    },
+    {
+      "name": "Ram Samarth B B",
+      "designation": "PhD Scholar (Started 2025)",
+      "designationLabel": "Research Scholar",
+      "status": "current",
+      "email": "ramsamarthbb@iisc.ac.in",
+      "research": "Graph Neural Network, Geometric Deep Learning, Parameterised Differential Equations, Federated Learning",
+      "projects": ["AML WatchDog"],
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
+        "github": "https://github.com/achiverram28/"
       }
     },
     {
