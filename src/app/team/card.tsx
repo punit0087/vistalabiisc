@@ -28,6 +28,8 @@ import adarsh from "@/assets/profile/potrait/AdharshNarayana.jpg";
 import Mohith from "@/assets/profile/potrait/MohithKumar.png";
 import chinmay from "@/assets/profile/potrait/chinmay.jpeg";
 import arindam from "@/assets/profile/potrait/Arindam.jpg";
+import shalini from "@/assets/profile/potrait/shalinisharma.jpeg";
+import srimugdha from "@/assets/profile/potrait/SrimugdhaMahalakshmi.jpeg";
 import { fetchPublicJson } from "@/lib/publicData";
 
 type Person = {
@@ -58,14 +60,13 @@ const imageByName: Record<string, string> = {
   "Tirthajit Baruah": tirthajit.src,
   "Sourav Ranjan Saraf": srs.src,
   "Rankit Kachroo": rankit.src,
-  "Shailja Sharma": Dprofile.src,
   "Biswadeep Debnath": Bdebnath.src,
   "Ila Ananta": ilana.src,
   "Rithwik Pradeep": ritwik.src,
   "Arnab Roy": Arnab.src,
   "Srikar Vedantam": Srikar.src,
   "Vedantam Srikar": Srikar.src,
-  "V Srimugdha Mahalakshmi Vabhiram": Dprofile.src,
+  "V Srimugdha Mahalakshmi Vabhiram": srimugdha.src,
   "Raju Bhookya": Dprofile.src,
   Ojaswee: ojaswee.src,
   "Dr. Debashis Ray Sarkar": debashis.src,
@@ -74,6 +75,7 @@ const imageByName: Record<string, string> = {
   "Mohith Kumar S S": Mohith.src,
   "Chinmay P Mhatre": chinmay.src,
   "Arindam Chakraborty": arindam.src,
+  "Shailja Sharma": shalini.src,
 };
 
 export default function CardP() {

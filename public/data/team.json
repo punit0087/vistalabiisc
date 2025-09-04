@@ -285,7 +285,9 @@
       "email": "sshailja@iisc.ac.in",
       "research": "Unsupervised Learning, Computer Vision, Cyber-Security",
       "projects": ["UPGRID"],
-      "links": {}
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/shailja-sharma-4417431a0/"
+      }
     },
     {
       "name": "Biswadeep Debnath",
@@ -352,7 +354,10 @@
       "designationLabel": "M.Tech",
       "status": "current",
       "email": "srimugdhav@iisc.ac.in",
-      "research": "",
+      "research": "Computer Vision, Deep Learning Techniques, Multimodal learning",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/srimugdha-mahalakshmi/"
+      },
       "projects": ["UPGRID"]
     },
     {
