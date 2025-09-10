@@ -9,6 +9,14 @@
       "citationCount": "0"
     },
     {
+      "title": "Physics-informed neural network for fatigue life prediction of irradiated austenitic and ferritic/martensitic steels",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:e5wmG9Sq2KIC",
+      "authors": "DS Kori, A Chandraker, SA Rahman, P Rathore, A Chauhan",
+      "publicationDate": "2025",
+      "journal": "arXiv preprint arXiv:2508.17303, 2025",
+      "citationCount": "0"
+    },
+    {
       "title": "Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:TQgYirikUcIC",
       "authors": "A Mazumder, K Vyas, P Rathore",
@@ -86,7 +94,7 @@
       "authors": "A Mazumder, T Baruah, B Kumar, R Sharma, V Pattanaik, P Rathore",
       "publicationDate": "2024",
       "journal": "Proceedings of the IEEE/CVF Winter Conference on Applications of Computer …, 2024",
-      "citationCount": "2"
+      "citationCount": "3"
     },
     {
       "title": "Feature Engineering for Anomaly Detection and Classification of Blockchain Transactions",
@@ -102,7 +110,7 @@
       "authors": "NJ Sai, P Rathore, K Sridharan, A Chauhan",
       "publicationDate": "2023",
       "journal": "Fusion Engineering and Design 195, 113964, 2023",
-      "citationCount": "9"
+      "citationCount": "12"
     },
     {
       "title": "A Theoretical and Empirical Study on the Convergence of Adam with an\" Exact\" Constant Step Size in Non-Convex Settings",
@@ -118,7 +126,7 @@
       "authors": "NJ Sai, P Rathore, A Chauhan",
       "publicationDate": "2023",
       "journal": "Scripta Materialia 226, 115214, 2023",
-      "citationCount": "50"
+      "citationCount": "52"
     },
     {
       "title": "DeepVAT: A Self-Supervised Technique for Cluster Assessment in Image Datasets",
@@ -151,32 +159,48 @@
       "publicationDate": "2022",
       "journal": "International Conference on Advanced Data Mining and Applications, 118-130, 2022",
       "citationCount": "4"
-    },
-    {
-      "title": "A Data-Driven Framework for Driving Style Classification",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:_kc_bZDykSQC",
-      "authors": "S Milardo, P Rathore, P Santi, C Ratti",
-      "publicationDate": "2022",
-      "journal": "International Conference on Advanced Data Mining and Applications, 253-265, 2022",
-      "citationCount": "3"
     }
   ],
   "metrics": {
-    "citationsAll": "670",
-    "citationsSince2019": "604",
+    "citationsAll": "685",
+    "citationsSince2019": "619",
     "hIndexAll": "13",
     "hIndexSince2019": "12",
-    "i10IndexAll": "14",
-    "i10IndexSince2019": "14"
+    "i10IndexAll": "15",
+    "i10IndexSince2019": "15"
   },
   "graphData": [
-    { "year": "2018", "citations": "26" },
-    { "year": "2019", "citations": "39" },
-    { "year": "2020", "citations": "69" },
-    { "year": "2021", "citations": "72" },
-    { "year": "2022", "citations": "113" },
-    { "year": "2023", "citations": "116" },
-    { "year": "2024", "citations": "130" },
-    { "year": "2025", "citations": "104" }
+    {
+      "year": "2018",
+      "citations": "26"
+    },
+    {
+      "year": "2019",
+      "citations": "39"
+    },
+    {
+      "year": "2020",
+      "citations": "69"
+    },
+    {
+      "year": "2021",
+      "citations": "72"
+    },
+    {
+      "year": "2022",
+      "citations": "113"
+    },
+    {
+      "year": "2023",
+      "citations": "116"
+    },
+    {
+      "year": "2024",
+      "citations": "132"
+    },
+    {
+      "year": "2025",
+      "citations": "116"
+    }
   ]
 }
