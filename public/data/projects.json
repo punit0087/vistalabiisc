@@ -1,6 +1,28 @@
 {
   "projects": [
     {
+      "id": 23,
+      "name": "RoadInfraAPI",
+      "description": "India’s roads are constantly changing, but today’s methods of checking their condition—such as survey vehicles and central databases—are slow, expensive, and limited. At the same time, almost every modern truck, bus, or car already carries powerful sensors: accelerometers, GPS, cameras, onboard diagnostics, and often a human driver with a smartphone. Aftermarket devices and roadside CCTVs also generate valuable data. The problem is that all this information remains scattered across silos. This project aims to build an open and standardised API that can bring these different data sources together and make them usable for road monitoring at scale. By collecting simple sensor signals—such as raw accelerometer readings, GPS location, and camera feeds—we can crowdsource insights about road roughness, potholes, parked vehicles on highways, and sudden diversions. The API will be lightweight enough to run on both high-end and low-cost devices, designed to comply with Indian regulations, and resilient to patchy network conditions (so data can still be captured in low-connectivity areas). Ultimately, the project envisions turning vehicle fleets into rolling surveyors of India’s roads—creating a scalable, vendor-neutral way to monitor infrastructure, improve safety, and enable smarter planning.",
+      "researchers": [
+        "Arindam Chakraborty",
+        "Chinmay P Mhatre",
+        "Dr. Punit Rathore",
+        "Dr. Vishwajeet Pattanaik"
+      ],
+      "tech": [
+        "Open APIs",
+        "Streaming Data",
+        "Crowdsourcing",
+        "Scalable Infrastructure"
+      ],
+      "data": [],
+      "fundedBy": [
+        "Volvo Group India Private Ltd."
+      ],
+      "url": "/research/roadinfraapi"
+    },
+    {
       "id": 1,
       "name": "CycloAI",
       "description": "The comprehensive research project is aimed at leveraging self-supervised deep learning techniques to enhance cyclone intensity classification and improve disaster management in the fields of geological and climate sciences. The project will involve the development of advanced Scientific Machine Learning models, and collaboration with the Indian Space Research Organisation (ISRO) to analyze meteorological data. The ultimate goal is to provide accurate predictions, enable effective decision-making, and contribute to scientific advancements in cyclone analysis and disaster mitigation. The increasing frequency and intensity of cyclonic events demand more accurate and timely predictions to enhance disaster management efforts. This research project aims to utilize the power of ML techniques to improve cyclone intensity classification, cyclone genesis forecast and cyclone tracking, enabling effective mitigation strategies in geological and climate sciences. Collaboration with ISRO will provide access to rich meteorological data for analysis and validation.",
@@ -387,28 +409,6 @@
       "data": [],
       "fundedBy": [],
       "url": "/research/sasd"
-    },
-    {
-      "id": 23,
-      "name": "RoadInfraAPI",
-      "description": "India’s roads are constantly changing, but today’s methods of checking their condition—such as survey vehicles and central databases—are slow, expensive, and limited. At the same time, almost every modern truck, bus, or car already carries powerful sensors: accelerometers, GPS, cameras, onboard diagnostics, and often a human driver with a smartphone. Aftermarket devices and roadside CCTVs also generate valuable data. The problem is that all this information remains scattered across silos. This project aims to build an open and standardised API that can bring these different data sources together and make them usable for road monitoring at scale. By collecting simple sensor signals—such as raw accelerometer readings, GPS location, and camera feeds—we can crowdsource insights about road roughness, potholes, parked vehicles on highways, and sudden diversions. The API will be lightweight enough to run on both high-end and low-cost devices, designed to comply with Indian regulations, and resilient to patchy network conditions (so data can still be captured in low-connectivity areas). Ultimately, the project envisions turning vehicle fleets into rolling surveyors of India’s roads—creating a scalable, vendor-neutral way to monitor infrastructure, improve safety, and enable smarter planning.",
-      "researchers": [
-        "Arindam Chakraborty",
-        "Chinmay P Mhatre",
-        "Dr. Punit Rathore",
-        "Dr. Vishwajeet Pattanaik"
-      ],
-      "tech": [
-        "Open APIs",
-        "Streaming Data",
-        "Crowdsourcing",
-        "Scalable Infrastructure"
-      ],
-      "data": [],
-      "fundedBy": [
-        "Volvo Group India Private Ltd."
-      ],
-      "url": "/research/roadinfraapi"
     }
   ]
 }
