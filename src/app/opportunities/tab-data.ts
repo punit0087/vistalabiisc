@@ -29,7 +29,7 @@ export const tabData: Tab[] = [
     positions: [
       {
         title: "GPU Rack Server Administrator ",
-        designation: "1 Project Associate / Junior Research Fellow",
+        designation: "1 Project Associate",
         deadlineIso: "2025-10-12T23:59:00+05:30",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLSfECW05DQoXzLUj_eX9Gi8zeK_5kFj6JL48riBq2rueAVuaBA/",
