@@ -30,7 +30,7 @@ export const tabData: Tab[] = [
       {
         title: "GPU Rack Server Administrator ",
         designation: "1 Project Associate",
-        deadlineIso: "2025-10-20T23:59:00+05:30",
+        deadlineIso: "2025-11-05T23:59:00+05:30",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLSfECW05DQoXzLUj_eX9Gi8zeK_5kFj6JL48riBq2rueAVuaBA/viewform",
         content: {
