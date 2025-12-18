@@ -56,8 +56,7 @@ export default function Section2() {
   // Fallback URL mapping when projects.json has placeholder '#'
   const fallbackUrlByName = useMemo(
     () => ({
-      "AML WatchDog": "/P_portfolio/research/AMLWD",
-      RoadDNA: "/P_portfolio/research/roadDNA",
+     
     }),
     []
   );
