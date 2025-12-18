@@ -28,19 +28,20 @@ export const tabData: Tab[] = [
     title: "Project / Research Associate",
     positions: [
       {
-        title: "GPU Rack Server Administrator ",
-        designation: "1 Project Associate",
-        deadlineIso: "2025-11-05T23:59:00+05:30",
+        title: "Network Packet Inspection and Anomaly Detection",
+        designation: "1 Project Associate/Research Associate",
+        deadlineIso: "2025-12-28T23:59:00+05:30",
         applyLink:
-          "https://docs.google.com/forms/d/e/1FAIpQLSfECW05DQoXzLUj_eX9Gi8zeK_5kFj6JL48riBq2rueAVuaBA/viewform",
+          "https://forms.gle/PziVyA1hjQvHfPw16",
         content: {
           type: "list",
           items: [
-            "Bachelor’s Degree (B.E., B.Tech., BCA, MCA, M.Tech or equivalent) in a relevant Engineering or Computing discipline.",
-            "1+ years of hands-on experience in System Administration, DevOps, or HPC/Cluster management.",
-            "Demonstrated proficiency in Python and Bash scripting for system automation, monitoring, and infrastructure management is essential.",
-            "Solid theoretical understanding and practical experience in setting up and maintaining high-performance computing (HPC) environments, including GPU cluster management and SLURM scheduling or similar resource managers.",
-            "Strong programming, debugging, and advanced system troubleshooting skills across complex distributed computing systems are a significant advantage.",
+            "Bachelor’s/Master’s degree in a relevant engineering discipline.",
+            "Knowledge of networking fundamentals, including protocols (e.g., TCP/IP, HTTP, DNS) and packet inspection concepts.",
+            "Demonstrated experience in using Large Language Models (LLMs) and natural language processing techniques is required.",
+            "Familiarity with tools for network traffic analysis (e.g., Wireshark, TCPDump) and packet data handling is a plus.",
+            "Proficiency in machine learning frameworks (e.g., TensorFlow, PyTorch) is a must.",
+            "Proficiency in Python, with experience in libraries such as Scikit-Learn, Numpy, and Pandas.",
           ],
         },
       },
