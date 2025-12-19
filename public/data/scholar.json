@@ -1,6 +1,30 @@
 {
   "results": [
     {
+      "title": "Comparative Analysis Of Deep Learning Models For Cyclone Detection And Localisation On Infrared Satellite Images",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:j3f4tGmQtD8C",
+      "authors": "A Agrawal, M Mohapatra, A Raja, P Tiwari, V Pattanaik, A Agarwal, ...",
+      "publicationDate": "2025",
+      "journal": "Authorea Preprints, 2025",
+      "citationCount": "0"
+    },
+    {
+      "title": "On Convergence of Adam with Data Dependent Stepsize",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:4JMBOYKVnBMC",
+      "authors": "A Mazumder, A Roy, R Sabharwal, B Kumar, M Tayal, C Garg, P Rathore",
+      "publicationDate": "2025",
+      "journal": "Authorea Preprints, 2025",
+      "citationCount": "0"
+    },
+    {
+      "title": "The Urban Vision Hackathon Dataset and Models: Towards Image Annotations and Accurate Vision Models for Indian Traffic",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:RHpTSmoSYBkC",
+      "authors": "A Sharma, C Mhatre, S Gawali, R Bokkasam, B Kishore, V Pattanaik, ...",
+      "publicationDate": "2025",
+      "journal": "arXiv preprint arXiv:2511.02563, 2025",
+      "citationCount": "0"
+    },
+    {
       "title": "PrefixCAN-Signal: PrefixSpan-based Automatic Controller Area Network Signal Extraction",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:R3hNpaxXUhUC",
       "authors": "PR Rajput, A Zaman, V Katewa, P Rathore",
@@ -41,6 +65,30 @@
       "citationCount": "0"
     },
     {
+      "title": "DIME: Deterministic Information Maximizing Autoencoder",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:mB3voiENLucC",
+      "authors": "A Mazumder, C Garg, T Baruah, P Rathore",
+      "publicationDate": "2025",
+      "journal": "ICLR 2025 Workshop on Deep Generative Model in Machine Learning: Theory …, 2025",
+      "citationCount": "0"
+    },
+    {
+      "title": "SSGNN: Simple Yet Effective Spectral Graph Neural Network",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:qUcmZB5y_30C",
+      "authors": "RS BB, R Sabharwal, SP Chepuri, P Rathore",
+      "publicationDate": "2025",
+      "journal": "",
+      "citationCount": "0"
+    },
+    {
+      "title": "Feature Engineering for Anomaly Detection and Classification of Blockchain Transactions",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:dhFuZR0502QC",
+      "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
+      "publicationDate": "2025",
+      "journal": "Distributed Ledger Technologies: Research and Practice, 2025",
+      "citationCount": "0"
+    },
+    {
       "title": "Benchmarking Object Detection and Tracking for UAVs: An Algorithmic Comparison",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:HDshCWvjkbEC",
       "authors": "PS Rathore, A Balana, R Bhaumik, V Pattanaik, P Rathore",
@@ -54,7 +102,7 @@
       "authors": "R Sabharwal, PS Rathore, P Rathore",
       "publicationDate": "2024",
       "journal": "arXiv preprint arXiv:2412.09023, 2024",
-      "citationCount": "0"
+      "citationCount": "1"
     },
     {
       "title": "A Visual-Analytical Approach for Automatic Detection of Cyclonic Events in Satellite Observations",
@@ -62,7 +110,7 @@
       "authors": "A Agrawal, M Mohapatra, A Raja, P Tiwari, V Pattanaik, N Jaiswal, ...",
       "publicationDate": "2024",
       "journal": "arXiv preprint arXiv:2410.08218, 2024",
-      "citationCount": "0"
+      "citationCount": "1"
     },
     {
       "title": "Unified Feature Engineering for Detection of Malicious Entities in Blockchain Networks",
@@ -70,7 +118,7 @@
       "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
       "publicationDate": "2024",
       "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "28"
+      "citationCount": "35"
     },
     {
       "title": "Adding Explainability to Visual Clustering Tendency Assessment (VAT) Methods Through Feature Importance",
@@ -111,59 +159,11 @@
       "publicationDate": "2023",
       "journal": "Fusion Engineering and Design 195, 113964, 2023",
       "citationCount": "12"
-    },
-    {
-      "title": "A Theoretical and Empirical Study on the Convergence of Adam with an\" Exact\" Constant Step Size in Non-Convex Settings",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:hC7cP41nSMkC",
-      "authors": "A Mazumder, R Sabharwal, M Tayal, B Kumar, P Rathore",
-      "publicationDate": "2023",
-      "journal": "arXiv preprint arXiv:2309.08339, 2023",
-      "citationCount": "0"
-    },
-    {
-      "title": "Machine learning-based predictions of fatigue life for multi-principal element alloys",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:M3ejUd6NZC8C",
-      "authors": "NJ Sai, P Rathore, A Chauhan",
-      "publicationDate": "2023",
-      "journal": "Scripta Materialia 226, 115214, 2023",
-      "citationCount": "52"
-    },
-    {
-      "title": "DeepVAT: A Self-Supervised Technique for Cluster Assessment in Image Datasets",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:mVmsd5A6BfQC",
-      "authors": "A Mazumder, T Baruah, AK Singh, PK Murthy, V Pattanaik, P Rathore",
-      "publicationDate": "2023",
-      "journal": "Proceedings of the IEEE/CVF International Conference on Computer Vision, 187-195, 2023",
-      "citationCount": "0"
-    },
-    {
-      "title": "Convergence of ADAM with Constant Step Size in Non-Convex Settings: A Simple Proof.",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:Wp0gIr-vW9MC",
-      "authors": "A Mazumder, B Kumar, M Tayal, P Rathore",
-      "publicationDate": "2023",
-      "journal": "CoRR, 2023",
-      "citationCount": "0"
-    },
-    {
-      "title": "A Self-Supervised Approach for Cluster Assessment of High-Dimensional Data.",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:aqlVkmm33-oC",
-      "authors": "A Mazumder, PK Murthy, P Rathore",
-      "publicationDate": "2023",
-      "journal": "CoRR, 2023",
-      "citationCount": "0"
-    },
-    {
-      "title": "Cyber attack detection in iot networks with small samples: Implementation and analysis",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:4TOpqqG69KYC",
-      "authors": "VA Kanthuru, S Rajasegarar, P Rathore, RRM Doss, L Pan, B Ray, ...",
-      "publicationDate": "2022",
-      "journal": "International Conference on Advanced Data Mining and Applications, 118-130, 2022",
-      "citationCount": "4"
     }
   ],
   "metrics": {
-    "citationsAll": "685",
-    "citationsSince2019": "619",
+    "citationsAll": "711",
+    "citationsSince2019": "644",
     "hIndexAll": "13",
     "hIndexSince2019": "12",
     "i10IndexAll": "15",
@@ -180,7 +180,7 @@
     },
     {
       "year": "2020",
-      "citations": "69"
+      "citations": "70"
     },
     {
       "year": "2021",
@@ -192,15 +192,15 @@
     },
     {
       "year": "2023",
-      "citations": "116"
+      "citations": "115"
     },
     {
       "year": "2024",
-      "citations": "132"
+      "citations": "131"
     },
     {
       "year": "2025",
-      "citations": "116"
+      "citations": "140"
     }
   ]
 }

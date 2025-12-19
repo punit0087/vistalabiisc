@@ -50,7 +50,7 @@
       "name": "Dr. Pruthvish Rajput",
       "designation": "Post-Doctoral Fellow",
       "designationLabel": "Research Staff",
-      "status": "current",
+      "status": "previous",
       "email": "pruthvishr@iisc.ac.in",
       "research": "Intelligent Transportation Systems, Machine Learning, Internet of Things, Embedded Systems.",
       "links": {
@@ -164,7 +164,7 @@
     },
     {
       "name": "Yash Soni",
-      "designation": "Project Associate",
+      "designation": "Junior Research Fellow",
       "designationLabel": "Research Staff",
       "status": "current",
       "email": "yashsoni@iisc.ac.in",
@@ -199,6 +199,18 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/arindm007",
         "github": "https://github.com/arindm007"
+      }
+    },
+    {
+      "name": "Charan Teja",
+      "designation": "Senior Project Associate",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "",
+      "research": "Automotive Domain, Machine Learning, Deep Learning & LLM's",
+      "projects": ["VehicleSec"],
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/charan-kadimi/"
       }
     },
     {

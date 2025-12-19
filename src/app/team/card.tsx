@@ -31,6 +31,7 @@ import arindam from "@/assets/profile/potrait/Arindam.jpg";
 import shalini from "@/assets/profile/potrait/shalinisharma.jpeg";
 import srimugdha from "@/assets/profile/potrait/SrimugdhaMahalakshmi.jpeg";
 import raju from "@/assets/profile/potrait/rajubhookya.jpg";
+import charan from "@/assets/profile/potrait/charan_kadimi.jpg";
 import { fetchPublicJson } from "@/lib/publicData";
 
 type Person = {
@@ -69,6 +70,7 @@ const imageByName: Record<string, string> = {
   "Vedantam Srikar": Srikar.src,
   "V Srimugdha Mahalakshmi Vabhiram": srimugdha.src,
   Ojaswee: ojaswee.src,
+  "Charan Teja": charan.src,
   "Dr. Debashis Ray Sarkar": debashis.src,
   "Yash Soni": yash.src,
   "Adharsh Narayana": adarsh.src,

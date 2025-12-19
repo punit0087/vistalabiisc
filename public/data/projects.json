@@ -133,7 +133,7 @@
       "name": "VehicleSec",
       "description": "Modern automobile systems are integrated with advanced communication and computational capabilities, and as a result, they come with many advanced features. However, these advancements render the automobile systems more prone to cyber-attacks. This project focuses on developing unsupervised learning technique on edge device (ECU) to detect and prevent attacks by monitoring the CAN bus traffic data in a car.",
       "researchers": [
-        "Dr. Pruthvish Rajput"
+        "Charan Teja"
       ],
       "tech": [
         "Unsupervised Learning",
