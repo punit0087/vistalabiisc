@@ -109,6 +109,31 @@
       }
     },
     {
+      "name": "Yash Soni",
+      "designation": "Junior Research Fellow",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "yashsoni@iisc.ac.in",
+      "research": "Radar Signal Processing, Radar Imaging",
+      "projects": ["RoadDNA"],
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/yash-soni-z7b860270/",
+        "scholar": "https://scholar.google.com/citations?user=EL-4wMEr7MMC&hl=en"
+      }
+    },
+    {
+      "name": "Charan Teja",
+      "designation": "Senior Project Associate",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "",
+      "research": "Automotive Domain, Machine Learning, Deep Learning & LLM's",
+      "projects": ["VehicleSec"],
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/charan-kadimi/"
+      }
+    },
+    {
       "name": "Anushtha Tamrakar",
       "designation": "Project Associate",
       "designationLabel": "Research Staff",
@@ -163,19 +188,6 @@
       }
     },
     {
-      "name": "Yash Soni",
-      "designation": "Junior Research Fellow",
-      "designationLabel": "Research Staff",
-      "status": "current",
-      "email": "yashsoni@iisc.ac.in",
-      "research": "Radar Signal Processing, Radar Imaging",
-      "projects": ["RoadDNA"],
-      "links": {
-        "linkedin": "https://www.linkedin.com/in/yash-soni-z7b860270/",
-        "scholar": "https://scholar.google.com/citations?user=EL-4wMEr7MMC&hl=en"
-      }
-    },
-    {
       "name": "Adharsh Narayana",
       "designation": "Project Assistant",
       "designationLabel": "Research Staff",
@@ -199,18 +211,6 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/arindm007",
         "github": "https://github.com/arindm007"
-      }
-    },
-    {
-      "name": "Charan Teja",
-      "designation": "Senior Project Associate",
-      "designationLabel": "Research Staff",
-      "status": "current",
-      "email": "",
-      "research": "Automotive Domain, Machine Learning, Deep Learning & LLM's",
-      "projects": ["VehicleSec"],
-      "links": {
-        "linkedin": "https://www.linkedin.com/in/charan-kadimi/"
       }
     },
     {
