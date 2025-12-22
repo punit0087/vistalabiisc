@@ -20,7 +20,24 @@ export const tabData: Tab[] = [
   {
     id: "tab-1",
     title: "Research Intern / Assistant",
-    positions: [],
+    positions: [
+      {
+        title: "Annotation Intern",
+        designation: "Research Intern",
+        deadlineIso: "2025-12-29T23:59:00+05:30",
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSeFD5LQXqCVZTNrAUlApqCN8gmn4rrSkAXkREnSTNDtw-AciQ/viewform",
+        content: {
+          type: "list",
+          items: [
+            "Currently enrolled in a program in Computer Science, Data Science, Engineering, or a related field. ",
+            "Familiarity with image annotation tools and a basic understanding of computer vision concepts. ",
+            "Attention to detail and a commitment to producing high-quality work. ",
+            "Prior experience with annotation projects is a plus, but not mandatory.",
+          ],
+        },
+      },
+    ],
   },
 
   {
@@ -31,8 +48,7 @@ export const tabData: Tab[] = [
         title: "Network Packet Inspection and Anomaly Detection",
         designation: "1 Project Associate/Research Associate",
         deadlineIso: "2025-12-28T23:59:00+05:30",
-        applyLink:
-          "https://forms.gle/PziVyA1hjQvHfPw16",
+        applyLink: "https://forms.gle/PziVyA1hjQvHfPw16",
         content: {
           type: "list",
           items: [

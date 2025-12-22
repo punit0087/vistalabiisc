@@ -2,6 +2,20 @@
   "projects": [
     {
       "id": 23,
+      "name": "RoadSense-77",
+      "description": "This project focuses on developing a robust road-condition monitoring system capable of detecting potholes and surface irregularities in adverse weather conditions. By leveraging the atmospheric penetration capabilities of 77GHz mmWave radar, the system identifies road features that traditional vision-based sensors (LiDAR and Cameras) fail to capture during low-visibility scenarios like heavy fog, rain, or snow.",
+      "researchers": [],
+      "tech": [
+        "mmWave radar"
+      ],
+      "data": [],
+      "fundedBy": [
+        "Indian Institute of Science (IISc)"
+      ],
+      "url": "/research/roadsense77"
+    },
+    {
+      "id": 23,
       "name": "RoadInfraAPI",
       "description": "India’s roads are constantly changing, but today’s methods of checking their condition—such as survey vehicles and central databases—are slow, expensive, and limited. At the same time, almost every modern truck, bus, or car already carries powerful sensors: accelerometers, GPS, cameras, onboard diagnostics, and often a human driver with a smartphone. Aftermarket devices and roadside CCTVs also generate valuable data. The problem is that all this information remains scattered across silos. This project aims to build an open and standardised API that can bring these different data sources together and make them usable for road monitoring at scale. By collecting simple sensor signals—such as raw accelerometer readings, GPS location, and camera feeds—we can crowdsource insights about road roughness, potholes, parked vehicles on highways, and sudden diversions. The API will be lightweight enough to run on both high-end and low-cost devices, designed to comply with Indian regulations, and resilient to patchy network conditions (so data can still be captured in low-connectivity areas). Ultimately, the project envisions turning vehicle fleets into rolling surveyors of India’s roads—creating a scalable, vendor-neutral way to monitor infrastructure, improve safety, and enable smarter planning.",
       "researchers": [
@@ -158,6 +172,7 @@
         "Dr. Aravinda Reddy",
         "Dr. Debashis Ray Sarkar",
         "Dr. Vishwajeet Pattanaik",
+        "Mohith Kumar S S",
         "Ojaswee"
       ],
       "tech": [

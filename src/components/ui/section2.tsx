@@ -49,6 +49,7 @@ export default function Section2() {
       iot: "/P_portfolio/img/fitzroyvis.jpg",
       sasd: "/P_portfolio/img/bigdata.png",
       roadinfraapi: "/P_portfolio/img/roadinfraapi.png",
+      roadsense77: "/P_portfolio/img/roadsense77.png",
     }),
     []
   );
