@@ -47,7 +47,7 @@ export const tabData: Tab[] = [
       {
         title: "Network Packet Inspection and Anomaly Detection",
         designation: "1 Project Associate/Research Associate",
-        deadlineIso: "2025-12-28T23:59:00+05:30",
+        deadlineIso: "2025-12-31T23:59:00+05:30",
         applyLink: "https://forms.gle/PziVyA1hjQvHfPw16",
         content: {
           type: "list",
