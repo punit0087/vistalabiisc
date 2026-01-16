@@ -2,6 +2,27 @@
   "projects": [
     {
       "id": 23,
+      "name": "GraphML",
+      "description": "Graphs are ubiquitous in real-world applications, from social networks to transportation networks and financial transaction data. For example, transportation systems generate large-scale, dynamic graph data, including road networks, vehicle trajectories, public transit connections, and traffic flow patterns. Effectively learning from these graphs is essential for optimising urban mobility, improving traffic prediction, enhancing road safety, and developing intelligent transportation systems. However, existing graph neural networks (GNNs) are often computationally expensive, struggle with heterogeneous traffic data, and lack adaptability to evolving mobility patterns. Moreover, many existing graph neural networks (GNNs) struggle with the challenges posed by heterophilic graphs, where node labels (e.g., different vehicle types or diverse road segments) or features differ among connected nodes, or by spectral properties that require sophisticated filtering. This necessitates the development of parameter-efficient graph representation learning methods that not only reduce computational overhead but also adapt to diverse graph structures without compromising performance. To tackle these challenges, we will design lightweight, robust modules and synchronisation mechanisms capable of leveraging graph structure and geometry efficiently with the help of sheaf theory. This research is expected to significantly advance the field by enabling GNNs that are computationally feasible for large-scale graphs while maintaining state-of-the-art performance across diverse graph types.",
+      "researchers": [
+        "P Surya Samyog",
+        "Ram Samarth B B",
+        "Srikar Vedantam"
+      ],
+      "tech": [
+        "Graph Neural Networks",
+        "Self-Supervised Learning"
+      ],
+      "data": [
+        "Heterophilous Graph Datasets"
+      ],
+      "fundedBy": [
+        "National Payments Corporation of India (NPCI)"
+      ],
+      "url": "/research/graphml"
+    },
+    {
+      "id": 23,
       "name": "RoadSense-77",
       "description": "This project focuses on developing a robust road-condition monitoring system capable of detecting potholes and surface irregularities in adverse weather conditions. By leveraging the atmospheric penetration capabilities of 77GHz mmWave radar, the system identifies road features that traditional vision-based sensors (LiDAR and Cameras) fail to capture during low-visibility scenarios like heavy fog, rain, or snow.",
       "researchers": [],
@@ -220,7 +241,6 @@
       "name": "UPGRID",
       "description": "The project aims to develop an advanced Machine Learning (ML)-based Intrusion Detection System (IDS) to safeguard power grids in India against cyber-attacks. Given the increasing vulnerability of modern power grids due to the integration of Computing and Communication (CC) devices, the project will focus on devising unsupervised learning models capable of detecting anomalies across various communication protocols. By leveraging state-of-the-art techniques like isolation forest, One-Class Support Vector Machine (OCSVM), and auto-encoders, the project seeks to enhance the specificity and sensitivity of the detection system. The research involves extensive data analysis using open datasets and synthetic data generation from power grid simulators. The developed models will be evaluated using standard metrics and deployed over GPU-accelerated computing platforms for real-time monitoring. Ultimately, the project’s goal is to create a robust and adaptive solution that can effectively detect and prevent cyber threats in the Indian power grid, making it more resilient to dynamic and sophisticated attacks.",
       "researchers": [
-        "Anushtha Tamrakar",
         "Dr. Vishwajeet Pattanaik",
         "Shailja Sharma",
         "V Srimugdha Mahalakshmi Vabhiram"

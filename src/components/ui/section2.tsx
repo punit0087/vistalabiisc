@@ -50,6 +50,7 @@ export default function Section2() {
       sasd: "/P_portfolio/img/bigdata.png",
       roadinfraapi: "/P_portfolio/img/roadinfraapi.png",
       roadsense77: "/P_portfolio/img/roadsense77.png",
+      graphml : "/P_portfolio/img/graphml.png"
     }),
     []
   );

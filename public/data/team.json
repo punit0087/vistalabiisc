@@ -137,7 +137,7 @@
       "name": "Anushtha Tamrakar",
       "designation": "Project Associate",
       "designationLabel": "Research Staff",
-      "status": "current",
+      "status": "previous",
       "email": "anushtha@fsid-iisc.in",
       "research": " Machine Learning, Data Science, Deep Learning, Computer Vision.",
       "projects": ["UPGRID"],
@@ -214,6 +214,19 @@
       }
     },
     {
+      "name": "P Surya Samyog",
+      "designation": "Project Associate",
+      "designationLabel": "Research Staff",
+      "status": "current",
+      "email": "",
+      "research": "Graph Neural Networks, Machine Learning Theory, Materials Informatics",
+      "projects": ["GraphML"],
+      "links": {
+        "linkedin": "https://linkedin.com/in/psuryasamyog",
+        "github": "https://github.com/suryasamyog"
+      }
+    },
+    {
       "name": "Alokendu Mazumder",
       "designation": "PMRF-PhD Scholar (Started 2021)",
       "designationLabel": "Research Scholar",
@@ -283,7 +296,7 @@
       "status": "current",
       "email": "ramsamarthbb@iisc.ac.in",
       "research": "Graph Neural Network, Geometric Deep Learning, Parameterised Differential Equations, Federated Learning",
-      "projects": ["AML WatchDog"],
+      "projects": ["AML WatchDog", "GraphML"],
       "links": {
         "linkedin": "https://www.linkedin.com/in/ram-samarth-b-b-340731243/",
         "github": "https://github.com/achiverram28/"
@@ -358,7 +371,7 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/rithwik-pradeep/"
       },
-      "projects": []
+      "projects": ["GraphML"]
     },
     {
       "name": "V Srimugdha Mahalakshmi Vabhiram",
