@@ -1,4 +1,4 @@
-interface Node {
-  id: number;
-  val: number;
-}
+// interface Node {
+//   id: number;
+//   val: number;
+// }
