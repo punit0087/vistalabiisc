@@ -1,6 +1,12 @@
 "use client";
-import React, { useEffect, useRef, useState, useCallback } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "../../utils/cn";
 
 export const BackgroundCellAnimation = () => {
@@ -19,15 +25,32 @@ export const BackgroundCellAnimation = () => {
 const BackgroundCellCore = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const ref = useRef<HTMLDivElement | null>(null);
+  const rafRef = useRef<number | null>(null);
+  const pendingPosition = useRef<{ x: number; y: number } | null>(null);
 
   const handleMouseMove = useCallback((event: React.MouseEvent) => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
-      setMousePosition({
+      pendingPosition.current = {
         x: event.clientX - rect.left,
         y: event.clientY - rect.top,
+      };
+      if (rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        if (pendingPosition.current) {
+          setMousePosition(pendingPosition.current);
+        }
+        rafRef.current = null;
       });
     }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
   }, []);
 
   const size = 300;
@@ -69,28 +92,15 @@ const Pattern = ({
   className?: string;
   cellClassName?: string;
 }) => {
-  const x = new Array(47).fill(0);
-  const y = new Array(30).fill(0);
-  const matrix = x.map((_, i) => y.map((_, j) => [i, j]));
+  const prefersReducedMotion = useReducedMotion();
+  const matrix = useMemo(() => {
+    const cols = prefersReducedMotion ? 24 : 47;
+    const rows = prefersReducedMotion ? 16 : 30;
+    return Array.from({ length: cols }, (_, i) =>
+      Array.from({ length: rows }, (_, j) => [i, j])
+    );
+  }, [prefersReducedMotion]);
   const [clickedCell, setClickedCell] = useState<any>(null);
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (clickedCell) {
-      matrix.forEach((row, rowIdx) => {
-        row.forEach((column, colIdx) => {
-          const distance = Math.sqrt(
-            Math.pow(clickedCell[0] - rowIdx, 2) +
-              Math.pow(clickedCell[1] - colIdx, 2)
-          );
-          controls.start({
-            opacity: [0, 1 - distance * 0.1, 0],
-            transition: { duration: distance * 0.2 },
-          });
-        });
-      });
-    }
-  }, [clickedCell, controls, matrix]);
 
   return (
     <div className={cn("flex flex-row relative z-30", className)}>
@@ -110,9 +120,39 @@ const Pattern = ({
             >
               <motion.div
                 initial={{ opacity: 0 }}
-                whileHover={{ opacity: [0, 1, 0.5] }}
+                whileHover={
+                  prefersReducedMotion ? undefined : { opacity: [0, 1, 0.5] }
+                }
                 transition={{ duration: 0.5, ease: "backOut" }}
-                animate={controls}
+                animate={
+                  prefersReducedMotion
+                    ? { opacity: 0 }
+                    : clickedCell
+                    ? {
+                        opacity: [
+                          0,
+                          Math.max(
+                            0,
+                            1 -
+                              Math.hypot(
+                                clickedCell[0] - rowIdx,
+                                clickedCell[1] - colIdx
+                              ) * 0.1
+                          ),
+                          0,
+                        ],
+                        transition: {
+                          duration: Math.max(
+                            0.1,
+                            Math.hypot(
+                              clickedCell[0] - rowIdx,
+                              clickedCell[1] - colIdx
+                            ) * 0.2
+                          ),
+                        },
+                      }
+                    : { opacity: 0 }
+                }
                 className="bg-[rgba(14,165,233,0.3)] h-12 w-12"
               ></motion.div>
             </div>

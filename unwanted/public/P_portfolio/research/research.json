@@ -1,0 +1,116 @@
+[
+  {
+    "link": "/research/reid",
+    "imageSrc": "/data/ProjectsCoverIMG/VehicleREID.jpeg",
+    "title": "RESEARCH",
+    "description": "Vehicle REID"
+  },
+  {
+    "link": "/research/cyc",
+    "imageSrc": "/data/ProjectsCoverIMG/cyclone.gif",
+    "title": "RESEARCH",
+    "description": "Cyclone Detection"
+  },
+  {
+    "link": "/research/DC",
+    "imageSrc": "/data/ProjectsCoverIMG/deep_clustering.gif",
+    "title": "RESEARCH",
+    "description": "Deep-Clustering"
+  },
+  {
+    "link": "/research/AMLWD",
+    "imageSrc": "/data/ProjectsCoverIMG/amlwatchdog.gif",
+    "title": "RESEARCH",
+    "description": "AML Watchdog"
+  },
+  {
+    "link": "/research/VSec",
+    "imageSrc": "/data/ProjectsCoverIMG/vehiclesec.gif",
+    "title": "RESEARCH",
+    "description": "VehicleSec"
+  },
+  {
+    "link": "/research/IADS",
+    "imageSrc": "/data/ProjectsCoverIMG/ADAS.gif",
+    "title": "RESEARCH",
+    "description": "Indian ADAS"
+  },
+  {
+    "link": "/research/CW",
+    "imageSrc": "/data/ProjectsCoverIMG/Edge-Analytics-for-UAVs.gif",
+    "title": "RESEARCH",
+    "description": "CityWatch"
+  },
+  {
+    "link": "/research/TB",
+    "imageSrc": "/data/ProjectsCoverIMG/Traffic-Flow-Optimizer.gif",
+    "title": "RESEARCH",
+    "description": "TrafficBrain"
+  },
+  {
+    "link": "/research/upgrid",
+    "imageSrc": "/data/ProjectsCoverIMG/PowerGrid-IDS.gif",
+    "title": "RESEARCH",
+    "description": "UPGRID"
+  },
+  {
+    "link": "/research/WAna",
+    "imageSrc": "/data/ProjectsCoverIMG/wreckanalyzer.gif",
+    "title": "RESEARCH",
+    "description": "Wreck Analyzer"
+  },
+  {
+    "link": "/research/roadDNA",
+    "imageSrc": "/data/ProjectsCoverIMG/RoadSurfacePro.gif",
+    "title": "RESEARCH",
+    "description": "RoadDNA"
+  },
+  {
+    "link": "/research/Driving_Behaviour_T_ITS.png",
+    "imageSrc": "/data/ProjectsCoverIMG/dbshmi.png",
+    "title": "RESEARCH",
+    "description": "Driver-Vehicle Interaction"
+  },
+  {
+    "link": "/research/dba",
+    "imageSrc": "/data/ProjectsCoverIMG/udb.png",
+    "title": "RESEARCH",
+    "description": "Driver DNA"
+  },
+  {
+    "link": "/research/frcd",
+    "imageSrc": "/data/ProjectsCoverIMG/TrajectoryClusteringDiagram.png",
+    "title": "RESEARCH",
+    "description": "Spam Detection"
+  },
+  {
+    "link": "/research/bdca",
+    "imageSrc": "/data/ProjectsCoverIMG/bigdata.png",
+    "title": "RESEARCH",
+    "description": "Big Data Cluster Analysis"
+  },
+  {
+    "link": "/research/sasd",
+    "imageSrc": "/data/ProjectsCoverIMG/bigdata.png",
+    "title": "RESEARCH",
+    "description": "Online Clustering"
+  },
+  {
+    "link": "/research/lstp",
+    "imageSrc": "/data/ProjectsCoverIMG/TrajectoryClusteringDiagram.png",
+    "title": "RESEARCH",
+    "description": "Traj-Pred"
+  },
+  {
+    "link": "/research/sme",
+    "imageSrc": "/data/ProjectsCoverIMG/drift.png",
+    "title": "RESEARCH",
+    "description": "ST Estimation"
+  },
+  {
+    "link": "/research/iot",
+    "imageSrc": "/data/ProjectsCoverIMG/fitzroyvis.jpg",
+    "title": "RESEARCH",
+    "description": "Urban Sensing using IOT"
+  }
+]

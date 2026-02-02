@@ -31,7 +31,7 @@ const Graph: React.FC<GraphProps> = ({ data, width, height }) => {
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const x = d3.scaleLinear().domain([2018, 2025]).range([0, svgWidth]);
+    const x = d3.scaleLinear().domain([2018, 2026]).range([0, svgWidth]);
 
     const y = d3
       .scaleLinear()

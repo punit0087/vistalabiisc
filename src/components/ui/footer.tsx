@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex">
           <Image src={copyrights} alt="" className="w-6" />
           <p className="h-auto my-auto m-2 mr-28 font-bold text-xs text-slate-200 uppercase sm:mr-0">
-            VISTA Lab, IISc, 2024-25
+            VISTA Lab, IISc 2026
           </p>
         </div>
       </div>

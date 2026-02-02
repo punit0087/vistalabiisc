@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "VISTA Lab @ IISc",
     images: [
       {
-        url: "/P_portfolio/img/TreeVisualization.png",
+        url: "/data/ProjectsCoverIMG/TreeVisualization.png",
         width: 1200,
         height: 630,
         alt: "VISTA Portfolio Banner",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Punit Rathore | VISTA Lab, IISc",
     description: "Portfolio - Punit Rathore",
-    images: ["/P_portfolio/img/TreeVisualization.png"],
+    images: ["/data/ProjectsCoverIMG/TreeVisualization.png"],
   },
 };
 

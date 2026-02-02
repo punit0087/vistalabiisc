@@ -14,6 +14,7 @@ type Project = {
   data?: string[];
   fundedBy?: string[];
   url: string;
+  image?: string;
 };
 
 type ProjectsPayload = {
@@ -26,42 +27,7 @@ export default function Section2() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Map known research route slugs to images
-  const imageBySlug = useMemo(
-    () => ({
-      cyc: "/P_portfolio/img/cyclone.gif",
-      TB: "/P_portfolio/img/Traffic-Flow-Optimizer.gif",
-      reid: "/P_portfolio/img/VehicleREID.jpeg",
-      DC: "/P_portfolio/img/deep_clustering.gif",
-      AMLWD: "/P_portfolio/img/amlwatchdog.gif",
-      VSec: "/P_portfolio/img/vehiclesec.gif",
-      IADS: "/P_portfolio/img/ADAS.gif",
-      CW: "/P_portfolio/img/Edge-Analytics-for-UAVs.gif",
-      upgrid: "/P_portfolio/img/PowerGrid-IDS.gif",
-      WAna: "/P_portfolio/img/wreckanalyzer.gif",
-      roadDNA: "/P_portfolio/img/RoadSurfacePro.gif",
-      dbshmi: "/P_portfolio/img/Driving_Behaviour_T_ITS.png",
-      dba: "/P_portfolio/img/udb.png",
-      frcd: "/P_portfolio/img/Fake_review.png",
-      bdca: "/P_portfolio/img/bigdata.png",
-      lstp: "/P_portfolio/img/TrajectoryClusteringDiagram.png",
-      sme: "/P_portfolio/img/drift.png",
-      iot: "/P_portfolio/img/fitzroyvis.jpg",
-      sasd: "/P_portfolio/img/bigdata.png",
-      roadinfraapi: "/P_portfolio/img/roadinfraapi.png",
-      roadsense77: "/P_portfolio/img/roadsense77.png",
-      graphml : "/P_portfolio/img/graphml.png"
-    }),
-    []
-  );
-
-  // Fallback URL mapping when projects.json has placeholder '#'
-  const fallbackUrlByName = useMemo(
-    () => ({
-     
-    }),
-    []
-  );
+  const fallbackImage = "/data/ProjectsCoverIMG/bigdata.png";
 
   useEffect(() => {
     let cancelled = false;
@@ -159,16 +125,8 @@ export default function Section2() {
       </div>
       <div className="flex mt-24 pb-6">
         {filteredProjects.map((project, index) => {
-          const url =
-            project.url && project.url !== "#"
-              ? project.url
-              : fallbackUrlByName[
-                  project.name as keyof typeof fallbackUrlByName
-                ] || "#";
-          const slug = url.split("/").filter(Boolean).pop() || "";
-          const image =
-            imageBySlug[slug as keyof typeof imageBySlug] ||
-            "/P_portfolio/img/bigdata.png";
+          const url = project.url && project.url !== "#" ? project.url : "#";
+          const image = project.image || fallbackImage;
           return (
             <Link href={url} key={`${project.id}-${index}`}>
               <div className="h-[27vh] border border-white/[0.2] flex flex-col items-start mx-auto p-4 relative z-30 ml-4 rounded-lg sm:h-full">

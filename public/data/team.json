@@ -126,7 +126,7 @@
       "designation": "Senior Project Associate",
       "designationLabel": "Research Staff",
       "status": "current",
-      "email": "",
+      "email": "charantejak@iisc.ac.in",
       "research": "Automotive Domain, Machine Learning, Deep Learning & LLM's",
       "projects": ["VehicleSec"],
       "links": {
@@ -165,7 +165,7 @@
       "designation": "Project Associate",
       "designationLabel": "Research Staff",
       "status": "current",
-      "email": "",
+      "email": "chinmayp1@iisc.ac.in",
       "research": "Software Development, Scalable System Design, Edge AI, Human-Computer Interaction",
       "projects": ["Vehicle REID", "RoadInfraAPI"],
       "links": {
@@ -178,7 +178,7 @@
       "designation": "Project Associate",
       "designationLabel": "Research Staff",
       "status": "current",
-      "email": "",
+      "email": "ojaswee1@iisc.ac.in",
       "research": "Computer Vision, Adversarial Machine Learning, Deep Learning",
       "projects": ["Indian ADAS"],
       "links": {
@@ -192,7 +192,7 @@
       "designation": "Project Assistant",
       "designationLabel": "Research Staff",
       "status": "current",
-      "email": "",
+      "email": "adharshn@iisc.ac.in",
       "research": "Deep Learning, Computer Vision, LLMs",
       "projects": ["Indian ADAS"],
       "links": {
@@ -205,7 +205,7 @@
       "designation": "Project Associate",
       "designationLabel": "Research Staff",
       "status": "current",
-      "email": "",
+      "email": "arindamc@iisc.ac.in",
       "research": "Software Development, Scalable System Design, Computer Vision, Edge based Inferencing",
       "projects": ["RoadInfraAPI"],
       "links": {
@@ -215,10 +215,10 @@
     },
     {
       "name": "P Surya Samyog",
-      "designation": "Project Associate",
+      "designation": "Project Assistant",
       "designationLabel": "Research Staff",
       "status": "current",
-      "email": "",
+      "email": "psuryas@iisc.ac.in",
       "research": "Graph Neural Networks, Machine Learning Theory, Materials Informatics",
       "projects": ["GraphML"],
       "links": {

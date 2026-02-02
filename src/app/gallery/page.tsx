@@ -10,14 +10,16 @@ export default async function GalleryPage() {
   const files = fs
     .readdirSync(dir)
     .filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
-    .sort((a, b) => {
-      const na = +a.match(/\d+/)![0];
-      const nb = +b.match(/\d+/)![0];
-      return na - nb;
-    });
+    .map((f) => ({
+      name: f,
+      mtimeMs: fs.statSync(path.join(dir, f)).mtimeMs,
+    }))
+    .sort((a, b) => b.mtimeMs - a.mtimeMs)
+    .map((f) => f.name);
 
   const images = files.map((f) => ({
-    src: `/gallery/${f}`,
+    thumbSrc: `/gallery/${f}`,
+    fullSrc: `/gallery/${f}`,
     alt: f,
   }));
 

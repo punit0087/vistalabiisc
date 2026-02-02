@@ -7,7 +7,8 @@ import arrowLeft from "@/assets/left.svg";
 import arrowRight from "@/assets/right.svg";
 
 export interface GalleryImage {
-  src: string; // e.g. "/gallery/File_1.jpg"
+  thumbSrc: string; // e.g. "/gallery/File_1.jpg"
+  fullSrc: string; // e.g. "/gallery/File_1.jpg"
   alt: string;
 }
 
@@ -17,22 +18,20 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = (index: number) => {
     setSelectedIndex(index);
-    setSelectedImage(images[index].src);
+    setIsOpen(true);
   };
-  const handleClose = () => setSelectedImage(null);
+  const handleClose = () => setIsOpen(false);
   const handlePrev = useCallback(() => {
     const idx = (selectedIndex - 1 + images.length) % images.length;
     setSelectedIndex(idx);
-    setSelectedImage(images[idx].src);
   }, [selectedIndex, images]);
   const handleNext = useCallback(() => {
     const idx = (selectedIndex + 1) % images.length;
     setSelectedIndex(idx);
-    setSelectedImage(images[idx].src);
   }, [selectedIndex, images]);
 
   useEffect(() => {
@@ -59,19 +58,22 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
         {images.map((image, idx) => (
           <div key={idx} className="p-2">
             <Image
-              src={image.src}
+              src={image.thumbSrc}
               alt={image.alt}
               className="w-full h-80 object-cover rounded-lg cursor-pointer hover:cursor-zoom-in transition-transform transform hover:scale-105"
               onClick={() => handleOpen(idx)}
               width={400}
               height={400}
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              quality={40}
+              loading="lazy"
             />
           </div>
         ))}
       </div>
 
       {/* LIGHTBOX */}
-      {selectedImage && (
+      {isOpen && images[selectedIndex] && (
         <div className="fixed inset-0 flex flex-col bg-black bg-opacity-90 z-50">
           <div className="flex justify-around items-start mt-20">
             <div className="grid space-y-96">
@@ -84,16 +86,21 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
             </div>
 
             <div className="flex items-center justify-center sm:mt-10">
-              <img
-                src={selectedImage}
+              <Image
+                src={images[selectedIndex].fullSrc}
                 alt={images[selectedIndex].alt}
                 className="object-contain rounded-lg w-[70vw] h-[74vh]"
+                width={1400}
+                height={1000}
+                sizes="70vw"
+                quality={90}
+                priority
               />
             </div>
 
             <div className="grid space-y-96">
               <button
-                onClick={() => handleDownload(selectedImage)}
+                onClick={() => handleDownload(images[selectedIndex].fullSrc)}
                 className="rounded"
               >
                 <Image src={download} alt="Download" width={48} height={48} />
@@ -116,11 +123,13 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
                 onClick={() => handleOpen(idx)}
               >
                 <Image
-                  src={image.src}
+                  src={image.thumbSrc}
                   alt={image.alt}
                   className="w-full h-full object-cover rounded"
                   width={96}
                   height={96}
+                  quality={40}
+                  loading="lazy"
                 />
               </div>
             ))}
