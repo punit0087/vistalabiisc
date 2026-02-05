@@ -24,7 +24,7 @@ export const tabData: Tab[] = [
       {
         title: "Annotation Intern",
         designation: "Research Intern",
-        deadlineIso: "2026-02-01T23:59:00+05:30",
+        deadlineIso: "2026-02-13T23:59:00+05:30",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLSeFD5LQXqCVZTNrAUlApqCN8gmn4rrSkAXkREnSTNDtw-AciQ/viewform",
         content: {

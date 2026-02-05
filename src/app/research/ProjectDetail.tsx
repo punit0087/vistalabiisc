@@ -37,14 +37,11 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
     (async () => {
       try {
         const data = await fetchPublicJson<ProjectsPayload>(
-          "/data/projects.json"
+          "/data/projects.json",
         );
         if (cancelled) return;
         const match = (data.projects || []).find((p) => {
-          const urlSlug = (p.url || "")
-            .split("/")
-            .filter(Boolean)
-            .pop();
+          const urlSlug = (p.url || "").split("/").filter(Boolean).pop();
           return String(urlSlug || "").toLowerCase() === normalizedSlug;
         });
         setProject(match || null);
@@ -83,7 +80,7 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
             {researchers.length > 0 && (
               <div className="mt-2">
                 <span className="text-zinc-300 font-semibold">
-                  Researchers: 
+                  Researchers:
                 </span>
                 <p className="text-zinc-400 text-sm mt-1">
                   {researchers.join(", ")}
@@ -93,19 +90,15 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
             {tech.length > 0 && (
               <div className="mt-4">
                 <span className="text-zinc-300 font-semibold">
-                  Technologies: 
+                  Technologies:
                 </span>
-                <p className="text-zinc-400 text-sm mt-1">
-                  {tech.join(", ")}
-                </p>
+                <p className="text-zinc-400 text-sm mt-1">{tech.join(", ")}</p>
               </div>
             )}
             {data.length > 0 && (
               <div className="mt-4">
                 <span className="text-zinc-300 font-semibold">Data: </span>
-                <p className="text-zinc-400 text-sm mt-1">
-                  {data.join(", ")}
-                </p>
+                <p className="text-zinc-400 text-sm mt-1">{data.join(", ")}</p>
               </div>
             )}
             {fundedBy.length > 0 && (
