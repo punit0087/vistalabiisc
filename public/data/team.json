@@ -232,7 +232,7 @@
       "designationLabel": "Research Scholar",
       "status": "current",
       "email": "alokendum@iisc.ac.in",
-      "research": "Representation Learning, Stocahastic Optimization.",
+      "research": "Stochastic optimization, Representation Learning, Stocahastic Optimization.",
       "projects": ["Deep-Clustering"],
       "links": {
         "github": "https://github.com/alokendumazumder",
@@ -358,7 +358,7 @@
       "designationLabel": "M.Tech",
       "status": "current",
       "email": "arnabroy@iisc.ac.in",
-      "research": "",
+      "research": "Graph Theory, Stochastic Optimization",
       "projects": []
     },
     {
