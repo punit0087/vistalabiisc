@@ -38,7 +38,7 @@ import kola from "@/assets/profile/potrait/KolaAkshitha.jpeg"
 import ankitha from "@/assets/profile/potrait/AnkithaG.jpg"
 import yakshith from "@/assets/profile/potrait/YakshithMaddineni.jpg"
 import soham from "@/assets/profile/potrait/SohamChakraborty.png"
-import mehuli from "@/assets/profile/potrait/MehuliChatterjee.jpg"
+import mehuli from "@/assets/profile/potrait/MehuliChatterjee.jpeg"
 import { fetchPublicJson } from "@/lib/publicData";
 
 type Person = {

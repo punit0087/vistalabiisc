@@ -6,7 +6,6 @@
       "description": "Graphs are ubiquitous in real-world applications, from social networks to transportation networks and financial transaction data. For example, transportation systems generate large-scale, dynamic graph data, including road networks, vehicle trajectories, public transit connections, and traffic flow patterns. Effectively learning from these graphs is essential for optimising urban mobility, improving traffic prediction, enhancing road safety, and developing intelligent transportation systems. However, existing graph neural networks (GNNs) are often computationally expensive, struggle with heterogeneous traffic data, and lack adaptability to evolving mobility patterns. Moreover, many existing graph neural networks (GNNs) struggle with the challenges posed by heterophilic graphs, where node labels (e.g., different vehicle types or diverse road segments) or features differ among connected nodes, or by spectral properties that require sophisticated filtering. This necessitates the development of parameter-efficient graph representation learning methods that not only reduce computational overhead but also adapt to diverse graph structures without compromising performance. To tackle these challenges, we will design lightweight, robust modules and synchronisation mechanisms capable of leveraging graph structure and geometry efficiently with the help of sheaf theory. This research is expected to significantly advance the field by enabling GNNs that are computationally feasible for large-scale graphs while maintaining state-of-the-art performance across diverse graph types.",
       "researchers": [
         "P Surya Samyog",
-        "Ram Samarth B B",
         "Srikar Vedantam"
       ],
       "tech": [
@@ -153,8 +152,7 @@
       "name": "AML WatchDog",
       "description": "The Indian Institute of Science (IISc) and the National Payments Corporation of India (NPCI) have initiated a groundbreaking joint research project to revolutionize the fight against financial crimes in India. This critical initiative leverages cutting-edge Graph and Graph Neural Network (GNN) analytics to detect and prevent money laundering and fraudulent transactions within NPCI's vast network of over 40 crore daily transactions. The collaboration brings together renowned researchers and industry professionals to develop innovative solutions that can identify anomalous sub-graphs and networks contributing to financial crimes with unprecedented speed and accuracy. By harnessing advanced graph algorithms and GNN techniques, this project aims to provide NPCI's Anti-Money Laundering team with cutting-edge tools for near real-time detection of suspicious patterns and relationships within the transaction graph. The outcomes of this research have far-reaching implications for the entire financial sector in India and beyond, setting new benchmarks in the fight against financial crimes. The project's success will strengthen public confidence in digital transactions, support the government's efforts to curb illicit activities, and contribute to the overall economic stability and growth of the nation.",
       "researchers": [
-        "Paritosh Tiwari",
-        "Ram Samarth B B"
+        "Paritosh Tiwari"
       ],
       "tech": [
         "Graph Neural Networks",
