@@ -293,7 +293,7 @@
       "name": "Ram Samarth B B",
       "designation": "PhD Scholar, [Jointly with Sundeep Prabhakar Chepuri, ECE](Started 2025)",
       "designationLabel": "Research Scholar",
-      "status": "current",
+      "status": "previous",
       "email": "ramsamarthbb@iisc.ac.in",
       "research": "Graph Neural Network, Geometric Deep Learning, Parameterised Differential Equations, Federated Learning",
       "projects": ["AML WatchDog", "GraphML"],
