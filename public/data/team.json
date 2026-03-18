@@ -398,6 +398,80 @@
       "projects": []
     },
     {
+      "name": "Mehuli Chatterjee",
+      "designation": "M.Tech in Robotics and Autonomous Systems (Started 2025)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "mehulic@iisc.ac.in",
+      "research": "ML, Deep Learning(CNNs, LSTMs), Computer Vision, PyTorch/TensorFlow",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/mehuli-chatterjee-29a895315/",
+        "scholar": "https://scholar.google.com/citations?view_op=list_works&hl=en&user=fonknu4AAAAJ"
+      },
+      "projects": []
+    },
+    {
+      "name": "Soham Chakraborty",
+      "designation": "M.Tech in Smart Mobility and Logistics Systems (Started 2025)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "sohamc@iisc.ac.in",
+      "research": "Computer Vision, Natural Language Processing, Machine Learning, Intelligent Transportation Systems",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/sohamchakraborty0707/",
+        "scholar": "https://scholar.google.com/citations?hl=en&tzom=-330&user=IJBJzYsAAAAJ"
+      },
+      "projects": []
+    },
+    {
+      "name": "Yakshith Maddineni",
+      "designation": "M.Tech in Smart Mobility and Logistics Systems (Started 2025)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "yakshithm@iisc.ac.in",
+      "research": "Computer Vision, Deep Learning, Data Science.",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/yakshith-maddineni-a61b79257/"
+      },
+      "projects": []
+    },
+    {
+      "name": "Ankitha G",
+      "designation": "M.Tech in Smart Mobility and Logistics Systems (Started 2025)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "ankithag@iisc.ac.in",
+      "research": "Machine learning, Deep Learning, Intelligent transportation systems, Computer vision, LLMs",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/ankitha-g-183874239/"
+      },
+      "projects": ["Indian ADAS"]
+    },
+    {
+      "name": "Kola Akshitha",
+      "designation": "M.Tech in Electrical Engineering (Started 2025)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "akshithakola@iisc.ac.in",
+      "research": "Deep Learning, Generative Models",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/akshitha-kola-8043a228a/"
+      },
+      "projects": []
+    },
+    {
+      "name": "Harkharaj Bharali",
+      "designation": "M.Tech (Started 2025)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "harkharajb@iisc.ac.in",
+      "research": "Computer vision, Deep Learning , Generative Latent Modeling",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/harkharaj-bharali/"
+      },
+      "projects": []
+    },
+    {
       "name": "Aditya Arvind",
       "designation": "Project Scientist",
       "designationLabel": "Research Staff",

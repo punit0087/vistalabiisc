@@ -1,6 +1,14 @@
 {
   "results": [
     {
+      "title": "Scaling Real-Time Traffic Analytics on Edge-Cloud Fabrics for City-Scale Camera Networks",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:bEWYMUwI8FkC",
+      "authors": "A Sharma, P Naman, R Banerjee, P Pansari, S Gawali, M Arya, ...",
+      "publicationDate": "2026",
+      "journal": "arXiv preprint arXiv:2603.05217, 2026",
+      "citationCount": "0"
+    },
+    {
       "title": "On Convergence of Adam with Data Dependent Stepsize",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:4JMBOYKVnBMC",
       "authors": "A Mazumder, R Sabharwal, B Kumar, M Tayal, C Garg, A Roy, P Rathore",
@@ -13,7 +21,7 @@
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:r0BpntZqJG4C",
       "authors": "T Baruah, P Rathore",
       "publicationDate": "2026",
-      "journal": "4th Deployable AI Workshop in (AAAI) Association for the Advancement of …, 2026",
+      "journal": "Proceedings of The Second AAAI Bridge Program on AI for Medicine and …, 2026",
       "citationCount": "0"
     },
     {
@@ -38,7 +46,7 @@
       "authors": "A Sharma, C Mhatre, S Gawali, R Bokkasam, B Kishore, V Pattanaik, ...",
       "publicationDate": "2025",
       "journal": "arXiv preprint arXiv:2511.02563, 2025",
-      "citationCount": "0"
+      "citationCount": "1"
     },
     {
       "title": "PrefixCAN-Signal: PrefixSpan-based Automatic Controller Area Network Signal Extraction",
@@ -57,7 +65,7 @@
       "citationCount": "0"
     },
     {
-      "title": "Density-Adaptive Fuzzy Clustering with Isolation Kernel",
+      "title": "Density-adaptive fuzzy clustering with isolation kernel",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:hFOr9nPyWt4C",
       "authors": "P Tiwari, R Kachroo, P Rathore",
       "publicationDate": "2025",
@@ -105,7 +113,7 @@
       "citationCount": "0"
     },
     {
-      "title": "Benchmarking Object Detection and Tracking for UAVs: An Algorithmic Comparison",
+      "title": "Benchmarking object detection and tracking for UAVs: an algorithmic comparison",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:HDshCWvjkbEC",
       "authors": "PS Rathore, A Balana, R Bhaumik, V Pattanaik, P Rathore",
       "publicationDate": "2024",
@@ -113,15 +121,15 @@
       "citationCount": "1"
     },
     {
-      "title": "STEAM: Squeeze and Transform Enhanced Attention Module",
+      "title": "STEAM: Squeeze and transform enhanced attention module",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:IWHjjKOFINEC",
       "authors": "R Sabharwal, PS Rathore, P Rathore",
       "publicationDate": "2024",
       "journal": "arXiv preprint arXiv:2412.09023, 2024",
-      "citationCount": "1"
+      "citationCount": "3"
     },
     {
-      "title": "A Visual-Analytical Approach for Automatic Detection of Cyclonic Events in Satellite Observations",
+      "title": "A visual-analytical approach for automatic detection of cyclonic events in satellite observations",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:ZeXyd9-uunAC",
       "authors": "A Agrawal, M Mohapatra, A Raja, P Tiwari, V Pattanaik, N Jaiswal, ...",
       "publicationDate": "2024",
@@ -134,7 +142,7 @@
       "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
       "publicationDate": "2024",
       "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "38"
+      "citationCount": "32"
     },
     {
       "title": "Adding Explainability to Visual Clustering Tendency Assessment (VAT) Methods Through Feature Importance",
@@ -150,21 +158,13 @@
       "authors": "KM Pagadala, P Rathore",
       "publicationDate": "2024",
       "journal": "Proceedings of the 7th Joint International Conference on Data Science …, 2024",
-      "citationCount": "2"
-    },
-    {
-      "title": "Learning Low-Rank Latent Spaces with Simple Deterministic Autoencoder: Theoretical and Empirical Insights",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:9ZlFYXVOiuMC",
-      "authors": "A Mazumder, T Baruah, B Kumar, R Sharma, V Pattanaik, P Rathore",
-      "publicationDate": "2024",
-      "journal": "Proceedings of the IEEE/CVF Winter Conference on Applications of Computer …, 2024",
-      "citationCount": "4"
+      "citationCount": "3"
     }
   ],
   "metrics": {
-    "citationsAll": "735",
-    "citationsSince2019": "601",
-    "hIndexAll": "13",
+    "citationsAll": "752",
+    "citationsSince2019": "613",
+    "hIndexAll": "14",
     "hIndexSince2019": "13",
     "i10IndexAll": "15",
     "i10IndexSince2019": "14"
@@ -176,35 +176,35 @@
     },
     {
       "year": "2019",
-      "citations": "39"
+      "citations": "40"
     },
     {
       "year": "2020",
-      "citations": "68"
+      "citations": "70"
     },
     {
       "year": "2021",
-      "citations": "73"
+      "citations": "72"
     },
     {
       "year": "2022",
-      "citations": "114"
+      "citations": "111"
     },
     {
       "year": "2023",
-      "citations": "116"
+      "citations": "119"
     },
     {
       "year": "2024",
-      "citations": "131"
+      "citations": "130"
     },
     {
       "year": "2025",
-      "citations": "158"
+      "citations": "154"
     },
     {
       "year": "2026",
-      "citations": "8"
+      "citations": "26"
     }
   ]
 }

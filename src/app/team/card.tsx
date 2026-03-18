@@ -32,7 +32,13 @@ import shalini from "@/assets/profile/potrait/shalinisharma.jpeg";
 import srimugdha from "@/assets/profile/potrait/SrimugdhaMahalakshmi.jpeg";
 import raju from "@/assets/profile/potrait/rajubhookya.jpg";
 import charan from "@/assets/profile/potrait/charan_kadimi.jpg";
-import surya from "@/assets/profile/potrait/PSuryaSamyog.jpeg"
+import surya from "@/assets/profile/potrait/PSuryaSamyog.jpeg";
+import Harkharaj from "@/assets/profile/potrait/HarkharajBharali.jpeg"
+import kola from "@/assets/profile/potrait/KolaAkshitha.jpeg"
+import ankitha from "@/assets/profile/potrait/AnkithaG.jpg"
+import yakshith from "@/assets/profile/potrait/YakshithMaddineni.jpg"
+import soham from "@/assets/profile/potrait/SohamChakraborty.png"
+import mehuli from "@/assets/profile/potrait/MehuliChatterjee.jpg"
 import { fetchPublicJson } from "@/lib/publicData";
 
 type Person = {
@@ -81,6 +87,12 @@ const imageByName: Record<string, string> = {
   "Shailja Sharma": shalini.src,
   "Raju Bhookya": raju.src,
   "P Surya Samyog": surya.src,
+  "Harkharaj Bharali": Harkharaj.src,
+  "Kola Akshitha": kola.src,
+  "Ankitha G": ankitha.src,
+  "Yakshith Maddineni": yakshith.src,
+  "Soham Chakraborty": soham.src,
+  "Mehuli Chatterjee": mehuli.src
 };
 
 export default function CardP() {
