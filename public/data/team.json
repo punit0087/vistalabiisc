@@ -472,6 +472,18 @@
       "projects": []
     },
     {
+      "name": "Tanushri Naik",
+      "designation": "MTech in Robotics and Autonomous Systems (Started 2025)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "tanushrinaik@iisc.ac.in",
+      "research": "Machine Learning, Deep Learning, Computer Vision",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/tanushri-naik-332869239/"
+      },
+      "projects": []
+    },
+    {
       "name": "Aditya Arvind",
       "designation": "Project Scientist",
       "designationLabel": "Research Staff",
