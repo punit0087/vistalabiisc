@@ -1,6 +1,26 @@
 {
   "projects": [
     {
+      "id": 16,
+      "name": "Missing Traffic Sign Detection",
+      "description": "As we know Missing traffic signs are a major safety hazard for both everyday drivers and self-driving cars. While most AI systems are built to simply recognize signs that are physically present, our project tackles a much trickier challenge which figures out when a sign should be there, but isn't. Instead of looking for the sign itself, we train our system to read the 'clues' in the surrounding environment like the layout of the road, intersections, or crosswalks that strongly hint a warning or rule is missing. By teaching the model to understand this broader context, we are building a smarter way to spot gaps in road infrastructure and improve overall safety.",
+      "researchers": [
+        "Dr. Vishwajeet Pattanaik",
+        "Rithwik Pradeep",
+        "Yakshith Maddineni"
+      ],
+      "tech": [
+        "Computer Vision",
+        "Image Processing"
+      ],
+      "data": [
+        "Missing Traffic Sign Video Datasets"
+      ],
+      "fundedBy": [],
+      "url": "/research/mtsd",
+      "image": "/data/ProjectsCoverIMG/mstd.png"
+    },
+    {
       "id": 23,
       "name": "GraphML",
       "description": "Graphs are ubiquitous in real-world applications, from social networks to transportation networks and financial transaction data. For example, transportation systems generate large-scale, dynamic graph data, including road networks, vehicle trajectories, public transit connections, and traffic flow patterns. Effectively learning from these graphs is essential for optimising urban mobility, improving traffic prediction, enhancing road safety, and developing intelligent transportation systems. However, existing graph neural networks (GNNs) are often computationally expensive, struggle with heterogeneous traffic data, and lack adaptability to evolving mobility patterns. Moreover, many existing graph neural networks (GNNs) struggle with the challenges posed by heterophilic graphs, where node labels (e.g., different vehicle types or diverse road segments) or features differ among connected nodes, or by spectral properties that require sophisticated filtering. This necessitates the development of parameter-efficient graph representation learning methods that not only reduce computational overhead but also adapt to diverse graph structures without compromising performance. To tackle these challenges, we will design lightweight, robust modules and synchronisation mechanisms capable of leveraging graph structure and geometry efficiently with the help of sheaf theory. This research is expected to significantly advance the field by enabling GNNs that are computationally feasible for large-scale graphs while maintaining state-of-the-art performance across diverse graph types.",

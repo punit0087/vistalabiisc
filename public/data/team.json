@@ -43,7 +43,8 @@
         "TrafficBrain",
         "UPGRID",
         "Vehicle REID",
-        "RoadInfraAPI"
+        "RoadInfraAPI",
+        "Missing Traffic Sign Detection"
       ]
     },
     {
@@ -350,7 +351,7 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/rithwik-pradeep/"
       },
-      "projects": []
+      "projects": ["Missing Traffic Sign Detection"]
     },
     {
       "name": "Arnab Roy",
@@ -433,7 +434,7 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/yakshith-maddineni-a61b79257/"
       },
-      "projects": []
+      "projects": ["Missing Traffic Sign Detection"]
     },
     {
       "name": "Ankitha G",
@@ -468,6 +469,18 @@
       "research": "Computer vision, Deep Learning , Generative Latent Modeling",
       "links": {
         "linkedin": "https://www.linkedin.com/in/harkharaj-bharali/"
+      },
+      "projects": []
+    },
+    {
+      "name": "Tanushri Naik",
+      "designation": "MTech in Robotics and Autonomous Systems (Started 2025)",
+      "designationLabel": "M.Tech",
+      "status": "current",
+      "email": "tanushrinaik@iisc.ac.in",
+      "research": "Machine Learning, Deep Learning, Computer Vision",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/tanushri-naik-332869239/"
       },
       "projects": []
     },

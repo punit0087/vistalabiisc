@@ -1,12 +1,20 @@
 {
   "results": [
     {
+      "title": "PosSpec-Net: Enhancing Radar-Based Speech Signals via U-Nets and Positional Vectors",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:isC4tDSrTZIC",
+      "authors": "Y Soni, A Mazumder, P Misra, P Rathore",
+      "publicationDate": "2026",
+      "journal": "ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …, 2026",
+      "citationCount": "0"
+    },
+    {
       "title": "Scaling Real-Time Traffic Analytics on Edge-Cloud Fabrics for City-Scale Camera Networks",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:bEWYMUwI8FkC",
       "authors": "A Sharma, P Naman, R Banerjee, P Pansari, S Gawali, M Arya, ...",
       "publicationDate": "2026",
       "journal": "arXiv preprint arXiv:2603.05217, 2026",
-      "citationCount": "0"
+      "citationCount": "1"
     },
     {
       "title": "On Convergence of Adam with Data Dependent Stepsize",
@@ -33,6 +41,14 @@
       "citationCount": "0"
     },
     {
+      "title": "FLandroid: Towards Federated Learning for Android Edge Devices",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:TFP_iSt0sucC",
+      "authors": "A Sharma, C Mhatre, P Rathore, N Auluck, Y Simmhan",
+      "publicationDate": "2025",
+      "journal": "2025 IEEE 32nd International Conference on High Performance Computing, Data …, 2025",
+      "citationCount": "0"
+    },
+    {
       "title": "Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:TQgYirikUcIC",
       "authors": "A Mazumder, K Vyas, P Rathore",
@@ -46,7 +62,7 @@
       "authors": "A Sharma, C Mhatre, S Gawali, R Bokkasam, B Kishore, V Pattanaik, ...",
       "publicationDate": "2025",
       "journal": "arXiv preprint arXiv:2511.02563, 2025",
-      "citationCount": "1"
+      "citationCount": "2"
     },
     {
       "title": "PrefixCAN-Signal: PrefixSpan-based Automatic Controller Area Network Signal Extraction",
@@ -86,7 +102,7 @@
       "authors": "JS Tharani, EYA Charles, P Rathore, Z Hóu, M Palaniswami, ...",
       "publicationDate": "2025",
       "journal": "Distributed Ledger Technologies: Research and Practice, 2025",
-      "citationCount": "1"
+      "citationCount": "2"
     },
     {
       "title": "DIME: Deterministic Information Maximizing Autoencoder",
@@ -118,7 +134,7 @@
       "authors": "PS Rathore, A Balana, R Bhaumik, V Pattanaik, P Rathore",
       "publicationDate": "2024",
       "journal": "2024 IEEE International Conference on Vehicular Electronics and Safety …, 2024",
-      "citationCount": "1"
+      "citationCount": "2"
     },
     {
       "title": "STEAM: Squeeze and transform enhanced attention module",
@@ -142,32 +158,16 @@
       "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
       "publicationDate": "2024",
       "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "32"
-    },
-    {
-      "title": "Adding Explainability to Visual Clustering Tendency Assessment (VAT) Methods Through Feature Importance",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:L8Ckcad2t8MC",
-      "authors": "BS Achary, R Kachroo, P Rathore",
-      "publicationDate": "2024",
-      "journal": "2024 International Joint Conference on Neural Networks (IJCNN), 1-8, 2024",
-      "citationCount": "0"
-    },
-    {
-      "title": "Havat: Automatic cluster structure assessment in unlabeled data",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:QIV2ME_5wuYC",
-      "authors": "KM Pagadala, P Rathore",
-      "publicationDate": "2024",
-      "journal": "Proceedings of the 7th Joint International Conference on Data Science …, 2024",
-      "citationCount": "3"
+      "citationCount": "35"
     }
   ],
   "metrics": {
-    "citationsAll": "752",
-    "citationsSince2019": "613",
+    "citationsAll": "770",
+    "citationsSince2019": "632",
     "hIndexAll": "14",
     "hIndexSince2019": "13",
     "i10IndexAll": "15",
-    "i10IndexSince2019": "14"
+    "i10IndexSince2019": "15"
   },
   "graphData": [
     {
@@ -176,7 +176,7 @@
     },
     {
       "year": "2019",
-      "citations": "40"
+      "citations": "39"
     },
     {
       "year": "2020",
@@ -184,11 +184,11 @@
     },
     {
       "year": "2021",
-      "citations": "72"
+      "citations": "73"
     },
     {
       "year": "2022",
-      "citations": "111"
+      "citations": "113"
     },
     {
       "year": "2023",
@@ -196,15 +196,15 @@
     },
     {
       "year": "2024",
-      "citations": "130"
+      "citations": "132"
     },
     {
       "year": "2025",
-      "citations": "154"
+      "citations": "155"
     },
     {
       "year": "2026",
-      "citations": "26"
+      "citations": "39"
     }
   ]
 }
