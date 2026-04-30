@@ -43,7 +43,8 @@
         "TrafficBrain",
         "UPGRID",
         "Vehicle REID",
-        "RoadInfraAPI"
+        "RoadInfraAPI",
+        "Missing Traffic Sign Detection"
       ]
     },
     {
@@ -350,7 +351,7 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/rithwik-pradeep/"
       },
-      "projects": []
+      "projects": ["Missing Traffic Sign Detection"]
     },
     {
       "name": "Arnab Roy",
@@ -433,7 +434,7 @@
       "links": {
         "linkedin": "https://www.linkedin.com/in/yakshith-maddineni-a61b79257/"
       },
-      "projects": []
+      "projects": ["Missing Traffic Sign Detection"]
     },
     {
       "name": "Ankitha G",
