@@ -25,8 +25,7 @@ export const tabData: Tab[] = [
         title: "Annotation Intern",
         designation: "Research Intern",
         deadlineIso: "2026-05-15T23:59:00+05:30",
-        applyLink:
-          "https://forms.gle/EKNZGMan6MEEHwnr8",
+        applyLink: "https://forms.gle/EKNZGMan6MEEHwnr8",
         content: {
           type: "list",
           items: [
@@ -42,22 +41,27 @@ export const tabData: Tab[] = [
 
   {
     id: "tab-2",
-    title: "Project / Research Associate",
+    title: "Project / Senior Project Associate",
     positions: [
       {
-        title: "GPU Rack Server Administrator",
-        designation: "1 Project Associate/Research Associate",
-        deadlineIso: "2026-04-20T23:59:00+05:30",
+        title:
+          "Road Infrastructure Assessment using ML/Computer Vision Models on Crowd-Sensing Data Collection through Instrumented Vehicle (Road computer vision)",
+        designation: "1 Project Associate/Senior Project Associate",
+        deadlineIso: "2026-05-10T23:59:00+05:30",
         applyLink:
-          "https://docs.google.com/forms/d/1fwz7tl103NJuBOHT471b6EK_aDjovUEJrPppH7gg3vs",
+          "https://docs.google.com/forms/d/e/1FAIpQLSc6u_TfQR9ABsulmgigdzxrTZIao0egUdn36K6V1mFflTGpPw/viewform",
         content: {
           type: "list",
           items: [
-            "Bachelor's Degree (B.E., B.Tech., BCA, MCA, M.Tech or equivalent) in a relevant Engineering or Computing discipline.",
-            "1+ years of hands-on experience in System Administration, DevOps, or HPC/Cluster management.",
-            "Demonstrated proficiency in Python and Bash scripting for system automation, monitoring, and infrastructure management is essential.",
-            "Solid theoretical understanding and practical experience in setting up and maintaining high-performance computing (HPC) environments, including GPU cluster management and SLURM scheduling or similar resource managers.",
-            "Strong programming, debugging, and advanced system troubleshooting skills across complex distributed computing systems are a significant advantage.",
+            "Proficiency in Python with demonstrated experience in ML and DL libraries (e.g., PyTorch, TensorFlow).",
+            "Strong expertise in developing scalable APIs and building high-performance backend systems is required.",
+            "Proficiency in SQL/NoSQL databases and high-volume data handling.",
+            "Familiarity with OLAP systems for analytical queries and insights.",
+            "Experience in ETL pipelines and streaming tools (Kafka).",
+            "Knowledge of geospatial data (GPS, mapping, spatial indexing).",
+            "Understanding of real-time analytics and dashboarding.",
+            "Experience with cloud platforms (AWS) and microservices architecture.",
+            "Strong fundamentals in signal processing (IMU data, filtering, noise reduction) is a plus.",
           ],
         },
       },
