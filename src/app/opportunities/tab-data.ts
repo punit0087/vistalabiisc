@@ -24,7 +24,7 @@ export const tabData: Tab[] = [
       {
         title: "Annotation Intern",
         designation: "Research Intern",
-        deadlineIso: "2026-05-15T23:59:00+05:30",
+        deadlineIso: "2026-05-24T23:59:00+05:30",
         applyLink: "https://forms.gle/EKNZGMan6MEEHwnr8",
         content: {
           type: "list",
@@ -47,7 +47,7 @@ export const tabData: Tab[] = [
         title:
           "Road Infrastructure Assessment using ML/Computer Vision Models on Crowd-Sensing Data Collection through Instrumented Vehicle (Road computer vision)",
         designation: "1 Project Associate/Senior Project Associate",
-        deadlineIso: "2026-05-10T23:59:00+05:30",
+        deadlineIso: "2026-05-24T23:59:00+05:30",
         applyLink:
           "https://docs.google.com/forms/d/e/1FAIpQLSc6u_TfQR9ABsulmgigdzxrTZIao0egUdn36K6V1mFflTGpPw/viewform",
         content: {
