@@ -44,24 +44,19 @@ export const tabData: Tab[] = [
     title: "Project / Senior Project Associate",
     positions: [
       {
-        title:
-          "Road Infrastructure Assessment using ML/Computer Vision Models on Crowd-Sensing Data Collection through Instrumented Vehicle (Road computer vision)",
-        designation: "1 Project Associate/Senior Project Associate",
-        deadlineIso: "2026-05-10T23:59:00+05:30",
+        title: "GPU Rack Server Administrator",
+        designation: "1 Project Associate",
+        deadlineIso: "2026-07-06T23:59:00+05:30",
         applyLink:
-          "https://docs.google.com/forms/d/e/1FAIpQLSc6u_TfQR9ABsulmgigdzxrTZIao0egUdn36K6V1mFflTGpPw/viewform",
+          "https://docs.google.com/forms/d/1fwz7tl103NJuBOHT471b6EK_aDjovUEJrPppH7gg3vs/viewform",
         content: {
           type: "list",
           items: [
-            "Proficiency in Python with demonstrated experience in ML and DL libraries (e.g., PyTorch, TensorFlow).",
-            "Strong expertise in developing scalable APIs and building high-performance backend systems is required.",
-            "Proficiency in SQL/NoSQL databases and high-volume data handling.",
-            "Familiarity with OLAP systems for analytical queries and insights.",
-            "Experience in ETL pipelines and streaming tools (Kafka).",
-            "Knowledge of geospatial data (GPS, mapping, spatial indexing).",
-            "Understanding of real-time analytics and dashboarding.",
-            "Experience with cloud platforms (AWS) and microservices architecture.",
-            "Strong fundamentals in signal processing (IMU data, filtering, noise reduction) is a plus.",
+            "Bachelor's Degree (B.E., B.Tech., BCA, MCA, M.Tech or equivalent) in a relevant Engineering or Computing discipline.",
+            "1+ years of hands-on experience in System Administration, DevOps, or HPC/Cluster management.",
+            "Demonstrated proficiency in Python and Bash scripting for system automation, monitoring, and infrastructure management is essential.",
+            "Solid theoretical understanding and practical experience in setting up and maintaining high-performance computing (HPC) environments, including GPU cluster management and SLURM scheduling or similar resource managers.",
+            "Strong programming, debugging, and advanced system troubleshooting skills across complex distributed computing systems are a significant advantage.",
           ],
         },
       },
