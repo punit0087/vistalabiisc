@@ -1,7 +1,7 @@
 import JobListings from "./Tabs";
 import { BackgroundCellAnimation } from "./BackgroundRippleEffect";
 
-export default function Oppurtunities() {
+export default function Opportunities() {
   return (
     <div>
       <BackgroundCellAnimation />

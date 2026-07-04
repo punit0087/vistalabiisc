@@ -278,7 +278,7 @@ export default function Section3() {
       <div id="child5" className="p-6 w-[20%] sm:w-full">
         <b className="leading-10 text-base">Positions</b>
         <Link
-          href="/oppurtunities"
+          href="/opportunities"
           target="_blank"
           className="flex text-sm text-gray-400 mb-4 font-bold hover:text-white"
         >
