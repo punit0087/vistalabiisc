@@ -5,7 +5,10 @@ export default function News() {
   return (
     <div className="h-[80%] overflow-y-auto scrollbar-custom">
       <ul className="text-xs text-justify animate-blink">
-      <li className="mb-4">
+        <li className="mb-4">
+          [Aug 2024] Our interdisciplinary team from IISc, with faculty, students and staff from CDS (lead), CiSTUP, CPS and CDPG, has won the IEEE TCSC SCALE Challenge 2026, held at IEEE/ACM CCGrid 2026 in Sydney <a href="https://www.iisc.ac.in/events/iisc-team-wins-ieee-tcsc-scale-challenge-2026-for-city-scale-real-time-traffic-analytics-across-edge-cloud-fabrics/" target="_blank">Read More</a>
+        </li>
+        <li className="mb-4">
           [Aug 2024] Punit Rathore Received Arcot Ramachandran Young Investigator Award from
            Indian Institute of Science (IISc)
         </li>
@@ -16,7 +19,7 @@ export default function News() {
           University on 4th November 2023
         </li>
         <li className="mb-4">
-          [Oct 2023] Punit Rathore be giving an Invited Talk on "Unlocking the Value of
+          [Oct 2023] Punit Rathore will be giving an Invited Talk on "Unlocking the Value of
           Vehicular Data: A Simple, Unsupervised Approach for On-board Driver
           Behavior Classification" at "AIMLSys 2023: Sustainable AI for Edge
           workshop, Bangalore" on 28th October 2023
