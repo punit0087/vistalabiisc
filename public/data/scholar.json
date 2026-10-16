@@ -1,210 +1,210 @@
 {
-  "results": [
-    {
-      "title": "PosSpec-Net: Enhancing Radar-Based Speech Signals via U-Nets and Positional Vectors",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:isC4tDSrTZIC",
-      "authors": "Y Soni, A Mazumder, P Misra, P Rathore",
-      "publicationDate": "2026",
-      "journal": "ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …, 2026",
-      "citationCount": "0"
+    "results": [
+        {
+            "title": "Rethinking Self-Supervised Learning on Graphs with SwAG",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:vV6vV6tmYwMC",
+            "authors": "P Surya Samyog, V Srikar, A Mazumder, P Rathore",
+            "publicationDate": "2026",
+            "journal": "5th Learning on Graphs (LoG) Conference, PMLR, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "LISA: Latent Inference on the Sphere for A-posteriori sampling",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:RYcK_YlVTxYC",
+            "authors": "A Mazumder, C Garg, T Baruah, P Rathore",
+            "publicationDate": "2026",
+            "journal": "Transactions on Machine Learning Research (TMLR), 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "NVE: A Separability and Coverage-Aware Internal Validation Metric for Biclustering",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:J_g5lzvAfSwC",
+            "authors": "P Tiwari, IN Kumar, JC Bezdek, P Rathore",
+            "publicationDate": "2026",
+            "journal": "arXiv preprint arXiv:2608.29045, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Why Clipping Matters in AdaGrad? Toward a High-Probability Theory under Generalized Smoothness",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:lSLTfruPkqcC",
+            "authors": "A Mazumder, A Mohd, H Rawat, A Roy, M Baranwal, P Rathore",
+            "publicationDate": "2026",
+            "journal": "arXiv preprint arXiv:2609.30276, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Global Linear Convergence of Inexact TD Under Generalized Smoothness",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:RGFaLdJalmkC",
+            "authors": "A Mazumder, I Ananta, P Rathore",
+            "publicationDate": "2026",
+            "journal": "Transactions on Machine Learning Research (TMLR), 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Two-Fold Patch Perturbation for Efficient Self-Supervised Learning in 3D Medical Imaging",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:BqipwSGYUEgC",
+            "authors": "T Baruah, K Jamadar, P Rathore",
+            "publicationDate": "2026",
+            "journal": "35th International Joint Conference on Artificial Intelligence (IJCAI-ECAI 2026), 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Unsupervised Detection of Entry and Exit Regions from Vehicle Trajectories for Camera-Agnostic Turning Movement Counts",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:hMod-77fHWUC",
+            "authors": "PS Rathore, V Pattanaik, P Rathore",
+            "publicationDate": "2026",
+            "journal": "arXiv preprint arXiv:2607.10949, 2026",
+            "citationCount": "1"
+        },
+        {
+            "title": "Global Linear Convergence of Inexact TD Under Generalized Smoothness",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:YFjsv_pBGBYC",
+            "authors": "A Mazumder, I Ananta, P Rathore",
+            "publicationDate": "2026",
+            "journal": "ICML Workshop on High-dimensional Learning Dynamics 2026, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Does Reasoning Kill the Joke? Long-Context Humor Understanding in Hindi",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:JV2RwH3_ST0C",
+            "authors": "K Anuranjana, N Shrivastava, A Johar, R Sabharwal, G Ranka, A Lunawat, ...",
+            "publicationDate": "2026",
+            "journal": "Proceedings of the 4th Workshop on Cross-Cultural Considerations in NLP …, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Hard Possibilistic C-Means: An Empirical Study of Noise, Overlap, and Rejection",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:blknAaTinKkC",
+            "authors": "P Tiwari, JC Bezdek, TA Runkler, P Rathore",
+            "publicationDate": "2026",
+            "journal": "2026 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE), 1-6, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Identifying suspicious blockchain transactions using clustering with explainability",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:_Qo2XoVZTnwC",
+            "authors": "J Samantha Tharani, EYA Charles, P Rathore, Z Hóu, M Palaniswami, ...",
+            "publicationDate": "2026",
+            "journal": "Distributed Ledger Technologies: Research and Practice 5 (4), 1-22, 2026",
+            "citationCount": "3"
+        },
+        {
+            "title": "Guarding Digital Substations: Securing IEC61850 Digital Substations with AI: Challenges, Opportunities, and the Path Forward",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:NaGl4SEjCO4C",
+            "authors": "S Sharma, K Baranwal, P Rathore, C Singh, G Gurrala, V Bishnoi",
+            "publicationDate": "2026",
+            "journal": "IEEE Power and Energy Magazine, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "On Hamming–Lipschitz Type Stability of the Subdominant (Minmax) Ultrametric: Theory and Simple Proofs",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:ns9cj8rnVeAC",
+            "authors": "A Mazumder, A Roy, P Rathore",
+            "publicationDate": "2026",
+            "journal": "Transactions on Machine Learning Research (TMLR), 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "PosSpec-Net: Enhancing Radar-Based Speech Signals via U-Nets and Positional Vectors",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:isC4tDSrTZIC",
+            "authors": "Y Soni, A Mazumder, P Misra, P Rathore",
+            "publicationDate": "2026",
+            "journal": "ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and …, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Physics-guided neural network for predicting fatigue life of unirradiated and irradiated austenitic and ferritic/martensitic steels under reactor-relevant conditions",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:e5wmG9Sq2KIC",
+            "authors": "DS Kori, A Chandraker, SA Rahman, P Rathore, A Chauhan",
+            "publicationDate": "2026",
+            "journal": "Engineering Fracture Mechanics, 112221, 2026",
+            "citationCount": "3"
+        },
+        {
+            "title": "BMD-45: A Large-Scale CCTV Vehicle Detection Dataset for Urban Traffic in Developing Cities",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:k_IJM867U9cC",
+            "authors": "A Sharma, C Mhatre, S Gawali, R Bokkasam, B Sharma, V Pattanaik, ...",
+            "publicationDate": "2026",
+            "journal": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …, 2026",
+            "citationCount": "1"
+        },
+        {
+            "title": "Scaling Real-Time Traffic Analytics on Edge-Cloud Fabrics for City-Scale Camera Networks",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:bEWYMUwI8FkC",
+            "authors": "A Sharma, P Naman, R Banerjee, P Pansari, S Gawali, M Arya, ...",
+            "publicationDate": "2026",
+            "journal": "IEEE 26th International Symposium on Cluster, Cloud and Internet Computing …, 2026",
+            "citationCount": "5"
+        },
+        {
+            "title": "On Convergence of Adam with Data Dependent Stepsize",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:4JMBOYKVnBMC",
+            "authors": "A Mazumder, R Sabharwal, B Kumar, M Tayal, C Garg, A Roy, P Rathore",
+            "publicationDate": "2026",
+            "journal": "IEEE Transactions on Artificial Intelligence (TAI), 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "(Distributed) Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:iH-uZ7U-co4C",
+            "authors": "A Mazumder, K Vyas, P Rathore",
+            "publicationDate": "2026",
+            "journal": "AAAI Workshop on Federated Learning for Critical Applications, 2026",
+            "citationCount": "0"
+        },
+        {
+            "title": "Translating Classifier Scores into Clinical Impact: Calibrated Risk and Queueing Simulation for AI-Assisted Radiology Worklist Triage",
+            "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:r0BpntZqJG4C",
+            "authors": "T Baruah, P Rathore",
+            "publicationDate": "2026",
+            "journal": "Proceedings of The Second AAAI Bridge Program on AI for Medicine and …, 2026",
+            "citationCount": "0"
+        }
+    ],
+    "metrics": {
+        "citationsAll": "846",
+        "citationsSince2019": "705",
+        "hIndexAll": "14",
+        "hIndexSince2019": "13",
+        "i10IndexAll": "15",
+        "i10IndexSince2019": "14"
     },
-    {
-      "title": "Scaling Real-Time Traffic Analytics on Edge-Cloud Fabrics for City-Scale Camera Networks",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:bEWYMUwI8FkC",
-      "authors": "A Sharma, P Naman, R Banerjee, P Pansari, S Gawali, M Arya, ...",
-      "publicationDate": "2026",
-      "journal": "arXiv preprint arXiv:2603.05217, 2026",
-      "citationCount": "1"
-    },
-    {
-      "title": "On Convergence of Adam with Data Dependent Stepsize",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:4JMBOYKVnBMC",
-      "authors": "A Mazumder, R Sabharwal, B Kumar, M Tayal, C Garg, A Roy, P Rathore",
-      "publicationDate": "2026",
-      "journal": "IEEE Transactions on Artificial Intelligence (TAI), 2026",
-      "citationCount": "0"
-    },
-    {
-      "title": "Translating Classifier Scores into Clinical Impact: Calibrated Risk and Queueing Simulation for AI-Assisted Radiology Worklist Triage",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:r0BpntZqJG4C",
-      "authors": "T Baruah, P Rathore",
-      "publicationDate": "2026",
-      "journal": "Proceedings of The Second AAAI Bridge Program on AI for Medicine and …, 2026",
-      "citationCount": "0"
-    },
-    {
-      "title": "Comparative Analysis Of Deep Learning Models For Cyclone Detection And Localisation On Infrared Satellite Images",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:j3f4tGmQtD8C",
-      "authors": "A Agrawal, M Mohapatra, A Raja, P Tiwari, V Pattanaik, A Agarwal, ...",
-      "publicationDate": "2025",
-      "journal": "IGARSS 2025 - 2025 IEEE International Geoscience and Remote Sensing Symposium, 2025",
-      "citationCount": "0"
-    },
-    {
-      "title": "FLandroid: Towards Federated Learning for Android Edge Devices",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:TFP_iSt0sucC",
-      "authors": "A Sharma, C Mhatre, P Rathore, N Auluck, Y Simmhan",
-      "publicationDate": "2025",
-      "journal": "2025 IEEE 32nd International Conference on High Performance Computing, Data …, 2025",
-      "citationCount": "0"
-    },
-    {
-      "title": "Fractional Gradient Descent with Matrix Stepsizes for Non-Convex Optimisation",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:TQgYirikUcIC",
-      "authors": "A Mazumder, K Vyas, P Rathore",
-      "publicationDate": "2025",
-      "journal": "IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2025",
-      "citationCount": "0"
-    },
-    {
-      "title": "The Urban Vision Hackathon Dataset and Models: Towards Image Annotations and Accurate Vision Models for Indian Traffic",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:RHpTSmoSYBkC",
-      "authors": "A Sharma, C Mhatre, S Gawali, R Bokkasam, B Kishore, V Pattanaik, ...",
-      "publicationDate": "2025",
-      "journal": "arXiv preprint arXiv:2511.02563, 2025",
-      "citationCount": "2"
-    },
-    {
-      "title": "PrefixCAN-Signal: PrefixSpan-based Automatic Controller Area Network Signal Extraction",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:R3hNpaxXUhUC",
-      "authors": "PR Rajput, A Zaman, V Katewa, P Rathore",
-      "publicationDate": "2025",
-      "journal": "2025 IEEE International Conference on Intelligent Transportation Systems (ITSC), 2025",
-      "citationCount": "0"
-    },
-    {
-      "title": "Physics-informed neural network for fatigue life prediction of irradiated austenitic and ferritic/martensitic steels",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:e5wmG9Sq2KIC",
-      "authors": "DS Kori, A Chandraker, SA Rahman, P Rathore, A Chauhan",
-      "publicationDate": "2025",
-      "journal": "arXiv preprint arXiv:2508.17303, 2025",
-      "citationCount": "0"
-    },
-    {
-      "title": "Density-adaptive fuzzy clustering with isolation kernel",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:hFOr9nPyWt4C",
-      "authors": "P Tiwari, R Kachroo, P Rathore",
-      "publicationDate": "2025",
-      "journal": "ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and …, 2025",
-      "citationCount": "1"
-    },
-    {
-      "title": "Monitoring of Speed Breaker Violations with RoadHAWK",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:-f6ydRqryjwC",
-      "authors": "RC Mahalik, P Misra, P Rathore",
-      "publicationDate": "2025",
-      "journal": "2025 17th International Conference on COMmunication Systems and NETworks …, 2025",
-      "citationCount": "1"
-    },
-    {
-      "title": "Identifying suspicious blockchain transactions using clustering with explainability",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:_Qo2XoVZTnwC",
-      "authors": "JS Tharani, EYA Charles, P Rathore, Z Hóu, M Palaniswami, ...",
-      "publicationDate": "2025",
-      "journal": "Distributed Ledger Technologies: Research and Practice, 2025",
-      "citationCount": "2"
-    },
-    {
-      "title": "DIME: Deterministic Information Maximizing Autoencoder",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:mB3voiENLucC",
-      "authors": "A Mazumder, C Garg, T Baruah, P Rathore",
-      "publicationDate": "2025",
-      "journal": "ICLR 2025 Workshop on Deep Generative Model in Machine Learning: Theory …, 2025",
-      "citationCount": "0"
-    },
-    {
-      "title": "SSGNN: Simple Yet Effective Spectral Graph Neural Network",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:qUcmZB5y_30C",
-      "authors": "RS BB, R Sabharwal, SP Chepuri, P Rathore",
-      "publicationDate": "2025",
-      "journal": "",
-      "citationCount": "0"
-    },
-    {
-      "title": "Feature Engineering for Anomaly Detection and Classification of Blockchain Transactions",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:dhFuZR0502QC",
-      "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
-      "publicationDate": "2025",
-      "journal": "Distributed Ledger Technologies: Research and Practice, 2025",
-      "citationCount": "0"
-    },
-    {
-      "title": "Benchmarking object detection and tracking for UAVs: an algorithmic comparison",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:HDshCWvjkbEC",
-      "authors": "PS Rathore, A Balana, R Bhaumik, V Pattanaik, P Rathore",
-      "publicationDate": "2024",
-      "journal": "2024 IEEE International Conference on Vehicular Electronics and Safety …, 2024",
-      "citationCount": "2"
-    },
-    {
-      "title": "STEAM: Squeeze and transform enhanced attention module",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:IWHjjKOFINEC",
-      "authors": "R Sabharwal, PS Rathore, P Rathore",
-      "publicationDate": "2024",
-      "journal": "arXiv preprint arXiv:2412.09023, 2024",
-      "citationCount": "3"
-    },
-    {
-      "title": "A visual-analytical approach for automatic detection of cyclonic events in satellite observations",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:ZeXyd9-uunAC",
-      "authors": "A Agrawal, M Mohapatra, A Raja, P Tiwari, V Pattanaik, N Jaiswal, ...",
-      "publicationDate": "2024",
-      "journal": "arXiv preprint arXiv:2410.08218, 2024",
-      "citationCount": "2"
-    },
-    {
-      "title": "Unified Feature Engineering for Detection of Malicious Entities in Blockchain Networks",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=2clQgooAAAAJ&sortby=pubdate&citation_for_view=2clQgooAAAAJ:7PzlFSSx8tAC",
-      "authors": "JS Tharani, Z Hóu, EYA Charles, P Rathore, M Palaniswami, ...",
-      "publicationDate": "2024",
-      "journal": "IEEE Transactions on Information Forensics and Security, 2024",
-      "citationCount": "35"
-    }
-  ],
-  "metrics": {
-    "citationsAll": "770",
-    "citationsSince2019": "632",
-    "hIndexAll": "14",
-    "hIndexSince2019": "13",
-    "i10IndexAll": "15",
-    "i10IndexSince2019": "15"
-  },
-  "graphData": [
-    {
-      "year": "2018",
-      "citations": "26"
-    },
-    {
-      "year": "2019",
-      "citations": "39"
-    },
-    {
-      "year": "2020",
-      "citations": "70"
-    },
-    {
-      "year": "2021",
-      "citations": "73"
-    },
-    {
-      "year": "2022",
-      "citations": "113"
-    },
-    {
-      "year": "2023",
-      "citations": "119"
-    },
-    {
-      "year": "2024",
-      "citations": "132"
-    },
-    {
-      "year": "2025",
-      "citations": "155"
-    },
-    {
-      "year": "2026",
-      "citations": "39"
-    }
-  ]
+    "graphData": [
+        {
+            "year": "2018",
+            "citations": "25"
+        },
+        {
+            "year": "2019",
+            "citations": "43"
+        },
+        {
+            "year": "2020",
+            "citations": "69"
+        },
+        {
+            "year": "2021",
+            "citations": "74"
+        },
+        {
+            "year": "2022",
+            "citations": "115"
+        },
+        {
+            "year": "2023",
+            "citations": "118"
+        },
+        {
+            "year": "2024",
+            "citations": "125"
+        },
+        {
+            "year": "2025",
+            "citations": "156"
+        },
+        {
+            "year": "2026",
+            "citations": "115"
+        }
+    ]
 }
